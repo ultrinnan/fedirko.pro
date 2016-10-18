@@ -162,21 +162,21 @@ $this->title = 'Sergey\'s Portfolio';
                     <div class="title">
                         TransRadar | TransRadar (февраль 2016)
                     </div>
-                    <a class="fancybox" rel="trans" href="/pictures/screenshots/transradar1.png" title="Пример работ">
-                        <img src="/pictures/screenshots/transradar1_m.png" alt="transradar" align="left"/>
+                    <a class="fancybox" rel="trans" href="/images/screenshots/transradar1.png" title="Пример работ">
+                        <img src="/images/screenshots/transradar1_m.png" alt="transradar" align="left"/>
                     </a>
                     <span style="display:none">
-		<a class="fancybox" rel="trans" href="/pictures/screenshots/transradar2.png" title="Пример работ"></a>
-		<a class="fancybox" rel="trans" href="/pictures/screenshots/transradar3.png" title="Пример работ"></a>
-		<a class="fancybox" rel="trans" href="/pictures/screenshots/transradar4.png" title="Пример работ"></a>
-		<a class="fancybox" rel="trans" href="/pictures/screenshots/transradar5.png" title="Пример работ"></a>
-		<a class="fancybox" rel="trans" href="/pictures/screenshots/transradar6.png" title="Пример работ"></a>
-		<a class="fancybox" rel="trans" href="/pictures/screenshots/transradar7.png" title="Пример работ"></a>
-		<a class="fancybox" rel="trans" href="/pictures/screenshots/transradar8.png" title="Пример работ"></a>
-		<a class="fancybox" rel="trans" href="/pictures/screenshots/transradar9.png" title="Пример работ"></a>
-		<a class="fancybox" rel="trans" href="/pictures/screenshots/transradar10.png" title="Пример работ"></a>
-		<a class="fancybox" rel="trans" href="/pictures/screenshots/transradar11.jpg" title="Пример работ"></a>
-		<a class="fancybox" rel="trans" href="/pictures/screenshots/transradar12.png" title="Пример работ"></a>
+		<a class="fancybox" rel="trans" href="/images/screenshots/transradar2.png" title="Пример работ"></a>
+		<a class="fancybox" rel="trans" href="/images/screenshots/transradar3.png" title="Пример работ"></a>
+		<a class="fancybox" rel="trans" href="/images/screenshots/transradar4.png" title="Пример работ"></a>
+		<a class="fancybox" rel="trans" href="/images/screenshots/transradar5.png" title="Пример работ"></a>
+		<a class="fancybox" rel="trans" href="/images/screenshots/transradar6.png" title="Пример работ"></a>
+		<a class="fancybox" rel="trans" href="/images/screenshots/transradar7.png" title="Пример работ"></a>
+		<a class="fancybox" rel="trans" href="/images/screenshots/transradar8.png" title="Пример работ"></a>
+		<a class="fancybox" rel="trans" href="/images/screenshots/transradar9.png" title="Пример работ"></a>
+		<a class="fancybox" rel="trans" href="/images/screenshots/transradar10.png" title="Пример работ"></a>
+		<a class="fancybox" rel="trans" href="/images/screenshots/transradar11.jpg" title="Пример работ"></a>
+		<a class="fancybox" rel="trans" href="/images/screenshots/transradar12.png" title="Пример работ"></a>
 	</span>
                     <div class="label">
 		<span class="label_text"><i class="fa fa-cog fa-spin fa-work"></i> Work<span>
@@ -189,8 +189,8 @@ $this->title = 'Sergey\'s Portfolio';
                     <div class="title">
                         OKI LTO | Тендерная система LTO (январь 2016)
                     </div>
-                    <a class="fancybox" rel="lto" href="/pictures/screenshots/oki_lto.png" title="Пример работ">
-                        <img src="/pictures/screenshots/oki_lto.png" alt="lto" align="left"/>
+                    <a class="fancybox" rel="lto" href="/images/screenshots/oki_lto.png" title="Пример работ">
+                        <img src="/images/screenshots/oki_lto.png" alt="lto" align="left"/>
                     </a>
                     <div class="label">
 		<span class="label_text"><i class="fa fa-cog fa-spin fa-work"></i> Work<span>
@@ -212,15 +212,15 @@ $this->title = 'Sergey\'s Portfolio';
                     <div class="title">
                         AmoreBeauty | Маникюрный салон (декабрь 2015)
                     </div>
-                    <a class="fancybox" rel="amore" href="/pictures/screenshots/amore1.png" title="Пример работ">
-                        <img src="/pictures/screenshots/amore1_m.png" alt="hairstyles" align="left"/>
+                    <a class="fancybox" rel="amore" href="/images/screenshots/amore1.png" title="Пример работ">
+                        <img src="/images/screenshots/amore1_m.png" alt="hairstyles" align="left"/>
                     </a>
                     <span style="display:none">
-		<a class="fancybox" rel="amore" href="/pictures/screenshots/amore2.png" title="Пример работ">
-			<img src="/pictures/screenshots/amore2_m.png" alt="hairstyles" align="left"/>
+		<a class="fancybox" rel="amore" href="/images/screenshots/amore2.png" title="Пример работ">
+			<img src="/images/screenshots/amore2_m.png" alt="hairstyles" align="left"/>
 		</a>
-		<a class="fancybox" rel="amore" href="/pictures/screenshots/amore3.png" title="Пример работ">
-			<img src="/pictures/screenshots/amore3_m.png" alt="hairstyles" align="left"/>
+		<a class="fancybox" rel="amore" href="/images/screenshots/amore3.png" title="Пример работ">
+			<img src="/images/screenshots/amore3_m.png" alt="hairstyles" align="left"/>
 		</a>
 	</span>
                     Описание: Сайт маникюрного салона AmoreBeauty
@@ -234,39 +234,39 @@ $this->title = 'Sergey\'s Portfolio';
                     <div class="title">
                         8000.ua | Интернет-магазин  - Товары для туризма и активного отдыха (декабрь 2015)
                     </div>
-                    <a class="fancybox" rel="8000" href="/pictures/screenshots/80001.png" title="Пример работ">
-                        <img src="/pictures/screenshots/80001_m.png" alt="8000.ua" align="left"/>
+                    <a class="fancybox" rel="8000" href="/images/screenshots/80001.png" title="Пример работ">
+                        <img src="/images/screenshots/80001_m.png" alt="8000.ua" align="left"/>
                     </a>
                     <span style="display:none">
-		<a class="fancybox" rel="8000" href="/pictures/screenshots/80002.png" title="Пример работ">
-			<img src="/pictures/screenshots/8000.png" alt="8000.ua" align="left"/>
+		<a class="fancybox" rel="8000" href="/images/screenshots/80002.png" title="Пример работ">
+			<img src="/images/screenshots/8000.png" alt="8000.ua" align="left"/>
 		</a>
-		<a class="fancybox" rel="8000" href="/pictures/screenshots/80003.png" title="Пример работ">
-			<img src="/pictures/screenshots/8000.png" alt="8000.ua" align="left"/>
+		<a class="fancybox" rel="8000" href="/images/screenshots/80003.png" title="Пример работ">
+			<img src="/images/screenshots/8000.png" alt="8000.ua" align="left"/>
 		</a>
-		<a class="fancybox" rel="8000" href="/pictures/screenshots/80004.png" title="Пример работ">
-			<img src="/pictures/screenshots/8000.png" alt="8000.ua" align="left"/>
+		<a class="fancybox" rel="8000" href="/images/screenshots/80004.png" title="Пример работ">
+			<img src="/images/screenshots/8000.png" alt="8000.ua" align="left"/>
 		</a>
-		<a class="fancybox" rel="8000" href="/pictures/screenshots/80005.png" title="Пример работ">
-			<img src="/pictures/screenshots/8000.png" alt="8000.ua" align="left"/>
+		<a class="fancybox" rel="8000" href="/images/screenshots/80005.png" title="Пример работ">
+			<img src="/images/screenshots/8000.png" alt="8000.ua" align="left"/>
 		</a>
-		<a class="fancybox" rel="8000" href="/pictures/screenshots/80006.png" title="Пример работ">
-			<img src="/pictures/screenshots/8000.png" alt="8000.ua" align="left"/>
+		<a class="fancybox" rel="8000" href="/images/screenshots/80006.png" title="Пример работ">
+			<img src="/images/screenshots/8000.png" alt="8000.ua" align="left"/>
 		</a>
-		<a class="fancybox" rel="8000" href="/pictures/screenshots/80007.png" title="Пример работ">
-			<img src="/pictures/screenshots/8000.png" alt="8000.ua" align="left"/>
+		<a class="fancybox" rel="8000" href="/images/screenshots/80007.png" title="Пример работ">
+			<img src="/images/screenshots/8000.png" alt="8000.ua" align="left"/>
 		</a>
-		<a class="fancybox" rel="8000" href="/pictures/screenshots/80008.png" title="Пример работ">
-			<img src="/pictures/screenshots/8000.png" alt="8000.ua" align="left"/>
+		<a class="fancybox" rel="8000" href="/images/screenshots/80008.png" title="Пример работ">
+			<img src="/images/screenshots/8000.png" alt="8000.ua" align="left"/>
 		</a>
-		<a class="fancybox" rel="8000" href="/pictures/screenshots/80009.png" title="Пример работ">
-			<img src="/pictures/screenshots/8000.png" alt="8000.ua" align="left"/>
+		<a class="fancybox" rel="8000" href="/images/screenshots/80009.png" title="Пример работ">
+			<img src="/images/screenshots/8000.png" alt="8000.ua" align="left"/>
 		</a>
-		<a class="fancybox" rel="8000" href="/pictures/screenshots/800010.png" title="Пример работ">
-			<img src="/pictures/screenshots/8000.png" alt="8000.ua" align="left"/>
+		<a class="fancybox" rel="8000" href="/images/screenshots/800010.png" title="Пример работ">
+			<img src="/images/screenshots/8000.png" alt="8000.ua" align="left"/>
 		</a>
-		<a class="fancybox" rel="8000" href="/pictures/screenshots/800011.png" title="Пример работ">
-			<img src="/pictures/screenshots/8000.png" alt="8000.ua" align="left"/>
+		<a class="fancybox" rel="8000" href="/images/screenshots/800011.png" title="Пример работ">
+			<img src="/images/screenshots/8000.png" alt="8000.ua" align="left"/>
 		</a>
 	</span>
                     <div class="label">
@@ -301,15 +301,15 @@ $this->title = 'Sergey\'s Portfolio';
                     <div class="title">
                         Suicide Prevention and Intervention (октябрь 2015)
                     </div>
-                    <a class="fancybox" rel="DMHS" href="/pictures/screenshots/dmhs1.png" title="Пример работ">
-                        <img src="/pictures/screenshots/dmhs1_m.png" alt="DMHS" align="left"/>
+                    <a class="fancybox" rel="DMHS" href="/images/screenshots/dmhs1.png" title="Пример работ">
+                        <img src="/images/screenshots/dmhs1_m.png" alt="DMHS" align="left"/>
                     </a>
                     <span style="display:none">
-		<a class="fancybox" rel="DMHS" href="/pictures/screenshots/dmhs2.png" title="Пример работ">
-			<img src="/pictures/screenshots/DMHS.png" alt="DMHS" align="left"/>
+		<a class="fancybox" rel="DMHS" href="/images/screenshots/dmhs2.png" title="Пример работ">
+			<img src="/images/screenshots/DMHS.png" alt="DMHS" align="left"/>
 		</a>
-		<a class="fancybox" rel="DMHS" href="/pictures/screenshots/dmhs3.png" title="Пример работ">
-			<img src="/pictures/screenshots/DMHS.png" alt="DMHS" align="left"/>
+		<a class="fancybox" rel="DMHS" href="/images/screenshots/dmhs3.png" title="Пример работ">
+			<img src="/images/screenshots/DMHS.png" alt="DMHS" align="left"/>
 		</a>
 	</span>
                     <div class="label">
@@ -327,12 +327,12 @@ $this->title = 'Sergey\'s Portfolio';
                     <div class="title">
                         Динадис | DinadiS - One Step Ahead (сентябрь 2015)
                     </div>
-                    <a class="fancybox" rel="Dinadis" href="/pictures/screenshots/Dinadis1.png" title="Пример работ">
-                        <img src="/pictures/screenshots/Dinadis1_m.png" alt="Dinadis" align="left"/>
+                    <a class="fancybox" rel="Dinadis" href="/images/screenshots/Dinadis1.png" title="Пример работ">
+                        <img src="/images/screenshots/Dinadis1_m.png" alt="Dinadis" align="left"/>
                     </a>
                     <span style="display:none">
-		<a class="fancybox" rel="Dinadis" href="/pictures/screenshots/Dinadis2.png" title="Пример работ">
-			<img src="/pictures/screenshots/Dinadisg" alt="Dinadis" align="left"/>
+		<a class="fancybox" rel="Dinadis" href="/images/screenshots/Dinadis2.png" title="Пример работ">
+			<img src="/images/screenshots/Dinadisg" alt="Dinadis" align="left"/>
 		</a>
 	</span>
                     <div class="label">
@@ -349,21 +349,21 @@ $this->title = 'Sergey\'s Portfolio';
                     <div class="title">
                         Altis.travel | Интернет турагентство АЛТИС : туры, авиабилеты, жд билеты, страховки. (июль 2015)
                     </div>
-                    <a class="fancybox" rel="Altis.travel" href="/pictures/screenshots/altis1.png" title="Пример работ">
-                        <img src="/pictures/screenshots/altis1_m.png" alt="Altis.travel" align="left"/>
+                    <a class="fancybox" rel="Altis.travel" href="/images/screenshots/altis1.png" title="Пример работ">
+                        <img src="/images/screenshots/altis1_m.png" alt="Altis.travel" align="left"/>
                     </a>
                     <span style="display:none">
-		<a class="fancybox" rel="Altis.travel" href="/pictures/screenshots/altis2.png" title="Пример работ">
-			<img src="/pictures/screenshots/altis1png" alt="Altis.travel" align="left"/>
+		<a class="fancybox" rel="Altis.travel" href="/images/screenshots/altis2.png" title="Пример работ">
+			<img src="/images/screenshots/altis1png" alt="Altis.travel" align="left"/>
 		</a>
-		<a class="fancybox" rel="Altis.travel" href="/pictures/screenshots/altis3.png" title="Пример работ">
-			<img src="/pictures/screenshots/altis1png" alt="Altis.travel" align="left"/>
+		<a class="fancybox" rel="Altis.travel" href="/images/screenshots/altis3.png" title="Пример работ">
+			<img src="/images/screenshots/altis1png" alt="Altis.travel" align="left"/>
 		</a>
-		<a class="fancybox" rel="Altis.travel" href="/pictures/screenshots/altis4.png" title="Пример работ">
-			<img src="/pictures/screenshots/altis1png" alt="Altis.travel" align="left"/>
+		<a class="fancybox" rel="Altis.travel" href="/images/screenshots/altis4.png" title="Пример работ">
+			<img src="/images/screenshots/altis1png" alt="Altis.travel" align="left"/>
 		</a>
-		<a class="fancybox" rel="Altis.travel" href="/pictures/screenshots/altis5.png" title="Пример работ">
-			<img src="/pictures/screenshots/altis1png" alt="Altis.travel" align="left"/>
+		<a class="fancybox" rel="Altis.travel" href="/images/screenshots/altis5.png" title="Пример работ">
+			<img src="/images/screenshots/altis1png" alt="Altis.travel" align="left"/>
 		</a>
 	</span>
                     <div class="label">
@@ -388,8 +388,8 @@ $this->title = 'Sergey\'s Portfolio';
                     <div class="title">
                         ANDREW REVA | director (июль 2015)
                     </div>
-                    <a class="fancybox" rel="andrewreva" href="/pictures/screenshots/andrewrewa1.png" title="Пример работ">
-                        <img src="/pictures/screenshots/andrewrewa1_m.png" alt="andrewreva" align="left"/>
+                    <a class="fancybox" rel="andrewreva" href="/images/screenshots/andrewrewa1.png" title="Пример работ">
+                        <img src="/images/screenshots/andrewrewa1_m.png" alt="andrewreva" align="left"/>
                     </a>
                     Описание: Сайт режиссера, оператора и монтажера Андрея Ревы
                     <br>Посмотреть: <a href="http://andrewreva.com/" target="_blank">http://andrewreva.com/</a>
@@ -402,12 +402,12 @@ $this->title = 'Sergey\'s Portfolio';
                     <div class="title">
                         OKI Sales Tool Kit (июль 2015)
                     </div>
-                    <a class="fancybox" rel="okiacademy" href="/pictures/screenshots/okiacademy1.png" title="Пример работ">
-                        <img src="/pictures/screenshots/okiacademy1_m.png" alt="okiacademy" align="left"/>
+                    <a class="fancybox" rel="okiacademy" href="/images/screenshots/okiacademy1.png" title="Пример работ">
+                        <img src="/images/screenshots/okiacademy1_m.png" alt="okiacademy" align="left"/>
                     </a>
                     <span style="display:none">
-		<a class="fancybox" rel="okiacademy" href="/pictures/screenshots/okiacademy2.png" title="Пример работ">
-			<img src="/pictures/screenshots/DMHS.png" alt="okiacademy" align="left"/>
+		<a class="fancybox" rel="okiacademy" href="/images/screenshots/okiacademy2.png" title="Пример работ">
+			<img src="/images/screenshots/DMHS.png" alt="okiacademy" align="left"/>
 		</a>
 	</span>
                     <div class="label">
@@ -426,12 +426,12 @@ $this->title = 'Sergey\'s Portfolio';
                     <div class="title">
                         OutSmartTeam (июнь 2015)
                     </div>
-                    <a class="fancybox" rel="outsmartteam" href="/pictures/screenshots/outsmartteam1.png" title="Пример работ">
-                        <img src="/pictures/screenshots/outsmartteam1_m.png" alt="outsmartteam" align="left"/>
+                    <a class="fancybox" rel="outsmartteam" href="/images/screenshots/outsmartteam1.png" title="Пример работ">
+                        <img src="/images/screenshots/outsmartteam1_m.png" alt="outsmartteam" align="left"/>
                     </a>
                     <span style="display:none">
-		<a class="fancybox" rel="outsmartteam" href="/pictures/screenshots/outsmartteam2.png" title="Пример работ">
-			<img src="/pictures/screenshots/outsmartteam.png" alt="outsmartteam" align="left"/>
+		<a class="fancybox" rel="outsmartteam" href="/images/screenshots/outsmartteam2.png" title="Пример работ">
+			<img src="/images/screenshots/outsmartteam.png" alt="outsmartteam" align="left"/>
 		</a>
 	</span>
                     <div class="label">
@@ -448,12 +448,12 @@ $this->title = 'Sergey\'s Portfolio';
                     <div class="title">
                         Comforttour | Comfort Tour - Quality Guided Bus Tours in Canada, US and the World (июнь 2015)
                     </div>
-                    <a class="fancybox" rel="Comforttour" href="/pictures/screenshots/comforttour1.png" title="Пример работ">
-                        <img src="/pictures/screenshots/comforttour1_m.png" alt="Comforttour" align="left"/>
+                    <a class="fancybox" rel="Comforttour" href="/images/screenshots/comforttour1.png" title="Пример работ">
+                        <img src="/images/screenshots/comforttour1_m.png" alt="Comforttour" align="left"/>
                     </a>
                     <span style="display:none">
-		<a class="fancybox" rel="Comforttour" href="/pictures/screenshots/comforttour2.png" title="Пример работ">
-			<img src="/pictures/screenshots/comforttourg" alt="Comforttour" align="left"/>
+		<a class="fancybox" rel="Comforttour" href="/images/screenshots/comforttour2.png" title="Пример работ">
+			<img src="/images/screenshots/comforttourg" alt="Comforttour" align="left"/>
 		</a>
 	</span>
                     <div class="label">
@@ -470,21 +470,21 @@ $this->title = 'Sergey\'s Portfolio';
                     <div class="title">
                         Кристина Борисенко | стилист (сентябрь 2015)
                     </div>
-                    <a class="fancybox" rel="borisenko" href="/pictures/screenshots/borisenko1.png" title="Пример работ">
-                        <img src="/pictures/screenshots/borisenko1_m.png" alt="hairstyles" align="left"/>
+                    <a class="fancybox" rel="borisenko" href="/images/screenshots/borisenko1.png" title="Пример работ">
+                        <img src="/images/screenshots/borisenko1_m.png" alt="hairstyles" align="left"/>
                     </a>
                     <span style="display:none">
-		<a class="fancybox" rel="borisenko" href="/pictures/screenshots/borisenko2.png" title="Пример работ">
-			<img src="/pictures/screenshots/borisenko2_m.png" alt="hairstyles" align="left"/>
+		<a class="fancybox" rel="borisenko" href="/images/screenshots/borisenko2.png" title="Пример работ">
+			<img src="/images/screenshots/borisenko2_m.png" alt="hairstyles" align="left"/>
 		</a>
-		<a class="fancybox" rel="borisenko" href="/pictures/screenshots/borisenko3.png" title="Пример работ">
-			<img src="/pictures/screenshots/borisenko3_m.png" alt="hairstyles" align="left"/>
+		<a class="fancybox" rel="borisenko" href="/images/screenshots/borisenko3.png" title="Пример работ">
+			<img src="/images/screenshots/borisenko3_m.png" alt="hairstyles" align="left"/>
 		</a>
-		<a class="fancybox" rel="borisenko" href="/pictures/screenshots/borisenko4.png" title="Пример работ">
-			<img src="/pictures/screenshots/borisenko4_m.png" alt="hairstyles" align="left"/>
+		<a class="fancybox" rel="borisenko" href="/images/screenshots/borisenko4.png" title="Пример работ">
+			<img src="/images/screenshots/borisenko4_m.png" alt="hairstyles" align="left"/>
 		</a>
-		<a class="fancybox" rel="borisenko" href="/pictures/screenshots/borisenko5.png" title="Пример работ">
-			<img src="/pictures/screenshots/borisenko5_m.png" alt="hairstyles" align="left"/>
+		<a class="fancybox" rel="borisenko" href="/images/screenshots/borisenko5.png" title="Пример работ">
+			<img src="/images/screenshots/borisenko5_m.png" alt="hairstyles" align="left"/>
 		</a>
 	</span>
                     Описание: Сайт стилиста Кристины Борисенко
@@ -498,8 +498,8 @@ $this->title = 'Sergey\'s Portfolio';
                     <div class="title">
                         Строительная компания Эка Строй Плюс (июнь 2015)
                     </div>
-                    <a class="fancybox" rel="ekastroy" href="/pictures/screenshots/ekastroy1.png" title="Пример работ">
-                        <img src="/pictures/screenshots/ekastroy1_m.png" alt="ekastroy" align="left"/>
+                    <a class="fancybox" rel="ekastroy" href="/images/screenshots/ekastroy1.png" title="Пример работ">
+                        <img src="/images/screenshots/ekastroy1_m.png" alt="ekastroy" align="left"/>
                     </a>
                     <div class="label_fix">
 		<span class="label_text"><i class="fa fa-cogs"></i> правки<br>доработки<span>
@@ -513,12 +513,12 @@ $this->title = 'Sergey\'s Portfolio';
                     <div class="title">
                         Чернозем (май 2015)
                     </div>
-                    <a class="fancybox" rel="chernozem" href="/pictures/screenshots/chernozem1.png" title="Пример работ">
-                        <img src="/pictures/screenshots/chernozem1_m.png" alt="hairstyles" align="left"/>
+                    <a class="fancybox" rel="chernozem" href="/images/screenshots/chernozem1.png" title="Пример работ">
+                        <img src="/images/screenshots/chernozem1_m.png" alt="hairstyles" align="left"/>
                     </a>
                     <span style="display:none">
-		<a class="fancybox" rel="chernozem" href="/pictures/screenshots/chernozem2.png" title="Пример работ">
-			<img src="/pictures/screenshots/chernozem2.png" alt="hairstyles" align="left"/>
+		<a class="fancybox" rel="chernozem" href="/images/screenshots/chernozem2.png" title="Пример работ">
+			<img src="/images/screenshots/chernozem2.png" alt="hairstyles" align="left"/>
 		</a>
 	</span>
                     <div class="label_fix">
@@ -534,7 +534,7 @@ $this->title = 'Sergey\'s Portfolio';
                     <div class="title">
                         BestGates | Ворота, роллеты, шлагбаумы (май 2015)
                     </div>
-                    <a href="/pictures/site-bestgates.jpg" target="_blank"><img src="/pictures/site-bestgates_m.jpg" alt="bestgates.com.ua" align="left"></a>
+                    <a href="/images/site-bestgates.jpg" target="_blank"><img src="/images/site-bestgates_m.jpg" alt="bestgates.com.ua" align="left"></a>
                     Описание: BestGates - полноценный коммерческий сайт на заказ
                     <br>Посмотреть: <a href="http://bestgates.com.ua" target="_blank">http://bestgates.com.ua</a>
                     <br>CMS: WordPress
@@ -545,7 +545,7 @@ $this->title = 'Sergey\'s Portfolio';
                     <div class="title">
                         PWS | professional web solutions
                     </div>
-                    <a href="/pictures/site-pws.jpg" target="_blank"><img src="/pictures/site-pws_m.jpg" alt="http://professionalwebsolutions.com.au/dev/" align="left"></a>
+                    <a href="/images/site-pws.jpg" target="_blank"><img src="/images/site-pws_m.jpg" alt="http://professionalwebsolutions.com.au/dev/" align="left"></a>
                     <div class="label_fix">
 		<span class="label_text"><i class="fa fa-cogs"></i> правки<br>доработки<span>
                     </div>
@@ -559,7 +559,7 @@ $this->title = 'Sergey\'s Portfolio';
                     <div class="title">
                         SERGEY FEDIRKO | personal site
                     </div>
-                    <a href="/pictures/site-fedirko.jpg" target="_blank"><img src="/pictures/site-fedirko_m.jpg" alt="fedirko.pp.ua" align="left"></a>
+                    <a href="/images/site-fedirko.jpg" target="_blank"><img src="/images/site-fedirko_m.jpg" alt="fedirko.pp.ua" align="left"></a>
                     <div class="label">
 		<span class="label_text"><i class="fa fa-cog fa-spin fa-work"></i> Work<span>
                     </div>
@@ -573,7 +573,7 @@ $this->title = 'Sergey\'s Portfolio';
                     <div class="title">
                         Арина Ткаченко | организация праздников
                     </div>
-                    <a href="/pictures/site-arisha.jpg" target="_blank"><img src="/pictures/site-arisha_m.jpg" alt="arisha.kiev.ua" align="left"></a>
+                    <a href="/images/site-arisha.jpg" target="_blank"><img src="/images/site-arisha_m.jpg" alt="arisha.kiev.ua" align="left"></a>
                     <div class="label_fix">
 		<span class="label_text"><i class="fa fa-cogs"></i> правки<br>доработки<span>
                     </div>
@@ -587,7 +587,7 @@ $this->title = 'Sergey\'s Portfolio';
                     <div class="title">
                         СТС | Современые Технологии Строительства
                     </div>
-                    <a href="/pictures/site-spbsts.jpg" target="_blank"><img src="/pictures/site-spbsts_m.jpg" alt="spbsts.ru" align="left"></a>
+                    <a href="/images/site-spbsts.jpg" target="_blank"><img src="/images/site-spbsts_m.jpg" alt="spbsts.ru" align="left"></a>
                     Современные Технологии Строительства.
                     <br>Посмотреть: <a href="http://spbsts.ru" target="_blank">http://spbsts.ru</a>
                     <br>CMS: Joomla
@@ -598,7 +598,7 @@ $this->title = 'Sergey\'s Portfolio';
                     <div class="title">
                         Вэльдрин - киевский клуб ролевого моделирования
                     </div>
-                    <a href="/pictures/site-veldrin.jpg" target="_blank"><img src="/pictures/site-veldrin_m.jpg" alt="veldrin.kiev.ua" align="left"></a>
+                    <a href="/images/site-veldrin.jpg" target="_blank"><img src="/images/site-veldrin_m.jpg" alt="veldrin.kiev.ua" align="left"></a>
                     Командный сайт киевского клуба ролевого моделирования "Вэльдрин"
                     <br>Посмотреть: <a href="http://veldrin.kiev.ua" target="_blank">http://veldrin.kiev.ua</a>
                     <br>CMS: Joomla
