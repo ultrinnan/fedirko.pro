@@ -26,7 +26,7 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-<div class="wrap">
+<div class="content">
     <?php
     NavBar::begin([
         'brandLabel' => 'FEDIRKO.PRO',
@@ -54,15 +54,23 @@ AppAsset::register($this);
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="logo"><a href="/" class="logo-link" style="background-image: url(/sites/all/themes/iflexion/images/common.logo@2x.png);" title="Iflexion">Iflexion <span style="background-image: url(/sites/all/themes/iflexion/images/common.logo@2x.png);"></span></a></div><nav class="navigation navigation_normal"><ul class="navigationList"><li class="first expanded navigationList-item"><a href="/about" class="navigationList-link">Company</a><ul class="navigationDropdown"><li class="first leaf navigationDropdown-item"><a href="/about" class="navigationDropdown-link">About</a></li>
-                                    <li class="leaf navigationDropdown-item"><a href="/about/history" class="navigationDropdown-link">History</a></li>
+                    <div class="logo"><a href="/" class="logo-link">FEDIRKO.PRO</a></div>
+                    <nav class="navigation navigation_normal">
+                        <ul class="navigationList">
+                            <li class="first expanded navigationList-item"><a href="<?=Yii::$app->homeUrl;?>" class="navigationList-link">Professionals</a>
+                                <ul class="navigationDropdown">
+                                    <li class="leaf navigationDropdown-item"><a href="/cv-sergey" class="navigationDropdown-link">Sergey's CV</a></li>
+                                    <li class="leaf navigationDropdown-item"><a href="/cv-mary" class="navigationDropdown-link">Mary's CV</a></li>
+
                                     <li class="leaf navigationDropdown-item"><a href="/methodology" class="navigationDropdown-link">Methodology</a></li>
                                     <li class="leaf navigationDropdown-item"><a href="/business-continuity" class="navigationDropdown-link">Business Continuity</a></li>
                                     <li class="leaf navigationDropdown-item"><a href="/quality-management" class="navigationDropdown-link">Quality Management</a></li>
                                     <li class="leaf navigationDropdown-item"><a href="/security-ipprotection" class="navigationDropdown-link">Security and IP Protection</a></li>
                                     <li class="last leaf navigationDropdown-item"><a href="/engagement-models" class="navigationDropdown-link">Engagement Models</a></li>
                                 </ul></li>
-                            <li class="expanded active-trail navigationList-item--active navigationList-item"><a href="/expertise" class="active-trail navigationList-link active">Expertise</a><ul class="navigationDropdown"><li class="first leaf navigationDropdown-item"><a href="/web-enterprise-portal-development" class="navigationDropdown-link">Web and Enterprise Portals</a></li>
+                            <li class="expanded active-trail navigationList-item--active navigationList-item"><a href="/expertise" class="active-trail navigationList-link active">Expertise</a>
+                                <ul class="navigationDropdown">
+                                    <li class="first leaf navigationDropdown-item"><a href="/web-enterprise-portal-development" class="navigationDropdown-link">Web and Enterprise Portals</a></li>
                                     <li class="leaf navigationDropdown-item"><a href="/content-document-management-systems" class="navigationDropdown-link">Content and Document Management</a></li>
                                     <li class="leaf navigationDropdown-item"><a href="/social-networking-software" class="navigationDropdown-link">Social Networking</a></li>
                                     <li class="leaf navigationDropdown-item"><a href="/ecommerce" class="navigationDropdown-link">Omnichannel Ecommerce</a></li>
@@ -72,7 +80,9 @@ AppAsset::register($this);
                                     <li class="leaf navigationDropdown-item"><a href="/elearning-online-training" class="navigationDropdown-link">Elearning and Online Training</a></li>
                                     <li class="last leaf navigationDropdown-item"><a href="/mobility" class="navigationDropdown-link">Mobility</a></li>
                                 </ul></li>
-                            <li class="expanded navigationList-item"><a href="/services" class="navigationList-link">Services</a><ul class="navigationDropdown"><li class="first leaf navigationDropdown-item"><a href="/services/requirements-engineering" class="navigationDropdown-link">Requirements Engineering</a></li>
+                            <li class="expanded navigationList-item"><a href="/services" class="navigationList-link">Services</a>
+                                <ul class="navigationDropdown">
+                                    <li class="first leaf navigationDropdown-item"><a href="/services/requirements-engineering" class="navigationDropdown-link">Requirements Engineering</a></li>
                                     <li class="leaf navigationDropdown-item"><a href="/services/design-usability" class="navigationDropdown-link">Prototyping &amp; UXD</a></li>
                                     <li class="leaf navigationDropdown-item"><a href="/services/custom-software-development" class="navigationDropdown-link">Application Development</a></li>
                                     <li class="leaf navigationDropdown-item"><a href="/services/application-integration" class="navigationDropdown-link">Application Integration</a></li>
@@ -81,7 +91,9 @@ AppAsset::register($this);
                                     <li class="leaf navigationDropdown-item"><a href="/services/maintenance-and-support" class="navigationDropdown-link">Maintenance and Support</a></li>
                                     <li class="last leaf navigationDropdown-item"><a href="/services/dedicated-development-centers" class="navigationDropdown-link">Dedicated Development Teams</a></li>
                                 </ul></li>
-                            <li class="expanded navigationList-item"><a href="/technologies" class="navigationList-link">Technologies</a><ul class="navigationDropdown"><li class="first leaf navigationDropdown-item"><a href="/dotnet-development" class="navigationDropdown-link">.NET</a></li>
+                            <li class="expanded navigationList-item"><a href="/technologies" class="navigationList-link">Technologies</a>
+                                <ul class="navigationDropdown">
+                                    <li class="first leaf navigationDropdown-item"><a href="/dotnet-development" class="navigationDropdown-link">.NET</a></li>
                                     <li class="leaf navigationDropdown-item"><a href="/java-development" class="navigationDropdown-link">Java</a></li>
                                     <li class="leaf navigationDropdown-item"><a href="/ruby-on-rails-development" class="navigationDropdown-link">Ruby on Rails</a></li>
                                     <li class="leaf navigationDropdown-item"><a href="/php-development" class="navigationDropdown-link">PHP</a></li>
@@ -92,12 +104,14 @@ AppAsset::register($this);
                                     <li class="last leaf navigationDropdown-item"><a href="/mobile-technologies" class="navigationDropdown-link">Mobile Platforms</a></li>
                                 </ul></li>
                             <li class="leaf navigationList-item"><a href="/portfolio" class="navigationList-link">Portfolio</a></li>
-                            <ul>
-                                <li class="leaf navigationList-item"><a href="/sergey" class="navigationList-link">Sergey's portfolio</a></li>
-                                <li class="leaf navigationList-item"><a href="/mary" class="navigationList-link">Mary's portfolio</a></li>
-                            </ul>
+                                <ul>
+                                    <li class="leaf navigationList-item"><a href="/portfolio/sergey" class="navigationList-link">Sergey's portfolio</a></li>
+                                    <li class="leaf navigationList-item"><a href="/portfolio/mary" class="navigationList-link">Mary's portfolio</a></li>
+                                </ul>
                             <li class="last leaf navigationList-item--border navigationList-item"><a href="/contact" class="navigationList-link">Contact Us</a></li>
-                        </ul><a href="#mobileNavigation" class="burger"><span class="burger-item burger-item--1"></span><span class="burger-item burger-item--2"></span><span class="burger-item burger-item--3"></span></a></nav>      </div>
+                        </ul><a href="#mobileNavigation" class="burger"><span class="burger-item burger-item--1"></span><span class="burger-item burger-item--2"></span><span class="burger-item burger-item--3"></span></a>
+                    </nav>
+                </div>
             </div>
         </div>
     </header>
@@ -115,7 +129,9 @@ AppAsset::register($this);
     <div class="container">
         <p class="pull-left">&copy; FEDIRKO.PRO <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="pull-right">
+            <a href="//fedirko.pro"><img src="//fedirko.pro/share/logo_small_bw.png" alt="FEDIRKO.PRO logo" title="created by FEDIRKO.PRO"></a>
+        </p>
     </div>
 </footer>
 

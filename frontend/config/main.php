@@ -41,7 +41,7 @@ return [
             'showScriptName' => false,
             'rules' => [
                 '<alias:index|about|contact>' => 'site/<alias>',
-                '<alias:sergey|mary>' => 'portfolio/<alias>',
+//                '<alias:sergey|mary>' => 'portfolio/<alias>',
             ],
         ],
     ],
