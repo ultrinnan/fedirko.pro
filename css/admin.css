@@ -6,10 +6,27 @@ body {
 }
 
 .content {
-    min-height: 100%;
-    height: auto;
-    margin: 0 auto -30px;
-    padding: 0 0 30px;
+    min-height: calc(100vh - 30px);
+}
+
+.site-login {
+    margin: 30vh auto;
+    width: 40%;
+    color: #7d7d7d;
+}
+.site-login .modal-dialog {
+    width: 800px;
+}
+
+.forgot {
+    cursor: pointer;
+    font-size: 50%;
+}
+
+.btn-grey {
+    background-color: #222;
+    color: #7d7d7d;
+    border: 1px solid #7d7d7d;
 }
 
 .content > .container {
@@ -19,8 +36,12 @@ body {
 .footer {
     height: 30px;
     background-color: #222;
+    color: #7d7d7d;
     border-top: 1px solid #7d7d7d;
-    padding-top: 5px;
+    padding-top: 4px;
+}
+.footer p {
+    margin: 0;
 }
 .footer .copy {
     position: relative;

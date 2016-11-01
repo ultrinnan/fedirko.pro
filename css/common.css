@@ -2,6 +2,10 @@ html,
 body {
     height: 100%;
 }
+/*todo: change after main layout will be ready*/
+.content {
+    min-height: calc(100vh - 60px);
+}
 
 .not-set {
     color: #c55;

@@ -11,25 +11,29 @@ $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
+    <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
-    <p>Please fill out the following fields to login:</p>
+        <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
 
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
+        <?= $form->field($model, 'password')->passwordInput() ?>
 
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+        <?= $form->field($model, 'rememberMe')->checkbox() ?>
 
-                <?= $form->field($model, 'password')->passwordInput() ?>
+        <div class="form-group">
+            <?= Html::submitButton('Login', ['class' => 'btn btn-grey', 'name' => 'login-button']) ?>
+        </div>
 
-                <?= $form->field($model, 'rememberMe')->checkbox() ?>
+    <div class="forgot" data-toggle="modal" data-target="#myModal">forgot your password?</div>
 
-                <div class="form-group">
-                    <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-                </div>
+    <?php ActiveForm::end(); ?>
 
-            <?php ActiveForm::end(); ?>
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <img src="/images/gopniki.png" alt="">
+            </div>
         </div>
     </div>
 </div>
