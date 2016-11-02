@@ -10,6 +10,7 @@ use yii\bootstrap\NavBar;
 use common\widgets\Alert;
 
 AppAsset::register($this);
+$clean_bg = Yii::$app->user->isGuest ? '' : 'content_mask';
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -24,7 +25,7 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-<div class="content">
+<div class="content <?=$clean_bg;?>">
     <?php
         if (!Yii::$app->user->isGuest) {
             NavBar::begin([
