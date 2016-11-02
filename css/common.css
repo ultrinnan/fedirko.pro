@@ -1,10 +1,88 @@
+@font-face {
+    font-family: Ubuntu;
+    src: url(/fonts/Ubuntu-Bold.ttf) format('truetype');
+    font-weight: 700;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Ubuntu;
+    src: url(/fonts/Ubuntu-BoldItalic.ttf) format('truetype');
+    font-weight: 700;
+    font-style: italic
+}
+
+@font-face {
+    font-family: Ubuntu;
+    src: url(/fonts/Ubuntu-Italic.ttf) format('truetype');
+    font-weight: 400;
+    font-style: italic
+}
+
+@font-face {
+    font-family: Ubuntu;
+    src: url(/fonts/Ubuntu-Light.ttf) format('truetype');
+    font-weight: 300;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Ubuntu;
+    src: url(/fonts/Ubuntu-LightItalic.ttf) format('truetype');
+    font-weight: 300;
+    font-style: italic
+}
+
+@font-face {
+    font-family: Ubuntu;
+    src: url(/fonts/Ubuntu-Medium.ttf) format('truetype');
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Ubuntu;
+    src: url(/fonts/Ubuntu-MediumItalic.ttf) format('truetype');
+    font-weight: 500;
+    font-style: italic
+}
+
+@font-face {
+    font-family: Ubuntu;
+    src: url(/fonts/Ubuntu-Regular.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Avenir;
+    src: url(/fonts/avenir-light.woff) format('woff');
+    font-weight: 300;
+    font-style: normal
+}
+
 html,
 body {
     height: 100%;
 }
+
+body {
+font-family: Ubuntu,Arial,Helvetica,sans-serif;
+font-size: 19px;
+line-height: 1.57894737;
+color: #234;
+background-color: #fff;
+overflow-x: hidden;
+-webkit-font-smoothing: antialiased
+}
+
 /*todo: change after main layout will be ready*/
 .content {
     min-height: calc(100vh - 60px);
+}
+
+.footer {
+    font-size: 14px;
 }
 
 .not-set {

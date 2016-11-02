@@ -13,7 +13,7 @@ body {
 }
 
 .site-login {
-    margin: 30vh auto;
+    margin: 30vh auto 0;
     width: 40%;
     color: #7d7d7d;
 }
