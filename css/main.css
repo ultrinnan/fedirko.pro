@@ -1,3 +1,9 @@
+/*--- header start ---*/
+li.dropdown:hover .dropdown-menu {
+    display: block;
+}
+/*--- header end ---*/
+
 .content {
     min-height: 100%;
     height: auto;
@@ -9,9 +15,11 @@
     padding: 70px 15px 20px;
 }
 
+/*--- footer start ---*/
 .footer {
     height: 60px;
     background-color: #f5f5f5;
     border-top: 1px solid #ddd;
     padding-top: 20px;
 }
+/*--- footer end ---*/

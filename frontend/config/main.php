@@ -41,7 +41,7 @@ return [
             'showScriptName' => false,
             'rules' => [
                 '<alias:index|about|contact>' => 'site/<alias>',
-//                '<alias:sergey|mary>' => 'portfolio/<alias>',
+                '<controller>' => '<controller>/index', //как-то так должно работать
             ],
         ],
     ],
