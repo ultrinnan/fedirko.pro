@@ -1,6 +1,48 @@
 /*--- header start ---*/
+.navbar-nav.navbar-right {
+    margin: 20px 0;
+}
+
+.navbar-inverse {
+     background-color: transparent;
+     border-color: transparent;
+}
+
+.navbar-brand {
+    height: 100%;
+}
+
+#logo {
+    background: url(/images/logo_white.png) no-repeat;
+    width: 260px;
+    height: 47px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    position: relative;
+    display: block;
+    padding-top: 12px;
+    padding-bottom: 11px;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    line-height: 14px;
+    color: #FFF;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
 li.dropdown:hover .dropdown-menu {
     display: block;
+}
+
+#contact_button {
+    border: 1px solid white;
+    border-radius: 3px;
+}
+#contact_button:hover a{
+    background: white;
+    color: #234;
+    transition: .5s;
 }
 /*--- header end ---*/
 
@@ -13,6 +55,10 @@ li.dropdown:hover .dropdown-menu {
 
 .content > .container {
     padding: 70px 15px 20px;
+}
+
+.site-index.main{
+    color: white;
 }
 
 /*--- footer start ---*/

@@ -5,6 +5,12 @@ body {
     background-attachment: fixed;
 }
 
+#admin_logo {
+    background: url(/images/logo_admin.png) no-repeat;
+    width: 326px;
+    height: 58px;
+}
+
 .content {
     min-height: calc(100vh - 30px);
 }
@@ -13,7 +19,7 @@ body {
 }
 
 .site-login {
-    margin: 30vh auto 0;
+    margin: 20vh auto 0;
     width: 40%;
     color: #7d7d7d;
 }

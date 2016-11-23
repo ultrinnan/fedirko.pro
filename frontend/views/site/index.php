@@ -3,8 +3,9 @@
 /* @var $this yii\web\View */
 
 $this->title = 'FEDIRKO.PRO - full stack web development';
+$this->registerCss("body { background: black url('/images/space_bg.jpg');  }");
 ?>
-<div class="site-index">
+<div class="site-index main">
 
     <div class="body-content">
 

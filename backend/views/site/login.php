@@ -11,6 +11,9 @@ $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-login">
+    <a href="/">
+        <div id="admin_logo"></div>
+    </a>
     <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
         <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>

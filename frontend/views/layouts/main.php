@@ -30,7 +30,7 @@ AppAsset::register($this);
 <div class="content">
     <?php
     NavBar::begin([
-        'brandLabel' => '<div class="logo">FEDIRKO<span class="pro">.PRO</span></div>',
+        'brandLabel' => '<div id="logo"></div>',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -207,7 +207,11 @@ AppAsset::register($this);
                 ],
             ],
         ],
-        ['label' => 'Contact us', 'url' => ['site/contact']],
+        [
+            'label' => 'Contact us',
+            'url' => ['site/contact'],
+            'options' => ['id' => 'contact_button'],
+        ],
     ];
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
