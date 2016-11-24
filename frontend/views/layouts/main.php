@@ -6,7 +6,6 @@
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
-use yii\widgets\Menu;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
@@ -17,7 +16,7 @@ AppAsset::register($this);
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
-<!--    <link rel="shortcut icon" href="--><?//=Yii::getAlias('@frontendUrl')?><!--/favicon.png">-->
+    <link rel="icon" type="image/png" href="/favicon.png">
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
@@ -155,18 +154,6 @@ AppAsset::register($this);
             'label' => 'technologies',
             'url' => ['/technologies/index'],
             'items' => [
-                [
-                    'label' => '.NET',
-                    'url' => '/dotnet-development',
-                ],
-                [
-                    'label' => 'Java',
-                    'url' => '/java-development',
-                ],
-                [
-                    'label' => 'Ruby on Rails',
-                    'url' => '/ruby-on-rails-development',
-                ],
                 [
                     'label' => 'PHP',
                     'url' => '/php-development',
