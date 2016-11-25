@@ -3,12 +3,9 @@
 /* @var $this yii\web\View */
 
 $this->title = 'FEDIRKO.PRO - full stack web development';
-$this->registerCss("body { background: black url('/images/space_bg.jpg');  }");
 ?>
-<div class="site-index main">
-
-    <div class="body-content">
-
+<section class="first main_page">
+    <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <h1>Cool site for our family will be here soon...</h1>
@@ -20,6 +17,15 @@ $this->registerCss("body { background: black url('/images/space_bg.jpg');  }");
                 <p>come back here later, it will be interesting ;)</p>
             </div>
         </div>
-
     </div>
+
+</section>
+<section>
+
+</section>
+<section>
+
+</section>
+<div class="site-index main">
+
 </div>
