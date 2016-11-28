@@ -34,7 +34,7 @@ AppAsset::register($this);
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
-    $menuItems = [
+    $mainItems = [
         [
             'label' => 'professionals',
             'url' => Yii::$app->homeUrl,
@@ -78,8 +78,8 @@ AppAsset::register($this);
                     'url' => '/web-enterprise-portal-development',
                 ],
                 [
-                    'label' => 'Content and Document Management',
-                    'url' => '/content-document-management-systems',
+                    'label' => 'Content Management',
+                    'url' => '/content-management-systems',
                 ],
                 [
                     'label' => 'Social Networking',
@@ -90,20 +90,16 @@ AppAsset::register($this);
                     'url' => '/ecommerce',
                 ],
                 [
-                    'label' => 'Big Data &amp; Business Intelligence',
+                    'label' => 'Business Intelligence',
                     'url' => '/business-intelligence',
-                ],
-                [
-                    'label' => 'Media Content Distribution',
-                    'url' => '/media-content-distribution',
                 ],
                 [
                     'label' => 'Business Process Automation',
                     'url' => '/business-process-automation',
                 ],
                 [
-                    'label' => 'Elearning and Online Training',
-                    'url' => '/elearning-online-training',
+                    'label' => 'E-learning and Training',
+                    'url' => '/elearning-training',
                 ],
                 [
                     'label' => 'Mobility',
@@ -143,10 +139,6 @@ AppAsset::register($this);
                     'label' => 'Maintenance and Support',
                     'url' => '/services/maintenance-and-support',
                 ],
-                [
-                    'label' => 'Dedicated Development Teams',
-                    'url' => '/services/dedicated-development-centers',
-                ],
             ],
         ],
         [
@@ -179,6 +171,8 @@ AppAsset::register($this);
                 ],
             ],
         ],
+    ];
+    $topItems = [
         [
             'label' => 'portfolio',
             'url' => ['/portfolio/index'],
@@ -201,7 +195,7 @@ AppAsset::register($this);
     ];
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => $menuItems,
+        'items' => array_merge($mainItems, $topItems),
         'activateItems' => true,
         'activateParents' => true,
     ]);
@@ -214,11 +208,36 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; FEDIRKO.PRO <?= date('Y') ?></p>
+        <div class="row footer_list">
+            <div class="col-md-3">
+                <a href="<?=Yii::$app->homeUrl?>"><div id="logo"></div></a>
+                <div class="footer_phones">
+                    <a href="tel:+380667670007">+3 8 066 767 00 07</a>
+                    <br>
+                    <a href="tel:+380660034001">+3 8 066 003 40 01</a>
+                </div>
+                <div><a href="mailto:contact@fedirko.pro">contact@fedirko.pro</a></div>
+                <div class="footer_address">01001, Ukraine, Kiev</div>
+                <div><a href="/sitemap">Sitemap</a></div>
+                <div><a href="/blog">Web development blog</a></div>
+            </div>
+            <?php
+            foreach ($mainItems as $col) {
+                echo '<div class="col-md-2">';
+                echo '<div class="footer_title"><a href="' . $col['url']. '">' . $col['label']. '</a></div>';
+                foreach ($col['items'] as $item) {
+                    echo '<a href="' . $item['url']. '">' . $item['label'] . '</a><br>';
+                }
 
-        <p class="pull-right">
-            <a href="//fedirko.pro"><img src="//fedirko.pro/share/logo_small_bw.png" alt="FEDIRKO.PRO logo" title="created by FEDIRKO.PRO"></a>
-        </p>
+                echo '</div>';
+            }
+            ?>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row footer_copy">
+            Copyright 2014 — <?= date('Y') ?> &copy; FEDIRKO.PRO. All rights reserved.
+        </div>
     </div>
 </footer>
 

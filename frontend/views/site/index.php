@@ -18,14 +18,4 @@ $this->title = 'FEDIRKO.PRO - full stack web development';
             </div>
         </div>
     </div>
-
 </section>
-<section>
-
-</section>
-<section>
-
-</section>
-<div class="site-index main">
-
-</div>
