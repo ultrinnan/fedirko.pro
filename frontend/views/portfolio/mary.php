@@ -8,15 +8,11 @@ $this->title = 'Mary\'s Portfolio';
     .work a {
         color: green;
     }
-    li {
-        /*margin: 15px;*/
-    }
-    .container	{
-        /*margin-bottom: 50px;*/
-    }
+
 </style>
-<div class="site-index">
-    <div class="body-content">
+
+<section class="first">
+    <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="container">
@@ -173,3 +169,4 @@ $this->title = 'Mary\'s Portfolio';
         </div>
     </div>
 </div>
+</section>

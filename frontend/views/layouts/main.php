@@ -25,7 +25,11 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-<div class="content">
+<header>
+    header here
+</header>
+
+<main>
     <?php
     NavBar::begin([
         'brandLabel' => '<div id="logo"></div>',
@@ -202,11 +206,12 @@ AppAsset::register($this);
 
     NavBar::end();
     ?>
+
         <?= Alert::widget() ?>
         <?= $content ?>
-</div>
+</main>
 
-<footer class="footer">
+<footer>
     <div class="container">
         <div class="row footer_list">
             <div class="col-md-3">

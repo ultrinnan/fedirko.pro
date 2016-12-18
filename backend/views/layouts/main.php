@@ -25,6 +25,10 @@ $clean_bg = Yii::$app->user->isGuest ? '' : 'content_mask';
 <body>
 <?php $this->beginBody() ?>
 
+<header>
+
+</header>
+
 <div class="content <?=$clean_bg;?>">
     <?php
         if (!Yii::$app->user->isGuest) {

@@ -6,30 +6,9 @@ use yii\helpers\Html;
 
 $this->title = 'Sergey\'s Portfolio';
 ?>
-<style>
-    .block-item {
-        display: table;
-        border: 3px solid;
-        border-color: #24C619;
-        padding: 20px 50px;
-        margin-top: 20px;
-        width: 92%;
-        position: relative;
-    }
 
-    .block-item .title {
-        background: linear-gradient(to top, green, #24C619);
-        color: #fff;
-        padding: 5px 20px;
-        margin: -35px 0px 20px;
-        position: absolute;
-        min-width: 20%;
-    }
-</style>
-<div class="site-index">
-
-    <div class="body-content">
-
+<section class="first">
+    <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <h2>Программирование</h2>
@@ -48,31 +27,6 @@ $this->title = 'Sergey\'s Portfolio';
                 <hr>
                 <h2>Портфолио</h2>
 
-                <div class="block-item">
-                    <div class="title">
-                        DnD - wip
-                    </div>
-                    детали позже...
-                </div>
-
-                <div class="block-item">
-                    <div class="title">
-                        CompareValves
-                    </div>
-                    детали позже...
-                </div>
-                <div class="block-item">
-                    <div class="title">
-                        Bevvs
-                    </div>
-                    детали позже...
-                </div>
-                <!-- <div class="block-item">
-                    <div class="title">
-                        Twomen - wip
-                    </div>
-                    детали позже...
-                </div> -->
                 <div class="block-item">
                     <div class="title">
                         DINADIS
@@ -610,3 +564,4 @@ $this->title = 'Sergey\'s Portfolio';
 
     </div>
 </div>
+</section>

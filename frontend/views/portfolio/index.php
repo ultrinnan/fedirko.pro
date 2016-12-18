@@ -4,10 +4,8 @@
 
 $this->title = 'Portfolio';
 ?>
-<div class="site-index">
-
-    <div class="body-content">
-
+<section class="first main_page">
+    <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <h1>Cool site for our family will be here soon...</h1>
@@ -19,6 +17,5 @@ $this->title = 'Portfolio';
                 <p>come back here later, it will be interesting ;)</p>
             </div>
         </div>
-
     </div>
-</div>
+</section>

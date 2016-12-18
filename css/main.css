@@ -1,4 +1,18 @@
 /*---------------------------------------- header start ----------------------------------------*/
+header {
+    position: fixed;
+    background: white;
+    height: 100px;
+    padding: 10px;
+    transition: all .5s ease;
+}
+header.small_header {
+    background: pink;
+    height: 50px;
+    padding: 5px;
+    transition: all .5s ease;
+}
+
 .navbar-nav.navbar-right {
     margin: 20px 0;
 }
@@ -58,10 +72,30 @@ li.dropdown:hover .dropdown-menu {
 }
 .main_page {
     background: black url('/images/space_bg.jpg');
+    color: white;
 }
 
-.site-index.main{
-    color: white;
+/*todo: remove this 2*/
+.block-item {
+    display: table;
+    border: 3px solid;
+    border-color: #24C619;
+    padding: 20px 50px;
+    margin-top: 20px;
+    width: 92%;
+    position: relative;
+}
+
+.block-item .title {
+    background: linear-gradient(to top, green, #24C619);
+    color: #fff;
+    padding: 5px 20px;
+    margin: -35px 0px 20px;
+    position: absolute;
+    min-width: 20%;
+}
+.block-item img {
+    margin: 10px 20px 10px 0;
 }
 /*---------------------------------------- content end ----------------------------------------*/
 
