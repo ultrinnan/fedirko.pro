@@ -11,7 +11,7 @@ body {
     height: 58px;
 }
 
-.content {
+main {
     min-height: calc(100vh - 30px);
 }
 .content_mask {
@@ -19,7 +19,8 @@ body {
 }
 
 .site-login {
-    margin: 20vh auto 0;
+    margin: 0 auto 0;
+    padding: 20vh 0 0;
     width: 40%;
     color: #7d7d7d;
 }
@@ -38,21 +39,17 @@ body {
     border: 1px solid #7d7d7d;
 }
 
-.content > .container {
-    padding: 70px 15px 20px;
-}
-
-.footer {
+footer {
     height: 30px;
     background-color: #222;
     color: #7d7d7d;
     border-top: 1px solid #7d7d7d;
     padding-top: 4px;
 }
-.footer p {
+footer p {
     margin: 0;
 }
-.footer .copy {
+footer .copy {
     position: relative;
     top: -1px;
 }

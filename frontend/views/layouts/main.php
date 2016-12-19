@@ -10,6 +10,166 @@ use frontend\assets\AppAsset;
 use common\widgets\Alert;
 
 AppAsset::register($this);
+
+$mainItems = [
+    [
+        'label' => 'professionals',
+        'url' => Yii::$app->homeUrl,
+        'items' => [
+            [
+                'label' => 'Sergey\'s CV',
+                'url' => '/cv-sergey',
+            ],
+            [
+                'label' => 'Mary\'s CV',
+                'url' => '/cv-mary',
+            ],
+            [
+                'label' => 'Methodology',
+                'url' => ['/methodology'],
+            ],
+            [
+                'label' => 'Business Continuity',
+                'url' => ['/business-continuity'],
+            ],
+            [
+                'label' => 'Quality Management',
+                'url' => ['/quality-management'],
+            ],
+            [
+                'label' => 'Security and IP Protection',
+                'url' => ['/security-ip-protection'],
+            ],
+            [
+                'label' => 'Engagement Models',
+                'url' => ['/engagement-models'],
+            ],
+        ]
+    ],
+    [
+        'label' => 'expertise',
+        'url' => ['/expertise/index'],
+        'items' => [
+            [
+                'label' => 'Web and Enterprise Portals',
+                'url' => '/web-enterprise-portal-development',
+            ],
+            [
+                'label' => 'Content Management',
+                'url' => '/content-management-systems',
+            ],
+            [
+                'label' => 'Social Networking',
+                'url' => '/social-networking-software',
+            ],
+            [
+                'label' => 'Omnichannel Ecommerce',
+                'url' => '/ecommerce',
+            ],
+            [
+                'label' => 'Business Intelligence',
+                'url' => '/business-intelligence',
+            ],
+            [
+                'label' => 'Business Process Automation',
+                'url' => '/business-process-automation',
+            ],
+            [
+                'label' => 'E-learning and Training',
+                'url' => '/elearning-training',
+            ],
+            [
+                'label' => 'Mobility',
+                'url' => '/mobility',
+            ],
+        ]
+    ],
+    [
+        'label' => 'services',
+        'url' => ['/services/index'],
+        'items' => [
+            [
+                'label' => 'Requirements Engineering',
+                'url' => '/services/requirements-engineering',
+            ],
+            [
+                'label' => 'Prototyping &amp; UXD',
+                'url' => '/services/design-usability',
+            ],
+            [
+                'label' => 'Application Development',
+                'url' => '/services/custom-software-development',
+            ],
+            [
+                'label' => 'Application Integration',
+                'url' => '/services/application-integration',
+            ],
+            [
+                'label' => 'Application Security',
+                'url' => '/application-security',
+            ],
+            [
+                'label' => 'QA and Testing',
+                'url' => '/services/quality-assurance-testing',
+            ],
+            [
+                'label' => 'Maintenance and Support',
+                'url' => '/services/maintenance-and-support',
+            ],
+        ],
+    ],
+    [
+        'label' => 'technologies',
+        'url' => ['/technologies/index'],
+        'items' => [
+            [
+                'label' => 'PHP',
+                'url' => '/php-development',
+            ],
+            [
+                'label' => 'Python',
+                'url' => '/python-development',
+            ],
+            [
+                'label' => 'Backend',
+                'url' => '/backend-development',
+            ],
+            [
+                'label' => 'Frontend',
+                'url' => '/frontend-development',
+            ],
+            [
+                'label' => 'Cloud',
+                'url' => '/cloud-solutions',
+            ],
+            [
+                'label' => 'Mobile Platforms',
+                'url' => '/mobile-technologies',
+            ],
+        ],
+    ],
+];
+$topItems = [
+    [
+        'label' => 'portfolio',
+        'url' => ['/portfolio/index'],
+        'items' => [
+            [
+                'label' => 'Sergey\'s portfolio',
+                'url' => ['/portfolio/sergey'],
+            ],
+            [
+                'label' => 'Mary\'s portfolio',
+                'url' => ['/portfolio/mary'],
+            ],
+        ],
+    ],
+    [
+        'label' => 'Contact us',
+        'url' => ['site/contact'],
+        'options' => ['id' => 'contact_button'],
+    ],
+];
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -26,7 +186,25 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <header>
-    header here
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <a href="<?=Yii::$app->homeUrl;?>">
+                    <div id="logo"></div>
+                </a>
+            </div>
+            <div class="col-md-9">
+            <?php
+                echo Nav::widget([
+                    'options' => ['class' => 'top_menu'],
+                    'items' => array_merge($mainItems, $topItems),
+                    'activateItems' => true,
+                    'activateParents' => true,
+                ]);
+            ?>
+            </div>
+        </div>
+    </div>
 </header>
 
 <main>
@@ -38,165 +216,6 @@ AppAsset::register($this);
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
-    $mainItems = [
-        [
-            'label' => 'professionals',
-            'url' => Yii::$app->homeUrl,
-            'items' => [
-                [
-                    'label' => 'Sergey\'s CV',
-                    'url' => '/cv-sergey',
-                ],
-                [
-                    'label' => 'Mary\'s CV',
-                    'url' => '/cv-mary',
-                ],
-                [
-                    'label' => 'Methodology',
-                    'url' => ['/methodology'],
-                ],
-                [
-                    'label' => 'Business Continuity',
-                    'url' => ['/business-continuity'],
-                ],
-                [
-                    'label' => 'Quality Management',
-                    'url' => ['/quality-management'],
-                ],
-                [
-                    'label' => 'Security and IP Protection',
-                    'url' => ['/security-ip-protection'],
-                ],
-                [
-                    'label' => 'Engagement Models',
-                    'url' => ['/engagement-models'],
-                ],
-            ]
-        ],
-        [
-            'label' => 'expertise',
-            'url' => ['/expertise/index'],
-            'items' => [
-                [
-                    'label' => 'Web and Enterprise Portals',
-                    'url' => '/web-enterprise-portal-development',
-                ],
-                [
-                    'label' => 'Content Management',
-                    'url' => '/content-management-systems',
-                ],
-                [
-                    'label' => 'Social Networking',
-                    'url' => '/social-networking-software',
-                ],
-                [
-                    'label' => 'Omnichannel Ecommerce',
-                    'url' => '/ecommerce',
-                ],
-                [
-                    'label' => 'Business Intelligence',
-                    'url' => '/business-intelligence',
-                ],
-                [
-                    'label' => 'Business Process Automation',
-                    'url' => '/business-process-automation',
-                ],
-                [
-                    'label' => 'E-learning and Training',
-                    'url' => '/elearning-training',
-                ],
-                [
-                    'label' => 'Mobility',
-                    'url' => '/mobility',
-                ],
-            ]
-        ],
-        [
-            'label' => 'services',
-            'url' => ['/services/index'],
-            'items' => [
-                [
-                    'label' => 'Requirements Engineering',
-                    'url' => '/services/requirements-engineering',
-                ],
-                [
-                    'label' => 'Prototyping &amp; UXD',
-                    'url' => '/services/design-usability',
-                ],
-                [
-                    'label' => 'Application Development',
-                    'url' => '/services/custom-software-development',
-                ],
-                [
-                    'label' => 'Application Integration',
-                    'url' => '/services/application-integration',
-                ],
-                [
-                    'label' => 'Application Security',
-                    'url' => '/application-security',
-                ],
-                [
-                    'label' => 'QA and Testing',
-                    'url' => '/services/quality-assurance-testing',
-                ],
-                [
-                    'label' => 'Maintenance and Support',
-                    'url' => '/services/maintenance-and-support',
-                ],
-            ],
-        ],
-        [
-            'label' => 'technologies',
-            'url' => ['/technologies/index'],
-            'items' => [
-                [
-                    'label' => 'PHP',
-                    'url' => '/php-development',
-                ],
-                [
-                    'label' => 'Python',
-                    'url' => '/python-development',
-                ],
-                [
-                    'label' => 'Backend',
-                    'url' => '/backend-development',
-                ],
-                [
-                    'label' => 'Frontend',
-                    'url' => '/frontend-development',
-                ],
-                [
-                    'label' => 'Cloud',
-                    'url' => '/cloud-solutions',
-                ],
-                [
-                    'label' => 'Mobile Platforms',
-                    'url' => '/mobile-technologies',
-                ],
-            ],
-        ],
-    ];
-    $topItems = [
-        [
-            'label' => 'portfolio',
-            'url' => ['/portfolio/index'],
-            'items' => [
-                [
-                    'label' => 'Sergey\'s portfolio',
-                    'url' => ['/portfolio/sergey'],
-                ],
-                [
-                    'label' => 'Mary\'s portfolio',
-                    'url' => ['/portfolio/mary'],
-                ],
-            ],
-        ],
-        [
-            'label' => 'Contact us',
-            'url' => ['site/contact'],
-            'options' => ['id' => 'contact_button'],
-        ],
-    ];
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => array_merge($mainItems, $topItems),
@@ -206,7 +225,6 @@ AppAsset::register($this);
 
     NavBar::end();
     ?>
-
         <?= Alert::widget() ?>
         <?= $content ?>
 </main>

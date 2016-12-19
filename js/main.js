@@ -5,7 +5,7 @@ $(document).ready(function() {
         padding : 0
     });
 
-    $('.navbar .dropdown-toggle').removeAttr('data-toggle');
+    $('.nav .dropdown-toggle').removeAttr('data-toggle');
 });
 
 $(window).scroll(function() {

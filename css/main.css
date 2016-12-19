@@ -1,16 +1,44 @@
 /*---------------------------------------- header start ----------------------------------------*/
 header {
     position: fixed;
-    background: white;
-    height: 100px;
-    padding: 10px;
+    width: 100%;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    padding: 15px 0;
     transition: all .5s ease;
+    top: 100px;
 }
 header.small_header {
-    background: pink;
-    height: 50px;
-    padding: 5px;
+    background: white;
+    border-bottom: 1px solid #f1f1f1;
+    padding: 10px 0 5px;
     transition: all .5s ease;
+}
+header #logo {
+    background: url(/images/logo_white.png) no-repeat;
+    width: 260px;
+    height: 47px;
+}
+header.small_header #logo {
+    background: url(/images/logo.png) no-repeat;
+    width: 260px;
+    height: 47px;
+}
+.top_menu {
+    float: right;
+    position: relative;
+    display: block;
+    padding-top: 12px;
+    padding-bottom: 11px;
+    font-family: Avenir, Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    line-height: 14px;
+    color: #FFF;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.nav > li {
+    float: left;
 }
 
 .navbar-nav.navbar-right {
@@ -26,18 +54,12 @@ header.small_header {
     height: 100%;
 }
 
-#logo {
-    background: url(/images/logo_white.png) no-repeat;
-    width: 260px;
-    height: 47px;
-}
-
 .navbar-inverse .navbar-nav > li > a {
     position: relative;
     display: block;
     padding-top: 12px;
     padding-bottom: 11px;
-    font-family: Arial,Helvetica,sans-serif;
+    font-family: Avenir, Arial,Helvetica,sans-serif;
     font-size: 14px;
     line-height: 14px;
     color: #FFF;
@@ -62,7 +84,7 @@ li.dropdown:hover .dropdown-menu {
 
 
 /*---------------------------------------- content start ----------------------------------------*/
-.content {
+main {
     min-height: calc(100vh - 393px);
 }
 
@@ -75,7 +97,7 @@ li.dropdown:hover .dropdown-menu {
     color: white;
 }
 
-/*todo: remove this 2*/
+/*todo: remove this 2 in portfolio*/
 .block-item {
     display: table;
     border: 3px solid;
@@ -101,13 +123,21 @@ li.dropdown:hover .dropdown-menu {
 
 
 /*---------------------------------------- footer start ----------------------------------------*/
-.footer {
+footer {
     padding-top: 36px;
     background-color: #3d3c42;
     color: #b3b3b4;
     line-height: 2;
     height: 393px;
 }
+footer a,
+footer a:visited {
+    color: #b4c3a8;
+}
+footer a:hover {
+    color: #84a580;
+}
+
 .footer_phones {
     padding-top: 10px;
 }
@@ -123,12 +153,6 @@ li.dropdown:hover .dropdown-menu {
 }
 .footer_list .col-md-2 {
     width: 18.5%;
-}
-.footer a {
-    color: #b4c3a8;
-}
-.footer a:hover, .footer a:visited {
-    color: #84a580;
 }
 .footer_copy {
     margin-top: 37px;
