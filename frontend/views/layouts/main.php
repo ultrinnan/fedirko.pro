@@ -208,25 +208,8 @@ $topItems = [
 </header>
 
 <main>
-    <?php
-    NavBar::begin([
-        'brandLabel' => '<div id="logo"></div>',
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
-        ],
-    ]);
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => array_merge($mainItems, $topItems),
-        'activateItems' => true,
-        'activateParents' => true,
-    ]);
-
-    NavBar::end();
-    ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
+    <?= Alert::widget() ?>
+    <?= $content ?>
 </main>
 
 <footer>

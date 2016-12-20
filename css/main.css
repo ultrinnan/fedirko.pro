@@ -7,13 +7,13 @@ header {
     border-bottom: 1px solid transparent;
     padding: 15px 0;
     transition: all .5s ease;
-    top: 100px;
 }
 header.small_header {
     background: white;
     border-bottom: 1px solid #f1f1f1;
-    padding: 10px 0 5px;
+    padding: 7px 0 5px;
     transition: all .5s ease;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 header #logo {
     background: url(/images/logo_white.png) no-repeat;
@@ -25,52 +25,47 @@ header.small_header #logo {
     width: 260px;
     height: 47px;
 }
+
+.dropdown.active > a {
+    border-bottom: 2px solid white;
+}
+.small_header .dropdown.active > a {
+    color: #84a580;
+    border-bottom: 2px solid #84a580;
+}
+
 .top_menu {
     float: right;
     position: relative;
     display: block;
-    font-family: Avenir, Arial,Helvetica,sans-serif;
     font-size: 14px;
-    line-height: 14px;
+    font-weight: bold;
+    line-height: 25px;
+    padding: 4px 0;
     text-decoration: none;
     text-transform: uppercase;
 }
-.nav > li {
-    float: left;
+.small_header .top_menu {
+    padding: 2px 0;
 }
-.nav > li > a {
-    padding: 12px 10px 10px;
+.top_menu > li {
+    float: left;
+    margin: 0 10px;
+}
+.top_menu > li > a {
+    padding: 8px 10px 7px;
+    color: white;
+}
+.top_menu > li > a:hover {
+    background: #39675a;
+}
+.small_header .top_menu > li > a:hover {
     color: white;
 }
 
-.navbar-nav.navbar-right {
-    margin: 20px 0;
-}
-
-.navbar-inverse {
-     background-color: transparent;
-     border-color: transparent;
-}
-
-.navbar-brand {
-    height: 100%;
-}
-
-.navbar-inverse .navbar-nav > li > a {
-    position: relative;
-    display: block;
-    padding-top: 12px;
-    padding-bottom: 11px;
-    font-family: Avenir, Arial,Helvetica,sans-serif;
-    font-size: 14px;
-    line-height: 14px;
-    color: #FFF;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
-li.dropdown:hover .dropdown-menu {
-    display: block;
+.small_header .top_menu > li > a,
+li.dropdown:hover .dropdown-menu a{
+    color: #39675a;
 }
 
 #contact_button {
@@ -78,9 +73,45 @@ li.dropdown:hover .dropdown-menu {
     border-radius: 3px;
 }
 #contact_button:hover a{
+    border-radius: 3px;
     background: white;
-    color: #234;
+    color: #39675a;
     transition: .5s;
+}
+.small_header #contact_button {
+    border: 1px solid #84a580;
+}
+.small_header #contact_button a {
+    color: #84a580;
+}
+#contact_button:hover a {
+    background: white;
+    color: #39675a;
+    transition: .5s;
+}
+.small_header #contact_button:hover a {
+    background: #84a580;
+    color: white;
+    transition: .5s;
+}
+
+li.dropdown:hover .dropdown-menu {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+}
+li.dropdown:hover .dropdown-menu a {
+    padding: 10px 20px;
+}
+li.dropdown:hover .dropdown-menu a:hover {
+    background: #39675a;
+    color: white;
+}
+li.dropdown:hover .dropdown-menu .active a {
+    background: #84a580;
+    color: white;
 }
 /*---------------------------------------- header end ----------------------------------------*/
 

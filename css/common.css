@@ -54,13 +54,6 @@
     font-style: normal
 }
 
-@font-face {
-    font-family: Avenir;
-    src: url(/fonts/avenir-light.woff) format('woff');
-    font-weight: 300;
-    font-style: normal
-}
-
 html,
 body {
     height: 100%;
@@ -170,19 +163,4 @@ a.desc:after {
     border-left: 3px solid #eed3d7;
     padding: 10px 20px;
     margin: 0 0 15px 0;
-}
-
-/* align the logout "link" (button in form) of the navbar */
-.nav > li > form {
-    padding: 8px;
-}
-
-@media(max-width:768px) {
-    .nav li > form {
-        padding: 3px;
-    }
-}
-
-.nav > li > form > button:hover {
-    text-decoration: none;
 }

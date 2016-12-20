@@ -5,15 +5,14 @@ $(document).ready(function() {
         padding : 0
     });
 
-    $('.nav .dropdown-toggle').removeAttr('data-toggle');
+    $('.top_menu .dropdown-toggle').removeAttr('data-toggle');
 });
 
 $(window).scroll(function() {
-    if ($(this).scrollTop() > 1 && !($('header').hasClass('small_header'))){
-        $('header').addClass("small_header");
-        console.log('moves!');
+    if ($(this).scrollTop() < 80){
+        $('header').removeClass("small_header");
     }
     else{
-        $('header').removeClass("small_header");
+        $('header').addClass("small_header");
     }
 });
