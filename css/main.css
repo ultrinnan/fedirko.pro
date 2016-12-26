@@ -5,7 +5,7 @@ header {
     width: 100%;
     background: transparent;
     border-bottom: 1px solid transparent;
-    padding: 15px 0;
+    padding: 20px 0;
     transition: all .5s ease;
 }
 header.small_header {
@@ -15,23 +15,16 @@ header.small_header {
     transition: all .5s ease;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
-header #logo {
+header .logo,
+footer .logo {
     background: url(/images/logo_white.png) no-repeat;
     width: 260px;
     height: 47px;
 }
-header.small_header #logo {
+header.small_header .logo {
     background: url(/images/logo.png) no-repeat;
     width: 260px;
     height: 47px;
-}
-
-.dropdown.active > a {
-    border-bottom: 2px solid white;
-}
-.small_header .dropdown.active > a {
-    color: #84a580;
-    border-bottom: 2px solid #84a580;
 }
 
 .top_menu {
@@ -52,15 +45,36 @@ header.small_header #logo {
     float: left;
     margin: 0 10px;
 }
+
 .top_menu > li > a {
     padding: 8px 10px 7px;
     color: white;
 }
 .top_menu > li > a:hover {
-    background: #39675a;
+    background: transparent;
 }
-.small_header .top_menu > li > a:hover {
-    color: white;
+.top_menu > li > a:after {
+    display: block;
+    content: "";
+    height: 2px;
+    width: 0%;
+    background-color: white;
+    transition: width .2s ease-in-out;
+}
+.top_menu > li > a:hover:after,
+.top_menu > li > a:focus:after,
+.top_menu > li.active > a:after {
+    width: 100%;
+}
+.small_header .top_menu > li.active > a {
+    color: #84a580;
+}
+.small_header .top_menu > li:hover > a:after,
+.small_header .top_menu > li.active > a:after {
+    background-color: #84a580;
+}
+.top_menu > li#contact_button > a:after {
+    height: 0;
 }
 
 .small_header .top_menu > li > a,
@@ -118,12 +132,15 @@ li.dropdown:hover .dropdown-menu .active a {
 
 /*---------------------------------------- content start ----------------------------------------*/
 main {
-    min-height: calc(100vh - 393px);
+    min-height: calc(100vh - 360px);
 }
 
 .first {
-    padding-top: 80px;
-    min-height: calc(100vh - 393px);
+    padding-top: 91px;
+    min-height: calc(100vh - 360px);
+}
+.first h1 {
+    font-size: 60px;
 }
 .main_page {
     background: black url('/images/space_bg.jpg');
@@ -157,13 +174,14 @@ main {
 
 /*---------------------------------------- footer start ----------------------------------------*/
 footer {
-    padding-top: 36px;
+    padding-top: 20px;
     background-color: #3d3c42;
     color: #b3b3b4;
     line-height: 2;
-    height: 393px;
+    height: 360px;
 }
 footer a,
+footer a:active,
 footer a:visited {
     color: #b4c3a8;
 }
@@ -188,7 +206,7 @@ footer a:hover {
     width: 18.5%;
 }
 .footer_copy {
-    margin-top: 37px;
+    margin-top: 20px;
     padding-top: 21px;
     padding-bottom: 20px;
     line-height: 24px;

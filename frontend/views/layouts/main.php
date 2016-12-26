@@ -5,7 +5,6 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
 
@@ -17,7 +16,7 @@ $mainItems = [
         'url' => Yii::$app->homeUrl,
         'items' => [
             [
-                'label' => 'Sergey\'s CV',
+                'label' => 'Serhii\'s CV',
                 'url' => '/cv-sergey',
             ],
             [
@@ -155,7 +154,7 @@ $topItems = [
         'url' => ['/portfolio/index'],
         'items' => [
             [
-                'label' => 'Sergey\'s portfolio',
+                'label' => 'Serhii\'s portfolio',
                 'url' => ['/portfolio/sergey'],
             ],
             [
@@ -190,7 +189,7 @@ $topItems = [
         <div class="row">
             <div class="col-md-3">
                 <a href="<?=Yii::$app->homeUrl;?>">
-                    <div id="logo"></div>
+                    <div class="logo"></div>
                 </a>
             </div>
             <div class="col-md-9">
@@ -216,14 +215,14 @@ $topItems = [
     <div class="container">
         <div class="row footer_list">
             <div class="col-md-3">
-                <a href="<?=Yii::$app->homeUrl?>"><div id="logo"></div></a>
+                <a href="<?=Yii::$app->homeUrl?>"><div class="logo"></div></a>
                 <div class="footer_phones">
-                    <a href="tel:+380667670007">+3 8 066 767 00 07</a>
+                    <a href="tel:+380668803111">+3 8 066 880 3 111</a>
                     <br>
                     <a href="tel:+380660034001">+3 8 066 003 40 01</a>
                 </div>
-                <div><a href="mailto:contact@fedirko.pro">contact@fedirko.pro</a></div>
-                <div class="footer_address">01001, Ukraine, Kiev</div>
+                <div><a href="mailto:contact&#64;fedirko&#46;pro">contact&#64;fedirko&#46;pro</a></div>
+                <div class="footer_address">Ukraine, Kyiv</div>
                 <div><a href="/sitemap">Sitemap</a></div>
                 <div><a href="/blog">Web development blog</a></div>
             </div>
