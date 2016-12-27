@@ -50,6 +50,10 @@ $mainItems = [
         'url' => ['/expertise/index'],
         'items' => [
             [
+                'label' => 'Proof of Concept',
+                'url' => '/expertise/proof-of-concept',
+            ],
+            [
                 'label' => 'Web and Enterprise Portals',
                 'url' => '/web-enterprise-portal-development',
             ],

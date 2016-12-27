@@ -223,7 +223,7 @@ $this->title = 'FEDIRKO.PRO - full stack web development';
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h2><span class="green_header">MORE THAN 35</span> COMPLETED PROJECTS</h2>
+                <h2><span class="green_header">MORE THAN 35<span title="some projects are hidden according to NDA" style="cursor: pointer;">*</span></span> COMPLETED PROJECTS</h2>
                 <p>We deliver globally, providing result-driven project management and seamless communication.</p>
                 <p>Our solutions yield benefit in Internet-facing, corporate and hybrid environments.</p>
             </div>

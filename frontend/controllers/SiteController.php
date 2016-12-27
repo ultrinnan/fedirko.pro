@@ -69,14 +69,5 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
-    /**
-     * Displays about page.
-     *
-     * @return mixed
-     */
-    public function actionExpertise()
-    {
-        return $this->render('expertise/index');
-    }
 
 }
