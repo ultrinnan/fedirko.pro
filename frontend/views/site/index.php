@@ -21,22 +21,20 @@ $this->title = 'FEDIRKO.PRO - full stack web development';
                 <h3>Full-cycle servicing that covers every aspect of app production and implementation</h3>
             </div>
         </div>
+    </div>
+</section>
+<section>
+    <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="services">
-                    <div class="service_box">
+            <div class="col-lg-4">
+                <a href="/services/web-application-development" class="service column-content cards-item icons--hover-white inactive" style="height: 343px;">
+                    <div class="cards-wrapper">
+                        <div class="cards-item-link-image" style="background-image: url(https://www.iflexion.com/files/styles/service__front_page/public/content/service/background/bg-page-webappdev.jpg?itok=jAvQR6JS);"></div>
+                        <div class="cards-icon">
+                            <!--?xml version="1.0" encoding="utf-8"?-->
+                            <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 
-                    </div>
-                </div>
-                    <div class="column">
-                        <a href="/services/web-application-development" class="column-content cards-item icons--hover-white" style="height: 343px;">
-                            <div class="cards-wrapper">
-                                <div class="cards-item-link-image" style="background-image: url(https://www.iflexion.com/files/styles/service__front_page/public/content/service/background/bg-page-webappdev.jpg?itok=jAvQR6JS);"></div>
-                                <div class="cards-icon">
-                                    <!--?xml version="1.0" encoding="utf-8"?-->
-                                    <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-
-                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="122px" height="96px" viewBox="0 0 122 96" enable-background="new 0 0 122 96" xml:space="preserve">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="122px" height="96px" viewBox="0 0 122 96" enable-background="new 0 0 122 96" xml:space="preserve">
 <path fill="#231F20" d="M23.633,12.408c1.808,0,3.278-1.471,3.278-3.278s-1.471-3.278-3.278-3.278c-1.809,0-3.279,1.471-3.279,3.278
 	S21.824,12.408,23.633,12.408z M23.633,6.852c1.256,0,2.278,1.022,2.278,2.278s-1.022,2.278-2.278,2.278
 	c-1.257,0-2.279-1.022-2.279-2.278S22.376,6.852,23.633,6.852z M34.747,12.408c1.808,0,3.278-1.471,3.278-3.278
@@ -74,149 +72,48 @@ $this->title = 'FEDIRKO.PRO - full stack web development';
 	l0.707-0.707l12.829,12.821L112.771,79.397z M97.24,69.286l12.812,12.828l-0.707,0.707L96.533,69.993L97.24,69.286z M93.814,72.71
 	l12.828,12.822l-0.707,0.707L93.107,73.417L93.814,72.71z"></path>
 </svg>
-                                </div><div class="cards-name">
-                                    <h4>ADVANCED WEB</h4>
-                                </div>
-                                <div class="cards-text">
-                                    <p>Productive, engaging and reliable web solutions for business outcomes you deserve.</p>
-                                </div>	</div>
-                        </a>
+                        </div><div class="cards-name">
+                            <h4>ADVANCED WEB</h4>
+                        </div>
+                        <div class="cards-text">
+                            <p>Productive, engaging and reliable web solutions for business outcomes you deserve.</p>
+                        </div>
                     </div>
-                    <div class="column">
-                        <a href="/services/mobile-application-development" class="column-content cards-item icons--hover-white" style="height: 343px;">
-                            <div class="cards-wrapper">
-                                <div class="cards-item-link-image" style="background-image: url(https://www.iflexion.com/files/styles/service__front_page/public/content/service/background/mobile-app-development-bg_0.jpg?itok=JdxZsEjv);"></div>
-                                <div class="cards-icon">
-                                    <!--?xml version="1.0" encoding="utf-8"?-->
-                                    <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-
-                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="93px" height="106px" viewBox="0 0 93 106" enable-background="new 0 0 93 106" xml:space="preserve">
-<path d="M2,53c0,6.431,1.299,12.645,3.861,18.468l-0.916,0.402C2.327,65.919,1,59.57,1,53C1,27.52,21.363,6.791,46.394,6.791
-	c6.777,0,13.283,1.494,19.355,4.414L59.956,1.168l0.706-0.408l6.122,10.604l0.408,0.707l-11.31,6.53l-0.408-0.707l9.943-5.741
-	c-5.965-2.888-12.361-4.362-19.024-4.362C21.915,7.791,2,28.071,2,53z M87.751,33.922l-0.914,0.407
-	c2.621,5.88,3.95,12.162,3.95,18.67c0,24.929-19.915,45.209-44.394,45.209c-6.443,0-12.655-1.374-18.463-4.083l-0.351,0.753
-	l-0.376-0.651l10.604-6.122l-0.408-0.707l-10.604,6.122v0l-0.706,0.408l6.529,11.311l0.707-0.408l-5.604-9.706
-	c5.88,2.707,12.159,4.084,18.672,4.084c25.03,0,45.394-20.729,45.394-46.209C91.787,46.35,90.429,39.932,87.751,33.922z
-	 M29.216,24.958H63.57v57.51H29.216V24.958z M30.216,31.438H62.57v-5.48H30.216V31.438z M30.216,69.735H62.57V32.438H30.216V69.735z
-	 M30.216,81.468H62.57V70.735H30.216V81.468z M48.747,75.793c0,1.297-1.056,2.353-2.354,2.353s-2.354-1.056-2.354-2.353
-	s1.056-2.353,2.354-2.353S48.747,74.496,48.747,75.793z M47.747,75.793c0-0.746-0.607-1.353-1.354-1.353s-1.354,0.607-1.354,1.353
-	c0,0.746,0.607,1.353,1.354,1.353S47.747,76.54,47.747,75.793z M33.455,48.881l0.707,0.707l11.696-11.697l-0.707-0.707
-	L33.455,48.881z M38.718,36.926l-0.707-0.707l-4.556,4.555l0.707,0.707L38.718,36.926z"></path>
-</svg>
-                                </div><div class="cards-name">
-                                    <h4>MOBILITY 360°</h4>
-                                </div>
-                                <div class="cards-text">
-                                    <p>End-to-end mobile development for consumer-facing and corporate environments.</p>
-                                </div>	</div>
-                        </a>
-                    </div>
-                    <div class="column">
-                        <a href="/cloud-solutions" class="column-content cards-item icons--hover-white" style="height: 343px;">
-                            <div class="cards-wrapper">
-                                <div class="cards-item-link-image" style="background-image: url(https://www.iflexion.com/files/styles/technology__front_page/public/content/technology/background/bg-page-cloud_0.jpg?itok=4yfll4Dy);"></div>
-                                <div class="cards-icon">
-                                    <!--?xml version="1.0" encoding="utf-8"?-->
-                                    <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-
-                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="133px" height="70px" viewBox="0 0 133 70" enable-background="new 0 0 133 70" xml:space="preserve">
-<path d="M41.33,68.951c-15.25,0-23.213-0.029-24.346-0.091l-0.146-0.009C4.605,68.122,0.534,58.812,0.765,51.062
-	C1.084,40.361,9.229,29.281,22.28,29.901c-0.193-4.723,1.337-8.963,4.443-12.292c3.718-3.985,9.459-6.364,15.356-6.364
-	c0.411,0,0.823,0.012,1.23,0.036c2.207,0.13,4.359,0.603,6.403,1.406C55.539,4.955,65.497,0.555,76.246,1.18
-	c14.47,0.84,26.192,10.538,28.08,23.144c1.392-0.156,2.798-0.194,4.22-0.112c6.571,0.382,12.601,3.283,16.977,8.169
-	c4.377,4.888,6.575,11.176,6.19,17.706c-0.37,6.26-2.668,11.639-6.473,15.146c-3.569,3.291-9.087,3.646-11.294,3.646
-	c-0.5,0-0.79-0.019-0.79-0.019c-2.288,0.001-8.265,0.012-16.172,0.024C81.521,68.912,58.672,68.951,41.33,68.951z M21.238,30.876
-	c-11.812,0-19.177,10.279-19.474,20.216C1.547,58.395,5.38,67.166,16.898,67.854l0.144,0.009c1.095,0.059,9.268,0.089,24.288,0.089
-	c17.342,0,40.19-0.039,55.653-0.066c7.909-0.013,13.886-0.023,16.206-0.023c0.041,0.002,0.306,0.018,0.758,0.018
-	c2.09,0,7.306-0.329,10.616-3.38c3.613-3.331,5.798-8.47,6.152-14.47c0.369-6.262-1.739-12.293-5.938-16.98
-	c-4.198-4.688-9.983-7.472-16.29-7.838c-1.521-0.087-3.036-0.032-4.523,0.166l-0.497,0.066l-0.064-0.498
-	C101.812,12.576,90.366,3.001,76.188,2.178C65.644,1.565,55.878,5.937,50.289,13.589l-0.232,0.317l-0.363-0.15
-	c-2.049-0.85-4.216-1.347-6.441-1.478c-0.388-0.022-0.78-0.034-1.172-0.034c-5.625,0-11.093,2.26-14.625,6.046
-	c-3.036,3.254-4.469,7.441-4.145,12.107l0.04,0.574l-0.574-0.041C22.255,30.895,21.742,30.876,21.238,30.876z"></path>
-</svg>
-                                </div><div class="cards-name">
-                                    <h4>CLOUD</h4>
-                                </div>
-                                <div class="cards-text">
-                                    <p>Powerful cloud-based solutions fused with creative design for private, hybrid &amp; public platforms.</p>
-                                </div>	</div>
-                        </a>
-                    </div>
-                    <div class="column">
-                        <a href="/services/custom-software-development" class="column-content cards-item icons--hover-white" style="height: 343px;">
-                            <div class="cards-wrapper">
-                                <div class="cards-item-link-image" style="background-image: url(https://www.iflexion.com/files/styles/service__front_page/public/content/service/background/bg-page-webappdev_0.jpg?itok=peZAYCXQ);"></div>
-                                <div class="cards-icon">
-                                    <!--?xml version="1.0" encoding="utf-8"?-->
-                                    <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-
-                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="61px" height="64px" viewBox="0 0 61 64" enable-background="new 0 0 61 64" xml:space="preserve">
-<path d="M0,0v45h21v7h-2v4h23v-4h-2v-7h21V0H0z M60,1v35H1V1H60z M41,55H20v-2h21V55z M39,52H22v-7h17V52z M40,44H21H1v-7h59v7H40z
-	 M58,3H3v30h55V3z M57,32H4V4h53V32z M30.5,39c-0.9,0-1.6,0.7-1.6,1.6c0,0.9,0.7,1.6,1.6,1.6s1.6-0.7,1.6-1.6
-	C32.1,39.7,31.4,39,30.5,39z M30.5,41.1c-0.3,0-0.6-0.2-0.6-0.6s0.2-0.6,0.6-0.6s0.6,0.2,0.6,0.6S30.8,41.1,30.5,41.1z M11.9,58.1
-	L5.2,64h50.7l-6.7-5.9H11.9z M7.9,63l4.4-3.9h36.6l4.4,3.9H7.9z"></path>
-</svg>
-                                </div><div class="cards-name">
-                                    <h4>FULL-CYCLE DEVELOPMENT</h4>
-                                </div>
-                                <div class="cards-text">
-                                    <p>Full spectrum of development services spiced with flexible engagement models.</p>
-                                </div>	</div>
-                        </a>
-                    </div>
-                    <div class="column">
-                        <a href="/services/quality-assurance-testing" class="column-content cards-item icons--hover-white" style="height: 343px;">
-                            <div class="cards-wrapper">
-                                <div class="cards-item-link-image" style="background-image: url(https://www.iflexion.com/files/styles/service__front_page/public/content/service/background/bg-page-qa_0.jpg?itok=3bClCurj);"></div>
-                                <div class="cards-icon">
-                                    <!--?xml version="1.0" encoding="utf-8"?-->
-                                    <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-
-                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve">
-<path d="M29.6,0C13.3,0,0,13.3,0,29.6c0,16.3,13.3,29.6,29.6,29.6s29.6-13.3,29.6-29.6C59.1,13.3,45.9,0,29.6,0z M29.6,58.1
-	C13.8,58.1,1,45.3,1,29.6S13.8,1,29.6,1s28.6,12.8,28.6,28.6S45.3,58.1,29.6,58.1z M52.3,29.6v0.5h-3.9v-1h2.9
-	c-0.1-5.4-2.2-10.3-5.6-14l-2.5,2.5l-0.7-0.7l2.5-2.5c-3.8-3.9-9.1-6.3-14.9-6.4v2h-1v-2C23.2,8,18,10.4,14.1,14.3l2.5,2.5L16,17.5
-	L13.5,15c-3.4,3.7-5.5,8.6-5.6,14h2.9v1H6.8v-0.5C6.8,17,17,6.8,29.6,6.8S52.3,17,52.3,29.6z M35.2,42.3l-5.6-26.2L24,42.3l0.5,0.1
-	h-0.5c0,3.1,2.5,5.6,5.6,5.6s5.6-2.5,5.6-5.6h-0.5L35.2,42.3z M29.6,47C27,47,25,45,24.9,42.4l4.6-21.6l4.6,21.6
-	C34.2,45,32.1,47,29.6,47z"></path>
-</svg>
-                                </div><div class="cards-name">
-                                    <h4>QUALITY ASSURANCE</h4>
-                                </div>
-                                <div class="cards-text">
-                                    <p>Hands-on quality assurance expertise weaved into your development lifecycle.</p>
-                                </div>	</div>
-                        </a>
-                    </div>
-                    <div class="column">
-                        <a href="/services/dedicated-development-centers" class="column-content cards-item icons--hover-white" style="height: 343px;">
-                            <div class="cards-wrapper">
-                                <div class="cards-item-link-image" style="background-image: url(https://www.iflexion.com/files/styles/service__front_page/public/content/service/background/bg-dedicated-development-teams.jpg?itok=fqIWjQfz);"></div>
-                                <div class="cards-icon">
-                                    <!--?xml version="1.0" encoding="utf-8"?-->
-                                    <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-
-                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="52px" height="52px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
-<path d="M27.2,0v9.1l0.8-0.4c0.6-0.4,1.4-0.6,2.1-0.6c2.3,0,4.2,1.9,4.2,4.2s-1.9,4.2-4.2,4.2c-0.7,0-1.5-0.2-2.1-0.6l-0.8-0.4V24
-	h24V0H27.2z M50.2,23h-22v-5.9c0.6,0.2,1.2,0.3,1.9,0.3c2.9,0,5.2-2.3,5.2-5.2S32.9,7.1,30,7.1c-0.6,0-1.3,0.1-1.9,0.3V1h22V23z
-	 M0,24h9.1l-0.4-0.8c-0.4-0.6-0.6-1.4-0.6-2.1c0-2.3,1.9-4.2,4.2-4.2s4.2,1.9,4.2,4.2c0,0.7-0.2,1.5-0.6,2.1L15.5,24h8.6V0H0V24z
-	 M1,1h22.1v22h-6c0.2-0.6,0.3-1.2,0.3-1.9c0-2.9-2.3-5.2-5.2-5.2s-5.2,2.3-5.2,5.2c0,0.6,0.1,1.3,0.3,1.9H1V1z M0,51.2h24.1v-8.3
-	l-0.8,0.4c-0.6,0.4-1.4,0.6-2.1,0.6c-2.3,0-4.2-1.9-4.2-4.2s1.9-4.2,4.2-4.2c0.7,0,1.5,0.2,2.1,0.6l0.8,0.4v-9.4H0V51.2z M1,28.2
-	h22.1v6.7c-0.6-0.2-1.2-0.3-1.9-0.3c-2.9,0-5.2,2.3-5.2,5.2c0,2.9,2.3,5.2,5.2,5.2c0.6,0,1.3-0.1,1.9-0.3v5.6H1V28.2z M42.7,27.9
-	c0.3,0.5,0.5,1.2,0.5,2.1c0,2.3-1.9,4.2-4.2,4.2s-4.2-1.9-4.2-4.2c0-0.7,0.2-1.5,0.6-2.1l0.4-0.8h-8.6v24h24v-24h-9L42.7,27.9z
-	 M50.2,28.2v22h-22v-22h5.9c-0.2,0.6-0.3,1.2-0.3,1.9c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2c0-0.7-0.1-1.3-0.3-1.9H50.2z"></path>
-</svg>
-                                </div><div class="cards-name">
-                                    <h4>DEDICATED TEAMS</h4>
-                                </div>
-                                <div class="cards-text">
-                                    <p>Excellent solution for complete control over human and technical resources.</p>
-                                </div>	</div>
-                        </a>
-                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4">
+                <div class="service">
+                    MOBILITY 360°
+                    End-to-end mobile development for consumer-facing and corporate environments.
                 </div>
             </div>
+            <div class="col-lg-4">
+                <div class="service">
+                    CLOUD
+                    Powerful cloud-based solutions fused with creative design for private, hybrid & public platforms.
+                </div>
+            </div>
+
         </div>
+        <div class="row">
+            <div class="col-lg-4">
+                FULL-CYCLE DEVELOPMENT
+                Full spectrum of development services spiced with flexible engagement models.
+            </div>
+            <div class="col-lg-4">
+                QUALITY ASSURANCE
+                Hands-on quality assurance expertise weaved into your development lifecycle.
+            </div>
+            <div class="col-lg-4">
+                DEDICATED TEAMS
+                Excellent solution for complete control over human and technical resources.
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+
     </div>
 </section>
 <section class="favorite_works">
