@@ -138,7 +138,7 @@ main {
     padding-top: 91px;
     min-height: calc(100vh - 360px);
     position: relative;
-    background: #39675a;
+    /*background: #39675a;*/
     color: white;
 }
 .first h1 {
