@@ -7,6 +7,7 @@ use Yii;
 use yii\web\Controller;
 use common\models\Project;
 use common\models\Techs;
+use yii\web\NotFoundHttpException;
 
 /**
  * Site controller
@@ -55,13 +56,16 @@ class PortfolioController extends Controller
     }
 
     /**
-     * View portfolio project
+     * View portfolio project or redirect to portfolio
      */
     public function actionView($id)
     {
-        $project = Project::find($id)
+        $project = Project::find()
+            ->where(['id' => $id])
             ->asArray()
             ->one();
+        if (!$project) throw new NotFoundHttpException('The requested project does not exist.');
+
         $project['engine'] = Techs::getTech($project['engine']);
         $project['tech_list'] = ProjectsTech::getProjectTechList($project['id']);
         $project['pictures_all'] = ProjectsPictures::getProjectPictures($project['id']);
@@ -74,9 +78,12 @@ class PortfolioController extends Controller
         }
         unset($project['pictures_all']);
 
+        $projects_for_slider = 'fff';
+
 
         return $this->render('view.php',
             ['project' => $project,
+            'slider' => $projects_for_slider,
         ]);
     }
 
