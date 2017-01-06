@@ -8,7 +8,6 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
 ?>
 <section class="first view_project">
     <div class="first_bg" style="background: #39675a url('<?=$project['pictures']['main']['url']?>') center no-repeat; background-size: cover;">
-
     </div>
     <div class="container">
         <div class="row">
@@ -87,7 +86,7 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
         </div>
     </div>
 </section>
-<section>
+<section class="related_projects">
     <div class="container-fluid">
         <div class="row">
         <h3>RELATED PROJECTS</h3>
@@ -98,37 +97,31 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                 <li data-target="#myCarousel" data-slide-to="1"></li>
                 <li data-target="#myCarousel" data-slide-to="2"></li>
-                <li data-target="#myCarousel" data-slide-to="3"></li>
             </ol>
-
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img src="/images/screenshots/80001.png" alt="Chania" width="460" height="345">
+                    <div class="bg" style="background: #39675a url('/images/screenshots/80001.png') center no-repeat; background-size: cover;"></div>
+                    <div class="item_box">
+                        <img src="/images/screenshots/80001.png" alt="Chania" width="460" height="345">
+                    </div>
                 </div>
-
                 <div class="item">
-                    <img src="/images/screenshots/altis1.png" alt="Chania" width="460" height="345">
+                    <div class="bg" style="background: #39675a url('/images/screenshots/altis1.png') center no-repeat; background-size: cover;"></div>
+                    <div class="item_box">
+                        <img src="/images/screenshots/altis1.png" alt="Chania" width="460" height="345">
+                    </div>
                 </div>
-
                 <div class="item">
-                    <img src="/images/screenshots/Dinadis1.png" alt="Flower" width="460" height="345">
-                </div>
-
-                <div class="item">
-                    <img src="/images/screenshots/transradar1.png" alt="Flower" width="460" height="345">
+                    <div class="bg" style="background: #39675a url('/images/screenshots/Dinadis1.png') center no-repeat; background-size: cover;"></div>
+                    <div class="item_box">
+                        <img src="/images/screenshots/Dinadis1.png" alt="Flower" width="460" height="345">
+                    </div>
                 </div>
             </div>
-
             <!-- Left and right controls -->
-            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"></a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"></a>
         </div>
         </div>
     </div>
