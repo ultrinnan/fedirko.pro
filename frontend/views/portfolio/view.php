@@ -91,7 +91,7 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
         <div class="row">
         <h3>RELATED PROJECTS</h3>
         <br>
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div id="myCarousel" class="carousel slide1" data-ride="carousel1">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -101,9 +101,26 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <div class="bg" style="background: #39675a url('/images/screenshots/80001.png') center no-repeat; background-size: cover;"></div>
-                    <div class="item_box">
-                        <img src="/images/screenshots/80001.png" alt="Chania" width="460" height="345">
+                    <div class="bg" style="background: #39675a url('<?=$project['pictures']['main']['url'];?>') center no-repeat; background-size: cover;"></div>
+                    <div class="item_box clearfix">
+                        <div class="clearfix">
+                            <div class="related_left">
+                                <h3><?=$project['name'];?></h3>
+                                <p><?=$project['short_desc'];?></p>
+                                <p>Works on <strong><?=$project['engine']['name'];?></strong></p>
+                                <p>Technologies:
+                                    <?php
+                                    foreach ($project['tech_list'] as $tech){
+                                        echo '<div class="related_tech">' . $tech['name'] . '</div>';
+                                    }
+                                    ?>
+                                </p>
+                            </div>
+                            <div class="related_right">
+                                <a href="/portfolio/view?id=<?=$project['id'];?>"><img src="<?=$project['pictures']['main']['url'];?>"></a>
+                            </div>
+                        </div>
+                        <a class="read_more" href="/portfolio/view?id=<?=$project['id'];?>">Read more</a>
                     </div>
                 </div>
                 <div class="item">

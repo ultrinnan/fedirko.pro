@@ -3,6 +3,9 @@
 namespace common\models;
 
 use Yii;
+use common\models\ProjectsPictures;
+use common\models\ProjectsTech;
+use common\models\Techs;
 
 /**
  * This is the model class for table "projects".
@@ -63,9 +66,60 @@ class Project extends \yii\db\ActiveRecord
         ];
     }
 
-    public function getProject($id)
+    /**
+     * return completed array for selected project
+     * @param $id
+     * @return array|bool
+     */
+    public static function getFullProject($id)
     {
-        $project = $this::findOne($id);
+        $project = static::find()
+            ->where('id = ' . $id)
+            ->asArray()
+            ->one();
+        if (!$project) return false;
+
+        $project['engine'] = Techs::getTech($project['engine']);
+        $project['tech_list'] = ProjectsTech::getProjectTechList($project['id']);
+
+        $project['pictures_all'] = ProjectsPictures::getProjectPictures($project['id']);
+        foreach ($project['pictures_all'] as $item){
+            if ($item['main'] == 1){
+                $project['pictures']['main'] = $item;
+            } else {
+                $project['pictures']['all'][] = $item;
+            }
+        }
+        unset($project['pictures_all']);
+
         return $project;
     }
+
+    public static function getSliderProjects($id)
+    {
+        $projects = static::find()
+            ->where('id = ' . $id)
+            ->asArray()
+            ->one();
+        if (!$projects) return false;
+
+        $slider = [];
+        foreach ($projects as $project) {
+            $project['engine'] = Techs::getTech($project['engine']);
+            $project['tech_list'] = ProjectsTech::getProjectTechList($project['id']);
+
+            $project['pictures_all'] = ProjectsPictures::getProjectPictures($project['id']);
+            foreach ($project['pictures_all'] as $item){
+                if ($item['main'] == 1){
+                    $project['pictures']['main'] = $item;
+                } else {
+                    $project['pictures']['all'][] = $item;
+                }
+            }
+            unset($project['pictures_all']);
+        }
+
+        return $projects;
+    }
+
 }

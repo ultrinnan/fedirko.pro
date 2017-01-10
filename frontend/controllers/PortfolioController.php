@@ -56,33 +56,17 @@ class PortfolioController extends Controller
     }
 
     /**
-     * View portfolio project or redirect to portfolio
+     * View portfolio project or show 404 no project
      */
     public function actionView($id)
     {
-        $project = Project::find()
-            ->where(['id' => $id])
-            ->asArray()
-            ->one();
-        if (!$project) throw new NotFoundHttpException('The requested project does not exist.');
-
-        $project['engine'] = Techs::getTech($project['engine']);
-        $project['tech_list'] = ProjectsTech::getProjectTechList($project['id']);
-        $project['pictures_all'] = ProjectsPictures::getProjectPictures($project['id']);
-        foreach ($project['pictures_all'] as $item){
-            if ($item['main'] == 1){
-                $project['pictures']['main'] = $item;
-            } else {
-                $project['pictures']['all'][] = $item;
-            }
-        }
-        unset($project['pictures_all']);
+        $project_main = Project::getFullProject($id);
+        if (!$project_main) throw new NotFoundHttpException('The requested project does not exist.');
 
         $projects_for_slider = 'fff';
 
-
         return $this->render('view.php',
-            ['project' => $project,
+            ['project' => $project_main,
             'slider' => $projects_for_slider,
         ]);
     }

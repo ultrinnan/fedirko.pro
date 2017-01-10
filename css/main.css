@@ -170,6 +170,15 @@ main {
     border-radius: 2px;
     color: #39675a;
 }
+.related_tech {
+    display: inline-block;
+    padding: 0 10px;
+    margin: 0 15px 10px 0;
+    background: #39675a;
+    border: 1px solid #39675a;
+    border-radius: 2px;
+    color: white;
+}
 .project_pictures_main img {
     width: 100%;
 }
@@ -197,9 +206,43 @@ main {
     overflow: hidden;
 }
 .related_projects .item_box {
-    height: 400px;
     margin: 0 auto;
+    padding: 30px;
+    width: 60%;
+    background: white;
+    filter: blur(0);
+}
+.related_projects .carousel-inner > .item {
+    padding: 50px 0;
+}
+.related_projects .carousel-indicators {
+    bottom: 1px;
+}
+.related_left,
+.related_right {
+    float: left;
     width: 50%;
+    height: 100%;
+}
+.related_right img {
+    float: right;
+    width: 100%;
+}
+a.read_more {
+    border: 2px solid #39675a;
+    border-radius: 2px;
+    color: #39675a;
+    display: block;
+    padding: 5px 25px;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: 170px;
+    margin: 30px auto 10px;
+}
+a.read_more:hover {
+    background: #39675a;
+    color: white;
+    transition: .5s;
 }
 
 .main_page {
