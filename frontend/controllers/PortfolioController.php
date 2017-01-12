@@ -56,14 +56,14 @@ class PortfolioController extends Controller
     }
 
     /**
-     * View portfolio project or show 404 no project
+     * View portfolio project and slider with selected number of favorite works, or show 404 no project
      */
     public function actionView($id)
     {
         $project_main = Project::getFullProject($id);
         if (!$project_main) throw new NotFoundHttpException('The requested project does not exist.');
 
-        $projects_for_slider = 'fff';
+        $projects_for_slider = Project::getSliderProjects($id, 5);
 
         return $this->render('view.php',
             ['project' => $project_main,

@@ -194,9 +194,6 @@ main {
 .related_projects {
     margin: 0 0 -30px;
 }
-.related_projects .item {
-    position: relative;
-}
 .related_projects .item .bg {
     position: absolute;
     top: 0;
@@ -222,11 +219,11 @@ main {
 .related_right {
     float: left;
     width: 50%;
-    height: 100%;
+    height: 300px;
 }
-.related_right img {
-    float: right;
-    width: 100%;
+.related_right a {
+    display: block;
+    height: 100%;
 }
 a.read_more {
     border: 2px solid #39675a;
@@ -243,6 +240,12 @@ a.read_more:hover {
     background: #39675a;
     color: white;
     transition: .5s;
+}
+.related_projects .carousel-indicators .active {
+    background-color: #39675a;
+}
+.related_projects .carousel-indicators li {
+    border: 1px solid #39675a;
 }
 
 .main_page {

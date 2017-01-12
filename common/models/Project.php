@@ -95,16 +95,24 @@ class Project extends \yii\db\ActiveRecord
         return $project;
     }
 
-    public static function getSliderProjects($id)
+    /**
+     * get prepared array for slider with selected number of favorite works
+     * @param $id
+     * @param null $lim
+     * @return array|bool|\yii\db\ActiveRecord[]
+     */
+    public static function getSliderProjects($id, $lim = null)
     {
         $projects = static::find()
-            ->where('id = ' . $id)
+            ->where('favorite = 1')
+            ->andWhere('id != ' . $id)
+            ->orderBy('RAND()')
+            ->limit($lim)
             ->asArray()
-            ->one();
+            ->all();
         if (!$projects) return false;
 
-        $slider = [];
-        foreach ($projects as $project) {
+        foreach ($projects as &$project) {
             $project['engine'] = Techs::getTech($project['engine']);
             $project['tech_list'] = ProjectsTech::getProjectTechList($project['id']);
 
