@@ -137,14 +137,14 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
         </div>
     </div>
 </section>
+<!--todo: move it to separate view file-->
 <section class="call_to_action">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <h2>WANT TO START A PROJECT?</h2>
                 It's simple.
-                <a class="contact_button" href="site/contact">contact us</a>
-
+                <a class="contact_button" href="/site/contact">contact us</a>
             </div>
         </div>
     </div>

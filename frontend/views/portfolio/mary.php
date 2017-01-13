@@ -176,7 +176,7 @@ $this->title = 'Mary\'s Portfolio';
             <div class="col-lg-12">
                 <h2>WANT TO START A PROJECT?</h2>
                 It's simple.
-                <a class="contact_button" href="site/contact">contact us</a>
+                <a class="contact_button" href="/site/contact">contact us</a>
 
             </div>
         </div>
