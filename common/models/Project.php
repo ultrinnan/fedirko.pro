@@ -130,4 +130,31 @@ class Project extends \yii\db\ActiveRecord
         return $projects;
     }
 
+    public static function getProjectsList()
+    {
+        $projects = static::find()
+            ->orderBy(['create_date' => SORT_DESC])
+            ->asArray()
+            ->all();
+        if (!$projects) return false;
+
+//        foreach ($projects as &$project) {
+//            $project['engine'] = Techs::getTech($project['engine']);
+//            $project['tech_list'] = ProjectsTech::getProjectTechList($project['id']);
+//
+//            $project['pictures_all'] = ProjectsPictures::getProjectPictures($project['id']);
+//            foreach ($project['pictures_all'] as $item){
+//                if ($item['main'] == 1){
+//                    $project['pictures']['main'] = $item;
+//                } else {
+//                    $project['pictures']['all'][] = $item;
+//                }
+//            }
+//            unset($project['pictures_all']);
+//        }
+
+        return $projects;
+
+    }
+
 }

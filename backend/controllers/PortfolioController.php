@@ -1,5 +1,5 @@
 <?php
-namespace frontend\controllers;
+namespace backend\controllers;
 
 use common\models\ProjectsPictures;
 use common\models\ProjectsTech;
@@ -10,7 +10,7 @@ use common\models\Techs;
 use yii\web\NotFoundHttpException;
 
 /**
- * Portfolio controller
+ * Portfolio controller for backend
  */
 class PortfolioController extends Controller
 {
@@ -27,32 +27,17 @@ class PortfolioController extends Controller
     }
 
     /**
-     * Displays common portfolio.
+     * Displays projects list
      *
      * @return mixed
      */
     public function actionIndex()
     {
-        return $this->render('index');
-    }
-
-    /**
-     * Displays Sergey's portfolio.
-     *
-     * @return mixed
-     */
-    public function actionSergey()
-    {
-        return $this->render('sergey');
-    }
-    /**
-     * Displays Mary's portfolio.
-     *
-     * @return mixed
-     */
-    public function actionMary()
-    {
-        return $this->render('mary');
+        $projects_list = Project::getProjectsList();
+        var_dump($projects_list);
+        return $this->render('index',
+            ['projects_list' => $projects_list,
+        ]);
     }
 
     /**

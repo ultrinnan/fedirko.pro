@@ -38,6 +38,7 @@ $clean_bg = Yii::$app->user->isGuest ? '' : 'content_mask';
         ]);
         $menuItems = [
             ['label' => 'Home', 'url' => ['/site/index']],
+            ['label' => 'Portfolio', 'url' => ['/portfolio/index']],
         ];
         if (Yii::$app->user->isGuest) {
             $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
