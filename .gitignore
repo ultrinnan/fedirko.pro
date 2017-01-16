@@ -38,6 +38,3 @@ phpunit.phar
 
 # vagrant runtime
 /.vagrant
-
-/index.php
-/index-test.php
