@@ -4,7 +4,16 @@
 
 $this->title = 'Portfolio';
 ?>
-<section class="first main_page">
+<section class="first portfolio_main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>PORTFOLIO</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
     <div class="container">
         <div class="row">
             <div class="col-lg-12">

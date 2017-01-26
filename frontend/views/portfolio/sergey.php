@@ -7,7 +7,16 @@ use yii\helpers\Html;
 $this->title = 'Sergey\'s Portfolio';
 ?>
 
-<section class="first">
+<section class="first portfolio_serhii">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>SERHII'S PORTFOLIO</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
     <div class="container">
         <div class="row">
             <div class="col-lg-12">

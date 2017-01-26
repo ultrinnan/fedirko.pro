@@ -10,8 +10,16 @@ $this->title = 'Mary\'s Portfolio';
     }
 
 </style>
-
-<section class="first">
+<section class="first portfolio_mary">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>MARY'S PORTFOLIO</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
     <div class="container">
         <div class="row">
             <div class="col-lg-12">

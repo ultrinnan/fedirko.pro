@@ -163,6 +163,16 @@ main {
     margin: auto;
 }
 
+.portfolio_main {
+    background: #39675a url('/images/bg/portfolio_bg.jpg') center no-repeat;
+}
+.portfolio_mary {
+    background: #39675a url('/images/bg/mary_bg.jpg') center no-repeat;
+}
+.portfolio_serhii {
+    background: #39675a url('/images/bg/serhii_bg.jpg') center no-repeat;
+}
+
 .view_project h1 {
     margin: 100px auto 50px;
 }
