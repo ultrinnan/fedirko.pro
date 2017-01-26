@@ -142,7 +142,7 @@ main {
     color: white;
 }
 .first h1 {
-    margin: 200px auto;
+    margin: 150px auto;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5)
 }
 
@@ -154,6 +154,15 @@ main {
     filter: blur(10px);
     overflow: hidden;
 }
+
+.contact_page {
+    background: #39675a url('/images/bg/contactus-bg.jpg') center no-repeat;
+}
+#contact-form {
+    width: 60%;
+    margin: auto;
+}
+
 .view_project h1 {
     margin: 100px auto 50px;
 }
