@@ -17,11 +17,11 @@ $this->title = 'Portfolio';
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h1>Cool site for our family will be here soon...</h1>
-                <p>Now you can visit our portfolio subdomains:</p>
+                <h2>Full our portfolio will be here very soon. At the moment we decided to GO Live with semi-static pages, soon all magic will be here :)</h2>
+                <p>Now you can check our portfolio pages:</p>
                 <ul>
-                    <li><a href="http://sergey.fedirko.pro">sergey.fedirko.pro</a> </li>
-                    <li><a href="http://mary.fedirko.pro">mary.fedirko.pro</a> </li>
+                    <li><a href="/portfolio/mary">Mary's portfolio</a></li>
+                    <li><a href="/portfolio/serhii">Serhii's portfolio</a></li>
                 </ul>
                 <p>come back here later, it will be interesting ;)</p>
             </div>
