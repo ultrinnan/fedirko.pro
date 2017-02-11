@@ -16,26 +16,13 @@ $this->title = 'Sergey\'s Portfolio';
         </div>
     </div>
 </section>
+<?php
+    echo $this->render('_portfolio_list', ['projects' => $projects]);
+?>
 <section>
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2>Программирование</h2>
-                <h3>Навыки и технологии, которыми владею</h3>
-                <img src="/images/learning.gif" style="float:right; margin-top:-50px">
-                <ul>
-                    <li>PHP, SQL, HTML5, CSS3, JavaScript.</li>
-                    <li>Bootstrap3, SMARTY, jQuery, AngularJS, AJAX</li>
-                    <li>Хорошее понимание принципов ООП, MVC, адаптивной и кроссплатформенной верстки.</li>
-                    <li>Контроль версий Git. Битрикс24.</li>
-                    <li>CMS: WordPress, osCommerce, Joomla, OpenCart, PrestaShop, Drupal, phpBB.</li>
-                    <li>Опыт в администрировании и поддержке сайтов.</li>
-                    <li>Полный жизненный цикл сайта (домен, хостинг, настройка сервера, настройки безопасности, FTP, бекапирование, SEO)</li>
-                    <li>Photoshop: работа с макетами, правки, прототипы страниц</li>
-                </ul>
-                <hr>
-                <h2>Портфолио</h2>
-
                 <div class="block-item">
                     <div class="title">
                         DINADIS
@@ -532,57 +519,12 @@ $this->title = 'Sergey\'s Portfolio';
                     <br>Технологии: HTML5, CSS3, PHP, Photoshop
                     <br>Мой вклад: все сам :)
                 </div>
-                <div class="block-item">
-                    <div class="title">
-                        Арина Ткаченко | организация праздников
-                    </div>
-                    <a href="/images/site-arisha.jpg" target="_blank"><img src="/images/site-arisha_m.jpg" alt="arisha.kiev.ua" align="left"></a>
-                    <div class="label_fix">
-		<span class="label_text"><i class="fa fa-cogs"></i> правки<br>доработки<span>
-                    </div>
-                    Песональный сайт ивент-менеджера Арины Ткаченко.
-                    <br>Посмотреть: <a href="http://arisha.kiev.ua" target="_blank">http://arisha.kiev.ua</a>
-                    <br>CMS: Typo3
-                    <br>Технологии: HTML, CSS, PHP
-                    <br>Мой вклад: корректировка шаблона, правка CSS, обновление и чистка движка, наполнение
-                </div>
-                <div class="block-item">
-                    <div class="title">
-                        СТС | Современые Технологии Строительства
-                    </div>
-                    <a href="/images/site-spbsts.jpg" target="_blank"><img src="/images/site-spbsts_m.jpg" alt="spbsts.ru" align="left"></a>
-                    Современные Технологии Строительства.
-                    <br>Посмотреть: <a href="http://spbsts.ru" target="_blank">http://spbsts.ru</a>
-                    <br>CMS: Joomla
-                    <br>Технологии: HTML, CSS, PHP, Photoshop
-                    <br>Мой вклад: полная настройка CMS сайта, переделка/дорисовка шаблона, правка CSS, подключение/изменение модулей
-                </div>
-                <div class="block-item">
-                    <div class="title">
-                        Вэльдрин - киевский клуб ролевого моделирования
-                    </div>
-                    <a href="/images/site-veldrin.jpg" target="_blank"><img src="/images/site-veldrin_m.jpg" alt="veldrin.kiev.ua" align="left"></a>
-                    Командный сайт киевского клуба ролевого моделирования "Вэльдрин"
-                    <br>Посмотреть: <a href="http://veldrin.kiev.ua" target="_blank">http://veldrin.kiev.ua</a>
-                    <br>CMS: Joomla
-                    <br>Технологии: HTML, CSS3, PHP, Photoshop
-                    <br>Мой вклад: полная настройка CMS сайта, переделка/дорисовка шаблона, правка CSS, подключение/изменение модулей, наполнение
-                </div>
             </div>
         </div>
 
     </div>
 </div>
 </section>
-<section class="call_to_action">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2>WANT TO START A PROJECT?</h2>
-                It's simple.
-                <a class="contact_button" href="/site/contact">contact us</a>
-
-            </div>
-        </div>
-    </div>
-</section>
+<?php
+    echo $this->render('/site/_call_to_action');
+?>

@@ -33,17 +33,24 @@ class PortfolioController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $projects = Project::getProjectsList();
+
+        return $this->render('index', [
+            'projects' => $projects,
+        ]);
     }
 
     /**
-     * Displays Sergey's portfolio.
+     * Displays Serhii's portfolio.
      *
      * @return mixed
      */
-    public function actionSergey()
+    public function actionSerhii()
     {
-        return $this->render('sergey');
+        $projects = Project::getProjectsList(1);
+        return $this->render('serhii', [
+            'projects' => $projects,
+        ]);
     }
     /**
      * Displays Mary's portfolio.
@@ -52,7 +59,10 @@ class PortfolioController extends Controller
      */
     public function actionMary()
     {
-        return $this->render('mary');
+        $projects = Project::getProjectsList(2);
+        return $this->render('mary', [
+            'projects' => $projects,
+        ]);
     }
 
     /**

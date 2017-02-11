@@ -25,57 +25,62 @@ $this->title = 'FEDIRKO.PRO - full stack web development';
 </section>
 <section>
     <div class="container">
+<!--        todo: hover images-->
         <div class="row">
             <div class="col-lg-4">
-                <a href="/services/web-application-development" class="service column-content cards-item icons--hover-white inactive" style="height: 343px;">
-                    <div class="cards-wrapper">
-                        <div class="cards-item-link-image" style="background-image: url(https://www.iflexion.com/files/styles/service__front_page/public/content/service/background/bg-page-webappdev.jpg?itok=jAvQR6JS);"></div>
-                        <div class="cards-icon">
-                        </div><div class="cards-name">
-                            <h4>ADVANCED WEB</h4>
-                        </div>
-                        <div class="cards-text">
-                            <p>Productive, engaging and reliable web solutions for business outcomes you deserve.</p>
-                        </div>
-                    </div>
+                <a href="#" class="service">
+                    <div class="icon web"></div>
+                    <h4>ADVANCED WEB</h4>
+                    <div class="desc">Productive, engaging and reliable web solutions for business outcomes you deserve.</div>
                 </a>
             </div>
             <div class="col-lg-4">
-                <div class="service">
-                    MOBILE SOLUTIONS
-                    Mobile integrations and development for consumer-facing and corporate environments.
-                </div>
+                <a href="#" class="service">
+                    <div class="icon mobile"></div>
+                    <h4>MOBILE SOLUTIONS</h4>
+                    <div class="desc">Mobile integrations and custom tools development for your business.</div>
+                </a>
             </div>
             <div class="col-lg-4">
-                <div class="service">
-                    CLOUD
-                    Powerful cloud-based solutions fused with creative design for private, hybrid & public platforms.
-                </div>
+                <a href="#" class="service">
+                    <div class="icon help"></div>
+                    <h4>Help and support</h4>
+                    <div class="desc">Excellent solution for fast recovery or fix of your existing projects.</div>
+                </a>
             </div>
-
         </div>
         <div class="row">
             <div class="col-lg-4">
-                FULL-CYCLE DEVELOPMENT
-                Full spectrum of development services spiced with flexible engagement models.
+                <a href="#" class="service">
+                    <div class="icon qa"></div>
+                    <h4>QUALITY ASSURANCE</h4>
+                    <div class="desc">Hands-on quality assurance expertise weaved into your development lifecycle.</div>
+                </a>
             </div>
             <div class="col-lg-4">
-                QUALITY ASSURANCE
-                Hands-on quality assurance expertise weaved into your development lifecycle.
+                <a href="#" class="service">
+                    <div class="icon full_stack"></div>
+                    <h4>FULL-CYCLE DEVELOPMENT</h4>
+                    <div class="desc">Full spectrum of development services spiced with flexible engagement models.</div>
+                </a>
             </div>
             <div class="col-lg-4">
-                DEDICATED TEAMS
-                Excellent solution for complete control over human and technical resources.
+                <a href="#" class="service cloud">
+                    <div class="icon cloud"></div>
+                    <h4>CLOUD</h4>
+                    <div class="desc">Powerful cloud-based solutions fused with creative design for private, hybrid & public platforms.</div>
+                </a>
             </div>
         </div>
     </div>
 </section>
 
-<section style="background: green; min-height: 200px; color: white">
-    <div class="container">
-expertize magic
-    </div>
-</section>
+<!--todo: expertize magic-->
+<!--<section style="background: green; min-height: 200px; color: white">-->
+<!--    <div class="container">-->
+<!--expertize magic-->
+<!--    </div>-->
+<!--</section>-->
 
 <!--todo: here should be also boxes with favorite projects-->
 <section class="favorite_works">
@@ -87,28 +92,20 @@ expertize magic
                 <p>Our solutions yield benefit in Internet-facing, corporate and hybrid environments.</p>
             </div>
         </div>
-        <div class="row favorite_works_box">
-            <div class="favorite_work">1</div>
-            <div class="favorite_work">2</div>
-            <div class="favorite_work">3</div>
-        </div>
-        <div class="row favorite_works_box">
-            <div class="favorite_work">4</div>
-            <div class="favorite_work">5</div>
-            <div class="favorite_work">6</div>
-        </div>
-        check all projects
+<!--        <div class="row favorite_works_box">-->
+<!--            <div class="favorite_work">1</div>-->
+<!--            <div class="favorite_work">2</div>-->
+<!--            <div class="favorite_work">3</div>-->
+<!--        </div>-->
+<!--        <div class="row favorite_works_box">-->
+<!--            <div class="favorite_work">4</div>-->
+<!--            <div class="favorite_work">5</div>-->
+<!--            <div class="favorite_work">6</div>-->
+<!--        </div>-->
+        <a class="check_all" href="/portfolio">check all of our projects</a>
     </div>
 </section>
 
-<section class="call_to_action">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2>WANT TO START A PROJECT?</h2>
-                It's simple.
-                <a class="contact_button" href="/site/contact">contact us</a>
-            </div>
-        </div>
-    </div>
-</section>
+<?php
+    echo $this->render('/site/_call_to_action');
+?>

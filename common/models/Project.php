@@ -130,28 +130,34 @@ class Project extends \yii\db\ActiveRecord
         return $projects;
     }
 
-    public static function getProjectsList()
+    public static function getProjectsList($author = null)
     {
+        if (isset($author)){
+            $where = $author == 1 ? 'by_serhii = 1' : 'by_mary = 1';
+        } else {
+            $where = '1';
+        }
         $projects = static::find()
+            ->where($where)
             ->orderBy(['create_date' => SORT_DESC])
             ->asArray()
             ->all();
         if (!$projects) return false;
 
-//        foreach ($projects as &$project) {
-//            $project['engine'] = Techs::getTech($project['engine']);
-//            $project['tech_list'] = ProjectsTech::getProjectTechList($project['id']);
-//
-//            $project['pictures_all'] = ProjectsPictures::getProjectPictures($project['id']);
-//            foreach ($project['pictures_all'] as $item){
-//                if ($item['main'] == 1){
-//                    $project['pictures']['main'] = $item;
-//                } else {
-//                    $project['pictures']['all'][] = $item;
-//                }
-//            }
-//            unset($project['pictures_all']);
-//        }
+        foreach ($projects as &$project) {
+            $project['engine'] = Techs::getTech($project['engine']);
+            $project['tech_list'] = ProjectsTech::getProjectTechList($project['id']);
+
+            $project['pictures_all'] = ProjectsPictures::getProjectPictures($project['id']);
+            foreach ($project['pictures_all'] as $item){
+                if ($item['main'] == 1){
+                    $project['pictures']['main'] = $item;
+                } else {
+                    $project['pictures']['all'][] = $item;
+                }
+            }
+            unset($project['pictures_all']);
+        }
 
         return $projects;
 

@@ -159,7 +159,7 @@ $topItems = [
         'items' => [
             [
                 'label' => 'Serhii\'s portfolio',
-                'url' => ['/portfolio/sergey'],
+                'url' => ['/portfolio/serhii'],
             ],
             [
                 'label' => 'Mary\'s portfolio',

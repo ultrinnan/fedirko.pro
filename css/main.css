@@ -163,6 +163,7 @@ main {
     margin: auto;
 }
 
+/*------------------------- portfolio start ------------------------------*/
 .portfolio_main {
     background: #39675a url('/images/bg/portfolio_bg.jpg') center no-repeat;
 }
@@ -172,6 +173,52 @@ main {
 .portfolio_serhii {
     background: #39675a url('/images/bg/serhii_bg.jpg') center no-repeat;
 }
+
+.portfolio a {
+    color: white;
+    text-decoration: none;
+    margin: 30px 5px;
+    position: relative;
+    display: block;
+}
+
+.portfolio .item_image {
+    height: 400px;
+}
+.portfolio a .item_desc {
+    display: none;
+}
+.portfolio a:hover .item_desc {
+    display: block;
+    padding: 30px;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background: rgba(57, 103, 90, 0.8);
+}
+.portfolio .related_tech {
+    display: inline-block;
+    padding: 0 10px;
+    margin: 0 15px 10px 0;
+    background: white;
+    border: 1px solid white;
+    border-radius: 2px;
+    color: #39675a;
+}
+.portfolio .read_more {
+    display: block;
+    width: 150px;
+    padding: 0 10px;
+    margin: 20px auto;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 2px;
+    color: white;
+    text-transform: uppercase;
+}
+/*------------------------- portfolio end ------------------------------*/
 
 .view_project h1 {
     margin: 100px auto 50px;
@@ -267,21 +314,109 @@ a.read_more:hover {
     border: 1px solid #39675a;
 }
 
+/*------------------------ main page start --------------------------*/
 .main_page {
     background: #39675a url('/images/bg/space_bg.jpg') center no-repeat;
 }
 
-.service {
+a.service {
     display: block;
     background: #fcfcfc;
     -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.15);
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.15);
     text-align: center;
     overflow: hidden;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    padding: 76px 20px 80px;
+    padding: 50px 25px;
+    margin-bottom: 30px;
+    text-decoration: none;
+    color: #234;
+    height: 400px;
 }
+a.service:hover {
+    color: white;
+}
+.service .icon {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+.service .icon.web {
+    background: url('/images/icons/internet.png');
+}
+.service .icon.mobile {
+    background: url('/images/icons/smartphone.png');
+}
+.service .icon.cloud {
+    background: url('/images/icons/cloud.png');
+}
+.service.cloud {
+
+}
+.service:hover.cloud {
+    background: url('/images/cloud.jpg');
+}
+.service .icon.full_stack {
+    background: url('/images/icons/settings.png');
+}
+.service .icon.qa {
+    background: url('/images/icons/like.png');
+}
+.service .icon.help {
+    background: url('/images/icons/help.png');
+}
+
+.service:hover .icon.web {
+    background: url('/images/icons/internet_w.png');
+}
+.service:hover .icon.mobile {
+    background: url('/images/icons/smartphone_w.png');
+}
+.service:hover .icon.cloud {
+    background: url('/images/icons/cloud_w.png');
+}
+.service:hover .icon.full_stack {
+    background: url('/images/icons/settings_w.png');
+}
+.service:hover .icon.qa {
+    background: url('/images/icons/like_w.png');
+}
+.service:hover .icon.help {
+    background: url('/images/icons/help_w.png');
+}
+
+.service h4 {
+    font-size: 30px;
+    margin: 20px 0;
+    color: #84a580;
+    text-transform: uppercase;
+}
+a.service:hover h4 {
+    color: white;
+}
+.service .desc {
+
+}
+
+.favorite_works a.check_all {
+    border: 2px solid #39675a;
+    border-radius: 2px;
+    color: #39675a;
+    display: block;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: 300px;
+    margin: 20px auto 30px;
+}
+.favorite_works a.check_all:hover {
+    color: white;
+    background: #39675a;
+    transition: .5s;
+}
+
+
+/*------------------------ main page end --------------------------*/
+
 .poc {
     background: black url('/images/bg/poc1.jpg') center no-repeat;
 }

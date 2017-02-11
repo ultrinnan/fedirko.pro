@@ -19,6 +19,9 @@ $this->title = 'Mary\'s Portfolio';
         </div>
     </div>
 </section>
+<?php
+    echo $this->render('_portfolio_list', ['projects' => $projects]);
+?>
 <section>
     <div class="container">
         <div class="row">
@@ -178,15 +181,6 @@ $this->title = 'Mary\'s Portfolio';
     </div>
 </div>
 </section>
-<section class="call_to_action">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2>WANT TO START A PROJECT?</h2>
-                It's simple.
-                <a class="contact_button" href="/site/contact">contact us</a>
-
-            </div>
-        </div>
-    </div>
-</section>
+<?php
+    echo $this->render('/site/_call_to_action');
+?>
