@@ -2,26 +2,31 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'Projects from portfolio';
+
+var_dump($projects_list[0]);
 ?>
 <section>
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium amet at debitis et ex, illum iure magni minus natus nemo nostrum quaerat quo reiciendis sapiente, sit ullam voluptatem voluptatibus.
-                <br>
-                <br>
-                <table>
+                Всего проектов в портфолио: <b><?=count($projects_list);?></b>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table table-striped">
                     <tr>
-                        <td>ID</td>
-                        <td>Project name</td>
-                        <td>Author</td>
-                        <td>Engine</td>
-                        <td>Create date</td>
-                        <td>Publish date</td>
-                        <td>Status</td>
-                        <td>Favorite</td>
-                        <td>Control</td>
+                        <th>ID</th>
+                        <th>Project name</th>
+                        <th>Author</th>
+                        <th>Engine</th>
+                        <th>Create date</th>
+                        <th>Publish date</th>
+                        <th>Status</th>
+                        <th>Favorite</th>
+                        <th>Control</th>
                     </tr>
                 <?php
                 foreach ($projects_list as $project){

@@ -34,7 +34,9 @@ class PortfolioController extends Controller
     public function actionIndex()
     {
         $projects_list = Project::getProjectsList();
-        var_dump($projects_list);
+        foreach ($projects_list as $item){
+            $item['engine'] = $item['engine']['name'];
+        }
         return $this->render('index',
             ['projects_list' => $projects_list,
         ]);
