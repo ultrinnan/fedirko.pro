@@ -25,8 +25,13 @@ class m170221_074718_create_config_table extends Migration
             'name' => $this->string(),
             'description' => $this->text(),
         ], $tableOptions);
-    }
 
+	    $this->batchInsert('{{%site_config}}', ['id', 'key', 'value', 'name', 'description'], [
+	    	[1, 'site_name', 'FEDIRKO.PRO', 'Site Name', 'This site name will be shown on all site pages'],
+		    [2, 'admin_email', 'sergey.fedirko@gmail.com', 'Admin\'s e-mail', 'General e-mail for administrative purposes (reports etc.)',],
+	        [3, 'contact_email', 'contact@fedirko.pro', 'Contact e-mail', 'General e-mail for Contact page and to show on site',]
+	    ]);
+    }
     /**
      * @inheritdoc
      */

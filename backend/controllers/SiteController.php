@@ -46,6 +46,10 @@ class SiteController extends Controller
      */
     public function actions()
     {
+        if (Yii::$app->user->isGuest) {
+            $this->layout = '/main-login';
+        }
+
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
@@ -70,11 +74,10 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
-        $this->layout = 'clean-login';
-
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
+        $this->layout = '/main-login';
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
@@ -97,4 +100,5 @@ class SiteController extends Controller
 
         return $this->goHome();
     }
+
 }
