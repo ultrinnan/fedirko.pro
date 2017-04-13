@@ -1,17 +1,18 @@
 <section>
     <div class="container portfolio">
 <?php
-$projects_list .= '<div class="row">';
-foreach ($projects as $key => $value) {
-    $techs = '';
-    foreach ($value['tech_list'] as $tech){
-        $techs .= '<div class="related_tech">' . $tech['name'] . '</div>';
-    }
-    if ($key !=0 && ($key % 2 == 0)) {
-        $projects_list .= '</div>';
-        $projects_list .= '<div class="row">';
-    }
-    $projects_list .= '<div class="col-lg-6">
+$projects_list = '<div class="row">';
+if ($projects){
+	foreach ($projects as $key => $value) {
+		$techs = '';
+		foreach ($value['tech_list'] as $tech){
+			$techs .= '<div class="related_tech">' . $tech['name'] . '</div>';
+		}
+		if ($key !=0 && ($key % 2 == 0)) {
+			$projects_list .= '</div>';
+			$projects_list .= '<div class="row">';
+		}
+		$projects_list .= '<div class="col-lg-6">
                 <a href="/portfolio/view?id=' . $value['id'] .'">
                     <div class="item_image" style="background: #39675a url(' . $value['pictures']['main']['url'] . ') center no-repeat; background-size: cover;">
                     </div>
@@ -24,6 +25,7 @@ foreach ($projects as $key => $value) {
                     </div>
                 </a>
             </div>';
+	}
 }
 $projects_list .= '</div>';
 echo $projects_list;

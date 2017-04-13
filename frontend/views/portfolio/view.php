@@ -86,21 +86,27 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
         </div>
     </div>
 </section>
-<section class="related_projects">
-    <div class="container-fluid">
-        <div class="row">
-            <h3>RELATED PROJECTS</h3>
-            <div id="related_slider" class="carousel slide" data-ride="carousel">
-                <?php
-                    for ($i=0; $i<count($slider); $i++) {
-                        $active_class = $i==0 ? 'active' : '';
-                        $indicators .= '<li data-target="#related_slider" data-slide-to="' . $i . '" class="' . $active_class. '"></li> ';
+<?php
+if ($slider){
+?>
+    <section class="related_projects">
+        <div class="container-fluid">
+            <div class="row">
+                <h3>RELATED PROJECTS</h3>
+                <div id="related_slider" class="carousel slide" data-ride="carousel">
+					<?php
+					var_dump($slider);
+					die;
+					$indicators = '';
+					for ($i=0; $i<count($slider); $i++) {
+						$active_class = $i==0 ? 'active' : '';
+						$indicators .= '<li data-target="#related_slider" data-slide-to="' . $i . '" class="' . $active_class. '"></li> ';
 
-                        $techs = '';
-                        foreach ($slider[$i]['tech_list'] as $tech){
-                            $techs .= '<div class="related_tech">' . $tech['name'] . '</div>';
-                        }
-                        $carousel_items .= '
+						$techs = '';
+						foreach ($slider[$i]['tech_list'] as $tech){
+							$techs .= '<div class="related_tech">' . $tech['name'] . '</div>';
+						}
+						$carousel_items .= '
                         <div class="item ' . $active_class . '">
                             <div class="bg" style="background: #39675a url(' . $slider[$i]['pictures']['main']['url'] . ') center no-repeat; background-size: cover;"></div>
                             <div class="item_box clearfix">
@@ -120,23 +126,24 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
                                 <a class="read_more" href="/portfolio/view?id=' . $slider[$i]['id'] .'">Read more</a>
                             </div>
                         </div>';
-                    }
-                ?>
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <?=$indicators;?>
-                </ol>
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    <?=$carousel_items;?>
+					}
+					?>
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+						<?=$indicators;?>
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+						<?=$carousel_items;?>
+                    </div>
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#related_slider" role="button" data-slide="prev"></a>
+                    <a class="right carousel-control" href="#related_slider" role="button" data-slide="next"></a>
                 </div>
-                <!-- Left and right controls -->
-                <a class="left carousel-control" href="#related_slider" role="button" data-slide="prev"></a>
-                <a class="right carousel-control" href="#related_slider" role="button" data-slide="next"></a>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 <?php
+}
     echo $this->render('/site/_call_to_action');
 ?>
