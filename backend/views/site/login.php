@@ -21,11 +21,13 @@ $fieldOptions2 = [
 
 <div class="login-box">
     <div class="login-logo">
-        <a href="<?=Yii::getAlias('@frontend_url')?>"><b>Admin </b>Dashboard</a>
+        <a href="/">
+            <div id="admin_logo"></div>
+        </a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <p class="login-box-msg">Sign in to start your session</p>
+        <p class="login-box-msg">welcome back</p>
 
         <?php $form = ActiveForm::begin(['id' => 'login-form', 'enableClientValidation' => false]); ?>
 

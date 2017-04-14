@@ -36,5 +36,5 @@ use dmstr\widgets\Alert;
 </div>
 
 <footer class="main-footer">
-    <strong>Copyright &copy; 2017 <a target="_blank" href="http://outsoft.com">OutSoft</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; <?=date('Y');?> <a target="_blank" href="//fedirko.pro">FEDIRKO.PRO</a>.</strong> All rights reserved.
 </footer>

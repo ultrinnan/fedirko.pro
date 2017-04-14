@@ -17,21 +17,21 @@
         <?= dmstr\widgets\Menu::widget(
             [
                 'options' => ['class' => 'sidebar-menu'],
+                'encodeLabels' => true,
                 'items' => [
                     [
                         'label' => 'Go to Site Home',
-                        'icon' => 'fa fa-share',
-                        'url' => Yii::getAlias('@frontend_url'),
+                        'icon' => 'share',
+                        'url' => '/',
                     ],
-                    ['label' => 'Menu', 'options' => ['class' => 'header']],
+	                ['label' => 'Menu', 'options' => ['class' => 'header']],
                     [
                         'label' => 'Site settings',
-                        'icon' => 'fa fa-gears',
+                        'icon' => 'gears',
                         'url' => ['#'],
                         'items' => [
-                            ['label' => 'General', 'icon' => 'fa  fa-gear', 'url' => ['site-config/index']],
-                            ['label' => 'Administrators', 'icon' => 'fa  fa-user-secret', 'url' => ['admin/index']],
-                            ['label' => 'My profile', 'icon' => 'fa fa-user', 'url' => ['admin/view?id=' . Yii::$app->user->id]],
+                            ['label' => 'General', 'icon' => 'gear', 'url' => ['site-config/index']],
+                            ['label' => 'Family', 'icon' => 'users', 'url' => ['admin/index']],
                         ]
                     ],
                 ],

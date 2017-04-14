@@ -1,0 +1,12 @@
+.login-page {
+    background: url('/images/bg/fire_flower.jpg') center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+#admin_logo {
+    background: url('/images/logo_admin.png') no-repeat;
+    width: 326px;
+    height: 58px;
+    margin: auto;
+}
