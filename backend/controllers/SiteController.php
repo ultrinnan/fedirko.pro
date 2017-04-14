@@ -5,7 +5,7 @@ use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-use common\models\LoginForm;
+use backend\models\LoginAdminForm;
 
 /**
  * Site controller
@@ -26,7 +26,7 @@ class SiteController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout', 'index', 'site-settings', 'game-rules', 'game-defaults'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -79,7 +79,7 @@ class SiteController extends Controller
         }
         $this->layout = '/main-login';
 
-        $model = new LoginForm();
+        $model = new LoginAdminForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         } else {
@@ -101,4 +101,31 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
+    /**
+     * Displays general site settings.
+     *
+     * @return string
+     */
+    public function actionSiteSettings()
+    {
+        return $this->render('site-settings');
+    }
+    /**
+     * Displays general settings.
+     *
+     * @return string
+     */
+    public function actionGameRules()
+    {
+        return $this->render('game-rules');
+    }
+    /**
+     * Displays general settings.
+     *
+     * @return string
+     */
+    public function actionGameDefaults()
+    {
+        return $this->render('game-defaults');
+    }
 }

@@ -1,12 +1,7 @@
-assets/*
-!assets/.gitignore
-protected/runtime/*
-!protected/runtime/.gitignore
-protected/data/*.db
-themes/classic/views/
-
-# yii console command
+# yii console commands
 /yii
+/yii_test
+/yii_test.bat
 
 # phpstorm project files
 .idea
@@ -38,7 +33,4 @@ phpunit.phar
 
 # vagrant runtime
 /.vagrant
-/frontend/web/index.php
-/frontend/web/index-test.php
-/backend/web/index.php
-/backend/web/index-test.php
+/composer.lock

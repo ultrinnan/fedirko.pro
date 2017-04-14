@@ -1,6 +1,6 @@
 <?php
 use yii\helpers\Html;
-use common\models\User;
+use backend\models\Admin;
 use backend\models\SiteConfig;
 
 
@@ -11,7 +11,7 @@ use backend\models\SiteConfig;
 
 <header class="main-header">
     <?php
-    $admin = User::findIdentity(Yii::$app->user->id);
+    $admin = Admin::findIdentity(Yii::$app->user->id);
     ?>
 
     <?= Html::a('<span class="logo-mini"><i class="fa fa-qrcode"></i></span><span class="logo-lg"> ' . SiteConfig::option('site_name') . '</span>', Yii::$app->homeUrl, ['class' => 'logo']) ?>
@@ -28,18 +28,18 @@ use backend\models\SiteConfig;
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="<?= Yii::getAlias('@backend_url') ?>/dist/img/default_user.svg" class="user-image" alt="admin Image"/>
-                        <span class="hidden-xs"><?=$admin->username;?></span>
+                        <img src="<?= Yii::getAlias('@web') ?>/dist/img/default_user.svg" class="user-image" alt="admin Image"/>
+                        <span class="hidden-xs"><?=$admin->first_name;?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="<?= Yii::getAlias('@backend_url');?>/dist/img/default_user.svg" class="img-circle"
+                            <img src="<?= Yii::getAlias('@web');?>/dist/img/default_user.svg" class="img-circle"
                                  alt="User Image"/>
 
                             <p>
 <!--                                todo: add real admin credentials-->
-                                <?=$admin->username;?>
+                                <?=$admin->first_name . ' ' . $admin->last_name;?>
                                 <small>Administrator</small>
                             </p>
                         </li>

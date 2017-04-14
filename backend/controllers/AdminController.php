@@ -88,7 +88,6 @@ class AdminController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post())) {
-            $model->password_hash = Yii::$app->getSecurity()->generatePasswordHash($model->password);
             $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         } else {

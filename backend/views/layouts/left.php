@@ -21,7 +21,7 @@
                     [
                         'label' => 'Go to Site Home',
                         'icon' => 'fa fa-share',
-                        'url' => Yii::getAlias('@frontend_url'), //todo: fix this link later
+                        'url' => Yii::getAlias('@frontend_url'),
                     ],
                     ['label' => 'Menu', 'options' => ['class' => 'header']],
                     [
@@ -30,7 +30,8 @@
                         'url' => ['#'],
                         'items' => [
                             ['label' => 'General', 'icon' => 'fa  fa-gear', 'url' => ['site-config/index']],
-                            ['label' => 'Family', 'icon' => 'fa  fa-users', 'url' => ['user/index']],
+                            ['label' => 'Administrators', 'icon' => 'fa  fa-user-secret', 'url' => ['admin/index']],
+                            ['label' => 'My profile', 'icon' => 'fa fa-user', 'url' => ['admin/view?id=' . Yii::$app->user->id]],
                         ]
                     ],
                 ],
