@@ -25,15 +25,9 @@
                         'url' => '/',
                     ],
 	                ['label' => 'Menu', 'options' => ['class' => 'header']],
-                    [
-                        'label' => 'Site settings',
-                        'icon' => 'gears',
-                        'url' => ['#'],
-                        'items' => [
-                            ['label' => 'General', 'icon' => 'gear', 'url' => ['site-config/index']],
-                            ['label' => 'Family', 'icon' => 'users', 'url' => ['admin/index']],
-                        ]
-                    ],
+                    ['label' => 'General', 'icon' => 'gear', 'url' => ['site-config/index']],
+                    ['label' => 'Family', 'icon' => 'users', 'url' => ['admin/index']],
+                    ['label' => 'Projects', 'icon' => 'gear', 'url' => ['project/index']],
                 ],
             ]
         ) ?>
