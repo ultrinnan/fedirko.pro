@@ -10,3 +10,12 @@
     height: 58px;
     margin: auto;
 }
+
+.visible.fa {
+    cursor: pointer;
+    color: #337ab7;
+}
+.favorite.fa {
+    cursor: pointer;
+    color: #ffcc00;
+}

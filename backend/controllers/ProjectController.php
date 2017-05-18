@@ -8,6 +8,7 @@ use common\models\ProjectSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\Response;
 
 /**
  * ProjectController implements the CRUD actions for Project model.
@@ -39,7 +40,6 @@ class ProjectController extends Controller
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -119,6 +119,15 @@ class ProjectController extends Controller
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+
+    public function actionAddToFavorites(){
+        if (Yii::$app->request->isAjax) {
+            $flag = 777;
+            // .....
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            return ['flag' => $flag];
         }
     }
 }

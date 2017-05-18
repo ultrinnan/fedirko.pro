@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use common\models\Techs;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\ProjectSearch */
@@ -17,21 +18,58 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
+//        'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'by_serhii',
-            'by_mary',
+            [
+                'attribute' => 'author',
+                'label' => 'Author',
+                'value' => function($model) {
+                    if ($model->by_serhii && $model->by_mary){
+                        $concat = ', ';
+                    } else {
+                        $concat = '';
+                    }
+                    $serhii = $model->by_serhii ? 'Serhii' : '';
+                    $mary = $model->by_mary ? 'Mary' : '';
+                    return $serhii  . $concat . $mary ;
+                },
+            ],
+
+//            'by_serhii',
+//            'by_mary',
 //            'url:url',
             'name',
              'short_desc',
             // 'long_desc:ntext',
-             'engine',
-             'create_date',
+            [
+                'attribute' => 'engine',
+                'value' => function($model){
+                    $tech = Techs::getTech($model->engine);
+                    return $tech['name'];
+                }
+
+            ],
+            [
+                'attribute' => 'create_date',
+                'format' => ['date', 'php:d M Y, h:i:s']
+            ],
             // 'publish_date',
-             'status',
-             'favorite',
+            [
+                'attribute' => 'status',
+                'format' => 'raw',
+                'value' => function($model) {
+                    return $model->status ? '<i class="visible fa fa-eye" title="visible"></i>' : '<i class="visible fa fa-eye-slash" title="hidden"></i>';
+                },
+            ],
+            [
+                'attribute' => 'favorite',
+                'format' => 'raw',
+                'value' => function($model) {
+                    return $model->status ? '<i class="favorite fa fa-star" title="remove from favorites"></i>' : '<i class="favorite fa fa-star-o" title="add to favorites"></i>';
+                },
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

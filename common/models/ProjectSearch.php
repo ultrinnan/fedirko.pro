@@ -19,7 +19,7 @@ class ProjectSearch extends Project
     {
         return [
             [['id', 'by_serhii', 'by_mary', 'engine', 'status', 'favorite'], 'integer'],
-            [['url', 'name', 'short_desc', 'long_desc', 'create_date', 'publish_date'], 'safe'],
+            [['author', 'url', 'name', 'short_desc', 'long_desc', 'create_date', 'publish_date'], 'safe'],
         ];
     }
 
@@ -60,6 +60,7 @@ class ProjectSearch extends Project
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+//            'author' => $this->by_serhii . ' ' . $this->by_mary,
             'by_serhii' => $this->by_serhii,
             'by_mary' => $this->by_mary,
             'engine' => $this->engine,
