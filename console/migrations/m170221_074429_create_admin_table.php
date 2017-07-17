@@ -34,9 +34,9 @@ class m170221_074429_create_admin_table extends Migration
 
         $this->insert('{{%admin}}', [
             'id' => '1',
-            'email' => 'sergey@outsoft.com',
-            'first_name' => 'Admin',
-            'last_name' => 'Outsoft',
+            'email' => 'serhii@fedirko.pro',
+            'first_name' => 'Serhii',
+            'last_name' => 'Fedirko',
             'auth_key' => '_dUIjsVnWnbij3fBVEkrQeqme1BvuY3D',
             'password_hash' => '$2y$13$D7HuHhDG0KL7//BfeyB/p.9pyfz4HUZ05.ejU043SytnVlzjMF9c.', //outsoft_rulez
             'password_reset_token' => null,
