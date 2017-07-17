@@ -14,6 +14,7 @@ return [
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
+            'class' => 'frontend\components\LangRequest',
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -39,10 +40,26 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'class'=>'frontend\components\LangUrlManager',
             'rules' => [
+	            '/' => 'site/index',
+	            '<controller:\w+>/<action:\w+>/*'=>'<controller>/<action>',
                 '<alias:index|about|contact>' => 'site/<alias>',
                 '<controller>' => '<controller>/index', //как-то так должно работать
             ],
+        ],
+        'language'=>'en-EN',
+        'i18n' => [
+	        'translations' => [
+		        '*' => [
+			        'class' => 'yii\i18n\PhpMessageSource',
+			        'basePath' => '@frontend/messages',
+			        'sourceLanguage' => 'en',
+			        'fileMap' => [
+				        'gen' => 'general.php',
+			        ],
+		        ],
+	        ],
         ],
     ],
     'params' => $params,
