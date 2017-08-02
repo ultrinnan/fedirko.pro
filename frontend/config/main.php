@@ -43,7 +43,7 @@ return [
             'class'=>'frontend\components\LangUrlManager',
             'rules' => [
 	            '/' => 'site/index',
-	            '<controller:\w+>/<action:\w+>/*'=>'<controller>/<action>',
+	            '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
                 '<alias:index|about|contact>' => 'site/<alias>',
                 '<controller>' => '<controller>/index', //как-то так должно работать
             ],
