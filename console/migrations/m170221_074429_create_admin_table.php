@@ -32,19 +32,13 @@ class m170221_074429_create_admin_table extends Migration
             'updated_at' => $this->integer()->notNull(),
         ], $tableOptions);
 
-        $this->insert('{{%admin}}', [
-            'id' => '1',
-            'email' => 'sergey@outsoft.com',
-            'first_name' => 'Admin',
-            'last_name' => 'Outsoft',
-            'auth_key' => '_dUIjsVnWnbij3fBVEkrQeqme1BvuY3D',
-            'password_hash' => '$2y$13$D7HuHhDG0KL7//BfeyB/p.9pyfz4HUZ05.ejU043SytnVlzjMF9c.', //outsoft_rulez
-            'password_reset_token' => null,
-
-            'status' => 1,
-            'created_at' => time(),
-            'updated_at' => time(),
-        ]);
+        $this->batchInsert('{{%admin}}',
+            //default - drowcity
+            ['id', 'email', 'first_name', 'last_name', 'auth_key', 'password_hash', 'password_reset_token', 'status', 'created_at', 'updated_at'],
+            [
+                ['1', 'serhii@fedirko.pro', 'Serhii', 'Fedirko', '_dUIjsVnWnbij3fBVEkrQeqme1BvuY3D', '$2y$13$nyurQJZ9hoNzZnlEsWUlyeWIgOr8B9QH9j7yMPdwPDplBqQco/Mzm', null, 1, time(), time()],
+                ['2', 'mary@fedirko.pro', 'Mary', 'Fedirko', '_dUIjsVnWnbij3fBVEkrQeqme1BvuY3D', '$2y$13$nyurQJZ9hoNzZnlEsWUlyeWIgOr8B9QH9j7yMPdwPDplBqQco/Mzm', null, 1, time(), time()],
+            ]);
     }
 
     /**
