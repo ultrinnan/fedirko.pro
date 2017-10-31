@@ -212,7 +212,8 @@ $topItems = [
 </header>
 
 <main>
-	<?= WLang::widget();?>
+<!--    todo: uncomment after multilang will be ready on backend-->
+	<?//= WLang::widget();?>
 
     <div class="alert_box">
         <?= Alert::widget() ?>
