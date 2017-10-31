@@ -70,4 +70,9 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
+    public function actionStyleGuide()
+    {
+        return $this->render('style-guide');
+    }
+
 }

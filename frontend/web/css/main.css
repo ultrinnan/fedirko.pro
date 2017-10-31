@@ -527,13 +527,20 @@ blockquote {
     background: linear-gradient(to top, green, #24C619);
     color: #fff;
     padding: 5px 20px;
-    margin: -35px 0px 20px;
+    margin: -35px 0 20px;
     position: absolute;
     min-width: 20%;
 }
 .block-item img {
     margin: 10px 20px 10px 0;
 }
+
+/*style guide*/
+.style_guide {
+    background: black url('/images/bg/style_bg.jpg') center no-repeat;
+}
+
+
 /*---------------------------------------- content end ----------------------------------------*/
 
 /*---------------------------------------- footer start ----------------------------------------*/
