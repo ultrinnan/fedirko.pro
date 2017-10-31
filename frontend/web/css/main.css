@@ -17,12 +17,12 @@ header.small_header {
 }
 header .logo,
 footer .logo {
-    background: url(/images/logo_white.png) no-repeat;
+    background: url('/images/logo_white.png') no-repeat;
     width: 260px;
     height: 47px;
 }
 header.small_header .logo {
-    background: url(/images/logo.png) no-repeat;
+    background: url('/images/logo.png') no-repeat;
     width: 260px;
     height: 47px;
 }
@@ -126,6 +126,38 @@ li.dropdown:hover .dropdown-menu a:hover {
 li.dropdown:hover .dropdown-menu .active a {
     background: #84a580;
     color: white;
+}
+
+#lang {
+    position: absolute;
+    z-index: 999;
+    top: 80px;
+    right: 0;
+}
+a.lang_box {
+    display: block;
+    text-decoration: none;
+    font-size: 16px;
+    border: 2px solid #39675a;
+    border-radius: 2px;
+    border-right: 0;
+    padding: 0 8px;
+    margin: 2px 0;
+    cursor: pointer;
+    width: 100px;
+    position: relative;
+    left: 71px;
+}
+a.lang_box:hover {
+    color: #84a580;
+    border: 2px solid #84a580;
+    border-right: 0;
+    left: 0;
+    transition: 0.5s;
+}
+a.lang_box.active {
+    color: #84a580;
+    border: 2px solid #84a580;
 }
 /*---------------------------------------- header end ----------------------------------------*/
 

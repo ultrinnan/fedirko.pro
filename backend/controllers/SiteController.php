@@ -26,7 +26,7 @@ class SiteController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index', 'site-settings', 'game-rules', 'game-defaults'],
+                        'actions' => ['logout', 'index', 'site-settings', 'player'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -110,22 +110,9 @@ class SiteController extends Controller
     {
         return $this->render('site-settings');
     }
-    /**
-     * Displays general settings.
-     *
-     * @return string
-     */
-    public function actionGameRules()
+
+    public function actionPlayer()
     {
-        return $this->render('game-rules');
-    }
-    /**
-     * Displays general settings.
-     *
-     * @return string
-     */
-    public function actionGameDefaults()
-    {
-        return $this->render('game-defaults');
+    	return $this->render('player');
     }
 }

@@ -7,6 +7,7 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
+use frontend\widgets\WLang;
 
 AppAsset::register($this);
 
@@ -211,6 +212,9 @@ $topItems = [
 </header>
 
 <main>
+<!--    todo: uncomment after multilang will be ready on backend-->
+	<?//= WLang::widget();?>
+
     <div class="alert_box">
         <?= Alert::widget() ?>
     </div>

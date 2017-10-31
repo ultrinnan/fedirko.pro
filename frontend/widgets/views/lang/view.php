@@ -2,14 +2,12 @@
 use yii\helpers\Html;
 ?>
 <div id="lang">
-    <span id="current-lang">
-        <?= $current->name;?> <span class="show-more-lang">▼</span>
-    </span>
-	<ul id="langs">
-		<?php foreach ($langs as $lang):?>
-			<li class="item-lang">
-				<?= Html::a($lang->name, '/'.$lang->url.Yii::$app->getRequest()->getLangUrl()) ?>
-			</li>
-		<?php endforeach;?>
-	</ul>
+		<?php foreach ($langs as $lang){
+		    if ($current->name == $lang->name){
+		        echo Html::a($lang->name, '/'.$lang->url.Yii::$app->getRequest()->getLangUrl(), ['class' => 'lang_box active']);
+		    } else {
+			    echo Html::a($lang->name, '/'.$lang->url.Yii::$app->getRequest()->getLangUrl(), ['class' => 'lang_box']);
+		    }
+        }
+        ?>
 </div>

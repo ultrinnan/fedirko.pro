@@ -28,6 +28,7 @@
                     ['label' => 'General', 'icon' => 'gear', 'url' => ['site-config/index']],
                     ['label' => 'Family', 'icon' => 'users', 'url' => ['admin/index']],
                     ['label' => 'Projects', 'icon' => 'gear', 'url' => ['project/index']],
+                    ['label' => 'Player', 'icon' => 'music', 'url' => ['site/player']],
                 ],
             ]
         ) ?>
