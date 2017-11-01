@@ -13,6 +13,7 @@ return [
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'request' => [
+	        'baseUrl' => '',
             'csrfParam' => '_csrf-frontend',
             'class' => 'frontend\components\LangRequest',
         ],
@@ -42,10 +43,10 @@ return [
             'showScriptName' => false,
             'class'=>'frontend\components\LangUrlManager',
             'rules' => [
-	            '/' => 'site/index',
+	            '' => 'site/index',
 	            '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-                '<alias:index|about|contact>' => 'site/<alias>',
-                '<controller>' => '<controller>/index', //как-то так должно работать
+                '<alias:\w+>' => 'site/<alias>',
+                '<controller>' => '<controller>/index', //show default actions
             ],
         ],
         'language'=>'en-EN',

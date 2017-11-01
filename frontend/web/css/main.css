@@ -17,12 +17,12 @@ header.small_header {
 }
 header .logo,
 footer .logo {
-    background: url('/images/logo_white.png') no-repeat;
+    background: url('../images/logo_white.png') no-repeat;
     width: 260px;
     height: 47px;
 }
 header.small_header .logo {
-    background: url('/images/logo.png') no-repeat;
+    background: url('../images/logo.png') no-repeat;
     width: 260px;
     height: 47px;
 }
@@ -57,7 +57,7 @@ header.small_header .logo {
     display: block;
     content: "";
     height: 2px;
-    width: 0%;
+    width: 0;
     background-color: white;
     transition: width .2s ease-in-out;
 }
@@ -162,20 +162,37 @@ a.lang_box.active {
 /*---------------------------------------- header end ----------------------------------------*/
 
 /*---------------------------------------- content start ----------------------------------------*/
-main {
-    min-height: calc(100vh - 360px);
+
+.first.error_page h1 {
+    margin: 50px 0;
+}
+#go_home {
+    color: white;
+    border: 2px solid white;
+    display: inline-block;
+    padding: 15px 20px;
+    border-radius: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#go_home:hover {
+    color: #39675a;
+    background: white;
+    transition: .5s;
 }
 
 .first {
-    padding-top: 91px;
-    min-height: calc(100vh - 360px);
+    padding: 91px 0;
+    min-height: 30vh;
     position: relative;
-    /*background: #39675a;*/
+    background: #39675a;
     color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    /*background-position: 50% 0;*/
+    background-size: cover;
 }
 .first h1 {
-    margin: 150px auto;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5)
+    margin: 72px auto 0;
 }
 
 .first_bg {
@@ -188,7 +205,7 @@ main {
 }
 
 .contact_page {
-    background: #39675a url('/images/bg/contactus-bg.jpg') center no-repeat;
+    background: #39675a url('../images/bg/contactus-bg.jpg') center no-repeat;
 }
 #contact-form {
     width: 60%;
@@ -197,13 +214,13 @@ main {
 
 /*------------------------- portfolio start ------------------------------*/
 .portfolio_main {
-    background: #39675a url('/images/bg/portfolio_bg.jpg') center no-repeat;
+    background: #39675a url('../images/bg/portfolio_bg.jpg') center no-repeat;
 }
 .portfolio_mary {
-    background: #39675a url('/images/bg/mary_bg.jpg') center no-repeat;
+    background: #39675a url('../images/bg/mary_bg.jpg') center no-repeat;
 }
 .portfolio_serhii {
-    background: #39675a url('/images/bg/serhii_bg.jpg') center no-repeat;
+    background: #39675a url('../images/bg/serhii_bg.jpg') center no-repeat;
 }
 
 .portfolio a {
@@ -348,7 +365,7 @@ a.read_more:hover {
 
 /*------------------------ main page start --------------------------*/
 .main_page {
-    background: #39675a url('/images/bg/space_bg.jpg') center no-repeat;
+    background: #39675a url('../images/bg/space_bg.jpg') center no-repeat;
 }
 
 a.service {
@@ -373,47 +390,47 @@ a.service:hover {
     margin: auto;
 }
 .service .icon.web {
-    background: url('/images/icons/internet.png');
+    background: url('../images/icons/internet.png');
 }
 .service .icon.mobile {
-    background: url('/images/icons/smartphone.png');
+    background: url('../images/icons/smartphone.png');
 }
 .service .icon.cloud {
-    background: url('/images/icons/cloud.png');
+    background: url('../images/icons/cloud.png');
 }
 .service.cloud {
 
 }
 .service:hover.cloud {
-    background: url('/images/cloud.jpg');
+    background: url('../images/cloud.jpg');
 }
 .service .icon.full_stack {
-    background: url('/images/icons/settings.png');
+    background: url('../images/icons/settings.png');
 }
 .service .icon.qa {
-    background: url('/images/icons/like.png');
+    background: url('../images/icons/like.png');
 }
 .service .icon.help {
-    background: url('/images/icons/help.png');
+    background: url('../images/icons/help.png');
 }
 
 .service:hover .icon.web {
-    background: url('/images/icons/internet_w.png');
+    background: url('../images/icons/internet_w.png');
 }
 .service:hover .icon.mobile {
-    background: url('/images/icons/smartphone_w.png');
+    background: url('../images/icons/smartphone_w.png');
 }
 .service:hover .icon.cloud {
-    background: url('/images/icons/cloud_w.png');
+    background: url('../images/icons/cloud_w.png');
 }
 .service:hover .icon.full_stack {
-    background: url('/images/icons/settings_w.png');
+    background: url('../images/icons/settings_w.png');
 }
 .service:hover .icon.qa {
-    background: url('/images/icons/like_w.png');
+    background: url('../images/icons/like_w.png');
 }
 .service:hover .icon.help {
-    background: url('/images/icons/help_w.png');
+    background: url('../images/icons/help_w.png');
 }
 
 .service h4 {
@@ -450,7 +467,7 @@ a.service:hover h4 {
 /*------------------------ main page end --------------------------*/
 
 .poc {
-    background: black url('/images/bg/poc1.jpg') center no-repeat;
+    background: black url('../images/bg/poc1.jpg') center no-repeat;
 }
 
 .poc_box {
@@ -515,16 +532,14 @@ blockquote {
 /*todo: remove this 2 in portfolio*/
 .block-item {
     display: table;
-    border: 3px solid;
-    border-color: #24C619;
+    border: 3px solid #39675a;
     padding: 20px 50px;
     margin-top: 20px;
     width: 92%;
     position: relative;
 }
-
 .block-item .title {
-    background: linear-gradient(to top, green, #24C619);
+    background: #39675a;
     color: #fff;
     padding: 5px 20px;
     margin: -35px 0 20px;
@@ -537,7 +552,7 @@ blockquote {
 
 /*style guide*/
 .style_guide {
-    background: black url('/images/bg/style_bg.jpg') center no-repeat;
+    background: black url('../images/bg/style_bg.jpg') center no-repeat;
 }
 
 

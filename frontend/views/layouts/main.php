@@ -170,7 +170,7 @@ $topItems = [
     ],
     [
         'label' => 'Contact us',
-        'url' => ['site/contact'],
+        'url' => ['/contact'],
         'options' => ['id' => 'contact_button'],
     ],
 ];
@@ -211,7 +211,7 @@ $topItems = [
     </div>
 </header>
 
-<main>
+<content>
 <!--    todo: uncomment after multilang will be ready on backend-->
 	<?//= WLang::widget();?>
 
@@ -219,7 +219,7 @@ $topItems = [
         <?= Alert::widget() ?>
     </div>
     <?= $content ?>
-</main>
+</content>
 
 <footer>
     <div class="container">

@@ -8,6 +8,8 @@
 use yii\helpers\Html;
 
 $this->title = $name;
+
+$this->registerCss(".first { background: url('/images/bg/404.jpg')no-repeat center center fixed;}");
 ?>
 
 <section class="first error_page">

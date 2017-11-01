@@ -1,0 +1,27 @@
+{
+  "name": "fedirko.pro",
+  "version": "1.0.0",
+  "description": "Personal site for family of professionals",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ultrinnan/fedirko.pro.git"
+  },
+  "keywords": [
+    "fedirko",
+    "fedirko.pro",
+    "web",
+    "solution",
+    "development",
+    "fullstack"
+  ],
+  "author": "Serhii Fedirko",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ultrinnan/fedirko.pro/issues"
+  },
+  "homepage": "https://github.com/ultrinnan/fedirko.pro#readme"
+}
