@@ -12,8 +12,8 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
+//    	todo: move fancybox to separate asset
         'js/fancybox/source/jquery.fancybox.css?v=2.1.5',
-        'css/common.css',
         'css/main.css',
     ];
     public $js = [
