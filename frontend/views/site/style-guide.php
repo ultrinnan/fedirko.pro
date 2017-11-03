@@ -3,21 +3,23 @@
 /* @var $this yii\web\View */
 
 $this->title = 'Style guide';
+
+$this->registerCss(".first { background: url('/images/bg/style_bg.jpg') no-repeat center; background-size: cover;}");
 ?>
-<section class="first style_guide">
+<section class="first">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-12">
                 <h1><?=$this->title;?></h1>
             </div>
         </div>
     </div>
 </section>
 
-<section>
+<section class="style_guide">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-12">
                 <blockquote cite="https://www.wikipedia.org/">
                     <p>A style guide (or manual of style) is a set of standards for the writing and design of documents, either for general use or for a specific publication, organization, or field. (It is often called a style sheet, though that term has other meanings.)</p>
                     <p>A style guide establishes and enforces style to improve communication. To do that, it ensures consistency within a document and across multiple documents and enforces best practice in usage and in language composition, visual composition, orthography and typography. For academic and technical documents, a guide may also enforce the best practice in ethics (such as authorship, research ethics, and disclosure), pedagogy (such as exposition and clarity), and compliance (technical and regulatory).</p>
@@ -29,7 +31,20 @@ $this->title = 'Style guide';
 
         <div class="row">
             <div class="col-md-12">
+                <h3>Images and backgrounds</h3>
                 <p>Full HD (1920 × 1080 progressive scan)</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Buttons, inputs and controls</h3>
+                <div class="center">
+                    <a class="button white_button" href="#">Button</a>
+                    <a class="button light_button" href="#">Button</a>
+                    <a class="button dark_button" href="#">Button</a>
+                    <a class="button red_button" href="#">Button</a>
+                </div>
             </div>
         </div>
     </div>

@@ -155,6 +155,14 @@ $mainItems = [
 ];
 $topItems = [
     [
+        'label' => 'portfolio2',
+        'url' => ['/portfolio/index2'],
+    ],
+    [
+        'label' => 'portfolio3',
+        'url' => ['/portfolio/index3'],
+    ],
+    [
         'label' => 'portfolio',
         'url' => ['/portfolio/index'],
         'items' => [

@@ -4,13 +4,15 @@ use yii\helpers\Url;
 use yii\helpers\Html;
 /* @var $this yii\web\View */
 
-$this->title = 'Sergey\'s Portfolio';
+$this->title = 'Serhii\'s Portfolio';
+
+$this->registerCss(".first { background: url('/images/bg/serhii_bg.jpg') no-repeat center; background-size: cover;}");
 ?>
 
 <section class="first portfolio_serhii">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-12">
                 <h1>SERHII'S PORTFOLIO</h1>
             </div>
         </div>
@@ -22,7 +24,7 @@ $this->title = 'Sergey\'s Portfolio';
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-12">
                 <div class="block-item">
                     <div class="title">
                         DINADIS

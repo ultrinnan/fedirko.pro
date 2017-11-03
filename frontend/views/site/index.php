@@ -3,11 +3,13 @@
 /* @var $this yii\web\View */
 
 $this->title = 'FEDIRKO.PRO - full stack web development';
+
+$this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repeat center; background-size: cover;}");
 ?>
 <section class="first main_page">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-12">
                 <h1>WE BUILD AMAZING WEB SOLUTIONS<br>FOR BUSINESS AND LIFE</h1>
             </div>
         </div>
@@ -16,7 +18,7 @@ $this->title = 'FEDIRKO.PRO - full stack web development';
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-12">
                 <h2>ADVANCED WEB & MOBILE SOLUTIONS<br>ENTERPRISE APPS & PORTALS</h2>
                 <h3>Full-cycle servicing that covers every aspect of production and implementation of ideas</h3>
             </div>
@@ -27,21 +29,21 @@ $this->title = 'FEDIRKO.PRO - full stack web development';
     <div class="container">
 <!--        todo: hover images-->
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-md-4">
                 <a href="#" class="service">
                     <div class="icon web"></div>
                     <h4>ADVANCED WEB</h4>
                     <div class="desc">Productive, engaging and reliable web solutions for business outcomes you deserve.</div>
                 </a>
             </div>
-            <div class="col-lg-4">
+            <div class="col-md-4">
                 <a href="#" class="service">
                     <div class="icon mobile"></div>
                     <h4>MOBILE SOLUTIONS</h4>
                     <div class="desc">Mobile integrations and custom tools development for your business.</div>
                 </a>
             </div>
-            <div class="col-lg-4">
+            <div class="col-md-4">
                 <a href="#" class="service">
                     <div class="icon help"></div>
                     <h4>Help and support</h4>
@@ -50,21 +52,21 @@ $this->title = 'FEDIRKO.PRO - full stack web development';
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-md-4">
                 <a href="#" class="service">
                     <div class="icon qa"></div>
                     <h4>QUALITY ASSURANCE</h4>
                     <div class="desc">Hands-on quality assurance expertise weaved into your development lifecycle.</div>
                 </a>
             </div>
-            <div class="col-lg-4">
+            <div class="col-md-4">
                 <a href="#" class="service">
                     <div class="icon full_stack"></div>
                     <h4>FULL-CYCLE DEVELOPMENT</h4>
                     <div class="desc">Full spectrum of development services spiced with flexible engagement models.</div>
                 </a>
             </div>
-            <div class="col-lg-4">
+            <div class="col-md-4">
                 <a href="#" class="service cloud">
                     <div class="icon cloud"></div>
                     <h4>CLOUD</h4>
@@ -86,7 +88,7 @@ $this->title = 'FEDIRKO.PRO - full stack web development';
 <section class="favorite_works">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-12">
                 <h2><span class="green_header">MORE THAN 35<span title="some projects are hidden according to NDA" style="cursor: pointer;">*</span></span> COMPLETED PROJECTS</h2>
                 <p>We deliver globally, providing result-driven project management and seamless communication.</p>
                 <p>Our solutions yield benefit in Internet-facing, corporate and hybrid environments.</p>

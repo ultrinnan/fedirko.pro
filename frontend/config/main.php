@@ -46,7 +46,7 @@ return [
 	            '' => 'site/index',
 	            '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
                 '<alias:\w+>' => 'site/<alias>',
-                '<controller>' => '<controller>/index', //show default actions
+                '<controller>' => '<controller>/index', //for default actions
             ],
         ],
         'language'=>'en-EN',

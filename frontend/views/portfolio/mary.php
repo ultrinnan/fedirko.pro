@@ -3,6 +3,8 @@
 /* @var $this yii\web\View */
 
 $this->title = 'Mary\'s Portfolio';
+
+$this->registerCss(".first { background: url('/images/bg/mary_bg.jpg') no-repeat center; background-size: cover;}");
 ?>
 <style>
     .work a {
@@ -13,7 +15,7 @@ $this->title = 'Mary\'s Portfolio';
 <section class="first portfolio_mary">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-12">
                 <h1>MARY'S PORTFOLIO</h1>
             </div>
         </div>
@@ -25,7 +27,7 @@ $this->title = 'Mary\'s Portfolio';
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-12">
                 <div class="container">
                     <h3 class="text-center">Домашние задания GoIT FrontEND</h3>
                     <h4 class="text-center">Markup</h4>
