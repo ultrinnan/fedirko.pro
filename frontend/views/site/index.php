@@ -30,22 +30,22 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
 <!--        todo: hover images-->
         <div class="row">
             <div class="col-md-4">
-                <a href="#" class="service">
-                    <div class="icon web"></div>
+                <a href="#" class="service web">
+                    <div class="icon"></div>
                     <h4>ADVANCED WEB</h4>
                     <div class="desc">Productive, engaging and reliable web solutions for business outcomes you deserve.</div>
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="#" class="service">
-                    <div class="icon mobile"></div>
+                <a href="#" class="service mobile">
+                    <div class="icon"></div>
                     <h4>MOBILE SOLUTIONS</h4>
                     <div class="desc">Mobile integrations and custom tools development for your business.</div>
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="#" class="service">
-                    <div class="icon help"></div>
+                <a href="#" class="service help">
+                    <div class="icon"></div>
                     <h4>Help and support</h4>
                     <div class="desc">Excellent solution for fast recovery or fix of your existing projects.</div>
                 </a>
@@ -53,22 +53,22 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
         </div>
         <div class="row">
             <div class="col-md-4">
-                <a href="#" class="service">
-                    <div class="icon qa"></div>
+                <a href="#" class="service qa">
+                    <div class="icon"></div>
                     <h4>QUALITY ASSURANCE</h4>
                     <div class="desc">Hands-on quality assurance expertise weaved into your development lifecycle.</div>
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="#" class="service">
-                    <div class="icon full_stack"></div>
+                <a href="#" class="service full_stack">
+                    <div class="icon"></div>
                     <h4>FULL-CYCLE DEVELOPMENT</h4>
                     <div class="desc">Full spectrum of development services spiced with flexible engagement models.</div>
                 </a>
             </div>
             <div class="col-md-4">
                 <a href="#" class="service cloud">
-                    <div class="icon cloud"></div>
+                    <div class="icon"></div>
                     <h4>CLOUD</h4>
                     <div class="desc">Powerful cloud-based solutions fused with creative design for private, hybrid & public platforms.</div>
                 </a>

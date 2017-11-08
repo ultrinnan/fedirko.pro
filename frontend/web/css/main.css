@@ -607,35 +607,62 @@ a.service {
 }
 a.service:hover {
     color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    /*transition: .5s;*/
 }
 .service .icon {
     width: 100px;
     height: 100px;
     margin: auto;
 }
-.service .icon.web {
+
+.service.web .icon {
     background: url('../images/icons/internet.png');
 }
-.service .icon.mobile {
+.service.mobile .icon {
     background: url('../images/icons/smartphone.png');
 }
-.service .icon.cloud {
-    background: url('../images/icons/cloud.png');
+.service.help .icon {
+    background: url('../images/icons/help.png');
 }
-.service.cloud {
-
-}
-.service:hover.cloud {
-    background: url('../images/cloud.jpg');
-}
-.service .icon.full_stack {
-    background: url('../images/icons/settings.png');
-}
-.service .icon.qa {
+.service.qa .icon {
     background: url('../images/icons/like.png');
 }
-.service .icon.help {
+.service.full_stack .icon {
+    background: url('../images/icons/settings.png');
+}
+.service.cloud .icon {
+    background: url('../images/icons/cloud.png');
+}
+/* services hovers*/
+.service.web:hover {
+    background: url('../images/services/advanced_web_small.jpg');
+    opacity: 1;
+    transition: .5s;
+}
+.service.web:hover .icon {
+    background: url('../images/icons/internet_w.png');
+}
+.service.mobile:hover {
+    background: url('../images/services/mobile_solutions_small.jpg');
+}
+.service.mobile:hover .icon {
+    background: url('../images/icons/smartphone_w.png');
+}
+.service.help .icon {
     background: url('../images/icons/help.png');
+}
+.service.qa .icon {
+    background: url('../images/icons/like.png');
+}
+.service.full_stack .icon {
+    background: url('../images/icons/settings.png');
+}
+.service.cloud .icon {
+    background: url('../images/icons/cloud.png');
+}
+.service.cloud:hover {
+    background: url('../images/services/cloud_small.jpg');
 }
 
 .service:hover .icon.web {
