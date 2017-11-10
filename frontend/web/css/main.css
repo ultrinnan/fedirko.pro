@@ -637,8 +637,6 @@ a.service:hover {
 /* services hovers*/
 .service.web:hover {
     background: url('../images/services/advanced_web_small.jpg');
-    opacity: 1;
-    transition: .5s;
 }
 .service.web:hover .icon {
     background: url('../images/icons/internet_w.png');
@@ -649,39 +647,40 @@ a.service:hover {
 .service.mobile:hover .icon {
     background: url('../images/icons/smartphone_w.png');
 }
-.service.help .icon {
-    background: url('../images/icons/help.png');
+.service.help:hover {
+    background: url('../images/services/help_support_small.jpg');
 }
-.service.qa .icon {
-    background: url('../images/icons/like.png');
+.service.help:hover .icon {
+    background: url('../images/icons/help_w.png');
 }
-.service.full_stack .icon {
-    background: url('../images/icons/settings.png');
+.service.qa:hover {
+    background: url('../images/services/quality_small.jpg');
 }
-.service.cloud .icon {
-    background: url('../images/icons/cloud.png');
+.service.qa:hover .icon {
+    background: url('../images/icons/like_w.png');
+}
+.service.full_stack:hover {
+    background: url('../images/services/development_small.jpg');
+    position: relative;
+}
+.service.full_stack:hover::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+.service.full_stack:hover .icon {
+    background: url('../images/icons/settings_w.png');
 }
 .service.cloud:hover {
     background: url('../images/services/cloud_small.jpg');
 }
-
-.service:hover .icon.web {
-    background: url('../images/icons/internet_w.png');
-}
-.service:hover .icon.mobile {
-    background: url('../images/icons/smartphone_w.png');
-}
-.service:hover .icon.cloud {
+.service.cloud:hover .icon {
     background: url('../images/icons/cloud_w.png');
-}
-.service:hover .icon.full_stack {
-    background: url('../images/icons/settings_w.png');
-}
-.service:hover .icon.qa {
-    background: url('../images/icons/like_w.png');
-}
-.service:hover .icon.help {
-    background: url('../images/icons/help_w.png');
 }
 
 .service h4 {

@@ -46,7 +46,7 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
             <div class="col-md-4">
                 <a href="#" class="service help">
                     <div class="icon"></div>
-                    <h4>Help and support</h4>
+                    <h4>HELP AND SUPPORT</h4>
                     <div class="desc">Excellent solution for fast recovery or fix of your existing projects.</div>
                 </a>
             </div>
@@ -60,7 +60,7 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="#" class="service full_stack">
+                <a href="#" class="service full_stack clearfix">
                     <div class="icon"></div>
                     <h4>FULL-CYCLE DEVELOPMENT</h4>
                     <div class="desc">Full spectrum of development services spiced with flexible engagement models.</div>
