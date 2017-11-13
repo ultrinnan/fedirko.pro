@@ -249,11 +249,11 @@ h1 {
 }
 h2 {
     font-size: 50px;
-    margin-top: 30px;
+    margin-top: 32px;
 }
 h3 {
     font-size: 40px;
-    margin-top: 20px;
+    margin-top: 24px;
 }
 
 a,
@@ -403,6 +403,9 @@ a.red_button:hover {
 
 /* ---------- 404 page start ---------- */
 
+.error_page {
+    padding: 64px;
+}
 /*todo: something fun*/
 
 /* ---------- 404 page end ---------- */
@@ -873,9 +876,6 @@ footer a:hover {
 }
 .footer_list .main {
     min-width: 260px;
-}
-.footer_list .col-md-2 {
-    width: 18.5%;
 }
 .footer_copy {
     margin-top: 20px;

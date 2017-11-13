@@ -12,48 +12,48 @@ use frontend\widgets\WLang;
 AppAsset::register($this);
 
 $mainItems = [
-//    [
-//        'label' => 'professionals',
-//        'url' => Yii::$app->homeUrl,
-//        'items' => [
-//            [
-//                'label' => 'Serhii\'s CV',
-//                'url' => '/cv-sergey',
-//            ],
-//            [
-//                'label' => 'Mary\'s CV',
-//                'url' => '/cv-mary',
-//            ],
+    [
+        'label' => 'professionals',
+        'url' => Yii::$app->homeUrl,
+        'items' => [
+            [
+                'label' => 'Serhii\'s CV',
+                'url' => '/cv-sergey',
+            ],
+            [
+                'label' => 'Mary\'s CV',
+                'url' => '/cv-mary',
+            ],
 //            [
 //                'label' => 'Methodology',
-//                'url' => ['/methodology'],
+//                'url' => '/methodology',
 //            ],
 //            [
 //                'label' => 'Business Continuity',
-//                'url' => ['/business-continuity'],
+//                'url' => '/business-continuity',
 //            ],
 //            [
 //                'label' => 'Quality Management',
-//                'url' => ['/quality-management'],
+//                'url' => '/quality-management',
 //            ],
 //            [
 //                'label' => 'Security and IP Protection',
-//                'url' => ['/security-ip-protection'],
+//                'url' => '/security-ip-protection',
 //            ],
 //            [
 //                'label' => 'Engagement Models',
-//                'url' => ['/engagement-models'],
+//                'url' => '/engagement-models',
 //            ],
-//        ]
-//    ],
-//    [
-//        'label' => 'expertise',
-//        'url' => ['/expertise/index'],
-//        'items' => [
-//            [
-//                'label' => 'Proof of Concept',
-//                'url' => '/expertise/proof-of-concept',
-//            ],
+        ]
+    ],
+    [
+        'label' => 'expertise',
+        'url' => '/expertise/index',
+        'items' => [
+            [
+                'label' => 'Proof of Concept',
+                'url' => '/expertise/proof-of-concept',
+            ],
 //            [
 //                'label' => 'Web and Enterprise Portals',
 //                'url' => '/web-enterprise-portal-development',
@@ -86,45 +86,45 @@ $mainItems = [
 //                'label' => 'Mobility',
 //                'url' => '/mobility',
 //            ],
-//        ]
-//    ],
-//    [
-//        'label' => 'services',
-//        'url' => ['/services/index'],
-//        'items' => [
-//            [
-//                'label' => 'Requirements Engineering',
-//                'url' => '/services/requirements-engineering',
-//            ],
-//            [
-//                'label' => 'Prototyping &amp; UXD',
-//                'url' => '/services/design-usability',
-//            ],
-//            [
-//                'label' => 'Application Development',
-//                'url' => '/services/custom-software-development',
-//            ],
-//            [
-//                'label' => 'Application Integration',
-//                'url' => '/services/application-integration',
-//            ],
-//            [
-//                'label' => 'Application Security',
-//                'url' => '/application-security',
-//            ],
-//            [
-//                'label' => 'QA and Testing',
-//                'url' => '/services/quality-assurance-testing',
-//            ],
-//            [
-//                'label' => 'Maintenance and Support',
-//                'url' => '/services/maintenance-and-support',
-//            ],
-//        ],
-//    ],
+        ]
+    ],
+    [
+        'label' => 'services',
+        'url' => '/services/index',
+        'items' => [
+            [
+                'label' => 'Requirements Engineering',
+                'url' => '/services/requirements-engineering',
+            ],
+            [
+                'label' => 'Prototyping &amp; UXD',
+                'url' => '/services/design-usability',
+            ],
+            [
+                'label' => 'Application Development',
+                'url' => '/services/custom-software-development',
+            ],
+            [
+                'label' => 'Application Integration',
+                'url' => '/services/application-integration',
+            ],
+            [
+                'label' => 'Application Security',
+                'url' => '/application-security',
+            ],
+            [
+                'label' => 'QA and Testing',
+                'url' => '/services/quality-assurance-testing',
+            ],
+            [
+                'label' => 'Maintenance and Support',
+                'url' => '/services/maintenance-and-support',
+            ],
+        ],
+    ],
 //    [
 //        'label' => 'technologies',
-//        'url' => ['/technologies/index'],
+//        'url' => '/technologies/index',
 //        'items' => [
 //            [
 //                'label' => 'PHP',
@@ -155,33 +155,26 @@ $mainItems = [
 ];
 $topItems = [
     [
-        'label' => 'portfolio2',
-        'url' => ['/portfolio/index2'],
-    ],
-    [
-        'label' => 'portfolio3',
-        'url' => ['/portfolio/index3'],
-    ],
-    [
         'label' => 'portfolio',
-        'url' => ['/portfolio/index'],
+        'url' => '/portfolio/index',
         'items' => [
             [
                 'label' => 'Serhii\'s portfolio',
-                'url' => ['/portfolio/serhii'],
+                'url' => '/portfolio/serhii',
             ],
             [
                 'label' => 'Mary\'s portfolio',
-                'url' => ['/portfolio/mary'],
+                'url' => '/portfolio/mary',
             ],
         ],
     ],
     [
         'label' => 'Contact us',
-        'url' => ['/contact'],
+        'url' => '/contact',
         'options' => ['id' => 'contact_button'],
     ],
 ];
+//var_dump($mainItems);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -232,7 +225,7 @@ $topItems = [
 <footer>
     <div class="container">
         <div class="row footer_list">
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <a href="<?=Yii::$app->homeUrl?>"><div class="logo"></div></a>
                 <div class="footer_phones">
                     <a href="tel:+380668803111">+3 8 066 880 3 111</a>
@@ -245,16 +238,24 @@ $topItems = [
                 <div><a href="#">Web development blog</a></div>
             </div>
             <?php
-            foreach ($mainItems as $col) {
-                echo '<div class="col-md-2">';
-                echo '<div class="footer_title"><a href="' . $col['url']. '">' . $col['label']. '</a></div>';
-                foreach ($col['items'] as $item) {
+            foreach ($mainItems as $columns) {
+	            echo '<div class="col-md-2">';
+	            echo '<div class="footer_title"><a href="' . $columns['url']. '">' . $columns['label']. '</a></div>';
+                foreach ($columns['items'] as $item) {
                     echo '<a href="' . $item['url']. '">' . $item['label'] . '</a><br>';
                 }
 
                 echo '</div>';
             }
             ?>
+            <div class="col-md-2">
+                <div class="footer_title">
+                    <a href="/interesting">See also</a>
+                </div>
+                <a href="#">One</a><br>
+                <a href="#">Two</a><br>
+                <a href="#">Three</a><br>
+            </div>
         </div>
     </div>
     <div class="container-fluid">
