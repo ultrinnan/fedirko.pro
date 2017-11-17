@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 use common\models\ProjectsPictures;
 use common\models\ProjectsTech;
 use common\models\Techs;
@@ -20,7 +21,10 @@ use common\models\Techs;
  * @property integer $engine
  * @property string $create_date
  * @property string $publish_date
+ * @property integer $created_at
+ * @property integer $updated_at
  * @property integer $status
+ * @property integer $favorite
  */
 class Project extends \yii\db\ActiveRecord
 {
@@ -32,13 +36,26 @@ class Project extends \yii\db\ActiveRecord
         return 'projects';
     }
 
+	public function behaviors()
+	{
+		return [
+			'timestamp' => [
+				'class' => 'yii\behaviors\TimestampBehavior',
+				'attributes' => [
+					ActiveRecord::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
+					ActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
+				],
+			],
+		];
+	}
+
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['by_serhii', 'by_mary', 'engine', 'status'], 'integer'],
+            [['by_serhii', 'by_mary', 'engine', 'status', 'favorite'], 'integer'],
             [['long_desc'], 'string'],
             [['create_date'], 'required'],
             [['create_date', 'publish_date'], 'safe'],
@@ -60,9 +77,11 @@ class Project extends \yii\db\ActiveRecord
             'short_desc' => 'Short Desc',
             'long_desc' => 'Long Desc',
             'engine' => 'Engine',
-            'create_date' => 'Create Date',
+	        'created_at' => 'Created at',
+	        'updated_at' => 'Updated at',
             'publish_date' => 'Publish Date',
             'status' => 'Status',
+	        'favorite' => 'Favorite'
         ];
     }
 
@@ -139,7 +158,7 @@ class Project extends \yii\db\ActiveRecord
         }
         $projects = static::find()
             ->where($where)
-            ->orderBy(['create_date' => SORT_DESC])
+            ->orderBy(['publish_date' => SORT_DESC])
             ->asArray()
             ->all();
         if (!$projects) return false;

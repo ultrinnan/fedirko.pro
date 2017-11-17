@@ -15,11 +15,12 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+//            todo: add avatars for admins
+	        'avatar',
 
-            'email',
-            'first_name',
-            'last_name',
+	        'email',
+	        'first_name',
+	        'last_name',
             [
                 'attribute' => 'updated_at',
                 'format' => ['date', 'php:d M Y, h:i:s']

@@ -19,7 +19,7 @@ class ProjectSearch extends Project
     {
         return [
             [['id', 'by_serhii', 'by_mary', 'engine', 'status', 'favorite'], 'integer'],
-            [['author', 'url', 'name', 'short_desc', 'long_desc', 'create_date', 'publish_date'], 'safe'],
+            [['author', 'url', 'name', 'short_desc', 'long_desc', 'created_at', 'updated_at', 'publish_date'], 'safe'],
         ];
     }
 
@@ -64,7 +64,8 @@ class ProjectSearch extends Project
             'by_serhii' => $this->by_serhii,
             'by_mary' => $this->by_mary,
             'engine' => $this->engine,
-            'create_date' => $this->create_date,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
             'publish_date' => $this->publish_date,
             'status' => $this->status,
             'favorite' => $this->favorite,

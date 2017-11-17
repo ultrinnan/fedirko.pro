@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-use common\models\Techs;
+use common\models\Engines;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\ProjectSearch */
@@ -41,18 +41,18 @@ $this->params['breadcrumbs'][] = $this->title;
 //            'by_mary',
 //            'url:url',
             'name',
-             'short_desc',
+            'short_desc',
             // 'long_desc:ntext',
             [
                 'attribute' => 'engine',
                 'value' => function($model){
-                    $tech = Techs::getTech($model->engine);
+                    $tech = Engines::getEngine($model->engine);
                     return $tech['name'];
                 }
 
             ],
             [
-                'attribute' => 'create_date',
+                'attribute' => 'created_at',
                 'format' => ['date', 'php:d M Y, h:i:s']
             ],
             // 'publish_date',
