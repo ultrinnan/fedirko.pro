@@ -27,7 +27,6 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
 </section>
 <section>
     <div class="container">
-<!--        todo: hover images-->
         <div class="row">
             <div class="col-md-4">
                 <a href="#" class="service web">

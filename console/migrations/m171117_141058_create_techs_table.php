@@ -26,6 +26,14 @@ class m171117_141058_create_techs_table extends Migration
 			    ['CSS'],
 			    ['JavaScript'],
 			    ['SQL'],
+				['jQuery'],
+				['Bootstrap'],
+				['AJAX'],
+				['PhoneGap'],
+				['API'],
+				['AngularJS'],
+				['SMARTY'],
+				['Twig'],
 		    ]
 	    );
     }

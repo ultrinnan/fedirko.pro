@@ -10,14 +10,14 @@ use Yii;
  * @property integer $project_id
  * @property integer $tech_id
  */
-class ProjectsTech extends \yii\db\ActiveRecord
+class ProjectsTechs extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'projects_tech';
+        return 'projects_techs';
     }
 
     /**
@@ -47,8 +47,8 @@ class ProjectsTech extends \yii\db\ActiveRecord
     {
         return static::find()
             ->select('tech_id as id, name')
-            ->leftJoin('techs', 'techs.id = projects_tech.tech_id')
-            ->where('projects_tech.project_id = '. $project_id)
+            ->leftJoin('techs', 'techs.id = projects_techs.tech_id')
+            ->where('projects_techs.project_id = '. $project_id)
             ->asArray()
             ->all();
     }

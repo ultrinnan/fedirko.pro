@@ -5,7 +5,7 @@ namespace common\models;
 use Yii;
 use yii\db\ActiveRecord;
 use common\models\ProjectsPictures;
-use common\models\ProjectsTech;
+use common\models\ProjectsTechs;
 use common\models\Techs;
 
 /**
@@ -99,7 +99,7 @@ class Project extends \yii\db\ActiveRecord
         if (!$project) return false;
 
         $project['engine'] = Techs::getTech($project['engine']);
-        $project['tech_list'] = ProjectsTech::getProjectTechList($project['id']);
+        $project['tech_list'] = ProjectsTechs::getProjectTechList($project['id']);
 
         $project['pictures_all'] = ProjectsPictures::getProjectPictures($project['id']);
         foreach ($project['pictures_all'] as $item){
@@ -133,7 +133,7 @@ class Project extends \yii\db\ActiveRecord
 
         foreach ($projects as &$project) {
             $project['engine'] = Techs::getTech($project['engine']);
-            $project['tech_list'] = ProjectsTech::getProjectTechList($project['id']);
+            $project['tech_list'] = ProjectsTechs::getProjectTechList($project['id']);
 
             $project['pictures_all'] = ProjectsPictures::getProjectPictures($project['id']);
             foreach ($project['pictures_all'] as $item){
@@ -165,7 +165,7 @@ class Project extends \yii\db\ActiveRecord
 
         foreach ($projects as &$project) {
             $project['engine'] = Techs::getTech($project['engine']);
-            $project['tech_list'] = ProjectsTech::getProjectTechList($project['id']);
+            $project['tech_list'] = ProjectsTechs::getProjectTechList($project['id']);
 
             $project['pictures_all'] = ProjectsPictures::getProjectPictures($project['id']);
             foreach ($project['pictures_all'] as $item){

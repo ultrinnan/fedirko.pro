@@ -2,7 +2,7 @@
 namespace frontend\controllers;
 
 use common\models\ProjectsPictures;
-use common\models\ProjectsTech;
+use common\models\ProjectsTechs;
 use Yii;
 use yii\web\Controller;
 use common\models\Project;
