@@ -27,7 +27,9 @@
 	                ['label' => 'Menu', 'options' => ['class' => 'header']],
                     ['label' => 'General', 'icon' => 'gear', 'url' => ['site-config/index']],
                     ['label' => 'Family', 'icon' => 'users', 'url' => ['admin/index']],
-                    ['label' => 'Projects', 'icon' => 'gear', 'url' => ['project/index']],
+                    ['label' => 'Projects', 'icon' => 'folder-open', 'url' => ['projects/index']],
+                    ['label' => 'Engines', 'icon' => 'rocket', 'url' => ['engines/index']],
+                    ['label' => 'Techs', 'icon' => 'gear', 'url' => ['techs/index']],
                     ['label' => 'Player', 'icon' => 'music', 'url' => ['site/player']],
                 ],
             ]

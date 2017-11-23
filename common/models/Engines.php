@@ -5,10 +5,11 @@ namespace common\models;
 use Yii;
 
 /**
- * This is the model class for table "techs".
+ * This is the model class for table "engines".
  *
  * @property integer $id
  * @property string $name
+ * @property string $logo
  */
 class Engines extends \yii\db\ActiveRecord
 {
@@ -26,7 +27,8 @@ class Engines extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name'], 'string', 'max' => 255],
+            [['name'], 'required'],
+            [['name', 'logo'], 'string', 'max' => 255],
         ];
     }
 
@@ -38,15 +40,7 @@ class Engines extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
+            'logo' => 'Logo',
         ];
     }
-
-    public static function getEngine($id)
-    {
-        $engine = self::findOne($id);
-        return $engine;
-
-    }
-
-
 }

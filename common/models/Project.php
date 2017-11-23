@@ -6,7 +6,7 @@ use Yii;
 use yii\db\ActiveRecord;
 use common\models\ProjectsPictures;
 use common\models\ProjectsTechs;
-use common\models\Techs;
+use common\models\Techs2;
 
 /**
  * This is the model class for table "projects".
@@ -98,7 +98,7 @@ class Project extends \yii\db\ActiveRecord
             ->one();
         if (!$project) return false;
 
-        $project['engine'] = Techs::getTech($project['engine']);
+        $project['engine'] = Techs2::getTech($project['engine']);
         $project['tech_list'] = ProjectsTechs::getProjectTechList($project['id']);
 
         $project['pictures_all'] = ProjectsPictures::getProjectPictures($project['id']);
@@ -132,7 +132,7 @@ class Project extends \yii\db\ActiveRecord
         if (!$projects) return false;
 
         foreach ($projects as &$project) {
-            $project['engine'] = Techs::getTech($project['engine']);
+            $project['engine'] = Techs2::getTech($project['engine']);
             $project['tech_list'] = ProjectsTechs::getProjectTechList($project['id']);
 
             $project['pictures_all'] = ProjectsPictures::getProjectPictures($project['id']);
@@ -164,7 +164,7 @@ class Project extends \yii\db\ActiveRecord
         if (!$projects) return false;
 
         foreach ($projects as &$project) {
-            $project['engine'] = Techs::getTech($project['engine']);
+            $project['engine'] = Techs2::getTech($project['engine']);
             $project['tech_list'] = ProjectsTechs::getProjectTechList($project['id']);
 
             $project['pictures_all'] = ProjectsPictures::getProjectPictures($project['id']);

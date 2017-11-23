@@ -10,14 +10,14 @@ use Yii;
  * @property integer $id
  * @property string $name
  */
-class Techs extends \yii\db\ActiveRecord
+class Engines2 extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'techs';
+        return 'engines';
     }
 
     /**
@@ -26,7 +26,6 @@ class Techs extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name'], 'required'],
             [['name'], 'string', 'max' => 255],
         ];
     }
@@ -41,4 +40,13 @@ class Techs extends \yii\db\ActiveRecord
             'name' => 'Name',
         ];
     }
+
+    public static function getEngine($id)
+    {
+        $engine = self::findOne($id);
+        return $engine;
+
+    }
+
+
 }

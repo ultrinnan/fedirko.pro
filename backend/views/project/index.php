@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-use common\models\Engines;
+use common\models\Engines2;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\ProjectSearch */
@@ -46,7 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'engine',
                 'value' => function($model){
-                    $tech = Engines::getEngine($model->engine);
+                    $tech = Engines2::getEngine($model->engine);
                     return $tech['name'];
                 }
 

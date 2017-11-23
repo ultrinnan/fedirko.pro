@@ -10,7 +10,7 @@ use Yii;
  * @property integer $id
  * @property string $name
  */
-class Techs extends \yii\db\ActiveRecord
+class Techs2 extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
@@ -26,7 +26,6 @@ class Techs extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name'], 'required'],
             [['name'], 'string', 'max' => 255],
         ];
     }
@@ -41,4 +40,13 @@ class Techs extends \yii\db\ActiveRecord
             'name' => 'Name',
         ];
     }
+
+    public static function getTech($id)
+    {
+        $tech = Techs2::findOne($id);
+        return $tech;
+
+    }
+
+
 }

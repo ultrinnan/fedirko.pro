@@ -6,7 +6,7 @@ use common\models\ProjectsTechs;
 use Yii;
 use yii\web\Controller;
 use common\models\Project;
-use common\models\Techs;
+use common\models\Techs2;
 use yii\web\NotFoundHttpException;
 
 /**

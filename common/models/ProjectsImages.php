@@ -5,20 +5,22 @@ namespace common\models;
 use Yii;
 
 /**
- * This is the model class for table "projects_techs".
+ * This is the model class for table "projects_images".
  *
  * @property integer $id
  * @property integer $project_id
- * @property integer $tech_id
+ * @property string $img
+ * @property string $thumb
+ * @property integer $main
  */
-class ProjectsTechs extends \yii\db\ActiveRecord
+class ProjectsImages extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'projects_techs';
+        return 'projects_images';
     }
 
     /**
@@ -27,8 +29,9 @@ class ProjectsTechs extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['project_id', 'tech_id'], 'required'],
-            [['project_id', 'tech_id'], 'integer'],
+            [['project_id'], 'required'],
+            [['project_id', 'main'], 'integer'],
+            [['img', 'thumb'], 'string', 'max' => 255],
         ];
     }
 
@@ -40,7 +43,9 @@ class ProjectsTechs extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'project_id' => 'Project ID',
-            'tech_id' => 'Tech ID',
+            'img' => 'Img',
+            'thumb' => 'Thumb',
+            'main' => 'Main',
         ];
     }
 }

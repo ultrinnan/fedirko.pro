@@ -19,3 +19,7 @@
     cursor: pointer;
     color: #ffcc00;
 }
+
+.back_tech_logos {
+    max-height: 21px;
+}
