@@ -8,6 +8,7 @@ use common\models\ProjectsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\Response;
 
 /**
  * ProjectsController implements the CRUD actions for Projects model.
@@ -121,4 +122,14 @@ class ProjectsController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
+	public function actionAddToFavorites(){
+		if (Yii::$app->request->isAjax) {
+			$flag = 777;
+			// .....
+			Yii::$app->response->format = Response::FORMAT_JSON;
+			return ['flag' => $flag];
+		}
+		return false;
+	}
 }

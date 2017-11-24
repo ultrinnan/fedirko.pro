@@ -13,24 +13,21 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="projects-index">
 
     <p>
-        <?= Html::a('Create Projects', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Project', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
             'id',
             'by_serhii',
             'by_mary',
             'url:url',
             'engine',
             // 'created_at',
-            // 'updated_at',
-            // 'publish_date',
-            // 'status',
-            // 'favorite',
+             'updated_at:datetime',
+             'publish_date:datetime',
+             'status',
+             'favorite',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
