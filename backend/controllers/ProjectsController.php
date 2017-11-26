@@ -52,9 +52,16 @@ class ProjectsController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+	    $project = Projects::find()
+	                 ->select('*')
+	                 ->where('projects.id = ' . $id)
+	                 ->leftJoin('projects_langs', 'projects_langs.project_id = projects.id')
+	                 ->asArray()
+	                 ->all();
+	    return $this->render('view', [
+		    'page' => $project,
+		    'model' => $this->findModel($id),
+	    ]);
     }
 
     /**

@@ -106,4 +106,16 @@ class Lang extends \yii\db\ActiveRecord
 			}
 		}
 	}
+
+	static function getNameById($id){
+		if ($id){
+			$language = self::findOne($id);
+			if ($language) {
+				return $language->name;
+			}else{
+				return false;
+			}
+		}
+		return false;
+	}
 }

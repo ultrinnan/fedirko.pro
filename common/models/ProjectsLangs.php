@@ -50,4 +50,12 @@ class ProjectsLangs extends \yii\db\ActiveRecord
             'long_desc' => 'Long Desc',
         ];
     }
+
+	/**
+	 * @return \yii\db\ActiveQuery
+	 */
+	public function getProject()
+	{
+		return $this->hasOne(Projects::className(), ['id' => 'project_id']);
+	}
 }

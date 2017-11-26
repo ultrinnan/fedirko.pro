@@ -43,4 +43,10 @@ class Engines extends \yii\db\ActiveRecord
             'logo' => 'Logo',
         ];
     }
+
+	public static function getEngine($id)
+	{
+		$engine = self::findOne($id);
+		return $engine;
+	}
 }
