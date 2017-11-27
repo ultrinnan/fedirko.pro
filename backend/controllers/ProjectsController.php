@@ -132,10 +132,26 @@ class ProjectsController extends Controller
 
 	public function actionAddToFavorites(){
 		if (Yii::$app->request->isAjax) {
-			$flag = 777;
-			// .....
 			Yii::$app->response->format = Response::FORMAT_JSON;
-			return ['flag' => $flag];
+			$id = (int)Yii::$app->request->post('id');
+			$project = Projects::findOne($id);
+			$project->favorite = $project->favorite ? false : true;
+			if ($project->save(false)){
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public function actionChangeVisibility(){
+		if (Yii::$app->request->isAjax) {
+			Yii::$app->response->format = Response::FORMAT_JSON;
+			$id = (int)Yii::$app->request->post('id');
+			$project = Projects::findOne($id);
+			$project->status = $project->status ? false : true;
+			if ($project->save(false)){
+				return true;
+			}
 		}
 		return false;
 	}

@@ -12,17 +12,13 @@ use common\models\Projects;
  */
 class ProjectsSearch extends Projects
 {
-	public $author;
-	public $name;
-	public $short_desc;
-
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['id', 'author', 'by_serhii', 'by_mary', 'engine', 'created_at', 'updated_at', 'publish_date', 'status', 'favorite'], 'integer'],
+            [['id', 'by_serhii', 'by_mary', 'engine', 'created_at', 'updated_at', 'publish_date', 'status', 'favorite'], 'integer'],
             [['url'], 'safe'],
         ];
     }
@@ -75,7 +71,6 @@ class ProjectsSearch extends Projects
         ]);
 
         $query->andFilterWhere(['like', 'url', $this->url]);
-        $query->andFilterWhere(['like', 'author', $this->by_mary]);
 
         return $dataProvider;
     }

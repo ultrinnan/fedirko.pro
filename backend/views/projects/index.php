@@ -25,8 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
 		        'format' => 'raw',
 		        'value' => function($model){
 			        $img = $model::getProjectImage($model->id);
-//			        var_dump($img);
-			        return '<img class="back_tech_logos" src="/images/projects/' . $model->id . '/' . $img->thumb . '">';
+			        return $img->thumb ? '<img class="back_tech_logos" src="/images/projects/' . $model->id . '/' . $img->thumb . '">' : null;
 		        }
 
 	        ],
@@ -72,14 +71,14 @@ $this->params['breadcrumbs'][] = $this->title;
 		        'attribute' => 'status',
 		        'format' => 'raw',
 		        'value' => function($model) {
-			        return $model->status ? '<i class="visible fa fa-eye" title="visible"></i>' : '<i class="visible fa fa-eye-slash" title="hidden"></i>';
+			        return $model->status ? '<i class="visible checked fa fa-eye" data-id="' . $model->id . '"></i>' : '<i class="visible fa fa-eye-slash" data-id="' . $model->id . '"></i>';
 		        },
 	        ],
 	        [
 		        'attribute' => 'favorite',
 		        'format' => 'raw',
 		        'value' => function($model) {
-			        return $model->status ? '<i class="favorite fa fa-star" title="remove from favorites"></i>' : '<i class="favorite fa fa-star-o" title="add to favorites"></i>';
+			        return $model->favorite ? '<i class="favorite checked fa fa-star" data-id="' . $model->id . '"></i>' : '<i class="favorite fa fa-star-o" data-id="' . $model->id . '"></i>';
 		        },
 	        ],
 
