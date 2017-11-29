@@ -36,8 +36,9 @@ class Projects extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['by_serhii', 'by_mary', 'engine', 'created_at', 'updated_at', 'publish_date'], 'required'],
-            [['by_serhii', 'by_mary', 'engine', 'created_at', 'updated_at', 'publish_date', 'status', 'favorite'], 'integer'],
+            [['by_serhii', 'by_mary', 'engine', 'publish_date', 'status'], 'required'],
+            [['by_serhii', 'by_mary', 'engine', 'created_at', 'updated_at', 'status', 'favorite'], 'integer'],
+	        ['publish_date', 'date', 'timestampAttribute' => 'publish_date'],
             [['url'], 'string', 'max' => 255],
         ];
     }
@@ -70,7 +71,7 @@ class Projects extends \yii\db\ActiveRecord
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'publish_date' => 'Publish Date',
-            'status' => 'Status',
+            'status' => 'Visible',
             'favorite' => 'Favorite',
         ];
     }

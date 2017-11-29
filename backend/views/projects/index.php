@@ -52,7 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
 	        ],
             // 'created_at',
 //             'updated_at:datetime',
-             'publish_date:datetime',
+             'publish_date:date',
 	        [
 		        'attribute' => 'author',
 		        'label' => 'Author',

@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use common\models\ProjectsLangs;
 use Yii;
 use common\models\Projects;
 use common\models\ProjectsSearch;
@@ -9,6 +10,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\Response;
+use frontend\models\Lang;
 
 /**
  * ProjectsController implements the CRUD actions for Projects model.
@@ -71,15 +73,43 @@ class ProjectsController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Projects();
+	    $model = new Projects();
+	    $lang_count = Lang::find()->asArray()->all();
+	    $page = [];
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
-        }
+	    for ($i = 0; $i<count($lang_count); $i++){
+		    $page[$i] = [
+			    'lang_id' => $lang_count[$i]['id']
+		    ];
+	    }
+	    if ($model->load(Yii::$app->request->post())) {
+	    	if ($model->save()){
+			    //projects_lang create
+			    foreach (Yii::$app->request->post('lang') as $lang){
+				    $language = new ProjectsLangs();
+				    $language->attributes = $lang;
+				    $language->project_id = $model->id;
+				    $language->save();
+			    }
+			    Yii::$app->session->setFlash('success', 'New project was created.');
+			    return $this->redirect(['index']);
+		    } else {
+			    $error_msg = '';
+			    foreach ($model->getErrors() as $key => $value){
+				    $error_msg .= '<b>' . $key . '</b>: ' . $value[0] . '<br>';
+			    }
+			    Yii::$app->session->setFlash('error', 'There was an error creating project.<hr>' . $error_msg);
+			    return $this->render('create', [
+				    'page' => $page,
+				    'model' => $model,
+			    ]);
+		    }
+	    } else {
+		    return $this->render('create', [
+			    'page' => $page,
+			    'model' => $model,
+		    ]);
+	    }
     }
 
     /**
