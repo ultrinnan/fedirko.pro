@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use common\models\helpers\Helper;
 use common\models\ProjectsLangs;
 use Yii;
 use common\models\Projects;
@@ -74,13 +75,12 @@ class ProjectsController extends Controller
     public function actionCreate()
     {
 	    $model = new Projects();
-	    $lang_count = Lang::find()->asArray()->all();
+	    $langs = Lang::find()->asArray()->all();
 	    $page = [];
 
-	    for ($i = 0; $i<count($lang_count); $i++){
-		    $page[$i] = [
-			    'lang_id' => $lang_count[$i]['id']
-		    ];
+	    for ($i = 0; $i<count($langs); $i++){
+		    $page[$i] = new ProjectsLangs();
+		    $page[$i]->lang_id = $langs[$i]['id'];
 	    }
 	    if ($model->load(Yii::$app->request->post())) {
 	    	if ($model->save()){
@@ -94,11 +94,7 @@ class ProjectsController extends Controller
 			    Yii::$app->session->setFlash('success', 'New project was created.');
 			    return $this->redirect(['index']);
 		    } else {
-			    $error_msg = '';
-			    foreach ($model->getErrors() as $key => $value){
-				    $error_msg .= '<b>' . $key . '</b>: ' . $value[0] . '<br>';
-			    }
-			    Yii::$app->session->setFlash('error', 'There was an error creating project.<hr>' . $error_msg);
+			    Yii::$app->session->setFlash('error', 'There was an error creating project.<hr>' . Helper::showErrors($model));
 			    return $this->render('create', [
 				    'page' => $page,
 				    'model' => $model,

@@ -8,6 +8,7 @@ use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Projects */
+/* @var $page common\models\ProjectsLangs */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
@@ -37,16 +38,14 @@ use yii\helpers\ArrayHelper;
     <?= $form->field($model, 'favorite')->checkbox() ?>
 
 	<?php
-		        //var_dump($page);
+//		        var_dump($page);
+//		        die;
 	?>
     <ul class="nav nav-tabs">
 		<?php
 		for ($i = 0; $i < count($page); $i++){
-			if ($i == 0){
-				echo '<li class="active"><a data-toggle="tab" href="#tab' . $i . '">' . Lang::getNameById($page[$i]['lang_id']) . '</a></li>';
-			} else {
-				echo '<li><a data-toggle="tab" href="#tab' . $i . '">' . Lang::getNameById($page[$i]['lang_id']) . '</a></li>';
-			}
+		    $class_active = $i == 0 ? 'class="active"' : '';
+            echo '<li ' . $class_active . '><a data-toggle="tab" href="#tab' . $i . '">' . Lang::getNameById($page[$i]['lang_id']) . '</a></li>';
 		}
 		?>
     </ul>
@@ -54,45 +53,25 @@ use yii\helpers\ArrayHelper;
     <div class="tab-content">
 		<?php
 		for ($i = 0; $i < count($page); $i++){
-			if ($i == 0){
-				?>
-                <div id="tab<?=$i?>" class="tab-pane fade in active">
-                    <input type="hidden" name="lang[<?=$i?>][page_id]" value="<?=$model->id?>">
+			$active_class = $i ==0 ? 'in active' : '';
+        ?>
+                <div id="tab<?=$i?>" class="tab-pane fade <?=$active_class;?>">
                     <input type="hidden" name="lang[<?=$i?>][lang_id]" value="<?=$page[$i]['lang_id']?>">
+                    <input type="hidden" name="lang[<?=$i?>][project_id]" value="<?=$model->id?>">
                     <div class="form-group required">
-                        <label class="control-label" for="pages-title<?=$i?>">Title</label>
-                        <input type="text" id="pages-title<?=$i?>" class="form-control" name="lang[<?=$i?>][title]" value="<?=$page[$i]['title']?>" maxlength="255" aria-required="true" aria-invalid="false">
+                        <label class="control-label" for="project_name<?=$i?>">Project Name</label>
+                        <input type="text" id="project_name<?=$i?>" class="form-control" name="lang[<?=$i?>][name]" value="<?=$page[$i]['name']?>" maxlength="255" aria-required="true" aria-invalid="false">
                     </div>
                     <div class="form-group required">
-                        <label class="control-label" for="pages-menu_name<?=$i?>">Menu name</label>
-                        <input type="text" id="pages-menu_name<?=$i?>" class="form-control" name="lang[<?=$i?>][menu_name]" value="<?=$page[$i]['menu_name']?>" maxlength="32" aria-required="true" aria-invalid="false">
+                        <label class="control-label" for="project_short<?=$i?>">Short description</label>
+                        <input type="text" id="project_short<?=$i?>" class="form-control" name="lang[<?=$i?>][short_desc]" value="<?=$page[$i]['short_desc']?>" maxlength="255" aria-required="true" aria-invalid="false">
                     </div>
                     <div class="form-group required">
-                        <label class="control-label" for="pages-text<?=$i?>">Text</label>
-                        <textarea id="pages-text<?=$i?>" class="form-control editor" name="lang[<?=$i?>][text]" aria-required="true"><?=$page[$i]['text']?></textarea>
+                        <label class="control-label" for="project_long<?=$i?>">Long description</label>
+                        <textarea id="project_long<?=$i?>" class="form-control editor" name="lang[<?=$i?>][long_desc]" aria-required="true"><?=$page[$i]['long_desc']?></textarea>
                     </div>
                 </div>
-				<?php
-			} else {
-				?>
-                <div id="tab<?=$i?>" class="tab-pane fade">
-                    <input type="hidden" name="lang[<?=$i?>][page_id]" value="<?=$model->id?>">
-                    <input type="hidden" name="lang[<?=$i?>][lang_id]" value="<?=$page[$i]['lang_id']?>">
-                    <div class="form-group required">
-                        <label class="control-label" for="pages-title<?=$i?>">Title</label>
-                        <input type="text" id="pages-title<?=$i?>" class="form-control" name="lang[<?=$i?>][title]" value="<?=$page[$i]['title']?>" maxlength="255" aria-required="true" aria-invalid="false">
-                    </div>
-                    <div class="form-group required">
-                        <label class="control-label" for="pages-menu_name<?=$i?>">Menu name</label>
-                        <input type="text" id="pages-menu_name<?=$i?>" class="form-control" name="lang[<?=$i?>][menu_name]" value="<?=$page[$i]['menu_name']?>" maxlength="32" aria-required="true" aria-invalid="false">
-                    </div>
-                    <div class="form-group required">
-                        <label class="control-label" for="pages-text<?=$i?>">Text</label>
-                        <textarea id="pages-text<?=$i?>" class="form-control editor" name="lang[<?=$i?>][text]" aria-required="true"><?=$page[$i]['text']?></textarea>
-                    </div>
-                </div>
-				<?php
-			}
+        <?php
 		}
 		?>
     </div>

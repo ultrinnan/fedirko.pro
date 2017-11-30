@@ -40,6 +40,8 @@ class Projects extends \yii\db\ActiveRecord
             [['by_serhii', 'by_mary', 'engine', 'created_at', 'updated_at', 'status', 'favorite'], 'integer'],
 	        ['publish_date', 'date', 'timestampAttribute' => 'publish_date'],
             [['url'], 'string', 'max' => 255],
+            [['url'], 'url'],
+	        ['url', 'default', 'value' => null],
         ];
     }
 

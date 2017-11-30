@@ -32,7 +32,9 @@ class ProjectsLangs extends \yii\db\ActiveRecord
         return [
             [['project_id', 'lang_id', 'name', 'short_desc', 'long_desc'], 'required'],
             [['project_id', 'lang_id'], 'integer'],
-            [['name', 'short_desc', 'long_desc'], 'string', 'max' => 255],
+            [['name', 'short_desc'], 'string', 'max' => 255],
+            ['long_desc', 'string', 'max' => 2048],
+	        [['name', 'short_desc', 'long_desc'], 'default', 'value' => null],
         ];
     }
 
@@ -45,9 +47,9 @@ class ProjectsLangs extends \yii\db\ActiveRecord
             'id' => 'ID',
             'project_id' => 'Project ID',
             'lang_id' => 'Lang ID',
-            'name' => 'Name',
-            'short_desc' => 'Short Desc',
-            'long_desc' => 'Long Desc',
+            'name' => 'Project name',
+            'short_desc' => 'Short description',
+            'long_desc' => 'Long description',
         ];
     }
 

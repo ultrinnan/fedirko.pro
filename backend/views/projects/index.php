@@ -25,7 +25,9 @@ $this->params['breadcrumbs'][] = $this->title;
 		        'format' => 'raw',
 		        'value' => function($model){
 			        $img = $model::getProjectImage($model->id);
-			        return $img->thumb ? '<img class="back_tech_logos" src="/images/projects/' . $model->id . '/' . $img->thumb . '">' : null;
+			        if ($img){
+				        return $img->thumb ? '<img class="back_tech_logos" src="/images/projects/' . $model->id . '/' . $img->thumb . '">' : null;
+			        } else return null;
 		        }
 
 	        ],
@@ -34,7 +36,9 @@ $this->params['breadcrumbs'][] = $this->title;
 		        'label' => 'Project name',
 		        'value' => function($model){
 			        $trans = $model::getProjectTranslation($model->id);
-			        return $trans->name;
+			        if ($trans){
+				        return $trans->name;
+			        } else return null;
 		        }
 	        ],
 
@@ -59,8 +63,10 @@ $this->params['breadcrumbs'][] = $this->title;
 		        'value' => function($model) {
 			        if ($model->by_serhii && $model->by_mary){
 				        $concat = ', ';
-			        } else {
+			        } elseif ($model->by_serhii || $model->by_mary) {
 				        $concat = '';
+			        } else {
+			            return null;
 			        }
 			        $serhii = $model->by_serhii ? 'Serhii' : '';
 			        $mary = $model->by_mary ? 'Mary' : '';

@@ -18,7 +18,7 @@ class m171123_071359_create_projects_langs_table extends Migration
 	        'lang_id' => $this->integer()->notNull(),
 	        'name' => $this->string()->notNull(),
 	        'short_desc' => $this->string()->notNull(),
-	        'long_desc' => $this->string()->notNull(),
+	        'long_desc' => $this->text()->notNull(),
         ]);
 
 	    $this->batchInsert(
