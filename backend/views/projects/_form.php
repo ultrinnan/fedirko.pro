@@ -37,10 +37,6 @@ use yii\helpers\ArrayHelper;
 
     <?= $form->field($model, 'favorite')->checkbox() ?>
 
-	<?php
-//		        var_dump($page);
-//		        die;
-	?>
     <ul class="nav nav-tabs">
 		<?php
 		for ($i = 0; $i < count($page); $i++){

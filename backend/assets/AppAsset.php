@@ -15,6 +15,7 @@ class AppAsset extends AssetBundle
         'css/admin.css',
     ];
     public $js = [
+    	'//cdn.ckeditor.com/4.7.3/standard/ckeditor.js',
         'js/admin.js',
     ];
     public $depends = [

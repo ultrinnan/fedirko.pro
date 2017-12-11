@@ -33,3 +33,15 @@ $('.visible').click(function () {
         }
     });
 });
+
+$(document).ready(function () {
+//     ClassicEditor
+//         .create($('.editor') )
+//         .then( editor => {
+//         console.log( editor );
+// } )
+// .catch( error => {
+//         console.error( error );
+// } );
+    CKEDITOR.replaceAll('editor');
+});
