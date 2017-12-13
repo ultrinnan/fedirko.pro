@@ -61,8 +61,10 @@ class ProjectsController extends Controller
 	                 ->leftJoin('projects_langs', 'projects_langs.project_id = projects.id')
 	                 ->asArray()
 	                 ->all();
+	    $images = Projects::getAllImages($id);
 	    return $this->render('view', [
 		    'page' => $project,
+		    'images' => $images,
 		    'model' => $this->findModel($id),
 	    ]);
     }

@@ -88,6 +88,21 @@ class Projects extends \yii\db\ActiveRecord
 		return $trans;
 	}
 
+	public static function getProjectTechs($id)
+	{
+//		$techs = ProjectsTechs::find()
+//			->select('*')
+//			->where('project_id = ' . $id)
+//			->leftJoin('techs', 'techs.id = projects_techs.tech_id')
+//			->all();
+//		return $techs;
+		return ProjectsTechs::find()
+		    ->select('*')
+			->where('projects_techs.project_id = '. $id)
+			->leftJoin('techs', 'techs.id = projects_techs.tech_id')
+		             ->all();
+	}
+
     //get default image with thumb
 	public static function getProjectImage($id)
 	{
@@ -96,6 +111,15 @@ class Projects extends \yii\db\ActiveRecord
 			->andWhere('main = 1')
 			->one();
 		return $img;
+	}
+
+	public static function getAllImages($id)
+	{
+		$imgs = ProjectsImages::find()
+			->where('project_id = ' . $id)
+			->orderBy('main DESC')
+			->all();
+		return $imgs;
 	}
 
 	/**

@@ -30,3 +30,14 @@
     border-left: 1px solid #ddd;
     background: white;
 }
+
+.images{
+    text-align: center;
+}
+.images img{
+    margin: 16px;
+    border: 4px solid transparent;
+}
+.images img.main{
+    border-color: #ffcc00;
+}

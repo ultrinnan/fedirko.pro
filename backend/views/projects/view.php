@@ -12,6 +12,8 @@ use common\models\Engines;
 $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Projects', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
+frontend\assets\FancyAsset::register($this);
 ?>
 <div class="projects-view">
 
@@ -40,17 +42,6 @@ $this->params['breadcrumbs'][] = $this->title;
 			        } else return null;
 		        }
 	        ],
-            [
-		        'attribute' => 'Thumb',
-		        'format' => 'raw',
-		        'value' => function($model){
-			        $img = $model::getProjectImage($model->id);
-			        if ($img){
-				        return $img->thumb ? '<img class="back_tech_logos" src="/images/projects/' . $model->id . '/' . $img->thumb . '">' : null;
-			        } else return null;
-		        }
-
-	        ],
 	        [
 		        'attribute' => 'by_serhii',
 		        'value' => function($model){
@@ -78,6 +69,18 @@ $this->params['breadcrumbs'][] = $this->title;
 		        'value' => function($model){
 			        $engine = Engines::getEngine($model->engine);
 			        return $engine->logo ? '<img class="back_tech_logos" src="' . $engine->logo . '" title="' . $engine->name . '">' : $engine->name;
+		        }
+	        ],
+            [
+		        'attribute' => 'Used techs',
+		        'format' => 'raw',
+		        'value' => function($model){
+			        $techs = $model::getProjectTechs($model->id);
+			        foreach ($techs as $tech){
+//			            echo '<span class="tech">' . $tech->name . '</span>';
+			            var_dump($tech);
+                    }
+			        return true;
 		        }
 	        ],
             'created_at:datetime',
@@ -128,6 +131,18 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php
 		}
 		?>
+    </div>
+
+    <div class="images">
+        <?php
+        foreach ($images as $img){
+            if ($img->main == 1){
+                echo '<a data-fancybox="gallery" href="/images/projects/' . $model->id . '/' . $img->img . '"><img class="main" src="/images/projects/' . $model->id . '/' . $img->thumb . '"></a>';
+            } else {
+	            echo '<a data-fancybox="gallery" href="/images/projects/' . $model->id . '/' . $img->img . '"><img src="/images/projects/' . $model->id . '/' . $img->thumb . '"></a>';
+            }
+        }
+        ?>
     </div>
 
 </div>
