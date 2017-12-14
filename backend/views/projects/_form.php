@@ -5,10 +5,12 @@ use yii\widgets\ActiveForm;
 use frontend\models\Lang;
 use yii\jui\DatePicker;
 use yii\helpers\ArrayHelper;
+use dosamigos\fileupload\FileUploadUI;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Projects */
 /* @var $page common\models\ProjectsLangs */
+/* @var $images common\models\ProjectsImages */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
@@ -70,6 +72,36 @@ use yii\helpers\ArrayHelper;
         <?php
 		}
 		?>
+    </div>
+
+    <div class="images" style="border: 1px solid grey;">
+	    <?php try {
+		    echo FileUploadUI::widget([
+                'model' => $images,
+                'attribute' => 'img',
+                'url' => ['projects/image-upload', 'id' => $model->id],
+                'gallery' => false,
+                'fieldOptions' => [
+                    'accept' => 'image/*'
+                ],
+                'clientOptions' => [
+                    'maxFileSize' => 2000000
+                ],
+                // ...
+                'clientEvents' => [
+                    'fileuploaddone' => 'function(e, data) {
+                                            console.log(e);
+                                            console.log(data);
+                                        }',
+                    'fileuploadfail' => 'function(e, data) {
+                                            console.log(e);
+                                            console.log(data);
+                                        }',
+                ],
+            ]);
+	    } catch ( Exception $e ) {
+	        var_dump($e);
+	    } ?>
     </div>
 
     <div class="form-group">

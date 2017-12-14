@@ -3,15 +3,21 @@
 namespace backend\controllers;
 
 use common\models\helpers\Helper;
+use common\models\ProjectsImages;
 use common\models\ProjectsLangs;
 use Yii;
 use common\models\Projects;
 use common\models\ProjectsSearch;
+use yii\base\Exception;
+use yii\db\StaleObjectException;
+use yii\helpers\Json;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\Response;
 use frontend\models\Lang;
+use yii\helpers\FileHelper;
+use yii\web\UploadedFile;
 
 /**
  * ProjectsController implements the CRUD actions for Projects model.
@@ -76,6 +82,7 @@ class ProjectsController extends Controller
      */
     public function actionCreate()
     {
+    	$images = new ProjectsImages();
 	    $model = new Projects();
 	    $langs = Lang::find()->asArray()->all();
 	    $page = [];
@@ -106,6 +113,7 @@ class ProjectsController extends Controller
 		    return $this->render('create', [
 			    'page' => $page,
 			    'model' => $model,
+			    'images' => $images
 		    ]);
 	    }
     }
@@ -137,9 +145,16 @@ class ProjectsController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+	    try {
+		    $this->findModel( $id )->delete();
+	    } catch ( StaleObjectException $e ) {
+	    } catch ( NotFoundHttpException $e ) {
+	    } catch ( \Exception $e ) {
+	    } catch ( \Throwable $e ) {
+	    	var_dump($e);
+	    }
 
-        return $this->redirect(['index']);
+	    return $this->redirect(['index']);
     }
 
     /**
@@ -182,5 +197,68 @@ class ProjectsController extends Controller
 			}
 		}
 		return false;
+	}
+
+	public function actionImageUpload()
+	{
+		$model = new ProjectsImages();
+
+		$imageFile = UploadedFile::getInstance($model, 'img');
+
+		$directory = Yii::getAlias('@frontend/web/images/projects') . '/' . $model->project_id . '/';
+		if (!is_dir($directory)) {
+			try {
+				FileHelper::createDirectory( $directory );
+			} catch ( Exception $e ) {
+				var_dump($e);
+			}
+		}
+
+		if ($imageFile) {
+			$uid = uniqid(time(), true);
+			$fileName = $uid . '.' . $imageFile->extension;
+			$filePath = $directory . $fileName;
+			if ($imageFile->saveAs($filePath)) {
+				$path = '/images/projects/' . $model->project_id . '/' . $fileName;
+				return Json::encode([
+					'files' => [
+						[
+							'name' => $fileName,
+							'size' => $imageFile->size,
+							'url' => $path,
+							'thumbnailUrl' => $path,
+							'deleteUrl' => 'image-delete?name=' . $fileName,
+							'deleteType' => 'POST',
+						],
+					],
+				]);
+			}
+		}
+
+		return '{error}';
+	}
+
+	public function actionImageDelete($name)
+	{
+		$directory = Yii::getAlias('@frontend/web/img/temp') . DIRECTORY_SEPARATOR . Yii::$app->session->id;
+		if (is_file($directory . DIRECTORY_SEPARATOR . $name)) {
+			unlink($directory . DIRECTORY_SEPARATOR . $name);
+		}
+
+		$files = FileHelper::findFiles($directory);
+		$output = [];
+		foreach ($files as $file) {
+			$fileName = basename($file);
+			$path = '/img/temp/' . Yii::$app->session->id . DIRECTORY_SEPARATOR . $fileName;
+			$output['files'][] = [
+				'name' => $fileName,
+				'size' => filesize($file),
+				'url' => $path,
+				'thumbnailUrl' => $path,
+				'deleteUrl' => 'image-delete?name=' . $fileName,
+				'deleteType' => 'POST',
+			];
+		}
+		return Json::encode($output);
 	}
 }
