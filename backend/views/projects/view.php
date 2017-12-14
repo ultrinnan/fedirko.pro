@@ -9,7 +9,12 @@ use common\models\Engines;
 /* @var $model common\models\Projects */
 /* @throws Exception */
 
-$this->title = $model->id;
+$trans = $model::getProjectTranslation( $model->id );
+if ( $trans ) {
+	$this->title = $trans->name;
+} else {
+	$this->title = $model->id;
+}
 $this->params['breadcrumbs'][] = ['label' => 'Projects', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 
@@ -28,86 +33,111 @@ frontend\assets\FancyAsset::register($this);
         ]) ?>
     </p>
 
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'id',
-	        [
-		        'attribute' => 'Project name',
-		        'label' => 'Project name',
-		        'value' => function($model){
-			        $trans = $model::getProjectTranslation($model->id);
-			        if ($trans){
-				        return $trans->name;
-			        } else return null;
-		        }
-	        ],
-	        [
-		        'attribute' => 'by_serhii',
-		        'value' => function($model){
-			        if ($model->by_serhii == 1){
-				        return 'yes';
-			        } else {
-				        return 'no';
-			        }
-		        }
-	        ],
-	        [
-		        'attribute' => 'by_mary',
-		        'value' => function($model){
-			        if ($model->by_mary == 1){
-				        return 'yes';
-			        } else {
-				        return 'no';
-			        }
-		        }
-	        ],
-            'url:url',
-	        [
-		        'attribute' => 'engine',
-		        'format' => 'raw',
-		        'value' => function($model){
-			        $engine = Engines::getEngine($model->engine);
-			        return $engine->logo ? '<img class="back_tech_logos" src="' . $engine->logo . '" title="' . $engine->name . '">' : $engine->name;
-		        }
-	        ],
-            [
-		        'attribute' => 'Used techs',
-		        'format' => 'raw',
-		        'value' => function($model){
-			        $techs = $model::getProjectTechs($model->id);
-			        foreach ($techs as $tech){
-//			            echo '<span class="tech">' . $tech->name . '</span>';
-			            var_dump($tech);
-                    }
-			        return true;
-		        }
-	        ],
-            'created_at:datetime',
-            'updated_at:datetime',
-            'publish_date:datetime',
-	        [
-		        'attribute' => 'status',
-		        'value' => function($model){
-			        if ($model->status == 1){
-				        return 'visible';
-			        } else {
-				        return 'hidden';
-			        }
-		        }
-	        ],
-            [
-		        'attribute' => 'favorite',
-		        'value' => function($model){
-			        if ($model->favorite == 1){
-				        return 'yes';
-			        } else {
-				        return 'no';
-			        }
-		        }
-	        ],
-        ],
-    ]) ?>
+    <?php
+    try {
+	    echo DetailView::widget( [
+		    'model'      => $model,
+		    'attributes' => [
+			    'id',
+			    [
+				    'attribute' => 'Project name',
+				    'label'     => 'Project name',
+				    'value'     => function ( $model ) {
+					    $trans = $model::getProjectTranslation( $model->id );
+					    if ( $trans ) {
+						    return $trans->name;
+					    } else {
+						    return null;
+					    }
+				    }
+			    ],
+//			    [
+//				    'attribute' => 'by_serhii',
+//				    'value'     => function ( $model ) {
+//					    if ( $model->by_serhii == 1 ) {
+//						    return 'yes';
+//					    } else {
+//						    return 'no';
+//					    }
+//				    }
+//			    ],
+//			    [
+//				    'attribute' => 'by_mary',
+//				    'value'     => function ( $model ) {
+//					    if ( $model->by_mary == 1 ) {
+//						    return 'yes';
+//					    } else {
+//						    return 'no';
+//					    }
+//				    }
+//			    ],
+			    [
+				    'attribute' => 'author',
+				    'label'     => 'Author',
+				    'value'     => function ( $model ) {
+					    if ( $model->by_serhii && $model->by_mary ) {
+						    $concat = ', ';
+					    } elseif ( $model->by_serhii || $model->by_mary ) {
+						    $concat = '';
+					    } else {
+						    return null;
+					    }
+					    $serhii = $model->by_serhii ? 'Serhii' : '';
+					    $mary   = $model->by_mary ? 'Mary' : '';
+
+					    return $serhii . $concat . $mary;
+				    },
+			    ],
+			    'url:url',
+			    [
+				    'attribute' => 'engine',
+				    'format'    => 'raw',
+				    'value'     => function ( $model ) {
+					    $engine = Engines::getEngine( $model->engine );
+
+					    return $engine->logo ? '<img class="back_tech_logos" src="' . $engine->logo . '" title="' . $engine->name . '">' : $engine->name;
+				    }
+			    ],
+			    [
+				    'attribute' => 'Used techs',
+				    'format'    => 'raw',
+				    'value'     => function ( $model ) {
+					    $techs = $model::getProjectTechs( $model->id );
+					    $techs_block = false;
+					    foreach ($techs as $tech){
+						    $techs_block .= '<span class="tech">' . $tech['name'] . '</span>';
+                        }
+                        return $techs_block;
+				    }
+			    ],
+			    'created_at:datetime',
+			    'updated_at:datetime',
+			    'publish_date:datetime',
+			    [
+				    'attribute' => 'status',
+				    'value'     => function ( $model ) {
+					    if ( $model->status == 1 ) {
+						    return 'visible';
+					    } else {
+						    return 'hidden';
+					    }
+				    }
+			    ],
+			    [
+				    'attribute' => 'favorite',
+				    'value'     => function ( $model ) {
+					    if ( $model->favorite == 1 ) {
+						    return 'yes';
+					    } else {
+						    return 'no';
+					    }
+				    }
+			    ],
+		    ],
+	    ] );
+    } catch ( Exception $e ) {
+    }
+    ?>
 
     <ul class="nav nav-tabs">
 		<?php
@@ -124,9 +154,14 @@ frontend\assets\FancyAsset::register($this);
 			$active_class = $i == 0 ? 'in active' : '';
         ?>
             <div id="tab<?=$i?>" class="tab-pane fade <?=$active_class;?>">
-                <p><b>Project Name: </b><br><?=$page[$i]['name']?></p>
-                <p><b>Short description: </b><br><?=$page[$i]['short_desc']?></p>
-                <p><b>Long description: </b><br><?=$page[$i]['long_desc']?></p>
+                <div class="cont_title">Project Name:</div>
+                <div class="cont_text"><?=$page[$i]['name']?></div>
+
+                <div class="cont_title">Short description:</div>
+                <div class="cont_text"><?=$page[$i]['short_desc']?></div>
+
+                <div class="cont_title">Long description:</div>
+                <div class="cont_text"><?=$page[$i]['long_desc']?></div>
             </div>
         <?php
 		}

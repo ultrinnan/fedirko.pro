@@ -24,11 +24,28 @@
     max-height: 21px;
 }
 
+.tech{
+    display: inline-block;
+    border: 2px solid #00a65a;
+    background: #00a65a;
+    color: white;
+    border-radius: 3px;
+    padding: 2px 8px;
+    margin-right: 8px;
+}
+
 .tab-content {
     padding: 8px 8px 1px;
     margin-bottom: 16px;
     border-left: 1px solid #ddd;
     background: white;
+}
+.cont_title{
+    font-weight: bold;
+}
+.cont_text{
+    padding: 0 8px;
+    margin-bottom: 16px;
 }
 
 .images{

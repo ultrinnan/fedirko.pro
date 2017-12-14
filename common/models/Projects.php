@@ -90,17 +90,13 @@ class Projects extends \yii\db\ActiveRecord
 
 	public static function getProjectTechs($id)
 	{
-//		$techs = ProjectsTechs::find()
-//			->select('*')
-//			->where('project_id = ' . $id)
-//			->leftJoin('techs', 'techs.id = projects_techs.tech_id')
-//			->all();
-//		return $techs;
-		return ProjectsTechs::find()
-		    ->select('*')
-			->where('projects_techs.project_id = '. $id)
-			->leftJoin('techs', 'techs.id = projects_techs.tech_id')
+		$techs = ProjectsTechs::find()
+		             ->select('tech_id as id, name')
+		             ->leftJoin('techs', 'techs.id = projects_techs.tech_id')
+		             ->where('projects_techs.project_id = '. $id)
+		             ->asArray()
 		             ->all();
+		return $techs;
 	}
 
     //get default image with thumb
