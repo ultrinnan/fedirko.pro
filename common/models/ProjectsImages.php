@@ -2,7 +2,9 @@
 
 namespace common\models;
 
+use common\helpers\Helper;
 use Yii;
+use yii\web\UploadedFile;
 
 /**
  * This is the model class for table "projects_images".
@@ -48,4 +50,44 @@ class ProjectsImages extends \yii\db\ActiveRecord
             'main' => 'Main',
         ];
     }
+
+	/**
+	 * @param $files object UploadFile
+	 * @param $project_id
+	 *
+	 * @return bool
+	 * @throws \yii\base\Exception
+	 */
+	public function upload($files, $project_id)
+	{
+		if ($files && $project_id) {
+			$error = true;
+			for ($i = 0; $i < count($files); $i++){
+				$obj = new self();
+				$obj->project_id = $project_id;
+
+				$obj->main = $i == 0 ? 1 : 0;
+
+				$rand_filename = Yii::$app->security->generateRandomString();
+				$obj->img = $rand_filename . '.' . $files[$i]->extension;
+				$obj->thumb = $rand_filename .'_m.' . $files[$i]->extension;
+
+				$path = Yii::getAlias('@project') . '/' . $project_id . '/';
+				Helper::createDirectory($path);
+				$files[$i]->saveAs($path . $obj->img);
+				Helper::createThumb($path . $obj->img, $path . $obj->thumb, 400);
+
+				if ($obj->save()){
+					$error = false;
+				}
+				else {
+					Yii::$app->session->setFlash('error', 'There was an error.<hr>' . Helper::showErrors($obj));
+					return false;
+				}
+			}
+			if (!$error) return true;
+		}
+		return false;
+	}
+
 }

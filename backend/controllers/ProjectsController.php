@@ -2,9 +2,10 @@
 
 namespace backend\controllers;
 
-use common\models\helpers\Helper;
+use common\helpers\Helper;
 use common\models\ProjectsImages;
 use common\models\ProjectsLangs;
+use common\models\ProjectsTechs;
 use Yii;
 use common\models\Projects;
 use common\models\ProjectsSearch;
@@ -83,6 +84,7 @@ class ProjectsController extends Controller
     public function actionCreate()
     {
     	$images = new ProjectsImages();
+    	$techs = new ProjectsTechs();
 	    $model = new Projects();
 	    $langs = Lang::find()->asArray()->all();
 	    $page = [];
@@ -100,6 +102,13 @@ class ProjectsController extends Controller
 				    $language->project_id = $model->id;
 				    $language->save();
 			    }
+
+			    $files = UploadedFile::getInstances($images, 'img');
+			    if ($files){
+		            $imgs = new ProjectsImages();
+		            $imgs->upload($files, $model->id);
+			    }
+
 			    Yii::$app->session->setFlash('success', 'New project was created.');
 			    return $this->redirect(['index']);
 		    } else {
@@ -113,7 +122,8 @@ class ProjectsController extends Controller
 		    return $this->render('create', [
 			    'page' => $page,
 			    'model' => $model,
-			    'images' => $images
+			    'images' => $images,
+			    'techs' => $techs
 		    ]);
 	    }
     }

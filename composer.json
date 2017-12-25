@@ -21,7 +21,7 @@
         "dmstr/yii2-adminlte-asset": "2.*",
         "yiisoft/yii2-jui": "^2.0",
         "kartik-v/yii2-date-range": "*",
-        "2amigos/yii2-file-upload-widget": "~1.0"
+        "kartik-v/yii2-widget-fileinput": "@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

@@ -5,12 +5,13 @@ use yii\widgets\ActiveForm;
 use frontend\models\Lang;
 use yii\jui\DatePicker;
 use yii\helpers\ArrayHelper;
-use dosamigos\fileupload\FileUploadUI;
+use kartik\file\FileInput;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Projects */
 /* @var $page common\models\ProjectsLangs */
 /* @var $images common\models\ProjectsImages */
+/* @var $techs common\models\ProjectsTechs */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
@@ -28,6 +29,19 @@ use dosamigos\fileupload\FileUploadUI;
 				         'prompt' => ' -- Select Engine -- '
 			         ]
 		         ])->label('Engine'); ?>
+
+	<?= $form->field($techs, 'tech_id[]')
+	         ->dropDownList(ArrayHelper::map(\common\models\Techs::find()->asArray()->all(),'id', 'name'),
+		         [
+			         'options' => [
+//				         $techs->tech_id => ['selected'=>true],
+//				         'multiple' => true,
+//				         'prompt' => ' -- Select Techs -- ',
+				         'prompt' => 'Select Techs',
+                         'multiple' => true,
+                         'selected' => 'selected'
+			         ]
+		         ])->label('Select techs'); ?>
 
     <?= $form->field($model, 'by_serhii')->checkbox() ?>
 
@@ -74,34 +88,20 @@ use dosamigos\fileupload\FileUploadUI;
 		?>
     </div>
 
-    <div class="images" style="border: 1px solid grey;">
-	    <?php try {
-		    echo FileUploadUI::widget([
-                'model' => $images,
-                'attribute' => 'img',
-                'url' => ['projects/image-upload', 'id' => $model->id],
-                'gallery' => false,
-                'fieldOptions' => [
-                    'accept' => 'image/*'
+    <div>
+        <?php
+        echo $form->field($images, 'img[]')->widget(FileInput::classname(), [
+            'options' =>
+                [
+                    'accept' => 'image/jpeg',
+                    'multiple' => true,
                 ],
-                'clientOptions' => [
-                    'maxFileSize' => 2000000
-                ],
-                // ...
-                'clientEvents' => [
-                    'fileuploaddone' => 'function(e, data) {
-                                            console.log(e);
-                                            console.log(data);
-                                        }',
-                    'fileuploadfail' => 'function(e, data) {
-                                            console.log(e);
-                                            console.log(data);
-                                        }',
-                ],
-            ]);
-	    } catch ( Exception $e ) {
-	        var_dump($e);
-	    } ?>
+            'pluginOptions' =>
+                [
+	                'showUpload' => false
+                ]
+        ])->label('Select images for project (first image will be project\'s main)');
+        ?>
     </div>
 
     <div class="form-group">
