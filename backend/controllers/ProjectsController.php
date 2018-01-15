@@ -95,7 +95,15 @@ class ProjectsController extends Controller
 	    }
 	    if ($model->load(Yii::$app->request->post())) {
 	    	if ($model->save()){
-			    //projects_lang create
+
+			    $tech_list = Yii::$app->request->post('ProjectsTechs');
+			    foreach ($tech_list['tech_id'] as $tech_id){
+				    $tech = new ProjectsTechs();
+				    $tech->tech_id = $tech_id;
+				    $tech->project_id = $model->id;
+				    $tech->save();
+			    }
+
 			    foreach (Yii::$app->request->post('lang') as $lang){
 				    $language = new ProjectsLangs();
 				    $language->attributes = $lang;
@@ -110,7 +118,7 @@ class ProjectsController extends Controller
 			    }
 
 			    Yii::$app->session->setFlash('success', 'New project was created.');
-			    return $this->redirect(['index']);
+			    return $this->redirect(['view', 'id' => $model->id]);
 		    } else {
 			    Yii::$app->session->setFlash('error', 'There was an error creating project.<hr>' . Helper::showErrors($model));
 			    return $this->render('create', [
@@ -138,13 +146,58 @@ class ProjectsController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
-        }
+	    $images = ProjectsImages::find()->where('project_id = ' . $id)->all();
+	    $techs = ProjectsTechs::find()->where('project_id = ' . $id)->all();
+	    var_dump($techs);
+	    $langs = Lang::find()->asArray()->all();
+
+	    $page = ProjectsLangs::find()
+	                 ->select('*')
+	                 ->where('project_id = ' . $id)
+//	                 ->leftJoin('pages_lang', 'pages_lang.page_id = pages.id')
+	                 ->asArray()
+	                 ->all();
+	    if ($model->load(Yii::$app->request->post())) {
+		    if ($model->save()){
+
+			    $tech_list = Yii::$app->request->post('ProjectsTechs');
+			    foreach ($tech_list['tech_id'] as $tech_id){
+				    $tech = new ProjectsTechs();
+				    $tech->tech_id = $tech_id;
+				    $tech->project_id = $model->id;
+				    $tech->save();
+			    }
+
+			    foreach (Yii::$app->request->post('lang') as $lang){
+				    $language = new ProjectsLangs();
+				    $language->attributes = $lang;
+				    $language->project_id = $model->id;
+				    $language->save();
+			    }
+
+			    $files = UploadedFile::getInstances($images, 'img');
+			    if ($files){
+				    $imgs = new ProjectsImages();
+				    $imgs->upload($files, $model->id);
+			    }
+
+			    Yii::$app->session->setFlash('success', 'New project was created.');
+			    return $this->redirect(['view', 'id' => $model->id]);
+		    } else {
+			    Yii::$app->session->setFlash('error', 'There was an error creating project.<hr>' . Helper::showErrors($model));
+			    return $this->render('create', [
+				    'page' => $page,
+				    'model' => $model,
+			    ]);
+		    }
+	    } else {
+		    return $this->render('update', [
+			    'page' => $page,
+			    'model' => $model,
+			    'images' => $images,
+			    'techs' => $techs
+		    ]);
+	    }
     }
 
     /**

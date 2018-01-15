@@ -6,6 +6,8 @@ use frontend\models\Lang;
 use yii\jui\DatePicker;
 use yii\helpers\ArrayHelper;
 use kartik\file\FileInput;
+use kartik\widgets\Select2;
+
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Projects */
@@ -30,18 +32,17 @@ use kartik\file\FileInput;
 			         ]
 		         ])->label('Engine'); ?>
 
-	<?= $form->field($techs, 'tech_id[]')
-	         ->dropDownList(ArrayHelper::map(\common\models\Techs::find()->asArray()->all(),'id', 'name'),
-		         [
-			         'options' => [
-//				         $techs->tech_id => ['selected'=>true],
-//				         'multiple' => true,
-//				         'prompt' => ' -- Select Techs -- ',
-				         'prompt' => 'Select Techs',
-                         'multiple' => true,
-                         'selected' => 'selected'
-			         ]
-		         ])->label('Select techs'); ?>
+    <?= $form->field($techs, 'tech_id[]')->widget(Select2::classname(), [
+            'data' => ArrayHelper::map(\common\models\Techs::find()->asArray()->all(),'id', 'name'),
+            'options' => [
+                'placeholder' => 'Select techs',
+                'multiple' => true
+            ],
+            'pluginOptions' => [
+                'allowClear' => true
+            ],
+        ]);
+    ?>
 
     <?= $form->field($model, 'by_serhii')->checkbox() ?>
 
