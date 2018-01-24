@@ -26,15 +26,18 @@ use backend\models\SiteConfig;
 
             <ul class="nav navbar-nav">
                 <!-- User Account: style can be found in dropdown.less -->
+                <?php
+                $avatar = $admin->avatar ? $admin->avatar : 'default_user.svg';
+                ?>
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="/images/avatars/default_user.svg" class="user-image" alt="admin Image"/>
+                        <img src="/images/avatars/<?=$avatar;?>" class="user-image" alt="admin Image"/>
                         <span class="hidden-xs"><?=$admin->first_name;?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="/images/avatars/default_user.svg" class="img-circle"
+                            <img src="/images/avatars/<?=$avatar;?>" class="img-circle"
                                  alt="User Image"/>
 
                             <p>

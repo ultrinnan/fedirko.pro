@@ -33,7 +33,7 @@ use kartik\file\FileInput;
                 'showDrag' => false,
                 'showZoom' => false,
             ],
-            'initialCaption' => "Your current avatar",
+            'initialCaption' => "Your current avatar (use square image)",
             'overwriteInitial' => true,
             'maxFileSize' => 3000
         ],
