@@ -15,21 +15,35 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
     </p>
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'email',
-            'first_name',
-            'last_name',
-            [
-                'attribute' => 'created_at',
-                'format' => ['date', 'php:d M Y, h:i:s']
+    <?php
+    try {
+        echo DetailView::widget([
+            'model' => $model,
+            'attributes' => [
+                [
+                    'attribute' => 'avatar',
+                    'format' => 'raw',
+                    'value' => function ($model) {
+                        return $model->avatar ? '<img class="avatar img-circle" src="/images/avatars/' . $model->avatar . '">' : '<img class="avatar img-circle" src="/images/avatars/default_user.svg" alt="No avatar">';
+                    }
+
+                ],
+                'email',
+                'first_name',
+                'last_name',
+                [
+                    'attribute' => 'created_at',
+                    'format' => ['date', 'php:d M Y, h:i:s']
+                ],
+                [
+                    'attribute' => 'updated_at',
+                    'format' => ['date', 'php:d M Y, h:i:s']
+                ],
             ],
-            [
-                'attribute' => 'updated_at',
-                'format' => ['date', 'php:d M Y, h:i:s']
-            ],
-        ],
-    ]) ?>
+        ]);
+    } catch (Exception $e) {
+        //error should be here
+    }
+    ?>
 
 </div>

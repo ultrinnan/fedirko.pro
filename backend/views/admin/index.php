@@ -12,21 +12,33 @@ $this->title = 'Family members';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="admin-index">
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'columns' => [
-//            todo: add avatars for admins
-	        'avatar',
+    <?php
+    try {
+        echo GridView::widget([
+            'dataProvider' => $dataProvider,
+            'columns' => [
+                //            todo: add avatars for admins
+                [
+                    'attribute' => 'avatar',
+                    'format' => 'raw',
+                    'value' => function ($model) {
+                        return $model->avatar ? '<img class="back_tech_logos img-circle" src="/images/avatars/' . $model->avatar . '">' : '<img class="back_tech_logos img-circle" src="/images/avatars/default_user.svg" alt="No avatar">';
+                    }
 
-	        'email',
-	        'first_name',
-	        'last_name',
-            [
-                'attribute' => 'updated_at',
-                'format' => ['date', 'php:d M Y, h:i:s']
+                ],
+
+                'email',
+                'first_name',
+                'last_name',
+                [
+                    'attribute' => 'updated_at',
+                    'format' => ['date', 'php:d M Y, h:i:s']
+                ],
+
+                ['class' => 'yii\grid\ActionColumn', 'template' => '{view} {update}'],
             ],
-
-	        ['class' => 'yii\grid\ActionColumn', 'template' => '{view} {update}'],
-        ],
-    ]); ?>
+        ]);
+    } catch (Exception $e) {
+        //error should be here
+    } ?>
 </div>

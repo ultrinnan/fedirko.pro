@@ -6,3 +6,4 @@ Yii::setAlias('@console', dirname(dirname(__DIR__)) . '/console');
 Yii::setAlias('@frontend_url', '/');
 Yii::setAlias('@backend_url', '/backend/web');
 Yii::setAlias('@project', dirname(dirname(__DIR__)) . '/frontend/web/images/projects');
+Yii::setAlias('@avatars', dirname(dirname(__DIR__)) . '/frontend/web/images/avatars');

@@ -11,10 +11,13 @@ use kartik\widgets\Select2;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Projects */
-/* @var $page common\models\ProjectsLangs */
+/* @var $page array|common\models\ProjectsLangs */
 /* @var $images common\models\ProjectsImages */
 /* @var $techs common\models\ProjectsTechs */
 /* @var $form yii\widgets\ActiveForm */
+
+var_dump($images);
+
 ?>
 
 <div class="projects-form">
@@ -32,17 +35,17 @@ use kartik\widgets\Select2;
 			         ]
 		         ])->label('Engine'); ?>
 
-    <?= $form->field($techs, 'tech_id[]')->widget(Select2::classname(), [
-            'data' => ArrayHelper::map(\common\models\Techs::find()->asArray()->all(),'id', 'name'),
-            'options' => [
-                'placeholder' => 'Select techs',
-                'multiple' => true
-            ],
-            'pluginOptions' => [
-                'allowClear' => true
-            ],
-        ]);
-    ?>
+<!--    --><?//= $form->field($techs, 'tech_id[]')->widget(Select2::classname(), [
+//            'data' => ArrayHelper::map(\common\models\Techs::find()->asArray()->all(),'id', 'name'),
+//            'options' => [
+//                'placeholder' => 'Select techs',
+//                'multiple' => true
+//            ],
+//            'pluginOptions' => [
+//                'allowClear' => true
+//            ],
+//        ]);
+//    ?>
 
     <?= $form->field($model, 'by_serhii')->checkbox() ?>
 
@@ -91,17 +94,27 @@ use kartik\widgets\Select2;
 
     <div>
         <?php
-        echo $form->field($images, 'img[]')->widget(FileInput::classname(), [
-            'options' =>
-                [
-                    'accept' => 'image/jpeg',
-                    'multiple' => true,
-                ],
-            'pluginOptions' =>
-                [
-	                'showUpload' => false
-                ]
-        ])->label('Select images for project (first image will be project\'s main)');
+//        echo $form->field($images, 'img[]')->widget(FileInput::classname(), [
+//            'options' =>
+//                [
+//                    'name' => 'img[]',
+//                    'accept' => 'image/jpeg',
+//                    'multiple' => true,
+//                ],
+//            'pluginOptions' =>
+//                [
+//	                'showUpload' => false
+//                ]
+//        ])->label('Select images for project (first image will be project\'s main)');
+
+        echo '<label class="control-label">Add Attachments</label>';
+        echo FileInput::widget([
+            'model' => $images,
+            'name' => 'img[]',
+            'attribute' => 'img[]',
+            'options' => ['multiple' => true]
+        ]);
+
         ?>
     </div>
 

@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use kartik\file\FileInput;
+
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Admin */
@@ -13,6 +15,30 @@ use yii\widgets\ActiveForm;
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
+    <hr>
+    <?php
+    echo $form->field($model, 'avatar')->widget(FileInput::classname(), [
+        'options' => [
+            'multiple' => false
+        ],
+        'pluginOptions' => [
+            'showUpload' => false,
+            'showRemove' => false,
+            //                'deleteUrl' => "file-delete",
+            //                'uploadUrl' => "file-upload?id=".$model->id,
+            'initialPreview' => $model->avatar ? '/images/avatars/' . \yii\helpers\ArrayHelper::getValue($model, 'avatar') : '/images/avatars/default_user.svg',
+            'initialPreviewAsData' => true,
+            'initialPreviewShowDelete' => false,
+            'fileActionSettings' => [
+                'showDrag' => false,
+                'showZoom' => false,
+            ],
+            'initialCaption' => "Your current avatar",
+            'overwriteInitial' => true,
+            'maxFileSize' => 3000
+        ],
+    ]);
+    ?>
     <hr>
     <?= $form->field($model, 'first_name')->textInput(['maxlength' => true]) ?>
     <?= $form->field($model, 'last_name')->textInput(['maxlength' => true]) ?>

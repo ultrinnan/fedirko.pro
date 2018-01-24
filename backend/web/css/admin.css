@@ -61,3 +61,7 @@
 .images img.main{
     border-color: #ffcc00;
 }
+
+.avatar{
+    max-height: 150px;
+}

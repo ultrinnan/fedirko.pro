@@ -8,6 +8,7 @@ use backend\models\AdminSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * AdminController implements the CRUD actions for Admin model.
@@ -66,6 +67,10 @@ class AdminController extends Controller
         $model->scenario = 'create';
 
         if ($model->load(Yii::$app->request->post())) {
+            $file = UploadedFile::getInstances($model, 'avatar');
+            if ($file && $file[0]->size != 0){
+                $model->avatar = $model->uploadAvatar($file);
+            }
             $model->password_hash = Yii::$app->getSecurity()->generatePasswordHash($model->password);
             $model->save();
             return $this->redirect(['index']);
@@ -85,8 +90,13 @@ class AdminController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $old_avatar = $model->avatar;
 
         if ($model->load(Yii::$app->request->post())) {
+            $file = UploadedFile::getInstances($model, 'avatar');
+            if ($file && $file[0]->size != 0){
+                $model->avatar = $model->uploadAvatar($file, $old_avatar);
+            }
             $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         } else {

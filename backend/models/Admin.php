@@ -7,6 +7,7 @@ use yii\behaviors\TimestampBehavior;
 use yii\behaviors\AttributeBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
+use common\helpers\Helper;
 
 /**
  * Admin model
@@ -14,6 +15,7 @@ use yii\web\IdentityInterface;
  * @property integer $id
  * @property string $first_name
  * @property string $last_name
+ * @property string $avatar
  * @property string $password_hash
  * @property string $password_reset_token
  * @property string $email
@@ -243,5 +245,30 @@ class Admin extends ActiveRecord implements IdentityInterface
     public function removePasswordResetToken()
     {
         $this->password_reset_token = null;
+    }
+
+    /**
+     * uploads avatar and returns generated filename in case of success
+     * @param $new_avatar object
+     * @param $old_avatar string
+     * @return string|null
+     * @throws \yii\base\Exception
+     */
+    public function uploadAvatar($new_avatar, $old_avatar = null)
+    {
+        if ($new_avatar) {
+            $filename = Yii::$app->security->generateRandomString() . '.' . $new_avatar[0]->extension;
+
+            if ($new_avatar[0]->saveAs(Yii::getAlias('@avatars') . '/' . $filename)){
+                if ($old_avatar){
+                    unlink(Yii::getAlias('@avatars') . '/' . $old_avatar);
+                }
+                Helper::createThumb(Yii::getAlias('@avatars') . '/' . $filename, Yii::getAlias('@avatars') . '/' . $filename, 150);
+                return $filename;
+            } else {
+                Yii::$app->session->setFlash('error', 'There was an error.<hr>' . Helper::showErrors($new_avatar[0]));
+            }
+        }
+        return $old_avatar;
     }
 }
