@@ -30,11 +30,11 @@ class ProjectsLangs extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['project_id', 'lang_id', 'name', 'short_desc', 'long_desc'], 'required'],
+//            [['project_id', 'lang_id', 'name', 'short_desc', 'long_desc'], 'required'],
             [['project_id', 'lang_id'], 'integer'],
             [['name', 'short_desc'], 'string', 'max' => 255],
             ['long_desc', 'string', 'max' => 2048],
-	        [['name', 'short_desc', 'long_desc'], 'default', 'value' => null],
+	        [['name', 'short_desc', 'long_desc'], 'default', 'value' => ''],
         ];
     }
 

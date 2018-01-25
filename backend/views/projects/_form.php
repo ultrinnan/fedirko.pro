@@ -13,16 +13,18 @@ use kartik\widgets\Select2;
 /* @var $model common\models\Projects */
 /* @var $page array|common\models\ProjectsLangs */
 /* @var $images common\models\ProjectsImages */
+/* @var $images_config array */
 /* @var $techs common\models\ProjectsTechs */
 /* @var $form yii\widgets\ActiveForm */
 
-var_dump($images);
+//var_dump($techs);
+//die;
 
 ?>
 
 <div class="projects-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]) ?>
 
     <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
 
@@ -35,17 +37,27 @@ var_dump($images);
 			         ]
 		         ])->label('Engine'); ?>
 
-<!--    --><?//= $form->field($techs, 'tech_id[]')->widget(Select2::classname(), [
-//            'data' => ArrayHelper::map(\common\models\Techs::find()->asArray()->all(),'id', 'name'),
-//            'options' => [
-//                'placeholder' => 'Select techs',
-//                'multiple' => true
-//            ],
-//            'pluginOptions' => [
-//                'allowClear' => true
-//            ],
-//        ]);
-//    ?>
+    <div class="form-group">
+    <?php
+        echo '<label class="control-label">Projects techs *</label>';
+        try {
+            echo Select2::widget([
+                'name' => 'tech_ids[]',
+                'value' => $techs, // initial value
+                'data' => ArrayHelper::map(\common\models\Techs::find()->asArray()->all(), 'id', 'name'),
+                'options' => [
+                    'placeholder' => 'Select projects techs...',
+                    'required' => true,
+                    'multiple' => true
+                ],
+                'pluginOptions' => [
+                ],
+            ]);
+        } catch (Exception $e) {
+            //error here
+        }
+    ?>
+    </div>
 
     <?= $form->field($model, 'by_serhii')->checkbox() ?>
 
@@ -68,6 +80,8 @@ var_dump($images);
 
     <div class="tab-content">
 		<?php
+//        var_dump($page);
+//        die;
 		for ($i = 0; $i < count($page); $i++){
 			$active_class = $i ==0 ? 'in active' : '';
         ?>
@@ -92,29 +106,39 @@ var_dump($images);
 		?>
     </div>
 
-    <div>
+    <div class="form-group">
         <?php
-//        echo $form->field($images, 'img[]')->widget(FileInput::classname(), [
-//            'options' =>
-//                [
-//                    'name' => 'img[]',
-//                    'accept' => 'image/jpeg',
-//                    'multiple' => true,
-//                ],
-//            'pluginOptions' =>
-//                [
-//	                'showUpload' => false
-//                ]
-//        ])->label('Select images for project (first image will be project\'s main)');
-
-        echo '<label class="control-label">Add Attachments</label>';
-        echo FileInput::widget([
-            'model' => $images,
-            'name' => 'img[]',
-            'attribute' => 'img[]',
-            'options' => ['multiple' => true]
-        ]);
-
+        var_dump($images_config);
+        try {
+            echo FileInput::widget([
+                'name' => 'img[]',
+//                'model' => $images,
+//                'attribute' => 'img[]',
+                'options' => [
+                    'multiple' => true
+                ],
+                'pluginOptions' => [
+                    'showUpload' => false,
+                    'showRemove' => true,
+                    //                'deleteUrl' => "image-delete",
+                    //                'uploadUrl' => "file-upload?id=".$model->id,
+                    'initialPreview' => $images,
+                    //                'initialPreview' => $model->avatar ? '/images/avatars/' . \yii\helpers\ArrayHelper::getValue($model, 'avatar') : '/images/avatars/default_user.svg',
+                    'initialPreviewConfig' => $images_config,
+                    'initialPreviewAsData' => true,
+                    'initialPreviewShowDelete' => true,
+                    'fileActionSettings' => [
+                        'showDrag' => true,
+                        'showZoom' => true,
+                    ],
+                    'initialCaption' => "Add project images",
+                    'overwriteInitial' => false,
+                    'maxFileSize' => 3000
+                ],
+            ]);
+        } catch (Exception $e) {
+            //error here
+        }
         ?>
     </div>
 

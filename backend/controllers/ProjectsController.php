@@ -83,21 +83,26 @@ class ProjectsController extends Controller
      */
     public function actionCreate()
     {
-    	$images = new ProjectsImages();
-    	$techs = new ProjectsTechs();
+    	$images = [];
+        $images_config = [];
+    	$techs = [];
 	    $model = new Projects();
 	    $langs = Lang::find()->asArray()->all();
 	    $page = [];
 
 	    for ($i = 0; $i<count($langs); $i++){
 		    $page[$i] = new ProjectsLangs();
-		    $page[$i]->lang_id = $langs[$i]['id'];
+		    $page[$i]['lang_id'] = $langs[$i]['id'];
 	    }
 	    if ($model->load(Yii::$app->request->post())) {
+//	        var_dump(Yii::$app->request->post());
+//            $files = UploadedFile::getInstancesByName('img');
+//            var_dump($files);
+//	        die;
 	    	if ($model->save()){
 
-			    $tech_list = Yii::$app->request->post('ProjectsTechs');
-			    foreach ($tech_list['tech_id'] as $tech_id){
+			    $tech_list = Yii::$app->request->post('tech_ids');
+			    foreach ($tech_list as $tech_id){
 				    $tech = new ProjectsTechs();
 				    $tech->tech_id = $tech_id;
 				    $tech->project_id = $model->id;
@@ -108,10 +113,12 @@ class ProjectsController extends Controller
 				    $language = new ProjectsLangs();
 				    $language->attributes = $lang;
 				    $language->project_id = $model->id;
-				    $language->save();
+                    if (!$language->save()){
+                        Yii::$app->session->setFlash('error', 'There was an error.<hr>' . Helper::showErrors($language));
+                    }
 			    }
 
-			    $files = UploadedFile::getInstances($images, 'img');
+			    $files = UploadedFile::getInstancesByName('img');
 			    if ($files){
 		            $imgs = new ProjectsImages();
 		            $imgs->upload($files, $model->id);
@@ -131,7 +138,8 @@ class ProjectsController extends Controller
 			    'page' => $page,
 			    'model' => $model,
 			    'images' => $images,
-			    'techs' => $techs
+                'images_config' => $images_config,
+                'techs' => $techs
 		    ]);
 	    }
     }
@@ -146,36 +154,77 @@ class ProjectsController extends Controller
     {
         $model = $this->findModel($id);
 
-	    $images = ProjectsImages::find()->where('project_id = ' . $id)->all();
-	    $techs = ProjectsTechs::find()->where('project_id = ' . $id)->all();
-	    var_dump($techs);
-	    $langs = Lang::find()->asArray()->all();
+	    $images = ProjectsImages::find()->select('img')->where('project_id = ' . $id)->asArray()->all();
+        $images_config = [];
+	    foreach ($images as &$image){
+            $images_config[] = [
+                'url' => "image-delete?name=" . $image['img'],
+                'key' => $id,
+            ];
+            $image = '/images/projects/' . $id . '/' . $image['img'];
+        }
 
-	    $page = ProjectsLangs::find()
-	                 ->select('*')
-	                 ->where('project_id = ' . $id)
+	    $techs = ProjectsTechs::find()->select('tech_id')->where('project_id = ' . $id)->asArray()->all();
+        foreach ($techs as &$tech){
+            $tech = $tech['tech_id'];
+        }
+//	    var_dump($techs);
+//	    die;
+	    $langs = Lang::find()->asArray()->all();
+//        var_dump($langs);
+        $page = [];
+        for ($i = 0; $i < count($langs); $i++){
+//            $page[$i] = new ProjectsLangs();
+            $page[$i] = ProjectsLangs::find()
+//                ->select('*')
+                ->where('project_id = ' . $id)
+                ->andWhere('lang_id = ' . ($i + 1))
 //	                 ->leftJoin('pages_lang', 'pages_lang.page_id = pages.id')
-	                 ->asArray()
-	                 ->all();
+                ->asArray()
+                ->one();
+//            $page[$i]['lang_id'] = $langs[$i]['id'];
+        }
+
+
 	    if ($model->load(Yii::$app->request->post())) {
+//	        var_dump(Yii::$app->request->post());
+//	        die;
 		    if ($model->save()){
 
-			    $tech_list = Yii::$app->request->post('ProjectsTechs');
-			    foreach ($tech_list['tech_id'] as $tech_id){
-				    $tech = new ProjectsTechs();
-				    $tech->tech_id = $tech_id;
-				    $tech->project_id = $model->id;
-				    $tech->save();
-			    }
+                $tech_list = Yii::$app->request->post('tech_ids');
+                //check old techs first and remove if not in new list
+                foreach ($techs as $old_tech){
+                    if (!in_array($old_tech, $tech_list)){
+                        ProjectsTechs::removeProjectsTech($model->id, $old_tech);
+                    }
+                }
+                //now check if exists and add new techs
+                foreach ($tech_list as $tech_id){
+                    $existed = ProjectsTechs::find()
+                        ->where('project_id = ' . $model->id)
+                        ->andWhere('tech_id = ' . $tech_id)
+                        ->one();
+                    if ($existed){
+                        continue;
+                    } else {
+                        $tech = new ProjectsTechs();
+                        $tech->tech_id = $tech_id;
+                        $tech->project_id = $model->id;
+                        $tech->save();
+                    }
+                }
 
 			    foreach (Yii::$app->request->post('lang') as $lang){
-				    $language = new ProjectsLangs();
+				    $language = ProjectsLangs::find()
+                        ->where('project_id = ' . $id)
+                        ->andWhere('lang_id = ' . $lang['lang_id'])
+                        ->one();
 				    $language->attributes = $lang;
-				    $language->project_id = $model->id;
+//				    $language->project_id = $model->id;
 				    $language->save();
 			    }
 
-			    $files = UploadedFile::getInstances($images, 'img');
+			    $files = UploadedFile::getInstanceByName('img');
 			    if ($files){
 				    $imgs = new ProjectsImages();
 				    $imgs->upload($files, $model->id);
@@ -195,6 +244,7 @@ class ProjectsController extends Controller
 			    'page' => $page,
 			    'model' => $model,
 			    'images' => $images,
+			    'images_config' => $images_config,
 			    'techs' => $techs
 		    ]);
 	    }
@@ -262,47 +312,49 @@ class ProjectsController extends Controller
 		return false;
 	}
 
-	public function actionImageUpload()
+//	public function actionImageUpload()
+//	{
+//		$model = new ProjectsImages();
+//
+//		$imageFile = UploadedFile::getInstance($model, 'img');
+//
+//		$directory = Yii::getAlias('@frontend/web/images/projects') . '/' . $model->project_id . '/';
+//		if (!is_dir($directory)) {
+//			try {
+//				FileHelper::createDirectory( $directory );
+//			} catch ( Exception $e ) {
+//				var_dump($e);
+//			}
+//		}
+//
+//		if ($imageFile) {
+//			$uid = uniqid(time(), true);
+//			$fileName = $uid . '.' . $imageFile->extension;
+//			$filePath = $directory . $fileName;
+//			if ($imageFile->saveAs($filePath)) {
+//				$path = '/images/projects/' . $model->project_id . '/' . $fileName;
+//				return Json::encode([
+//					'files' => [
+//						[
+//							'name' => $fileName,
+//							'size' => $imageFile->size,
+//							'url' => $path,
+//							'thumbnailUrl' => $path,
+//							'deleteUrl' => 'image-delete?name=' . $fileName,
+//							'deleteType' => 'POST',
+//						],
+//					],
+//				]);
+//			}
+//		}
+//
+//		return '{error}';
+//	}
+
+	public function actionImageDelete()
 	{
-		$model = new ProjectsImages();
-
-		$imageFile = UploadedFile::getInstance($model, 'img');
-
-		$directory = Yii::getAlias('@frontend/web/images/projects') . '/' . $model->project_id . '/';
-		if (!is_dir($directory)) {
-			try {
-				FileHelper::createDirectory( $directory );
-			} catch ( Exception $e ) {
-				var_dump($e);
-			}
-		}
-
-		if ($imageFile) {
-			$uid = uniqid(time(), true);
-			$fileName = $uid . '.' . $imageFile->extension;
-			$filePath = $directory . $fileName;
-			if ($imageFile->saveAs($filePath)) {
-				$path = '/images/projects/' . $model->project_id . '/' . $fileName;
-				return Json::encode([
-					'files' => [
-						[
-							'name' => $fileName,
-							'size' => $imageFile->size,
-							'url' => $path,
-							'thumbnailUrl' => $path,
-							'deleteUrl' => 'image-delete?name=' . $fileName,
-							'deleteType' => 'POST',
-						],
-					],
-				]);
-			}
-		}
-
-		return '{error}';
-	}
-
-	public function actionImageDelete($name)
-	{
+	    var_dump($_REQUEST);
+	    die;
 		$directory = Yii::getAlias('@frontend/web/img/temp') . DIRECTORY_SEPARATOR . Yii::$app->session->id;
 		if (is_file($directory . DIRECTORY_SEPARATOR . $name)) {
 			unlink($directory . DIRECTORY_SEPARATOR . $name);

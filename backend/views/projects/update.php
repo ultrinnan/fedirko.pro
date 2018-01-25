@@ -4,7 +4,9 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Projects */
+/* @var $page common\models\ProjectsLangs */
 /* @var $images common\models\ProjectsImages */
+/* @var $images_config array */
 /* @var $techs common\models\ProjectsTechs */
 
 $this->title = 'Update Project: ' . $model->id;
@@ -18,6 +20,7 @@ $this->params['breadcrumbs'][] = 'Update';
 		'page' => $page,
 		'model' => $model,
 		'images' => $images,
+        'images_config' => $images_config,
 		'techs' => $techs
 	]) ?>
 

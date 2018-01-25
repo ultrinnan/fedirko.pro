@@ -6,6 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $page common\models\ProjectsLangs */
 /* @var $images common\models\ProjectsImages */
+/* @var $images_config array */
 /* @var $techs common\models\ProjectsTechs */
 /* @var $model common\models\Projects */
 
@@ -18,7 +19,8 @@ $this->params['breadcrumbs'][] = $this->title;
 	<?= $this->render('_form', [
 		'page' => $page,
 		'images' => $images,
-		'techs' => $techs,
+        'images_config' => $images_config,
+        'techs' => $techs,
 		'model' => $model,
 	]) ?>
 

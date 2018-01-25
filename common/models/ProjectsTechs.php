@@ -43,4 +43,13 @@ class ProjectsTechs extends \yii\db\ActiveRecord
             'tech_id' => 'Tech ID',
         ];
     }
+
+    public static function removeProjectsTech($project_id, $tech_id)
+    {
+        $record = self::find()
+            ->where('project_id = ' . $project_id)
+            ->andWhere('tech_id = ' . $tech_id)
+            ->one();
+        return $record->delete();
+    }
 }
