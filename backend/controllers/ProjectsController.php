@@ -9,15 +9,12 @@ use common\models\ProjectsTechs;
 use Yii;
 use common\models\Projects;
 use common\models\ProjectsSearch;
-use yii\base\Exception;
 use yii\db\StaleObjectException;
-use yii\helpers\Json;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\Response;
 use frontend\models\Lang;
-use yii\helpers\FileHelper;
 use yii\web\UploadedFile;
 
 /**
@@ -95,10 +92,6 @@ class ProjectsController extends Controller
 		    $page[$i]['lang_id'] = $langs[$i]['id'];
 	    }
 	    if ($model->load(Yii::$app->request->post())) {
-//	        var_dump(Yii::$app->request->post());
-//            $files = UploadedFile::getInstancesByName('img');
-//            var_dump($files);
-//	        die;
 	    	if ($model->save()){
 
 			    $tech_list = Yii::$app->request->post('tech_ids');
@@ -168,27 +161,18 @@ class ProjectsController extends Controller
         foreach ($techs as &$tech){
             $tech = $tech['tech_id'];
         }
-//	    var_dump($techs);
-//	    die;
 	    $langs = Lang::find()->asArray()->all();
-//        var_dump($langs);
         $page = [];
         for ($i = 0; $i < count($langs); $i++){
-//            $page[$i] = new ProjectsLangs();
             $page[$i] = ProjectsLangs::find()
-//                ->select('*')
                 ->where('project_id = ' . $id)
                 ->andWhere('lang_id = ' . ($i + 1))
-//	                 ->leftJoin('pages_lang', 'pages_lang.page_id = pages.id')
                 ->asArray()
                 ->one();
-//            $page[$i]['lang_id'] = $langs[$i]['id'];
         }
 
 
 	    if ($model->load(Yii::$app->request->post())) {
-//	        var_dump(Yii::$app->request->post());
-//	        die;
 		    if ($model->save()){
 
                 $tech_list = Yii::$app->request->post('tech_ids');
@@ -220,11 +204,10 @@ class ProjectsController extends Controller
                         ->andWhere('lang_id = ' . $lang['lang_id'])
                         ->one();
 				    $language->attributes = $lang;
-//				    $language->project_id = $model->id;
 				    $language->save();
 			    }
 
-			    $files = UploadedFile::getInstanceByName('img');
+			    $files = UploadedFile::getInstancesByName('img');
 			    if ($files){
 				    $imgs = new ProjectsImages();
 				    $imgs->upload($files, $model->id);
@@ -256,10 +239,29 @@ class ProjectsController extends Controller
      * @param integer $id
      * @return mixed
      */
+    //todo: make relations in database
     public function actionDelete($id)
     {
 	    try {
 		    $this->findModel( $id )->delete();
+
+		    $langs = ProjectsLangs::find()->where('project_id = ' . $id)->all();
+		    foreach ($langs as $lang){
+		        $lang->delete();
+            }
+
+            $techs = ProjectsTechs::find()->where('project_id = ' . $id)->all();
+		    foreach ($techs as $tech){
+		        $tech->delete();
+            }
+
+            $images = ProjectsImages::find()->where('project_id = ' . $id)->all();
+		    foreach ($images as $image){
+		        $image->delete();
+            }
+            $path = Yii::getAlias('@project') . '/' . $id;
+            Helper::deleteDir($path);
+
 	    } catch ( StaleObjectException $e ) {
 	    } catch ( NotFoundHttpException $e ) {
 	    } catch ( \Exception $e ) {
@@ -312,68 +314,46 @@ class ProjectsController extends Controller
 		return false;
 	}
 
-//	public function actionImageUpload()
-//	{
-//		$model = new ProjectsImages();
-//
-//		$imageFile = UploadedFile::getInstance($model, 'img');
-//
-//		$directory = Yii::getAlias('@frontend/web/images/projects') . '/' . $model->project_id . '/';
-//		if (!is_dir($directory)) {
-//			try {
-//				FileHelper::createDirectory( $directory );
-//			} catch ( Exception $e ) {
-//				var_dump($e);
-//			}
-//		}
-//
-//		if ($imageFile) {
-//			$uid = uniqid(time(), true);
-//			$fileName = $uid . '.' . $imageFile->extension;
-//			$filePath = $directory . $fileName;
-//			if ($imageFile->saveAs($filePath)) {
-//				$path = '/images/projects/' . $model->project_id . '/' . $fileName;
-//				return Json::encode([
-//					'files' => [
-//						[
-//							'name' => $fileName,
-//							'size' => $imageFile->size,
-//							'url' => $path,
-//							'thumbnailUrl' => $path,
-//							'deleteUrl' => 'image-delete?name=' . $fileName,
-//							'deleteType' => 'POST',
-//						],
-//					],
-//				]);
-//			}
-//		}
-//
-//		return '{error}';
-//	}
-
-	public function actionImageDelete()
+    /**
+     * @param $key - project_id
+     * @param $name string image name
+     * @return bool
+     */
+	public function actionImageDelete($key = null, $name = null)
 	{
-	    var_dump($_REQUEST);
-	    die;
-		$directory = Yii::getAlias('@frontend/web/img/temp') . DIRECTORY_SEPARATOR . Yii::$app->session->id;
-		if (is_file($directory . DIRECTORY_SEPARATOR . $name)) {
-			unlink($directory . DIRECTORY_SEPARATOR . $name);
-		}
+	    $key = $_REQUEST['key'];
+	    $name = $_REQUEST['name'];
 
-		$files = FileHelper::findFiles($directory);
-		$output = [];
-		foreach ($files as $file) {
-			$fileName = basename($file);
-			$path = '/img/temp/' . Yii::$app->session->id . DIRECTORY_SEPARATOR . $fileName;
-			$output['files'][] = [
-				'name' => $fileName,
-				'size' => filesize($file),
-				'url' => $path,
-				'thumbnailUrl' => $path,
-				'deleteUrl' => 'image-delete?name=' . $fileName,
-				'deleteType' => 'POST',
-			];
-		}
-		return Json::encode($output);
+	    $image = ProjectsImages::find()
+            ->where('project_id = ' . $key)
+            ->andWhere('img = "' . $name . '"')
+            ->one();
+	    $is_main = $image->main ? true : false;
+
+	    $img = $image->img;
+	    $thumb = $image->thumb;
+
+	    if ($image->delete()){
+            $path = Yii::getAlias('@project') . '/' . $key . '/';
+
+            if (is_file($path . $img)) {
+                unlink($path . $img);
+                unlink($path . $thumb);
+            }
+
+            //mark next image as main
+            if ($is_main){
+                $new_main = ProjectsImages::find()
+                    ->where('project_id = ' . $key)
+                    ->one();
+                if ($new_main){
+                    $new_main->main = 1;
+                    $new_main->save();
+                }
+            }
+
+            return true;
+        }
+        return false;
 	}
 }

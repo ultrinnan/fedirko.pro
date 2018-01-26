@@ -2,6 +2,9 @@
 
 namespace common\helpers;
 
+use http\Exception\InvalidArgumentException;
+use yii\base\Exception;
+
 trait Helper {
 
 	/**
@@ -27,7 +30,7 @@ trait Helper {
 			$result = mkdir($path, $mode);
 			chmod($path, $mode);
 		} catch (\Exception $e) {
-			throw new \yii\base\Exception("Failed to create directory '$path': " . $e->getMessage(), $e->getCode(), $e);
+			throw new Exception("Failed to create directory '$path': " . $e->getMessage(), $e->getCode(), $e);
 		}
 		return $result;
 	}
@@ -35,7 +38,12 @@ trait Helper {
 	static function createThumb($src, $dest, $desired_width) {
 
 		/* read the source image */
-		$source_image = imagecreatefromjpeg($src);
+        if (exif_imagetype($src) != IMAGETYPE_JPEG) {
+            $source_image = imagecreatefrompng($src);
+        } else {
+            $source_image = imagecreatefromjpeg($src);
+        }
+
 		$width = imagesx($source_image);
 		$height = imagesy($source_image);
 
@@ -51,6 +59,28 @@ trait Helper {
 		/* create the physical thumbnail image to its destination */
 		imagejpeg($virtual_image, $dest);
 	}
+
+    /**
+     * recursive deletion of folder with subfolders
+     * @param $dirPath
+     */
+    static function deleteDir($dirPath) {
+        if (! is_dir($dirPath)) {
+            throw new InvalidArgumentException("$dirPath must be a directory");
+        }
+        if (substr($dirPath, strlen($dirPath) - 1, 1) != '/') {
+            $dirPath .= '/';
+        }
+        $files = glob($dirPath . '*', GLOB_MARK);
+        foreach ($files as $file) {
+            if (is_dir($file)) {
+                self::deleteDir($file);
+            } else {
+                unlink($file);
+            }
+        }
+        rmdir($dirPath);
+    }
 
 
 }

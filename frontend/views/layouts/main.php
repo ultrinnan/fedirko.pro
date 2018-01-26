@@ -200,12 +200,16 @@ $topItems = [
             </div>
             <div class="col-md-9">
             <?php
+            try {
                 echo Nav::widget([
                     'options' => ['class' => 'top_menu'],
                     'items' => array_merge($mainItems, $topItems),
                     'activateItems' => true,
                     'activateParents' => true,
                 ]);
+            } catch (Exception $e) {
+                //error here
+            }
             ?>
             </div>
         </div>

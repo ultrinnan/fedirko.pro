@@ -4,7 +4,6 @@ namespace common\models;
 
 use common\helpers\Helper;
 use Yii;
-use yii\web\UploadedFile;
 
 /**
  * This is the model class for table "projects_images".
@@ -52,7 +51,7 @@ class ProjectsImages extends \yii\db\ActiveRecord
     }
 
 	/**
-	 * @param $files object UploadFile
+	 * @param $files object|array UploadFile
 	 * @param $project_id
 	 *
 	 * @return bool
@@ -62,11 +61,18 @@ class ProjectsImages extends \yii\db\ActiveRecord
 	{
 		if ($files && $project_id) {
 			$error = true;
+
+            //should we assign new main flag?
+            $has_main = self::find()
+                ->where('project_id = ' . $project_id)
+                ->andWhere('main = 1')
+                ->one();
+
 			for ($i = 0; $i < count($files); $i++){
 				$obj = new self();
 				$obj->project_id = $project_id;
 
-				$obj->main = $i == 0 ? 1 : 0;
+				$obj->main = ($i == 0 && !$has_main) ? 1 : 0;
 
 				$rand_filename = Yii::$app->security->generateRandomString();
 				$obj->img = $rand_filename . '.' . $files[$i]->extension;

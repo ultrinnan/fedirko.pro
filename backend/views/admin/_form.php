@@ -19,13 +19,12 @@ use kartik\file\FileInput;
     <?php
     echo $form->field($model, 'avatar')->widget(FileInput::classname(), [
         'options' => [
-            'multiple' => false
+            'multiple' => false,
+            'accept' => ".png, .jpg, .jpeg"
         ],
         'pluginOptions' => [
             'showUpload' => false,
             'showRemove' => false,
-            //                'deleteUrl' => "file-delete",
-            //                'uploadUrl' => "file-upload?id=".$model->id,
             'initialPreview' => $model->avatar ? '/images/avatars/' . \yii\helpers\ArrayHelper::getValue($model, 'avatar') : '/images/avatars/default_user.svg',
             'initialPreviewAsData' => true,
             'initialPreviewShowDelete' => false,

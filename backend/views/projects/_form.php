@@ -17,9 +17,6 @@ use kartik\widgets\Select2;
 /* @var $techs common\models\ProjectsTechs */
 /* @var $form yii\widgets\ActiveForm */
 
-//var_dump($techs);
-//die;
-
 ?>
 
 <div class="projects-form">
@@ -80,8 +77,6 @@ use kartik\widgets\Select2;
 
     <div class="tab-content">
 		<?php
-//        var_dump($page);
-//        die;
 		for ($i = 0; $i < count($page); $i++){
 			$active_class = $i ==0 ? 'in active' : '';
         ?>
@@ -108,16 +103,17 @@ use kartik\widgets\Select2;
 
     <div class="form-group">
         <?php
-        var_dump($images_config);
         try {
             echo FileInput::widget([
                 'name' => 'img[]',
 //                'model' => $images,
 //                'attribute' => 'img[]',
                 'options' => [
-                    'multiple' => true
+                    'multiple' => true,
+                    'accept' => ".png, .jpg, .jpeg"
                 ],
                 'pluginOptions' => [
+                    'allowedFileExtensions' => ['jpg','png','jpeg'],
                     'showUpload' => false,
                     'showRemove' => true,
                     //                'deleteUrl' => "image-delete",
