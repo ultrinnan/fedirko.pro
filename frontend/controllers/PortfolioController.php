@@ -1,12 +1,10 @@
 <?php
 namespace frontend\controllers;
 
-use common\models\ProjectsPictures;
 use common\models\ProjectsTechs;
 use Yii;
 use yii\web\Controller;
-use common\models\Project;
-use common\models\Techs2;
+use common\models\Projects;
 use yii\web\NotFoundHttpException;
 
 /**
@@ -33,7 +31,7 @@ class PortfolioController extends Controller
      */
     public function actionIndex()
     {
-        $projects = Project::getProjectsList();
+        $projects = Projects::getProjectsList();
 
         return $this->render('index', [
             'projects' => $projects,
@@ -47,7 +45,7 @@ class PortfolioController extends Controller
      */
     public function actionSerhii()
     {
-        $projects = Project::getProjectsList(1);
+        $projects = Projects::getProjectsList(1);
         return $this->render('serhii', [
             'projects' => $projects,
         ]);
@@ -59,7 +57,7 @@ class PortfolioController extends Controller
      */
     public function actionMary()
     {
-        $projects = Project::getProjectsList(2);
+        $projects = Projects::getProjectsList(2);
         return $this->render('mary', [
             'projects' => $projects,
         ]);

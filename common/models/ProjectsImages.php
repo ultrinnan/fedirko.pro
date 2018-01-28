@@ -96,4 +96,14 @@ class ProjectsImages extends \yii\db\ActiveRecord
 		return false;
 	}
 
+	public static function getProjectPictures($project_id)
+	{
+		$pictures = self::find()
+		                  ->select('id, main, img')
+		                  ->where('project_id = '. $project_id)
+		                  ->asArray()
+		                  ->all();
+		return $pictures;
+	}
+
 }

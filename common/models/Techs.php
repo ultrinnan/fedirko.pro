@@ -41,4 +41,10 @@ class Techs extends \yii\db\ActiveRecord
             'name' => 'Name',
         ];
     }
+
+	public static function getTech($id)
+	{
+		$tech = self::findOne($id);
+		return $tech;
+	}
 }

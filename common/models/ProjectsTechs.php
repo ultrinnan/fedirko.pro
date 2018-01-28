@@ -52,4 +52,14 @@ class ProjectsTechs extends \yii\db\ActiveRecord
             ->one();
         return $record->delete();
     }
+
+	public static function getProjectTechList($project_id)
+	{
+		return self::find()
+		             ->select('tech_id as id, name')
+		             ->leftJoin('techs', 'techs.id = projects_techs.tech_id')
+		             ->where('projects_techs.project_id = '. $project_id)
+		             ->asArray()
+		             ->all();
+	}
 }
