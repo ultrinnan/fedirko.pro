@@ -12,18 +12,18 @@ use frontend\widgets\WLang;
 AppAsset::register($this);
 
 $mainItems = [
-    [
-        'label' => 'professionals',
-        'url' => Yii::$app->homeUrl,
-        'items' => [
-            [
-                'label' => 'Serhii\'s CV',
-                'url' => '/cv-sergey',
-            ],
-            [
-                'label' => 'Mary\'s CV',
-                'url' => '/cv-mary',
-            ],
+//    [
+//        'label' => 'professionals',
+//        'url' => Yii::$app->homeUrl,
+//        'items' => [
+//            [
+//                'label' => 'Serhii\'s CV',
+//                'url' => '/cv-sergey',
+//            ],
+//            [
+//                'label' => 'Mary\'s CV',
+//                'url' => '/cv-mary',
+//            ],
 //            [
 //                'label' => 'Methodology',
 //                'url' => '/methodology',
@@ -44,8 +44,8 @@ $mainItems = [
 //                'label' => 'Engagement Models',
 //                'url' => '/engagement-models',
 //            ],
-        ]
-    ],
+//        ]
+//    ],
     [
         'label' => 'expertise',
         'url' => '/expertise/index',
@@ -88,70 +88,70 @@ $mainItems = [
 //            ],
         ]
     ],
-    [
-        'label' => 'services',
-        'url' => '/services/index',
-        'items' => [
-            [
-                'label' => 'Requirements Engineering',
-                'url' => '/services/requirements-engineering',
-            ],
-            [
-                'label' => 'Prototyping &amp; UXD',
-                'url' => '/services/design-usability',
-            ],
-            [
-                'label' => 'Application Development',
-                'url' => '/services/custom-software-development',
-            ],
-            [
-                'label' => 'Application Integration',
-                'url' => '/services/application-integration',
-            ],
-            [
-                'label' => 'Application Security',
-                'url' => '/application-security',
-            ],
-            [
-                'label' => 'QA and Testing',
-                'url' => '/services/quality-assurance-testing',
-            ],
-            [
-                'label' => 'Maintenance and Support',
-                'url' => '/services/maintenance-and-support',
-            ],
-        ],
-    ],
 //    [
-//        'label' => 'technologies',
-//        'url' => '/technologies/index',
+//        'label' => 'services',
+//        'url' => '/services/index',
 //        'items' => [
 //            [
-//                'label' => 'PHP',
-//                'url' => '/php-development',
+//                'label' => 'Requirements Engineering',
+//                'url' => '/services/requirements-engineering',
 //            ],
 //            [
-//                'label' => 'Python',
-//                'url' => '/python-development',
+//                'label' => 'Prototyping &amp; UXD',
+//                'url' => '/services/design-usability',
 //            ],
 //            [
-//                'label' => 'Backend',
-//                'url' => '/backend-development',
+//                'label' => 'Application Development',
+//                'url' => '/services/custom-software-development',
 //            ],
 //            [
-//                'label' => 'Frontend',
-//                'url' => '/frontend-development',
+//                'label' => 'Application Integration',
+//                'url' => '/services/application-integration',
 //            ],
 //            [
-//                'label' => 'Cloud',
-//                'url' => '/cloud-solutions',
+//                'label' => 'Application Security',
+//                'url' => '/application-security',
 //            ],
 //            [
-//                'label' => 'Mobile Platforms',
-//                'url' => '/mobile-technologies',
+//                'label' => 'QA and Testing',
+//                'url' => '/services/quality-assurance-testing',
+//            ],
+//            [
+//                'label' => 'Maintenance and Support',
+//                'url' => '/services/maintenance-and-support',
 //            ],
 //        ],
 //    ],
+    [
+        'label' => 'technologies',
+        'url' => '/technologies/index',
+        'items' => [
+            [
+                'label' => 'PHP',
+                'url' => '/php-development',
+            ],
+            [
+                'label' => 'Python',
+                'url' => '/python-development',
+            ],
+            [
+                'label' => 'Backend',
+                'url' => '/backend-development',
+            ],
+            [
+                'label' => 'Frontend',
+                'url' => '/frontend-development',
+            ],
+            [
+                'label' => 'Cloud',
+                'url' => '/cloud-solutions',
+            ],
+            [
+                'label' => 'Mobile Platforms',
+                'url' => '/mobile-technologies',
+            ],
+        ],
+    ],
 ];
 $topItems = [
     [
