@@ -13,12 +13,11 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
 //    	todo: move fancybox to separate asset
-        'js/fancybox/source/jquery.fancybox.css?v=2.1.5',
+        'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css',
         'css/main.css',
     ];
     public $js = [
-        'js/fancybox/lib/jquery.mousewheel-3.0.6.pack.js',
-        'js/fancybox/source/jquery.fancybox.pack.js?v=2.1.5',
+        'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js',
         'js/main.js'
     ];
     public $depends = [

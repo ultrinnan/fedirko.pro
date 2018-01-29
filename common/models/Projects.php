@@ -5,6 +5,7 @@ namespace common\models;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
+use frontend\models\Lang;
 
 /**
  * This is the model class for table "projects".
@@ -88,6 +89,37 @@ class Projects extends \yii\db\ActiveRecord
 		return $trans;
 	}
 
+    /**
+     * @param null int $author
+     * @return bool|array|ActiveRecord[]
+     */
+	public static function getProjectInfo($author = null, $id = null)
+    {
+        $lang = Lang::getCurrent();
+
+        if (isset($author)){
+            $where = $author == 1 ? 'by_serhii = 1' : 'by_mary = 1';
+        } else {
+            $where = '1';
+        }
+        $where_id = $id ? 'projects.id = ' . $id : '1';
+
+        $projects = static::find()
+            ->select('*')
+            ->leftJoin('projects_langs pl', 'pl.project_id = projects.id')
+            ->where($where)
+            ->andWhere('pl.lang_id = ' . $lang->id)
+            ->andWhere($where_id)
+            ->orderBy(['projects.publish_date' => SORT_DESC])
+            ->asArray()
+            ->all();
+        if ($projects){
+            return $projects;
+        } else {
+            return false;
+        }
+    }
+
 	public static function getProjectTechs($id)
 	{
 		$techs = ProjectsTechs::find()
@@ -126,45 +158,34 @@ class Projects extends \yii\db\ActiveRecord
 		return $this->hasMany(ProjectsLangs::className(), ['project_id' => 'id']);
 	}
 
+    /**
+     * @param null $author
+     * @return array|bool|ActiveRecord[]
+     */
 	public static function getProjectsList($author = null)
 	{
-		if (isset($author)){
-			$where = $author == 1 ? 'by_serhii = 1' : 'by_mary = 1';
-		} else {
-			$where = '1';
-		}
-		$projects = static::find()
-		                  ->where($where)
-		                  ->orderBy(['publish_date' => SORT_DESC])
-		                  ->asArray()
-		                  ->all();
+		$projects = static::getProjectInfo($author);
 		if (!$projects) return false;
 
 		foreach ($projects as &$project) {
-			//todo: get engine via sql
-			$project['engine'] = Techs::getTech($project['engine']);
+			$project['engine'] = Engines::getEngine($project['engine']);
 			$project['tech_list'] = ProjectsTechs::getProjectTechList($project['id']);
-
-			$project['pictures_all'] = ProjectsImages::getProjectPictures($project['id']);
-			foreach ($project['pictures_all'] as $item){
-				if ($item['main'] == 1){
-					$project['pictures']['main'] = $item;
-				} else {
-					$project['pictures']['all'][] = $item;
-				}
-			}
-			unset($project['pictures_all']);
+			$project['pictures'] = ProjectsImages::getProjectPictures($project['id']);
 		}
 
 		return $projects;
-
 	}
 
 	public static function getSliderProjects($id, $lim = null)
 	{
+        $lang = Lang::getCurrent();
+
 		$projects = static::find()
-		                  ->where('favorite = 1')
-		                  ->andWhere('id != ' . $id)
+            ->select('*')
+            ->leftJoin('projects_langs pl', 'pl.project_id = projects.id')
+		                  ->where('projects.favorite = 1')
+		                  ->andWhere('projects.id != ' . $id)
+            ->andWhere('pl.lang_id = ' . $lang->id)
 		                  ->orderBy('RAND()')
 		                  ->limit($lim)
 		                  ->asArray()
@@ -172,18 +193,9 @@ class Projects extends \yii\db\ActiveRecord
 		if (!$projects) return false;
 
 		foreach ($projects as &$project) {
-			$project['engine'] = Techs::getTech($project['engine']);
+			$project['engine'] = Engines::getEngine($project['engine']);
 			$project['tech_list'] = ProjectsTechs::getProjectTechList($project['id']);
-
-			$project['pictures_all'] = ProjectsImages::getProjectPictures($project['id']);
-			foreach ($project['pictures_all'] as $item){
-				if ($item['main'] == 1){
-					$project['pictures']['main'] = $item;
-				} else {
-					$project['pictures']['all'][] = $item;
-				}
-			}
-			unset($project['pictures_all']);
+			$project['pictures'] = ProjectsImages::getProjectPictures($project['id']);
 		}
 
 		return $projects;
@@ -191,24 +203,13 @@ class Projects extends \yii\db\ActiveRecord
 
 	public static function getFullProject($id)
 	{
-		$project = static::find()
-		                 ->where('id = ' . $id)
-		                 ->asArray()
-		                 ->one();
-		if (!$project) return false;
+        $project = static::getProjectInfo(null, $id);
+        if (!$project) return false;
 
-		$project['engine'] = Techs::getTech($project['engine']);
+        $project = $project[0];
+		$project['engine'] = Engines::getEngine($project['engine']);
 		$project['tech_list'] = ProjectsTechs::getProjectTechList($project['id']);
-
-		$project['pictures_all'] = ProjectsImages::getProjectPictures($project['id']);
-		foreach ($project['pictures_all'] as $item){
-			if ($item['main'] == 1){
-				$project['pictures']['main'] = $item;
-			} else {
-				$project['pictures']['all'][] = $item;
-			}
-		}
-		unset($project['pictures_all']);
+		$project['pictures'] = ProjectsImages::getProjectPictures($project['id']);
 
 		return $project;
 	}

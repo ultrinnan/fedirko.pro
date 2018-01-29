@@ -81,7 +81,7 @@ class ProjectsImages extends \yii\db\ActiveRecord
 				$path = Yii::getAlias('@project') . '/' . $project_id . '/';
 				Helper::createDirectory($path);
 				$files[$i]->saveAs($path . $obj->img);
-				Helper::createThumb($path . $obj->img, $path . $obj->thumb, 400);
+				Helper::createThumb($path . $obj->img, $path . $obj->thumb, 600);
 
 				if ($obj->save()){
 					$error = false;
@@ -99,11 +99,19 @@ class ProjectsImages extends \yii\db\ActiveRecord
 	public static function getProjectPictures($project_id)
 	{
 		$pictures = self::find()
-		                  ->select('id, main, img')
 		                  ->where('project_id = '. $project_id)
 		                  ->asArray()
 		                  ->all();
-		return $pictures;
+        $result = [];
+        foreach ($pictures as $picture){
+            if ($picture['main'] == 1){
+                $result['main'] = $picture;
+            } else {
+                $result['all'][] = $picture;
+            }
+        }
+
+		return $result;
 	}
 
 }

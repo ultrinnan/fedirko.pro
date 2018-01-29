@@ -433,15 +433,6 @@ a.red_button:hover {
     text-transform: uppercase;
 }
 
-.first_bg {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    filter: blur(10px);
-    overflow: hidden;
-}
-
 /*------------------------- contact us start ------------------------------*/
 
 .contact_page form {
@@ -463,6 +454,7 @@ a.red_button:hover {
 
 .portfolio .item_image {
     height: 400px;
+    box-shadow: 1px 1px 1px 0 rgba(0,0,0,.15);
 }
 .portfolio a .item_desc {
     display: none;
@@ -498,6 +490,25 @@ a.red_button:hover {
     text-transform: uppercase;
 }
 /*------------------------- portfolio end ------------------------------*/
+
+.first_bg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(10px);
+    overflow: hidden;
+}
+.first_bg:before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 1;
+    top: 0;
+}
 
 .view_project h1 {
     margin: 100px auto 50px;
@@ -537,8 +548,17 @@ a.red_button:hover {
 }
 
 .related_projects {
-    margin: 0 0 -30px;
+    margin: 0 0 -32px;
 }
+
+.carousel{
+    background: #39675a
+}
+
+.carousel-control{
+    z-index: 1;
+}
+
 .related_projects .item .bg {
     position: absolute;
     top: 0;
@@ -547,6 +567,17 @@ a.red_button:hover {
     filter: blur(10px);
     overflow: hidden;
 }
+.related_projects .item .bg:before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 1;
+    top: 0;
+}
+
 .related_projects .item_box {
     margin: 0 auto;
     padding: 30px;
@@ -586,20 +617,13 @@ a.read_more:hover {
     color: white;
     transition: .5s;
 }
-.related_projects .carousel-indicators .active {
-    background-color: #39675a;
-}
-.related_projects .carousel-indicators li {
-    border: 1px solid #39675a;
-}
 
 /*------------------------ main page start --------------------------*/
 
 a.service {
     display: block;
     background: #fcfcfc;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.15);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.15);
+    box-shadow: 1px 1px 1px 0 rgba(0,0,0,.15);
     text-align: center;
     overflow: hidden;
     padding: 50px 25px;

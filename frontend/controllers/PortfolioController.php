@@ -1,8 +1,6 @@
 <?php
 namespace frontend\controllers;
 
-use common\models\ProjectsTechs;
-use Yii;
 use yii\web\Controller;
 use common\models\Projects;
 use yii\web\NotFoundHttpException;
@@ -68,10 +66,10 @@ class PortfolioController extends Controller
      */
     public function actionView($id)
     {
-        $project_main = Project::getFullProject($id);
+        $project_main = Projects::getFullProject($id);
         if (!$project_main) throw new NotFoundHttpException('The requested project does not exist.');
 
-        $projects_for_slider = Project::getSliderProjects($id, 5);
+        $projects_for_slider = Projects::getSliderProjects($id, 5);
 
         return $this->render('view.php',
             ['project' => $project_main,

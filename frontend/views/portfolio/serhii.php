@@ -3,6 +3,7 @@
 use yii\helpers\Url;
 use yii\helpers\Html;
 /* @var $this yii\web\View */
+/* @var $projects \common\models\Projects */
 
 $this->title = 'Serhii\'s Portfolio';
 

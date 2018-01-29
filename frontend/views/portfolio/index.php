@@ -1,6 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
+/* @var $projects \common\models\Projects */
 
 $this->title = 'Portfolio';
 

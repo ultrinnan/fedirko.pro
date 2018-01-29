@@ -1,13 +1,14 @@
 <?php
 
 /* @var $this yii\web\View */
-
+/* @var $project array \common\models\Projects */
+/* @var $slider array \common\models\Projects */
 $this->title = $project['name'];
 
 $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false : true;
 ?>
 <section class="first view_project">
-    <div class="first_bg" style="background: #39675a url('<?=$project['pictures']['main']['url']?>') center no-repeat; background-size: cover;">
+    <div class="first_bg" style="background: #39675a url('/images/projects/<?=$project['id'] . '/' . $project['pictures']['main']['img']?>') center no-repeat; background-size: cover;">
     </div>
     <div class="container">
         <div class="row">
@@ -18,7 +19,7 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
         <div class="row">
             <div class="col-lg-6 project_engine">
                 <p>Works on</p>
-                <img src="<?=$project['engine']['tech_logo'];?>" alt="<?=$project['engine']['name'];?>">
+                <img src="<?=$project['engine']->logo;?>" alt="<?=$project['engine']->name?>">
             </div>
             <div class="col-lg-6 project_techlist">
                 <p>Technologies</p>
@@ -45,17 +46,18 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
     <div class="container">
         <div class="row">
             <?php
-            if ($project['pictures']['all']) {
+            //if more than one image
+            if (isset($project['pictures']['all'])) {
                 ?>
                 <div class="col-lg-6 project_pictures_main">
-                    <a class="fancybox" rel="<?=$project['id'];?>" href="<?=$project['pictures']['main']['url'];?>" title="<?=$project['name'];?> example picture">
-                        <img src="<?=$project['pictures']['main']['url'];?>" alt="<?=$project['name'];?> example picture">
+                    <a data-fancybox="<?=$project['id'];?>" href="/images/projects/<?=$project['id'] . '/' . $project['pictures']['main']['img'];?>" title="<?=$project['name'];?> example picture">
+                        <img src="/images/projects/<?=$project['id'] . '/' . $project['pictures']['main']['thumb'];?>" alt="<?=$project['name'];?> example picture">
                     </a>
                 </div>
                 <div class="col-lg-6 project_pictures">
                     <?php
                     foreach ($project['pictures']['all'] as $picture) {
-                        echo '<a class="fancybox" rel="' . $project['id'] . '" href="' . $picture['url'] . '" title="' . $project['name'] . ' example picture"><img src="' . $picture['url'] . '" alt="' . $project['name'] . ' example picture"></a>';
+                        echo '<a data-fancybox="' . $project['id'] . '" href="/images/projects/' . $project['id'] . '/' . $picture['img'] . '" title="' . $project['name'] . ' example picture"><img src="/images/projects/' . $project['id'] . '/' . $picture['thumb'] . '" alt="' . $project['name'] . ' example picture"></a>';
                     }
                     ?>
                 </div>
@@ -63,8 +65,8 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
             } else {
                 ?>
                 <div class="col-lg-12 project_pictures_main">
-                    <a class="fancybox" rel="<?=$project['id'];?>" href="<?=$project['pictures']['main']['url'];?>" title="<?=$project['name'];?> example picture">
-                        <img src="<?=$project['pictures']['main']['url'];?>" alt="<?=$project['name'];?> example picture">
+                    <a data-fancybox="<?=$project['id'];?>" href="/images/projects/<?=$project['id'] . '/' . $project['pictures']['main']['img'];?>" title="<?=$project['name'];?> example picture">
+                        <img src="/images/projects/<?=$project['id'] . '/' . $project['pictures']['main']['img'];?>" alt="<?=$project['name'];?> example picture">
                     </a>
                 </div>
                 <?php
@@ -95,10 +97,9 @@ if ($slider){
                 <h3>RELATED PROJECTS</h3>
                 <div id="related_slider" class="carousel slide" data-ride="carousel">
 					<?php
-					var_dump($slider);
-					die;
 					$indicators = '';
-					for ($i=0; $i<count($slider); $i++) {
+                    $carousel_items = '';
+                    for ($i=0; $i<count($slider); $i++) {
 						$active_class = $i==0 ? 'active' : '';
 						$indicators .= '<li data-target="#related_slider" data-slide-to="' . $i . '" class="' . $active_class. '"></li> ';
 
@@ -108,7 +109,7 @@ if ($slider){
 						}
 						$carousel_items .= '
                         <div class="item ' . $active_class . '">
-                            <div class="bg" style="background: #39675a url(' . $slider[$i]['pictures']['main']['url'] . ') center no-repeat; background-size: cover;"></div>
+                            <div class="bg" style="background: #39675a url(/images/projects/' . $slider[$i]['id'] . '/' . $slider[$i]['pictures']['main']['img'] . ') center no-repeat; background-size: cover;"></div>
                             <div class="item_box clearfix">
                                 <div class="clearfix">
                                     <div class="related_left">
@@ -120,7 +121,7 @@ if ($slider){
                                         </p>
                                     </div>
                                     <div class="related_right">
-                                        <a href="/portfolio/view?id=' . $slider[$i]['id'] .'" style="background: #39675a url(' . $slider[$i]['pictures']['main']['url'] . ') center no-repeat; background-size: cover;"></a>
+                                        <a href="/portfolio/view?id=' . $slider[$i]['id'] .'" style="background: #39675a url(/images/projects/' . $slider[$i]['id'] . '/' . $slider[$i]['pictures']['main']['thumb'] . ') center no-repeat; background-size: cover;"></a>
                                     </div>
                                 </div>
                                 <a class="read_more" href="/portfolio/view?id=' . $slider[$i]['id'] .'">Read more</a>
@@ -137,8 +138,14 @@ if ($slider){
 						<?=$carousel_items;?>
                     </div>
                     <!-- Left and right controls -->
-                    <a class="left carousel-control" href="#related_slider" role="button" data-slide="prev"></a>
-                    <a class="right carousel-control" href="#related_slider" role="button" data-slide="next"></a>
+                    <a class="left carousel-control" href="#related_slider" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#related_slider" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
             </div>
         </div>

@@ -22,8 +22,8 @@ class m171117_142114_create_engines_table extends Migration
 		    'engines',
 		    ['name', 'logo'],
 		    [
-			    ['Custom engine', ''],
-			    ['SPA', ''],
+			    ['Custom engine', '/images/tech_logos/custom_engine.png'],
+			    ['SPA', '/images/tech_logos/spa.png'],
 			    ['WordPress', '/images/tech_logos/wordpress.png'],
 			    ['Joomla', '/images/tech_logos/joomla.png'],
 			    ['Yii2', '/images/tech_logos/yii2.png'],
