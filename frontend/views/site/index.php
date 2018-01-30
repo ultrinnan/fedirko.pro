@@ -29,21 +29,21 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <a href="#" class="service web">
+                <a href="/solutions/advanced-web" class="service web">
                     <div class="icon"></div>
                     <h4>ADVANCED WEB</h4>
                     <div class="desc">Productive, engaging and reliable web solutions for business outcomes you deserve.</div>
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="#" class="service mobile">
+                <a href="/solutions/mobile-solutions" class="service mobile">
                     <div class="icon"></div>
                     <h4>MOBILE SOLUTIONS</h4>
                     <div class="desc">Mobile integrations and custom tools development for your business.</div>
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="#" class="service help">
+                <a href="/solutions/help-and-support" class="service help">
                     <div class="icon"></div>
                     <h4>HELP AND SUPPORT</h4>
                     <div class="desc">Excellent solution for fast recovery or fix of your existing projects.</div>
@@ -52,21 +52,21 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
         </div>
         <div class="row">
             <div class="col-md-4">
-                <a href="#" class="service qa">
+                <a href="/solutions/quality-assurance" class="service qa">
                     <div class="icon"></div>
                     <h4>QUALITY ASSURANCE</h4>
                     <div class="desc">Hands-on quality assurance expertise weaved into your development lifecycle.</div>
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="#" class="service full_stack clearfix">
+                <a href="/solutions/full-cycle-development" class="service full_stack clearfix">
                     <div class="icon"></div>
                     <h4>FULL-CYCLE DEVELOPMENT</h4>
                     <div class="desc">Full spectrum of development services spiced with flexible engagement models.</div>
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="#" class="service cloud">
+                <a href="/solutions/cloud" class="service cloud">
                     <div class="icon"></div>
                     <h4>CLOUD</h4>
                     <div class="desc">Powerful cloud-based solutions fused with creative design for private, hybrid & public platforms.</div>

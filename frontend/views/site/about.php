@@ -2,28 +2,73 @@
 
 /* @var $this yii\web\View */
 
-use yii\helpers\Html;
+$this->title = 'About FEDIRKO.PRO';
 
-$this->title = 'About';
-$this->params['breadcrumbs'][] = $this->title;
+$this->registerCss(".first { background: url('/images/bg/marvel-bg.jpg') no-repeat center; background-size: cover;}");
 ?>
-<section class="first main_page">
+<section class="first">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <h1>About page</h1>
+            <div class="col-md-12">
+                <h1><?=$this->title;?></h1>
+                <h3>Meet our small team of passionate professionals</h3>
             </div>
         </div>
     </div>
 </section>
-<section class="call_to_action">
+<section>
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <h2>WANT TO START A PROJECT?</h2>
-                It's simple.
-                <a class="contact_button" href="site/contact">contact us</a>
-
+            <div class="col-md-6">
+                <img src="/frontend/web/images/avatars/default_user.svg" alt="">
+				<div>
+                    Serhii Fedirko
+                    full stack web developer
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="/frontend/web/images/avatars/default_user.svg" alt="">
+				<div>
+                    Mary Fedirko
+                    frontend web developer
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="/frontend/web/images/avatars/default_user.svg" alt="">
+				<div>
+                    Vyacheslav Chub
+                    full stack web developer
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="/frontend/web/images/avatars/default_user.svg" alt="">
+				<div>
+                    Daniil Yakovenko
+                    mobile web developer
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <h3>
+                    We are looking for talanted people to join our team!
+                </h3>
+            </div>
+            <div class="col-md-6">
+                <img src="/frontend/web/images/avatars/default_user.svg" alt="">
+				<div>
+                    Maybe you?
+                    web designer
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="/frontend/web/images/avatars/default_user.svg" alt="">
+				<div>
+                    Maybe you?
+                    mobile developer
+                </div>
             </div>
         </div>
     </div>

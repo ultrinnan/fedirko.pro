@@ -47,36 +47,28 @@ $mainItems = [
         'url' => '/solutions',
         'items' => [
             [
-                'label' => 'Requirements Engineering',
-                'url' => '/solutions/requirements-engineering',
+                'label' => 'ADVANCED WEB',
+                'url' => '/solutions/advanced-web',
             ],
             [
-                'label' => 'Prototyping &amp; UXD',
-                'url' => '/solutions/design-usability',
+                'label' => 'MOBILE SOLUTIONS',
+                'url' => '/solutions/mobile-solutions',
             ],
             [
-                'label' => 'Application Development',
-                'url' => '/solutions/custom-software-development',
+                'label' => 'HELP AND SUPPORT',
+                'url' => '/solutions/help-and-support',
             ],
             [
-                'label' => 'Application Integration',
-                'url' => '/solutions/application-integration',
+                'label' => 'QUALITY ASSURANCE',
+                'url' => '/solutions/quality-assurance',
             ],
             [
-                'label' => 'Application Security',
-                'url' => '/solutions/security',
+                'label' => 'FULL-CYCLE DEVELOPMENT',
+                'url' => '/solutions/full-cycle-development',
             ],
             [
-                'label' => 'QA and Testing',
-                'url' => '/solutions/quality-assurance-testing',
-            ],
-            [
-                'label' => 'Maintenance and Support',
-                'url' => '/solutions/maintenance-and-support',
-            ],
-            [
-                'label' => 'Maintenance and Support',
-                'url' => '/solutions/maintenance-and-support',
+                'label' => 'CLOUD',
+                'url' => '/solutions/cloud',
             ],
         ],
     ],

@@ -36,9 +36,35 @@ class SolutionsController extends Controller
      *
      * @return mixed
      */
+    //todo: move to dynamic posts
     public function actionFSysinfoPlugin()
     {
         return $this->render('f-sysinfo-plugin');
+    }
+
+    public function actionAdvancedWeb()
+    {
+        return $this->render('advanced-web');
+    }
+    public function actionMobileSolutions()
+    {
+        return $this->render('mobile-solutions');
+    }
+    public function actionHelpAndSupport()
+    {
+        return $this->render('help-and-support');
+    }
+    public function actionQualityAssurance()
+    {
+        return $this->render('quality-assurance');
+    }
+    public function actionFullCycleDevelopment()
+    {
+        return $this->render('full-cycle-development');
+    }
+    public function actionCloud()
+    {
+        return $this->render('cloud');
     }
 
 }

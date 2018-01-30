@@ -12,9 +12,6 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="row">
             <div class="col-lg-12">
                 <h1>Solutions</h1>
-                <div>
-                    <a href="/solutions/f-sysinfo-plugin">WP-Plugin sysinfo</a>
-                </div>
             </div>
         </div>
     </div>
