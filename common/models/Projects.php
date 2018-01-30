@@ -111,7 +111,7 @@ class Projects extends \yii\db\ActiveRecord
             ->andWhere('pl.lang_id = ' . $lang->id)
             ->andWhere($where_id)
             ->andWhere('projects.status = 1')
-            ->orderBy(['projects.publish_date' => SORT_DESC])
+            ->orderBy(['projects.publish_date' => SORT_ASC])
             ->asArray()
             ->all();
         if ($projects){

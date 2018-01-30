@@ -12,10 +12,26 @@ use frontend\widgets\WLang;
 AppAsset::register($this);
 
 $mainItems = [
-//    [
-//        'label' => 'professionals',
-//        'url' => Yii::$app->homeUrl,
-//        'items' => [
+    [
+        'label' => 'professionals',
+        'url' => Yii::$app->homeUrl,
+        'items' => [
+            [
+                'label' => 'About',
+                'url' => '/about'
+            ],
+            [
+                'label' => 'How we work',
+                'url' => '/how-we-work'
+            ],
+            [
+                'label' => 'Proof of Concept',
+                'url' => '/proof-of-concept',
+            ],
+            [
+                'label' => 'Terms and conditions',
+                'url' => '/terms-and-conditions'
+            ],
 //            [
 //                'label' => 'Serhii\'s CV',
 //                'url' => '/cv-sergey',
@@ -24,131 +40,43 @@ $mainItems = [
 //                'label' => 'Mary\'s CV',
 //                'url' => '/cv-mary',
 //            ],
-//            [
-//                'label' => 'Methodology',
-//                'url' => '/methodology',
-//            ],
-//            [
-//                'label' => 'Business Continuity',
-//                'url' => '/business-continuity',
-//            ],
-//            [
-//                'label' => 'Quality Management',
-//                'url' => '/quality-management',
-//            ],
-//            [
-//                'label' => 'Security and IP Protection',
-//                'url' => '/security-ip-protection',
-//            ],
-//            [
-//                'label' => 'Engagement Models',
-//                'url' => '/engagement-models',
-//            ],
-//        ]
-//    ],
-    [
-        'label' => 'expertise',
-        'url' => '/expertise/index',
-        'items' => [
-            [
-                'label' => 'Proof of Concept',
-                'url' => '/expertise/proof-of-concept',
-            ],
-//            [
-//                'label' => 'Web and Enterprise Portals',
-//                'url' => '/web-enterprise-portal-development',
-//            ],
-//            [
-//                'label' => 'Content Management',
-//                'url' => '/content-management-systems',
-//            ],
-//            [
-//                'label' => 'Social Networking',
-//                'url' => '/social-networking-software',
-//            ],
-//            [
-//                'label' => 'Omnichannel Ecommerce',
-//                'url' => '/ecommerce',
-//            ],
-//            [
-//                'label' => 'Business Intelligence',
-//                'url' => '/business-intelligence',
-//            ],
-//            [
-//                'label' => 'Business Process Automation',
-//                'url' => '/business-process-automation',
-//            ],
-//            [
-//                'label' => 'E-learning and Training',
-//                'url' => '/elearning-training',
-//            ],
-//            [
-//                'label' => 'Mobility',
-//                'url' => '/mobility',
-//            ],
         ]
     ],
-//    [
-//        'label' => 'services',
-//        'url' => '/services/index',
-//        'items' => [
-//            [
-//                'label' => 'Requirements Engineering',
-//                'url' => '/services/requirements-engineering',
-//            ],
-//            [
-//                'label' => 'Prototyping &amp; UXD',
-//                'url' => '/services/design-usability',
-//            ],
-//            [
-//                'label' => 'Application Development',
-//                'url' => '/services/custom-software-development',
-//            ],
-//            [
-//                'label' => 'Application Integration',
-//                'url' => '/services/application-integration',
-//            ],
-//            [
-//                'label' => 'Application Security',
-//                'url' => '/application-security',
-//            ],
-//            [
-//                'label' => 'QA and Testing',
-//                'url' => '/services/quality-assurance-testing',
-//            ],
-//            [
-//                'label' => 'Maintenance and Support',
-//                'url' => '/services/maintenance-and-support',
-//            ],
-//        ],
-//    ],
     [
-        'label' => 'technologies',
-        'url' => '/technologies/index',
+        'label' => 'Solutions',
+        'url' => '/solutions',
         'items' => [
             [
-                'label' => 'PHP',
-                'url' => '/php-development',
+                'label' => 'Requirements Engineering',
+                'url' => '/solutions/requirements-engineering',
             ],
             [
-                'label' => 'Python',
-                'url' => '/python-development',
+                'label' => 'Prototyping &amp; UXD',
+                'url' => '/solutions/design-usability',
             ],
             [
-                'label' => 'Backend',
-                'url' => '/backend-development',
+                'label' => 'Application Development',
+                'url' => '/solutions/custom-software-development',
             ],
             [
-                'label' => 'Frontend',
-                'url' => '/frontend-development',
+                'label' => 'Application Integration',
+                'url' => '/solutions/application-integration',
             ],
             [
-                'label' => 'Cloud',
-                'url' => '/cloud-solutions',
+                'label' => 'Application Security',
+                'url' => '/solutions/security',
             ],
             [
-                'label' => 'Mobile Platforms',
-                'url' => '/mobile-technologies',
+                'label' => 'QA and Testing',
+                'url' => '/solutions/quality-assurance-testing',
+            ],
+            [
+                'label' => 'Maintenance and Support',
+                'url' => '/solutions/maintenance-and-support',
+            ],
+            [
+                'label' => 'Maintenance and Support',
+                'url' => '/solutions/maintenance-and-support',
             ],
         ],
     ],
@@ -156,7 +84,7 @@ $mainItems = [
 $topItems = [
     [
         'label' => 'portfolio',
-        'url' => '/portfolio/index',
+        'url' => '/portfolio',
         'items' => [
             [
                 'label' => 'Serhii\'s portfolio',
@@ -229,7 +157,7 @@ $topItems = [
 <footer>
     <div class="container">
         <div class="row footer_list">
-            <div class="col-md-4">
+            <div class="col-md-8">
                 <a href="<?=Yii::$app->homeUrl?>"><div class="logo"></div></a>
                 <div class="footer_phones">
                     <a href="tel:+380668803111">+3 8 066 880 3 111</a>
@@ -238,8 +166,8 @@ $topItems = [
                 </div>
                 <div><a href="mailto:contact&#64;fedirko&#46;pro">contact&#64;fedirko&#46;pro</a></div>
                 <div class="footer_address">Ukraine, Kyiv</div>
-                <div><a href="#">Sitemap</a></div>
-                <div><a href="#">Web development blog</a></div>
+<!--                <div><a href="#">Sitemap</a></div>-->
+<!--                <div><a href="#">Web development blog</a></div>-->
             </div>
             <?php
             foreach ($mainItems as $columns) {
@@ -252,14 +180,14 @@ $topItems = [
                 echo '</div>';
             }
             ?>
-            <div class="col-md-2">
-                <div class="footer_title">
-                    <a href="/interesting">See also</a>
-                </div>
-                <a href="#">One</a><br>
-                <a href="#">Two</a><br>
-                <a href="#">Three</a><br>
-            </div>
+<!--            <div class="col-md-2">-->
+<!--                <div class="footer_title">-->
+<!--                    <a href="/interesting">See also</a>-->
+<!--                </div>-->
+<!--                <a href="#">One</a><br>-->
+<!--                <a href="#">Two</a><br>-->
+<!--                <a href="#">Three</a><br>-->
+<!--            </div>-->
         </div>
     </div>
     <div class="container-fluid">

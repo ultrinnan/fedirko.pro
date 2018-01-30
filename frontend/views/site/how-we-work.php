@@ -4,14 +4,14 @@
 
 use yii\helpers\Html;
 
-$this->title = 'About';
+$this->title = 'How we work';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <section class="first main_page">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h1>About page</h1>
+                <h1>How we work</h1>
             </div>
         </div>
     </div>

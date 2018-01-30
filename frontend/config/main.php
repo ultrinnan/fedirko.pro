@@ -43,10 +43,16 @@ return [
             'showScriptName' => false,
             'class'=>'frontend\components\LangUrlManager',
             'rules' => [
-	            '' => 'site/index',
-	            '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-                '<alias:\w+>' => 'site/<alias>',
-                '<controller>' => '<controller>/index', //for default actions
+	            '/' => 'site/index',
+	            '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+
+                'portfolio' => 'portfolio/index',
+                'solutions' => 'solutions/index',
+
+                '<alias>' => 'site/<alias>', //all static pages
+
+                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>', //portfolio/view/7
+
             ],
         ],
         'language'=>'en-EN',
