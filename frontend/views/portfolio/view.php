@@ -8,7 +8,7 @@ $this->title = $project['name'];
 $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false : true;
 ?>
 <section class="first view_project">
-    <div class="first_bg" style="background: #39675a url('/images/projects/<?=$project['id'] . '/' . $project['pictures']['main']['img']?>') center no-repeat; background-size: cover;">
+    <div class="first_bg" style="background: #39675a url('/images/projects/<?=$project['project_id'] . '/' . $project['pictures']['main']['img']?>') center no-repeat; background-size: cover;">
     </div>
     <div class="container">
         <div class="row">
@@ -50,14 +50,14 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
             if (isset($project['pictures']['all'])) {
                 ?>
                 <div class="col-lg-6 project_pictures_main">
-                    <a data-fancybox="<?=$project['id'];?>" href="/images/projects/<?=$project['id'] . '/' . $project['pictures']['main']['img'];?>" title="<?=$project['name'];?> example picture">
-                        <img src="/images/projects/<?=$project['id'] . '/' . $project['pictures']['main']['thumb'];?>" alt="<?=$project['name'];?> example picture">
+                    <a data-fancybox="<?=$project['id'];?>" href="/images/projects/<?=$project['project_id'] . '/' . $project['pictures']['main']['img'];?>" title="<?=$project['name'];?> example picture">
+                        <img src="/images/projects/<?=$project['project_id'] . '/' . $project['pictures']['main']['thumb'];?>" alt="<?=$project['name'];?> example picture">
                     </a>
                 </div>
                 <div class="col-lg-6 project_pictures">
                     <?php
                     foreach ($project['pictures']['all'] as $picture) {
-                        echo '<a data-fancybox="' . $project['id'] . '" href="/images/projects/' . $project['id'] . '/' . $picture['img'] . '" title="' . $project['name'] . ' example picture"><img src="/images/projects/' . $project['id'] . '/' . $picture['thumb'] . '" alt="' . $project['name'] . ' example picture"></a>';
+                        echo '<a data-fancybox="' . $project['id'] . '" href="/images/projects/' . $project['project_id'] . '/' . $picture['img'] . '" title="' . $project['name'] . ' example picture"><img src="/images/projects/' . $project['project_id'] . '/' . $picture['thumb'] . '" alt="' . $project['name'] . ' example picture"></a>';
                     }
                     ?>
                 </div>
@@ -65,8 +65,8 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
             } else {
                 ?>
                 <div class="col-lg-12 project_pictures_main">
-                    <a data-fancybox="<?=$project['id'];?>" href="/images/projects/<?=$project['id'] . '/' . $project['pictures']['main']['img'];?>" title="<?=$project['name'];?> example picture">
-                        <img src="/images/projects/<?=$project['id'] . '/' . $project['pictures']['main']['img'];?>" alt="<?=$project['name'];?> example picture">
+                    <a data-fancybox="<?=$project['id'];?>" href="/images/projects/<?=$project['project_id'] . '/' . $project['pictures']['main']['img'];?>" title="<?=$project['name'];?> example picture">
+                        <img src="/images/projects/<?=$project['project_id'] . '/' . $project['pictures']['main']['img'];?>" alt="<?=$project['name'];?> example picture">
                     </a>
                 </div>
                 <?php
@@ -80,15 +80,17 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
         <div class="row">
             <div class="col-lg-12">
                 <?php
-                if ($url_exists){
-                    echo '<h3><a href="' . $project['url']. '">' . $project['url']. '</a></h3>';
-                }
+                //todo: uncomment after seohide implementation
+//                if ($url_exists){
+//                    echo '<h3><a href="' . $project['url']. '">' . $project['url']. '</a></h3>';
+//                }
                 ?>
             </div>
         </div>
     </div>
 </section>
 <?php
+//todo: maybe move to separate partial?
 if ($slider){
 ?>
     <section class="related_projects">
@@ -109,7 +111,7 @@ if ($slider){
 						}
 						$carousel_items .= '
                         <div class="item ' . $active_class . '">
-                            <div class="bg" style="background: #39675a url(/images/projects/' . $slider[$i]['id'] . '/' . $slider[$i]['pictures']['main']['img'] . ') center no-repeat; background-size: cover;"></div>
+                            <div class="bg" style="background: #39675a url(/images/projects/' . $slider[$i]['project_id'] . '/' . $slider[$i]['pictures']['main']['img'] . ') center no-repeat; background-size: cover;"></div>
                             <div class="item_box clearfix">
                                 <div class="clearfix">
                                     <div class="related_left">
@@ -121,10 +123,10 @@ if ($slider){
                                         </p>
                                     </div>
                                     <div class="related_right">
-                                        <a href="/portfolio/view?id=' . $slider[$i]['id'] .'" style="background: #39675a url(/images/projects/' . $slider[$i]['id'] . '/' . $slider[$i]['pictures']['main']['thumb'] . ') center no-repeat; background-size: cover;"></a>
+                                        <a href="/portfolio/view?id=' . $slider[$i]['project_id'] .'" style="background: #39675a url(/images/projects/' . $slider[$i]['project_id'] . '/' . $slider[$i]['pictures']['main']['thumb'] . ') center no-repeat; background-size: cover;"></a>
                                     </div>
                                 </div>
-                                <a class="read_more" href="/portfolio/view?id=' . $slider[$i]['id'] .'">Read more</a>
+                                <a class="read_more" href="/portfolio/view?id=' . $slider[$i]['project_id'] .'">Read more</a>
                             </div>
                         </div>';
 					}

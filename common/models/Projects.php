@@ -110,6 +110,7 @@ class Projects extends \yii\db\ActiveRecord
             ->where($where)
             ->andWhere('pl.lang_id = ' . $lang->id)
             ->andWhere($where_id)
+            ->andWhere('projects.status = 1')
             ->orderBy(['projects.publish_date' => SORT_DESC])
             ->asArray()
             ->all();
@@ -169,8 +170,8 @@ class Projects extends \yii\db\ActiveRecord
 
 		foreach ($projects as &$project) {
 			$project['engine'] = Engines::getEngine($project['engine']);
-			$project['tech_list'] = ProjectsTechs::getProjectTechList($project['id']);
-			$project['pictures'] = ProjectsImages::getProjectPictures($project['id']);
+			$project['tech_list'] = ProjectsTechs::getProjectTechList($project['project_id']);
+			$project['pictures'] = ProjectsImages::getProjectPictures($project['project_id']);
 		}
 
 		return $projects;
@@ -183,19 +184,20 @@ class Projects extends \yii\db\ActiveRecord
 		$projects = static::find()
             ->select('*')
             ->leftJoin('projects_langs pl', 'pl.project_id = projects.id')
-		                  ->where('projects.favorite = 1')
-		                  ->andWhere('projects.id != ' . $id)
+            ->where('projects.favorite = 1')
+            ->andWhere('projects.id != ' . $id)
             ->andWhere('pl.lang_id = ' . $lang->id)
-		                  ->orderBy('RAND()')
-		                  ->limit($lim)
-		                  ->asArray()
-		                  ->all();
+            ->andWhere('projects.status = 1')
+            ->orderBy('RAND()')
+            ->limit($lim)
+            ->asArray()
+            ->all();
 		if (!$projects) return false;
 
 		foreach ($projects as &$project) {
 			$project['engine'] = Engines::getEngine($project['engine']);
-			$project['tech_list'] = ProjectsTechs::getProjectTechList($project['id']);
-			$project['pictures'] = ProjectsImages::getProjectPictures($project['id']);
+			$project['tech_list'] = ProjectsTechs::getProjectTechList($project['project_id']);
+			$project['pictures'] = ProjectsImages::getProjectPictures($project['project_id']);
 		}
 
 		return $projects;
@@ -208,8 +210,8 @@ class Projects extends \yii\db\ActiveRecord
 
         $project = $project[0];
 		$project['engine'] = Engines::getEngine($project['engine']);
-		$project['tech_list'] = ProjectsTechs::getProjectTechList($project['id']);
-		$project['pictures'] = ProjectsImages::getProjectPictures($project['id']);
+		$project['tech_list'] = ProjectsTechs::getProjectTechList($project['project_id']);
+		$project['pictures'] = ProjectsImages::getProjectPictures($project['project_id']);
 
 		return $project;
 	}
