@@ -4,7 +4,7 @@
 
 $this->title = 'About FEDIRKO.PRO';
 
-$this->registerCss(".first { background: url('/images/bg/marvel-bg.jpg') no-repeat center; background-size: cover;}");
+$this->registerCss(".first { background: url('/images/bg/office-bg.jpg') no-repeat center; background-size: cover;}");
 ?>
 <section class="first">
     <div class="container">
