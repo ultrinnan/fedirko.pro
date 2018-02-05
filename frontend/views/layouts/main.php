@@ -28,10 +28,10 @@ $mainItems = [
                 'label' => 'Proof of Concept',
                 'url' => '/proof-of-concept',
             ],
-            [
-                'label' => 'Terms and conditions',
-                'url' => '/terms-and-conditions'
-            ],
+//            [
+//                'label' => 'Terms and conditions',
+//                'url' => '/terms-and-conditions'
+//            ],
 //            [
 //                'label' => 'Serhii\'s CV',
 //                'url' => '/cv-sergey',

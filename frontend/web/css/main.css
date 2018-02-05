@@ -75,6 +75,10 @@ body {
     -webkit-font-smoothing: antialiased
 }
 
+p {
+    margin: 0 0 16px;
+}
+
 /*---------------------------------------- header start ----------------------------------------*/
 
 header {
@@ -782,6 +786,40 @@ a.service:hover h4 {
 }
 
 /*------------------------ main page end --------------------------*/
+
+/*------------------------ about page start --------------------------*/
+
+.team_flex{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.team_box{
+    text-align: center;
+    margin: 32px;
+}
+
+.img{
+    margin: auto;
+    width: 150px;
+}
+.img img{
+    width: 100%;
+    border-radius: 50%;
+}
+
+.name{
+    text-transform: uppercase;
+    color: #39675a;
+}
+.position{
+    text-transform: capitalize;
+    color: #84a580;
+}
+
+/*------------------------ about page end --------------------------*/
 
 .poc {
     background: black url('../images/bg/poc1.jpg') center no-repeat;
