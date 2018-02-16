@@ -12,16 +12,16 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-12">
                 <h1><?=$project['name'];?></h1>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-6 project_engine">
+            <div class="col-md-6 project_engine">
                 <p>Works on</p>
                 <img src="<?=$project['engine']->logo;?>" alt="<?=$project['engine']->name?>">
             </div>
-            <div class="col-lg-6 project_techlist">
+            <div class="col-md-6 project_techlist">
                 <p>Technologies</p>
                 <?php
                 foreach ($project['tech_list'] as $tech){
@@ -35,7 +35,7 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-12">
                 <h2>About project</h2>
                 <p><?=$project['long_desc'];?></p>
             </div>
@@ -49,12 +49,12 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
             //if more than one image
             if (isset($project['pictures']['all'])) {
                 ?>
-                <div class="col-lg-6 project_pictures_main">
+                <div class="col-md-6 project_pictures_main">
                     <a data-fancybox="<?=$project['id'];?>" href="/images/projects/<?=$project['project_id'] . '/' . $project['pictures']['main']['img'];?>" title="<?=$project['name'];?> example picture">
                         <img src="/images/projects/<?=$project['project_id'] . '/' . $project['pictures']['main']['thumb'];?>" alt="<?=$project['name'];?> example picture">
                     </a>
                 </div>
-                <div class="col-lg-6 project_pictures">
+                <div class="col-md-6 project_pictures">
                     <?php
                     foreach ($project['pictures']['all'] as $picture) {
                         echo '<a data-fancybox="' . $project['id'] . '" href="/images/projects/' . $project['project_id'] . '/' . $picture['img'] . '" title="' . $project['name'] . ' example picture"><img src="/images/projects/' . $project['project_id'] . '/' . $picture['thumb'] . '" alt="' . $project['name'] . ' example picture"></a>';
@@ -64,7 +64,7 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
                 <?php
             } else {
                 ?>
-                <div class="col-lg-12 project_pictures_main">
+                <div class="col-md-12 project_pictures_main">
                     <a data-fancybox="<?=$project['id'];?>" href="/images/projects/<?=$project['project_id'] . '/' . $project['pictures']['main']['img'];?>" title="<?=$project['name'];?> example picture">
                         <img src="/images/projects/<?=$project['project_id'] . '/' . $project['pictures']['main']['img'];?>" alt="<?=$project['name'];?> example picture">
                     </a>
@@ -78,7 +78,7 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-12">
                 <?php
                 //todo: uncomment after seohide implementation
 //                if ($url_exists){

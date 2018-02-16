@@ -9,7 +9,7 @@ $this->title = 'How we work';
 <section class="first">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-12">
                 <h1><?=$this->title;?></h1>
             </div>
         </div>
