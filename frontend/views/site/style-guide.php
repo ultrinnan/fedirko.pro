@@ -30,6 +30,47 @@ $this->registerCss(".first { background: url('/images/bg/style_bg.jpg') no-repea
         </div>
 
         <div class="row">
+            <h3>Colors</h3>
+            <div class="col-md-6">
+                <img class="color_example" src="/images/colors.png">
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <div class="color_box">
+                        <div class="color" style="background: #39675a"></div>
+                        <div class="color_code">
+                            #39675a
+                        </div>
+                    </div>
+                    <div class="color_box">
+                        <div class="color" style="background: #84a580"></div>
+                        <div class="color_code">
+                            #84a580
+                        </div>
+                    </div>
+                    <div class="color_box">
+                        <div class="color" style="background: #b4c3a8"></div>
+                        <div class="color_code">
+                            #b4c3a8
+                        </div>
+                    </div>
+                    <div class="color_box">
+                        <div class="color" style="background: #e1e7d3"></div>
+                        <div class="color_code">
+                            #e1e7d3
+                        </div>
+                    </div>
+                    <div class="color_box">
+                        <div class="color" style="background: #4f3717"></div>
+                        <div class="color_code">
+                            #4f3717
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
             <div class="col-md-12">
                 <h3>Images and backgrounds</h3>
                 <p>Full HD (1920 × 1080 progressive scan)</p>
