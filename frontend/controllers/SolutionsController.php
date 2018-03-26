@@ -54,9 +54,9 @@ class SolutionsController extends Controller
     {
         return $this->render('help-and-support');
     }
-    public function actionQualityAssurance()
+    public function actionWordpressSolutions()
     {
-        return $this->render('quality-assurance');
+        return $this->render('wordpress-solutions');
     }
     public function actionFullCycleDevelopment()
     {

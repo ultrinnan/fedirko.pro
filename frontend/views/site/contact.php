@@ -17,7 +17,7 @@ $this->registerCss(".first { background: url('/images/bg/contactus-bg.jpg') no-r
         <div class="row">
             <div class="col-md-12">
                 <h1><?=$this->title;?></h1>
-                <h3>If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.</h3>
+                <h2>If you have business inquiries or other questions, please fill out the following form to contact us.</h2>
             </div>
         </div>
     </div>

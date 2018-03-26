@@ -47,8 +47,16 @@ $mainItems = [
         'url' => '/solutions',
         'items' => [
             [
-                'label' => 'ADVANCED WEB',
-                'url' => '/solutions/advanced-web',
+                'label' => 'WORDPRESS SOLUTIONS',
+                'url' => '/solutions/wordpress-solutions',
+            ],
+//            [
+//                'label' => 'ADVANCED WEB',
+//                'url' => '/solutions/advanced-web',
+//            ],
+            [
+                'label' => 'FULL-CYCLE DEVELOPMENT',
+                'url' => '/solutions/full-cycle-development',
             ],
             [
                 'label' => 'MOBILE SOLUTIONS',
@@ -58,18 +66,10 @@ $mainItems = [
                 'label' => 'HELP AND SUPPORT',
                 'url' => '/solutions/help-and-support',
             ],
-            [
-                'label' => 'QUALITY ASSURANCE',
-                'url' => '/solutions/quality-assurance',
-            ],
-            [
-                'label' => 'FULL-CYCLE DEVELOPMENT',
-                'url' => '/solutions/full-cycle-development',
-            ],
-            [
-                'label' => 'CLOUD',
-                'url' => '/solutions/cloud',
-            ],
+//            [
+//                'label' => 'CLOUD',
+//                'url' => '/solutions/cloud',
+//            ],
         ],
     ],
 ];
@@ -152,7 +152,7 @@ $topItems = [
             <div class="col-md-8">
                 <a href="<?=Yii::$app->homeUrl?>"><div class="logo"></div></a>
                 <div class="footer_phones">
-                    <a href="tel:+380668803111">+3 8 066 880 3 111</a>
+                    <a href="tel:+380666272979">+3 8 066 627 29 79</a>
                     <br>
                     <a href="tel:+380660034001">+3 8 066 003 40 01</a>
                 </div>

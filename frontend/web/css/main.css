@@ -669,8 +669,8 @@ a.service:hover::before {
 .service.help .icon {
     background: url('../images/icons/help.png');
 }
-.service.qa .icon {
-    background: url('../images/icons/like.png');
+.service.wp .icon {
+    background: url('../images/icons/wordpress-logo.png');
 }
 .service.full_stack .icon {
     background: url('../images/icons/settings.png');
@@ -680,37 +680,43 @@ a.service:hover::before {
 }
 /* services hovers*/
 .service.web:hover {
-    background: url('../images/bg/solutions/advanced_web_small.jpg');
+    background: url('../images/bg/solutions/advanced_web_small.jpg') center no-repeat;
+    background-size: cover;
 }
 .service.web:hover .icon {
     background: url('../images/icons/internet_w.png');
 }
 .service.mobile:hover {
-    background: url('../images/bg/solutions/mobile_solutions_small.jpg');
+    background: url('../images/bg/solutions/mobile_solutions_small.jpg') center no-repeat;
+    background-size: cover;
 }
 .service.mobile:hover .icon {
     background: url('../images/icons/smartphone_w.png');
 }
 .service.help:hover {
-    background: url('../images/bg/solutions/help_support_small.jpg');
+    background: url('../images/bg/solutions/help_support_small.jpg') center no-repeat;
+    background-size: cover;
 }
 .service.help:hover .icon {
     background: url('../images/icons/help_w.png');
 }
-.service.qa:hover {
-    background: url('../images/bg/solutions/quality_small.jpg');
+.service.wp:hover {
+    background: url('../images/bg/solutions/wordpress_small.jpg') center no-repeat;
+    background-size: cover;
 }
-.service.qa:hover .icon {
-    background: url('../images/icons/like_w.png');
+.service.wp:hover .icon {
+    background: url('../images/icons/wordpress-logo_w.png');
 }
 .service.full_stack:hover {
-    background: url('../images/bg/solutions/development_small.jpg');
+    background: url('../images/bg/solutions/development_small.jpg') center no-repeat;
+    background-size: cover;
 }
 .service.full_stack:hover .icon {
     background: url('../images/icons/settings_w.png');
 }
 .service.cloud:hover {
-    background: url('../images/bg/solutions/cloud_small.jpg');
+    background: url('../images/bg/solutions/cloud_small.jpg') center no-repeat;
+    background-size: cover;
 }
 .service.cloud:hover .icon {
     background: url('../images/icons/cloud_w.png');
@@ -933,7 +939,6 @@ footer {
     background-color: #3d3c42;
     color: #b3b3b4;
     line-height: 2;
-    height: 360px;
 }
 footer a,
 footer a:active,

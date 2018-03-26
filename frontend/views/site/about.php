@@ -11,7 +11,7 @@ $this->registerCss(".first { background: url('/images/bg/office-bg.jpg') no-repe
         <div class="row">
             <div class="col-md-12">
                 <h1><?=$this->title;?></h1>
-                <h3>Meet our team of passionate professionals</h3>
+                <h2>Meet our team of passionate professionals</h2>
             </div>
         </div>
     </div>
@@ -82,7 +82,7 @@ $this->registerCss(".first { background: url('/images/bg/office-bg.jpg') no-repe
                         Maybe you?
                     </div>
                     <div class="position">
-                        mobile developer
+                        Mobile Developer
                     </div>
                 </div>
                 <div class="team_box">
@@ -93,7 +93,7 @@ $this->registerCss(".first { background: url('/images/bg/office-bg.jpg') no-repe
                         Maybe you?
                     </div>
                     <div class="position">
-                        web designer
+                        Web Designer
                     </div>
                 </div>
                 <div class="team_box">
@@ -104,18 +104,7 @@ $this->registerCss(".first { background: url('/images/bg/office-bg.jpg') no-repe
                         Maybe you?
                     </div>
                     <div class="position">
-                        QA engineer
-                    </div>
-                </div>
-                <div class="team_box">
-                    <div class="img">
-                        <img src="/frontend/web/images/avatars/default_user.svg" alt="">
-                    </div>
-                    <div class="name">
-                        Maybe you?
-                    </div>
-                    <div class="position">
-                        Project manager
+                        Sales Manager
                     </div>
                 </div>
             </div>

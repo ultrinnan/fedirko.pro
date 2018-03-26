@@ -4,30 +4,32 @@
 
 use yii\helpers\Html;
 
-$this->title = 'Solutions';
+$this->title = 'WP-Plugin sysinfo';
 $this->params['breadcrumbs'][] = $this->title;
-?>
-<section class="first main_page">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Solutions</h1>
-                <div>
-                    <a href="/solutions/f-sysinfo-plugin">WP-Plugin sysinfo</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="call_to_action">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>WANT TO START A PROJECT?</h2>
-                It's simple.
-                <a class="contact_button" href="site/contact">contact us</a>
 
+$this->registerCss(".first { background: url('/images/bg/solutions/wordpress.jpg') no-repeat center; background-size: cover;}");
+?>
+<section class="first">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>WP-Plugin sysinfo</h1>
             </div>
         </div>
     </div>
 </section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p>Shows important system information about server configuration as a nice Widget on WP dashboard.</p>
+                <a target="_blank" href="https://github.com/ultrinnan/f-sysinfo">Check it on GitHub</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php
+    echo $this->render('/site/_call_to_action');
+?>
