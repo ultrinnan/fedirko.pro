@@ -10,7 +10,7 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>WE BUILD AMAZING WEB SOLUTIONS<br>FOR BUSINESS AND LIFE</h1>
+                <h1>OUTSTANDING WEB SOLUTIONS<br>FOR YOUR BUSINESS TEST</h1>
             </div>
         </div>
     </div>
@@ -29,17 +29,17 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-6">
-                <a href="/solutions/wordpress-solutions" class="service wp">
-                    <div class="icon"></div>
-                    <h4>WORDPRESS SOLUTIONS</h4>
-                    <div class="desc">Professional tools and solutions for any site on most popular CMS.</div>
-                </a>
-            </div>
-            <div class="col-md-6 col-sm-6">
                 <a href="/solutions/full-cycle-development" class="service full_stack clearfix">
                     <div class="icon"></div>
                     <h4>FULL-CYCLE DEVELOPMENT</h4>
                     <div class="desc">Full spectrum of development services spiced with flexible engagement models.</div>
+                </a>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <a href="/solutions/wordpress-solutions" class="service wp">
+                    <div class="icon"></div>
+                    <h4>WORDPRESS SOLUTIONS</h4>
+                    <div class="desc">Professional tools and solutions for any site on most popular CMS.</div>
                 </a>
             </div>
 <!--            <div class="col-md-4">-->

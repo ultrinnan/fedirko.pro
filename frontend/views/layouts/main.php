@@ -47,16 +47,20 @@ $mainItems = [
         'url' => '/solutions',
         'items' => [
             [
-                'label' => 'WORDPRESS SOLUTIONS',
-                'url' => '/solutions/wordpress-solutions',
-            ],
-//            [
-//                'label' => 'ADVANCED WEB',
-//                'url' => '/solutions/advanced-web',
-//            ],
-            [
                 'label' => 'FULL-CYCLE DEVELOPMENT',
                 'url' => '/solutions/full-cycle-development',
+            ],
+            [
+                'label' => 'WORDPRESS SOLUTIONS',
+//            [
+//                'label' => 'CLOUD',
+//                'url' => '/solutions/cloud',
+//            ],
+//            ],
+//                'url' => '/solutions/advanced-web',
+//                'label' => 'ADVANCED WEB',
+//            [
+                'url' => '/solutions/wordpress-solutions',
             ],
             [
                 'label' => 'MOBILE SOLUTIONS',
@@ -66,10 +70,6 @@ $mainItems = [
                 'label' => 'HELP AND SUPPORT',
                 'url' => '/solutions/help-and-support',
             ],
-//            [
-//                'label' => 'CLOUD',
-//                'url' => '/solutions/cloud',
-//            ],
         ],
     ],
 ];
@@ -149,7 +149,7 @@ $topItems = [
 <footer>
     <div class="container">
         <div class="row footer_list">
-            <div class="col-md-8">
+            <div class="col-md-6">
                 <a href="<?=Yii::$app->homeUrl?>"><div class="logo"></div></a>
                 <div class="footer_phones">
                     <a href="tel:+380666272979">+3 8 066 627 29 79</a>
@@ -163,7 +163,7 @@ $topItems = [
             </div>
             <?php
             foreach ($mainItems as $columns) {
-	            echo '<div class="col-md-2">';
+	            echo '<div class="col-md-3">';
 	            echo '<div class="footer_title"><a href="' . $columns['url']. '">' . $columns['label']. '</a></div>';
                 foreach ($columns['items'] as $item) {
                     echo '<a href="' . $item['url']. '">' . $item['label'] . '</a><br>';

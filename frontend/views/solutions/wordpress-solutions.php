@@ -38,7 +38,7 @@ $this->registerCss(".first { background: url('/images/bg/solutions/wordpress.jpg
         <div class="row">
             <div class="col-md-12">
                 <div>
-                    <a href="#"><h2>F-theme WP template.</h2></a>
+                    <a href="#"><h2>F-theme WP template. <span class="small">(link coming soon)</span></h2></a>
                     <p>Our default template for WP themes. An entry point for the most of our custom themes. Feel free to use it :)</p>
                 </div>
                 <div>
@@ -46,11 +46,11 @@ $this->registerCss(".first { background: url('/images/bg/solutions/wordpress.jpg
                     <p>Shows important system information about server configuration as a nice Widget on WP dashboard.</p>
                 </div>
                 <div>
-                    <a href="#"><h2>WP Plugin SEOHide.</h2></a>
+                    <a href="#"><h2>WP Plugin SEOHide. <span class="small">(link coming soon)</span></h2></a>
                     <p>Encodes external links with base64 and converts it dynamically after page rendering. Can be applied for posts/pages/custom post types/etc.</p>
                 </div>
                 <div>
-                    <a href="#"><h2>WP Plugin reCaptcha wrapper.</h2></a>
+                    <a href="#"><h2>WP Plugin reCaptcha wrapper. <span class="small">(link coming soon)</span></h2></a>
                     <p>Wrapper for CF7 plugin recaptcha.</p>
                 </div>
             </div>
