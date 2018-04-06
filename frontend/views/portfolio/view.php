@@ -123,10 +123,10 @@ if ($slider){
                                         </p>
                                     </div>
                                     <div class="related_right">
-                                        <a href="/portfolio/view?id=' . $slider[$i]['project_id'] .'" style="background: #39675a url(/images/projects/' . $slider[$i]['project_id'] . '/' . $slider[$i]['pictures']['main']['thumb'] . ') center no-repeat; background-size: cover;"></a>
+                                        <a href="/portfolio/view/' . $slider[$i]['project_id'] .'" style="background: #39675a url(/images/projects/' . $slider[$i]['project_id'] . '/' . $slider[$i]['pictures']['main']['thumb'] . ') center no-repeat; background-size: cover;"></a>
                                     </div>
                                 </div>
-                                <a class="read_more" href="/portfolio/view?id=' . $slider[$i]['project_id'] .'">Read more</a>
+                                <a class="read_more" href="/portfolio/view/' . $slider[$i]['project_id'] .'">Read more</a>
                             </div>
                         </div>';
 					}

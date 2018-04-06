@@ -13,7 +13,7 @@ $this->registerCss(".first { background: url('/images/bg/mary_bg.jpg') no-repeat
     }
 
 </style>
-<section class="first portfolio_mary">
+<section class="first">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

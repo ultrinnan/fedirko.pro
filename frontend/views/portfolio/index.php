@@ -7,7 +7,7 @@ $this->title = 'Portfolio';
 
 $this->registerCss(".first { background: url('/images/bg/serhii_bg.jpg') no-repeat center; background-size: cover;}");
 ?>
-<section class="first portfolio_main">
+<section class="first">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

@@ -15,7 +15,7 @@ if ($projects){
 			$projects_list .= '<div class="row">';
 		}
 		$projects_list .= '<div class="col-md-6">
-                <a href="/portfolio/view?id=' . $value['project_id'] .'">
+                <a href="/portfolio/view/' . $value['project_id'] .'">
                     <div class="item_image" style="background: #39675a url(/images/projects/' . $value['project_id'] . '/' . $value['pictures']['main']['thumb'] . ') center no-repeat; background-size: cover;">
                     </div>
                     <div class="item_desc">
