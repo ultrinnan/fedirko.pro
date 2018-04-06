@@ -32,7 +32,7 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
                 <a href="/solutions/full-cycle-development" class="service full_stack clearfix">
                     <div class="icon"></div>
                     <h4>FULL-CYCLE DEVELOPMENT</h4>
-                    <div class="desc">Full spectrum of development services spiced with flexible engagement models.</div>
+                    <div class="desc">Full range of development services with flexible engagement models.</div>
                 </a>
             </div>
             <div class="col-md-6 col-sm-6">
@@ -55,14 +55,14 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
                 <a href="/solutions/mobile-solutions" class="service mobile">
                     <div class="icon"></div>
                     <h4>MOBILE SOLUTIONS</h4>
-                    <div class="desc">Mobile integrations and custom tools development for your business.</div>
+                    <div class="desc">Mobile integrations and tools development for any business.</div>
                 </a>
             </div>
             <div class="col-md-6 col-sm-6">
                 <a href="/solutions/help-and-support" class="service help">
                     <div class="icon"></div>
                     <h4>HELP AND SUPPORT</h4>
-                    <div class="desc">Excellent solution for fast recovery or fix of your existing projects.</div>
+                    <div class="desc">Solution for fast recovery or fix of your existing projects.</div>
                 </a>
             </div>
 <!--            <div class="col-md-4">-->

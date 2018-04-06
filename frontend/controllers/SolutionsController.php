@@ -42,10 +42,10 @@ class SolutionsController extends Controller
         return $this->render('f-sysinfo-plugin');
     }
 
-    public function actionAdvancedWeb()
-    {
-        return $this->render('advanced-web');
-    }
+//    public function actionAdvancedWeb()
+//    {
+//        return $this->render('advanced-web');
+//    }
     public function actionMobileSolutions()
     {
         return $this->render('mobile-solutions');
@@ -62,9 +62,9 @@ class SolutionsController extends Controller
     {
         return $this->render('full-cycle-development');
     }
-    public function actionCloud()
-    {
-        return $this->render('cloud');
-    }
+//    public function actionCloud()
+//    {
+//        return $this->render('cloud');
+//    }
 
 }
