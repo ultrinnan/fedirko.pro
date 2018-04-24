@@ -124,34 +124,34 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
                     "Throughout the scope of work undertaken on my behalf, Serhii has maintained an exemplary attitude of professionalism and flexibility on what has proven a challenging project. Additionally, he has offered personal input on possible improvements at no expense, it has been a pleasure working with Serhii."
                 </div>
                 <div class="feedback_author">
-                    Matt Allan, <a href="#">BEVVS</a>
-                </div>
-            </div>
-
-            <div class="item" style="background: url('/images/bg/feedback/feed_2.jpg') center; background-size: cover;">
-                <div class="feedback_text">
-                    "Throughout the scope of work undertaken on my behalf, Serhii has maintained an exemplary attitude of professionalism and flexibility on what has proven a challenging project. Additionally, he has offered personal input on possible improvements at no expense, it has been a pleasure working with Serhii."
-                </div>
-                <div class="feedback_author">
-                    Matt Allan, <a href="#">BEVVS</a>
+                    Matt Allan, BEVVS
                 </div>
             </div>
 
             <div class="item" style="background: url('/images/bg/feedback/feed_3.jpg') center; background-size: cover;">
                 <div class="feedback_text">
-                    "Throughout the scope of work undertaken on my behalf, Serhii has maintained an exemplary attitude of professionalism and flexibility on what has proven a challenging project. Additionally, he has offered personal input on possible improvements at no expense, it has been a pleasure working with Serhii."
+                    "Заказывал у Сергея админ часть сайта (фронтенд и бэкенд). Все сделано в соответствии с техническим заданием и четко в строк. От себя могу добавить: приятный и адекватный разработчик,  в случае необходимости, может чего-то посоветовать в направлении юзабильности продукта. Уже посоветовал своим друзьям."
                 </div>
                 <div class="feedback_author">
-                    Matt Allan, <a href="#">BEVVS</a>
+                    Владимир Лобода
+                </div>
+            </div>
+
+            <div class="item" style="background: url('/images/bg/feedback/feed_2.jpg') center; background-size: cover;">
+                <div class="feedback_text">
+                    "We have worked together on 2 website projects from concept to reality. Serhii provided innovation and professionalism throughout the projects. Serhii developed the projects on time and within budget, which highlights to delivery. Serhii has helped turn the 2 project ideas into operating businesses. I continue to use Serhii who provides a cost effective service for support."
+                </div>
+                <div class="feedback_author">
+                    Martin Burke, ValveRecruitment
                 </div>
             </div>
 
             <div class="item" style="background: url('/images/bg/feedback/feed_4.jpg') center; background-size: cover;">
                 <div class="feedback_text">
-                    "Throughout the scope of work undertaken on my behalf, Serhii has maintained an exemplary attitude of professionalism and flexibility on what has proven a challenging project. Additionally, he has offered personal input on possible improvements at no expense, it has been a pleasure working with Serhii."
+                    "Заказывал доработку/правки сайта после индийских "профессионалов". Не самые дешевые рейты, но качество работы более чем соответствует. Новый проект запустили вовремя, а благодаря оперативной поддержке и постоянным советам по улучшению, готовый сайт получился даже луче, чем планировали.
                 </div>
                 <div class="feedback_author">
-                    Matt Allan, <a href="#">BEVVS</a>
+                    Дмитрий
                 </div>
             </div>
 
