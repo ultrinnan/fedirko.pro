@@ -112,27 +112,24 @@ $topItems = [
 
 <header>
     <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <a href="<?=Yii::$app->homeUrl;?>">
-                    <div class="logo"></div>
-                </a>
-            </div>
-            <div class="col-md-9">
-            <?php
-            try {
-                echo Nav::widget([
-                    'options' => ['class' => 'top_menu'],
-                    'items' => array_merge($mainItems, $topItems),
-                    'activateItems' => true,
-                    'activateParents' => true,
-                ]);
-            } catch (Exception $e) {
-                //error here
-            }
-            ?>
-            </div>
+        <a class="logo" href="<?=Yii::$app->homeUrl;?>"></a>
+        <div class="mobile_menu">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
+        <?php
+        try {
+            echo Nav::widget([
+                'options' => ['class' => 'top_menu'],
+                'items' => array_merge($mainItems, $topItems),
+                'activateItems' => true,
+                'activateParents' => true,
+            ]);
+        } catch (Exception $e) {
+            //error here
+        }
+        ?>
     </div>
 </header>
 

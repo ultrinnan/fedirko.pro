@@ -99,14 +99,22 @@ header.small_header {
 }
 header .logo,
 footer .logo {
+    display: block;
     background: url('../images/logo_white.png') no-repeat;
     width: 260px;
     height: 47px;
+}
+header .logo{
+    float: left;
 }
 header.small_header .logo {
     background: url('../images/logo.png') no-repeat;
     width: 260px;
     height: 47px;
+}
+
+.mobile_menu{
+    display: none;
 }
 
 .top_menu {
@@ -969,3 +977,52 @@ footer a:hover {
     background-color: #2d2c31;
 }
 /*---------------------------------------- footer start ----------------------------------------*/
+
+@media screen and (max-width: 1024px){
+
+    /*menu*/
+    .mobile_menu{
+        display: block;
+        color: #fff;
+        float: right;
+    }
+    .mobile_menu span{
+        display: block;
+        background: white;
+        width: 24px;
+        height: 3px;
+        margin: 7px 0;
+    }
+    .small_header .mobile_menu span{
+        background: #39675a;
+    }
+    .top_menu{
+        display: none;
+    }
+    .top_menu.active{
+        display: block;
+        position: fixed;
+        background: rgba(0, 0, 0, 0.8);
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        text-align: right;
+    }
+    .top_menu > li{
+        float: none;
+        margin: 0 0 8px;
+    }
+    .dropdown-menu{
+        position: relative;
+        top: -16px;
+        display: block;
+        float: none;
+        text-align: right;
+        background: transparent;
+    }
+    .dropdown-menu > li > a{
+        color: #fff;
+    }
+}
