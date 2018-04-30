@@ -980,6 +980,16 @@ footer a:hover {
 
 @media screen and (max-width: 1024px){
 
+    header .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    header .container:before,
+    header .container:after{
+        content: none;
+    }
+
     /*menu*/
     .mobile_menu{
         display: block;
@@ -1043,5 +1053,18 @@ footer a:hover {
     }
     #contact_button a{
         padding: 4px 16px;
+    }
+}
+
+@media screen and (max-width: 768px){
+
+}
+
+@media screen and (max-width: 375px){
+    .dropdown-menu{
+        padding: 0 0 8px;
+    }
+    .dropdown-menu > li > a{
+        padding: 0;
     }
 }
