@@ -423,6 +423,9 @@ a.red_button:hover {
 /* ---------- 404 page end ---------- */
 
 .first {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 91px 0;
     min-height: 33vh;
     position: relative;
@@ -662,6 +665,7 @@ a.service:hover::before {
 }
 
 .service .icon {
+    display: block;
     width: 100px;
     height: 100px;
     margin: auto;
@@ -741,6 +745,7 @@ a.service:hover h4 {
     color: white;
 }
 .service .desc {
+    display: block;
     position: relative;
 }
 
@@ -1017,7 +1022,7 @@ footer a:hover {
         top: 0;
         width: 100%;
         height: 100%;
-        padding: 24px;
+        padding: 16px 8px;
         text-align: right;
         font-size: 24px;
     }
@@ -1036,7 +1041,13 @@ footer a:hover {
     .dropdown-menu > li > a{
         color: #fff;
         font-size: 24px;
-        padding: 4px 0;
+        padding: 4px 16px;
+    }
+    .dropdown-menu > .active > a,
+    .dropdown-menu > .active > a:hover,
+    .dropdown-menu > .active > a:focus{
+        background-color: #84a580;
+        display: inline-block;
     }
     .top_menu > li > a:after{
         display: none;
@@ -1046,18 +1057,103 @@ footer a:hover {
     li.dropdown:hover .dropdown-menu a{
         color: #84a580;
         display: inline-block;
-        padding: 0;
+        padding: 0 16px;
     }
     .caret{
         display: none;
     }
     #contact_button a{
         padding: 4px 16px;
+        border-color: #84a580;
+        margin: 0 16px;
+    }
+
+    .first{
+        padding: 80px 0;
+    }
+    .first h1{
+        font-size: 48px;
+        margin: 30px auto 0;
+    }
+    h2{
+        font-size: 40px;
+        margin-top: 24px;
+    }
+    h3{
+        font-size: 32px;
+        margin-top: 16px;
+    }
+    .feedback_text{
+        width: 85%;
+    }
+    .carousel-control{
+        width: 10%;
+    }
+    a.service,
+    a.service h4,
+    a.service .desc{
+        color: #fff;
+    }
+    a.service::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+    }
+    /* services hovers*/
+    .service.web {
+        background: url('../images/bg/solutions/advanced_web_small.jpg') center no-repeat;
+        background-size: cover;
+    }
+    .service.web .icon {
+        background: url('../images/icons/internet_w.png');
+    }
+    .service.mobile {
+        background: url('../images/bg/solutions/mobile_solutions_small.jpg') center no-repeat;
+        background-size: cover;
+    }
+    .service.mobile .icon {
+        background: url('../images/icons/smartphone_w.png');
+    }
+    .service.help {
+        background: url('../images/bg/solutions/help_support_small.jpg') center no-repeat;
+        background-size: cover;
+    }
+    .service.help .icon {
+        background: url('../images/icons/help_w.png');
+    }
+    .service.wp {
+        background: url('../images/bg/solutions/wordpress_small.jpg') center no-repeat;
+        background-size: cover;
+    }
+    .service.wp .icon {
+        background: url('../images/icons/wordpress-logo_w.png');
+    }
+    .service.full_stack {
+        background: url('../images/bg/solutions/development_small.jpg') center no-repeat;
+        background-size: cover;
+    }
+    .service.full_stack .icon {
+        background: url('../images/icons/settings_w.png');
+    }
+    .service.cloud {
+        background: url('../images/bg/solutions/cloud_small.jpg') center no-repeat;
+        background-size: cover;
+    }
+    .service.cloud .icon {
+        background: url('../images/icons/cloud_w.png');
     }
 }
 
 @media screen and (max-width: 768px){
-
+    .feedback_slider .item{
+        min-height: 365px;
+        padding: 40px 0;
+    }
 }
 
 @media screen and (max-width: 375px){
@@ -1066,5 +1162,21 @@ footer a:hover {
     }
     .dropdown-menu > li > a{
         padding: 0;
+    }
+    .first{
+        padding: 72px 0 32px;
+    }
+    .first h1 {
+        font-size: 32px;
+        margin: 16px auto 0;
+    }
+    h2,
+    h3{
+        font-size: 24px;
+        margin-top: 16px;
+    }
+    .feedback_slider .item{
+        min-height: 480px;
+        padding: 24px 0;
     }
 }

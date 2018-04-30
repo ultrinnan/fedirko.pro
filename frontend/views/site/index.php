@@ -10,7 +10,7 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>OUTSTANDING WEB SOLUTIONS<br>FOR YOUR BUSINESS TEST</h1>
+                <h1>OUTSTANDING WEB SOLUTIONS<br>FOR YOUR BUSINESS</h1>
             </div>
         </div>
     </div>
@@ -19,7 +19,7 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>ADVANCED WEB & MOBILE SOLUTIONS<br>ENTERPRISE APPS & PORTALS</h2>
+                <h2>ADVANCED WEB & MOBILE SOLUTIONS,<br>ENTERPRISE APPS & PORTALS</h2>
                 <h3>Full-cycle servicing that covers every aspect of production and implementation of ideas</h3>
             </div>
         </div>
@@ -30,16 +30,16 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
         <div class="row">
             <div class="col-md-6 col-sm-6">
                 <a href="/solutions/full-cycle-development" class="service full_stack clearfix">
-                    <div class="icon"></div>
+                    <span class="icon"></span>
                     <h4>FULL-CYCLE DEVELOPMENT</h4>
-                    <div class="desc">Full range of development services with flexible engagement models.</div>
+                    <span class="desc">Full range of development services with flexible engagement models.</span>
                 </a>
             </div>
             <div class="col-md-6 col-sm-6">
                 <a href="/solutions/wordpress-solutions" class="service wp">
-                    <div class="icon"></div>
+                    <span class="icon"></span>
                     <h4>WORDPRESS SOLUTIONS</h4>
-                    <div class="desc">Professional tools and solutions for any site on most popular CMS.</div>
+                    <span class="desc">Professional tools and solutions for any site on most popular CMS.</span>
                 </a>
             </div>
 <!--            <div class="col-md-4">-->
@@ -53,16 +53,16 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
         <div class="row">
             <div class="col-md-6 col-sm-6">
                 <a href="/solutions/mobile-solutions" class="service mobile">
-                    <div class="icon"></div>
+                    <span class="icon"></span>
                     <h4>MOBILE SOLUTIONS</h4>
-                    <div class="desc">Mobile integrations and tools development for any business.</div>
+                    <span class="desc">Mobile integrations and tools development for any business.</span>
                 </a>
             </div>
             <div class="col-md-6 col-sm-6">
                 <a href="/solutions/help-and-support" class="service help">
-                    <div class="icon"></div>
+                    <span class="icon"></span>
                     <h4>HELP AND SUPPORT</h4>
-                    <div class="desc">Solution for fast recovery or fix of your existing projects.</div>
+                    <span class="desc">Solution for fast recovery or fix of your existing projects.</span>
                 </a>
             </div>
 <!--            <div class="col-md-4">-->
@@ -108,6 +108,7 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
 </section>
 
 <section class="feedback_slider">
+<!--    todo: refactor with slick-->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">

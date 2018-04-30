@@ -18,19 +18,23 @@ $mainItems = [
         'items' => [
             [
                 'label' => 'About',
-                'url' => '/about'
+                'url' => '/about',
+                'active' => \Yii::$app->controller->action->id === 'about',
             ],
             [
                 'label' => 'How we work',
-                'url' => '/how-we-work'
+                'url' => '/how-we-work',
+                'active' => \Yii::$app->controller->action->id === 'how-we-work',
             ],
             [
                 'label' => 'Proof of Concept',
                 'url' => '/proof-of-concept',
+                'active' => \Yii::$app->controller->action->id === 'proof-of-concept',
             ],
             [
                 'label' => 'Terms and conditions',
-                'url' => '/terms-and-conditions'
+                'url' => '/terms-and-conditions',
+                'active' => \Yii::$app->controller->action->id === 'terms-and-conditions',
             ],
 //            [
 //                'label' => 'Serhii\'s CV',
@@ -40,7 +44,7 @@ $mainItems = [
 //                'label' => 'Mary\'s CV',
 //                'url' => '/cv-mary',
 //            ],
-        ]
+        ],
     ],
     [
         'label' => 'Solutions',
@@ -49,28 +53,25 @@ $mainItems = [
             [
                 'label' => 'FULL-CYCLE DEVELOPMENT',
                 'url' => '/solutions/full-cycle-development',
+                'active' => \Yii::$app->controller->action->id === 'full-cycle-development',
             ],
             [
                 'label' => 'WORDPRESS SOLUTIONS',
-//            [
-//                'label' => 'CLOUD',
-//                'url' => '/solutions/cloud',
-//            ],
-//            ],
-//                'url' => '/solutions/advanced-web',
-//                'label' => 'ADVANCED WEB',
-//            [
                 'url' => '/solutions/wordpress-solutions',
+                'active' => \Yii::$app->controller->action->id === 'wordpress-solutions',
             ],
             [
                 'label' => 'MOBILE SOLUTIONS',
                 'url' => '/solutions/mobile-solutions',
+                'active' => \Yii::$app->controller->action->id === 'mobile-solutions',
             ],
             [
                 'label' => 'HELP AND SUPPORT',
                 'url' => '/solutions/help-and-support',
+                'active' => \Yii::$app->controller->action->id === 'help-and-support',
             ],
         ],
+        'active' => \Yii::$app->controller->id === 'solutions',
     ],
 ];
 $topItems = [
@@ -81,12 +82,15 @@ $topItems = [
             [
                 'label' => 'Serhii\'s portfolio',
                 'url' => '/portfolio/serhii',
+                'active' => \Yii::$app->controller->action->id === 'serhii',
             ],
             [
                 'label' => 'Mary\'s portfolio',
                 'url' => '/portfolio/mary',
+                'active' => \Yii::$app->controller->action->id === 'mary',
             ],
         ],
+        'active' => \Yii::$app->controller->id === 'portfolio',
     ],
     [
         'label' => 'Contact us',
@@ -146,7 +150,7 @@ $topItems = [
 <footer>
     <div class="container">
         <div class="row footer_list">
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-6">
                 <a href="<?=Yii::$app->homeUrl?>"><div class="logo"></div></a>
                 <div class="footer_phones">
                     <a href="tel:+380666272979">+3 8 066 627 29 79</a>
@@ -160,7 +164,7 @@ $topItems = [
             </div>
             <?php
             foreach ($mainItems as $columns) {
-	            echo '<div class="col-md-3">';
+	            echo '<div class="col-md-3 col-sm-3">';
 	            echo '<div class="footer_title"><a href="' . $columns['url']. '">' . $columns['label']. '</a></div>';
                 foreach ($columns['items'] as $item) {
                     echo '<a href="' . $item['url']. '">' . $item['label'] . '</a><br>';
