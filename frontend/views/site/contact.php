@@ -38,7 +38,7 @@ $this->registerCss(".first { background: url('/images/bg/contactus-bg.jpg') no-r
                 <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
 
                 <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
-                    'template' => '<div class="row"><div class="col-md-3">{image}</div><div class="col-md-6">{input}</div></div>',
+                    'template' => '<div class="row"><div class="col-md-4 captcha_box" >{image}</div><div class="col-md-8">{input}</div></div>',
                 ]) ?>
 
                 <div class="form-group">

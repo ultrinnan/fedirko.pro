@@ -75,20 +75,20 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
         </div>
     </div>
 </section>
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <?php
-                //todo: uncomment after seohide implementation
-//                if ($url_exists){
-//                    echo '<h3><a href="' . $project['url']. '">' . $project['url']. '</a></h3>';
-//                }
-                ?>
-            </div>
-        </div>
-    </div>
-</section>
+<!--<section>-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-12">-->
+<!--                --><?php
+//                //todo: uncomment after seohide implementation
+////                if ($url_exists){
+////                    echo '<h3><a href="' . $project['url']. '">' . $project['url']. '</a></h3>';
+////                }
+//                ?>
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 <?php
 //todo: maybe move to separate partial?
 if ($slider){
@@ -97,7 +97,7 @@ if ($slider){
         <div class="container-fluid">
             <div class="row">
                 <h3>RELATED PROJECTS</h3>
-                <div id="related_slider" class="carousel slide" data-ride="carousel">
+                <div id="related_slider" class="carousel slide" data-ride="<!--carousel-->">
 					<?php
 					$indicators = '';
                     $carousel_items = '';
