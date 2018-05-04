@@ -151,7 +151,7 @@ $topItems = [
     <div class="container">
         <div class="row footer_list">
             <div class="col-md-6 col-sm-6">
-                <a href="<?=Yii::$app->homeUrl?>"><div class="logo"></div></a>
+                <div class="footer_title">Contacts</div>
                 <div class="footer_phones">
                     <a href="tel:+380666272979">+3 8 066 627 29 79</a>
                     <br>
