@@ -1216,6 +1216,9 @@ footer a:hover {
         color: #39675a;
         background: white;
     }
+    .poc_box img {
+        max-width: 100%;
+    }
 }
 
 @media screen and (max-width: 414px){
