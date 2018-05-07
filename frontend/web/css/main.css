@@ -539,6 +539,9 @@ a.red_button:hover {
 .project_techlist {
     text-align: center;
 }
+.project_engine img{
+    filter: drop-shadow(1px 1px 0 white) drop-shadow(-1px -1px 0 white);
+}
 .project_tech {
     display: inline-block;
     padding: 10px 15px;
@@ -560,13 +563,16 @@ a.red_button:hover {
 .project_pictures_main img {
     width: 100%;
     margin: 0 auto 15px;
+    border: 1px solid white;
 }
 .project_pictures{
     text-align: center;
 }
 .project_pictures img {
-    width: 40%;
+    max-width: 40%;
+    max-height: 200px;
     margin: 0 15px 15px 0;
+    border: 1px solid white;
 }
 .project_pictures_main img:hover,
 .project_pictures img:hover {
