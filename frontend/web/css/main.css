@@ -103,7 +103,7 @@ header.small_header {
 header .logo {
     display: block;
     background: url('../images/logo_white.svg') top left no-repeat;
-    background-size: cover;
+    background-size: contain;
     width: 260px;
     height: 64px;
 }
@@ -112,7 +112,7 @@ header .logo{
 }
 header.small_header .logo {
     background: url('../images/logo.svg') top left no-repeat;
-    background-size: cover;
+    background-size: contain;
     width: 260px;
     height: 50px;
 }
@@ -574,7 +574,16 @@ a.red_button:hover {
 }
 
 .related_projects {
-    margin: 0 0 -32px;
+    margin: 0;
+    padding: 0;
+}
+#related_slider>h3{
+    color: #fff;
+    position: absolute;
+    top: 24px;
+    margin: auto;
+    width: 100%;
+    z-index: 2;
 }
 
 .carousel{
@@ -612,10 +621,10 @@ a.red_button:hover {
     filter: blur(0);
 }
 .related_projects .carousel-inner > .item {
-    padding: 50px 0;
+    padding: 80px 0 64px;
 }
 .related_projects .carousel-indicators {
-    bottom: 1px;
+    bottom: 8px;
 }
 .related_left,
 .related_right {
@@ -662,7 +671,6 @@ a.service {
 a.service:hover {
     color: white;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-    /*transition: .5s;*/
 }
 a.service:hover::before {
     content: '';
@@ -1210,19 +1218,27 @@ footer a:hover {
     }
 }
 
-@media screen and (max-width: 450px){
+@media screen and (max-width: 414px){
     .contact_page form{
         width: 100%;
+    }
+    header .logo {
+        width: 253px;
+        height: 63px;
+    }
+    header.small_header .logo {
+        width: 253px;
+        height: 49px;
     }
 }
 @media screen and (max-width: 375px){
     header .logo {
-        width: 154px;
-        height: 38px;
+        width: 231px;
+        height: 57px;
     }
     header.small_header .logo {
-        width: 154px;
-        height: 30px;
+        width: 231px;
+        height: 45px;
     }
 
     .dropdown-menu{
@@ -1232,7 +1248,7 @@ footer a:hover {
         padding: 0 16px;
     }
     .first{
-        padding: 105px 0 32px;
+        padding: 98px 0 32px;
     }
     .first h1 {
         font-size: 32px;
@@ -1264,6 +1280,14 @@ footer a:hover {
     }
 }
 @media screen and (max-width: 320px){
+    header .logo {
+        width: 191px;
+        height: 47px;
+    }
+    header.small_header .logo {
+        width: 191px;
+        height: 37px;
+    }
     .dropdown-menu > li > a{
         font-size: 20px;
     }

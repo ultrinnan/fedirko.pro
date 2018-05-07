@@ -6,6 +6,9 @@
 # phpstorm project files
 .idea
 
+#SSL certificates folder
+.well-known
+
 # netbeans project files
 nbproject
 

@@ -1,6 +1,8 @@
 <IfModule mod_rewrite.c>
     Options +FollowSymlinks
     RewriteEngine On
+    RewriteCond %{SERVER_PORT} 80
+    RewriteRule ^(.*)$ https://fedirko.pro/$1 [R,L]
 </IfModule>
  
 <IfModule mod_rewrite.c>    
@@ -40,9 +42,3 @@
     ExpiresDefault "access 1 month"
 </IfModule>
 ## EXPIRES CACHING ##
-<Limit GET POST>
-	require valid-user
-</Limit>
-AuthType Basic
-AuthName "/www/dev.fedirko.pro"
-AuthUserFile /home/h57883/data/etc/1171836.passwd

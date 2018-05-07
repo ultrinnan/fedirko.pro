@@ -96,9 +96,9 @@ if ($slider){
     <section class="related_projects">
         <div class="container-fluid">
             <div class="row">
-                <h3>RELATED PROJECTS</h3>
-                <div id="related_slider" class="carousel slide" data-ride="<!--carousel-->">
-					<?php
+                <div id="related_slider" class="carousel slide" data-ride="carousel">
+                    <h3>RELATED PROJECTS</h3>
+                    <?php
 					$indicators = '';
                     $carousel_items = '';
                     for ($i=0; $i<count($slider); $i++) {
