@@ -8,7 +8,7 @@ $this->title = $project['name'];
 $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false : true;
 ?>
 <section class="first view_project">
-    <div class="first_bg" style="background: #39675a url('/images/projects/<?=$project['project_id'] . '/' . $project['pictures']['main']['img']?>') center no-repeat; background-size: cover;">
+    <div class="first_bg" style="background: #39675a url('/images/projects/<?=$project['project_id'] . '/' . $project['pictures']['main']['img']?>') center top no-repeat; background-size: cover;">
     </div>
     <div class="container">
         <div class="row">
