@@ -111,7 +111,7 @@ if ($slider){
 						}
 						$carousel_items .= '
                         <div class="item ' . $active_class . '">
-                            <div class="bg" style="background: #39675a url(/images/projects/' . $slider[$i]['project_id'] . '/' . $slider[$i]['pictures']['main']['img'] . ') center no-repeat; background-size: cover;"></div>
+                            <div class="bg" style="background: #39675a url(/images/projects/' . $slider[$i]['project_id'] . '/' . $slider[$i]['pictures']['main']['img'] . ') center top no-repeat; background-size: cover;"></div>
                             <div class="item_box clearfix">
                                 <div class="clearfix">
                                     <div class="related_left">
