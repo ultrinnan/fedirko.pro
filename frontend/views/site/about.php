@@ -20,7 +20,7 @@ $this->registerCss(".first { background: url('/images/bg/office-bg.jpg') no-repe
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p>We started as small family team of freelance web developers, but soon we realized, that we can create more value to our clients if we will provide general consulting services.</p>
+                <p>We started as a small family team of freelance web developers, but soon we realized, that we can create more value to our clients if we will provide general consulting services.</p>
                 <p>Today we not just create sites and services - we provide full cycle consulting on business improvement.</p>
                 <p>Our technology stack is based mostly on web technologies and related areas, but we also familiar in mobile development, cloud solutions,  and SEO.</p>
                 <p>We have wide network of partners in different professional areas, so any task can be fully estimated and solved.</p>
