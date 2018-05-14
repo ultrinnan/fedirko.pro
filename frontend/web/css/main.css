@@ -542,6 +542,10 @@ a.red_button:hover {
 .project_engine img{
     filter: drop-shadow(1px 1px 0 white) drop-shadow(-1px -1px 0 white);
 }
+.project_engine .engine{
+    font-size: 48px;
+    font-weight: bold;
+}
 .project_tech {
     display: inline-block;
     padding: 10px 15px;

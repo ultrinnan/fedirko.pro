@@ -19,7 +19,13 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
         <div class="row">
             <div class="col-md-6 project_engine">
                 <p>Works on</p>
-                <img src="<?=$project['engine']->logo;?>" alt="<?=$project['engine']->name?>">
+                <?php
+                if ($project['engine']->logo != ''){
+                    echo '<img src="' . $project['engine']->logo . '" alt="' . $project['engine']->name . '">';
+                } else {
+                    echo '<div class="engine">' . $project['engine']->name . '</div>';
+                }
+                ?>
             </div>
             <div class="col-md-6 project_techlist">
                 <p>Technologies</p>
