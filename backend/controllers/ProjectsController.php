@@ -16,6 +16,7 @@ use yii\filters\VerbFilter;
 use yii\web\Response;
 use frontend\models\Lang;
 use yii\web\UploadedFile;
+use yii\filters\AccessControl;
 
 /**
  * ProjectsController implements the CRUD actions for Projects model.
@@ -28,6 +29,19 @@ class ProjectsController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['login', 'error'],
+                        'allow' => true,
+                    ],
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
