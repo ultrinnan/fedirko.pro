@@ -99,6 +99,15 @@ $topItems = [
         'options' => ['id' => 'contact_button'],
     ],
 ];
+
+$this->registerMetaTag(Yii::$app->params['og_title'], 'og_title');
+$this->registerMetaTag(Yii::$app->params['og_image'], 'og_image');
+$this->registerMetaTag(Yii::$app->params['og_description'], 'og_description');
+
+$this->registerMetaTag(Yii::$app->params['default_author'], 'default_author');
+$this->registerMetaTag(Yii::$app->params['default_description'], 'default_description');
+$this->registerMetaTag(Yii::$app->params['default_keywords'], 'default_keywords');
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -116,19 +125,12 @@ $topItems = [
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
+    <title><?= Html::encode($this->title);?></title>
     <!--    Open Graph protocol-->
-    <meta property="og:title" content="<?= Html::encode($this->title) ?>">
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?=Url::to('', 'https');?>">
-    <meta property="og:image" content="<?=Url::to('@web/images/logo_sqv.png', 'https');?>">
     <meta property="og:site_name" content="FEDIRKO.PRO">
     <meta property="og:locale" content="en_EN">
-    <meta property="og:description" content="Full stack web development and efficient solutions for your business. Consulting services, SEO, security audit, help and support, etc.">
-    <!--    Open Graph protocol-->
-    <meta name="description" content="Full stack web development and efficient solutions for your business. Consulting services, SEO, security audit, help and support, etc.">
-    <meta name="keywords" content="full stack, web, development, dev, php, html, css, javascript, framework, yii2, code, programmer, programming, application, app, spa, wordpress, plugin, pro, support, code, coding, freelance, consulting, solution, seo, security, audit">
-    <meta name="author" content="Serhii Fedirko"
     <?php $this->head() ?>
 </head>
 <body>

@@ -4,6 +4,12 @@
 
 $this->title = 'FEDIRKO.PRO - Full Stack Web Development and Solutions';
 
+//meta modifiers example
+//Yii::$app->params['og_title']['content'] = $this->title;
+//Yii::$app->params['og_image']['content'] = Url::to('@web/images/bg/office-bg.jpg', 'https');
+//Yii::$app->params['og_description']['content'] = 'Meet our team of passionate professionals';
+//Yii::$app->params['default_description']['content'] = 'Meet our team of passionate professionals';
+
 $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repeat center; background-size: cover;}");
 ?>
 <section class="first">

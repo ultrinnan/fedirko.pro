@@ -1,8 +1,15 @@
 <?php
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 
 $this->title = 'About FEDIRKO.PRO';
+
+Yii::$app->params['og_title']['content'] = $this->title;
+Yii::$app->params['og_image']['content'] = Url::to('@web/images/bg/office-bg.jpg', 'https');
+Yii::$app->params['og_description']['content'] = 'Meet our team of passionate professionals';
+Yii::$app->params['default_description']['content'] = 'Meet our team of passionate professionals';
+
 
 $this->registerCss(".first { background: url('/images/bg/office-bg.jpg') no-repeat center; background-size: cover;}");
 ?>
