@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'FEDIRKO.PRO - full stack web development';
+$this->title = 'FEDIRKO.PRO - Full Stack Web Development and Solutions';
 
 $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repeat center; background-size: cover;}");
 ?>

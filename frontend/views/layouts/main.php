@@ -7,6 +7,7 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
+use yii\helpers\Url;
 use frontend\widgets\WLang;
 
 AppAsset::register($this);
@@ -98,11 +99,10 @@ $topItems = [
         'options' => ['id' => 'contact_button'],
     ],
 ];
-//var_dump($mainItems);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
+<html lang="<?= Yii::$app->language ?>" prefix="og: http://ogp.me/ns#">
 <head>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -111,11 +111,24 @@ $topItems = [
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-KDGDVMX');</script>
     <!-- End Google Tag Manager -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <link rel="icon" type="image/png" href="/favicon.png">
     <meta charset="<?= Yii::$app->charset ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
+    <!--    Open Graph protocol-->
+    <meta property="og:title" content="<?= Html::encode($this->title) ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<?=Url::to('', 'https');?>">
+    <meta property="og:image" content="<?=Url::to('@web/images/logo_sqv.png', 'https');?>">
+    <meta property="og:site_name" content="FEDIRKO.PRO">
+    <meta property="og:locale" content="en_EN">
+    <meta property="og:description" content="Full stack web development and efficient solutions for your business. Consulting services, SEO, security audit, help and support, etc.">
+    <!--    Open Graph protocol-->
+    <meta name="description" content="Full stack web development and efficient solutions for your business. Consulting services, SEO, security audit, help and support, etc.">
+    <meta name="keywords" content="full stack, web, development, dev, php, html, css, javascript, framework, yii2, code, programmer, programming, application, app, spa, wordpress, plugin, pro, support, code, coding, freelance, consulting, solution, seo, security, audit">
+    <meta name="author" content="Serhii Fedirko"
     <?php $this->head() ?>
 </head>
 <body>
