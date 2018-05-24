@@ -216,12 +216,6 @@ $this->registerMetaTag(Yii::$app->params['default_keywords'], 'default_keywords'
     </div>
 </footer>
 
-<script src="script URL" async></script>
-<script>
-    var galite = galite || {};
-    galite.UA = 'UA-118877318-1'; // Add your analytics code
-</script>
-
 <?php $this->endBody() ?>
 </body>
 </html>
