@@ -5,6 +5,9 @@
 /* @var $slider array \common\models\Projects */
 
 use yii\helpers\Url;
+use frontend\assets\FancyAsset;
+
+FancyAsset::register($this);
 
 if ( $project['by_serhii'] && $project['by_mary'] ) {
     $concat = ', ';

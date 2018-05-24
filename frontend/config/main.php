@@ -68,6 +68,33 @@ return [
 		        ],
 	        ],
         ],
+        'assetManager' => [
+            'class' => 'yii\web\AssetManager',
+            'bundles' => [
+                'yii\web\JqueryAsset' => [
+                    'js' => [
+                        //YII_ENV_DEV ? 'jquery.js' : 'jquery.min.js'
+                        'jquery.min.js'
+                    ],
+                ],
+                'yii\bootstrap\BootstrapAsset' => [
+                    'css' => [
+                        'css/bootstrap.min.css',
+                    ],
+                    'cssOptions' => [
+                        'async' => 'async'
+                    ],
+                ],
+                'yii\bootstrap\BootstrapPluginAsset' => [
+                    'js' => [
+                        'js/bootstrap.min.js',
+                    ],
+                    'jsOptions' => [
+                        'async' => 'async'
+                    ],
+                ]
+            ],
+        ],
     ],
     'params' => $params,
 ];
