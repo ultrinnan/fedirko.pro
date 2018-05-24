@@ -3,7 +3,26 @@
 /* @var $this yii\web\View */
 /* @var $project array \common\models\Projects */
 /* @var $slider array \common\models\Projects */
+
+use yii\helpers\Url;
+
+if ( $project['by_serhii'] && $project['by_mary'] ) {
+    $concat = ', ';
+} elseif ( $project['by_serhii'] || $project['by_mary'] ) {
+    $concat = '';
+} else {
+    return null;
+}
+$serhii = $project['by_serhii'] ? 'Serhii Fedirko' : '';
+$mary   = $project['by_mary'] ? 'Mary Fedirko' : '';
+
 $this->title = $project['name'];
+
+Yii::$app->params['og_title']['content'] = $this->title;
+Yii::$app->params['og_image']['content'] = Url::to('@web/images/projects/' . $project['project_id'] . '/' . $project['pictures']['main']['img'], 'https');
+Yii::$app->params['og_description']['content'] = $project['short_desc'];
+Yii::$app->params['default_description']['content'] = $project['short_desc'];
+Yii::$app->params['default_author']['content'] = $serhii . $concat . $mary;
 
 $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false : true;
 ?>
@@ -107,7 +126,8 @@ if ($slider){
                     <?php
 					$indicators = '';
                     $carousel_items = '';
-                    for ($i=0; $i<count($slider); $i++) {
+                    $slider_count = count($slider);
+                    for ($i=0; $i < $slider_count; $i++) {
 						$active_class = $i==0 ? 'active' : '';
 						$indicators .= '<li data-target="#related_slider" data-slide-to="' . $i . '" class="' . $active_class. '"></li> ';
 

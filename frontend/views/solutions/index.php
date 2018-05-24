@@ -2,9 +2,14 @@
 
 /* @var $this yii\web\View */
 
-use yii\helpers\Html;
+use yii\helpers\Url;
 
-$this->title = 'Solutions';
+$this->title = 'Solutions | FEDIRKO.PRO';
+
+Yii::$app->params['og_title']['content'] = $this->title;
+Yii::$app->params['og_image']['content'] = Url::to('@web/images/bg/solutions/solution.jpeg', 'https');
+Yii::$app->params['og_description']['content'] = 'Every client is unique. We build solutions for all of them.';
+Yii::$app->params['default_description']['content'] = 'Every client is unique. We build solutions for all of them.';
 
 $this->registerCss(".first { background: url('/images/bg/solutions/solution.jpeg') no-repeat center; background-size: cover;}");
 ?>

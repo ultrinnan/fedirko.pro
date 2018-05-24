@@ -2,9 +2,18 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'Proof of concept';
+use yii\helpers\Url;
+
+$this->title = 'Proof of concept | FEDIRKO.PRO';
+
+Yii::$app->params['og_title']['content'] = $this->title;
+Yii::$app->params['og_image']['content'] = Url::to('@web/images/bg/contactus-bg.jpg', 'https');
+Yii::$app->params['og_description']['content'] = 'Proof of concept (POC) is a realization of a certain method or idea in order to demonstrate its feasibility, or a demonstration in principle with the aim of verifying that some concept or theory has practical potential.';
+Yii::$app->params['default_description']['content'] = 'Proof of concept (POC) is a realization of a certain method or idea in order to demonstrate its feasibility, or a demonstration in principle with the aim of verifying that some concept or theory has practical potential.';
+
+$this->registerCss(".first { background: url('/images/bg/poc1.jpg') no-repeat center; background-size: cover;}");
 ?>
-<section class="first poc">
+<section class="first">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -78,14 +87,7 @@ $this->title = 'Proof of concept';
         </div>
     </div>
 </section>
-<section class="call_to_action">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>WANT TO START A PROJECT?</h2>
-                It's simple.
-                <a class="contact_button" href="site/contact">contact us</a>
-            </div>
-        </div>
-    </div>
-</section>
+
+<?php
+    echo $this->render('/site/_call_to_action');
+?>

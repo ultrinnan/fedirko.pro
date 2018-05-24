@@ -2,10 +2,14 @@
 
 /* @var $this yii\web\View */
 
-use yii\helpers\Html;
+use yii\helpers\Url;
 
-$this->title = 'WordPress solutions';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'WordPress solutions | FEDIRKO.PRO';
+
+Yii::$app->params['og_title']['content'] = $this->title;
+Yii::$app->params['og_image']['content'] = Url::to('@web/images/bg/solutions/wordpress.jpg', 'https');
+Yii::$app->params['og_description']['content'] = 'Wordpress plugins, templates and scripts for your business.';
+Yii::$app->params['default_description']['content'] = 'Wordpress plugins, templates and scripts for your business.';
 
 $this->registerCss(".first { background: url('/images/bg/solutions/wordpress.jpg') no-repeat center; background-size: cover;}");
 ?>
@@ -42,8 +46,8 @@ $this->registerCss(".first { background: url('/images/bg/solutions/wordpress.jpg
                     <p>Our default template for WP themes. An entry point for the most of our custom themes. Feel free to use it :)</p>
                 </div>
                 <div>
-                    <a href="/solutions/f-sysinfo-plugin"><h2>WP Plugin F-SysInfo.</h2></a>
-                    <p>Shows important system information about server configuration as a nice Widget on WP dashboard.</p>
+                    <a href="/solutions/f-sysinfo-plugin"><h2>WP plugin F-SysInfo.</h2></a>
+                    <p>Shows important system information about server configuration as a nice widget in WP dashboard.</p>
                 </div>
                 <div>
                     <a href="#"><h2>WP Plugin SEOHide. <span class="small">(link coming soon)</span></h2></a>

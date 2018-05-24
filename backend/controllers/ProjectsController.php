@@ -101,7 +101,8 @@ class ProjectsController extends Controller
 	    $langs = Lang::find()->asArray()->all();
 	    $page = [];
 
-	    for ($i = 0; $i<count($langs); $i++){
+        $lang_count = count($langs);
+        for ($i = 0; $i < $lang_count; $i++){
 		    $page[$i] = new ProjectsLangs();
 		    $page[$i]['lang_id'] = $langs[$i]['id'];
 	    }
@@ -177,7 +178,8 @@ class ProjectsController extends Controller
         }
 	    $langs = Lang::find()->asArray()->all();
         $page = [];
-        for ($i = 0; $i < count($langs); $i++){
+        $lang_count = count($langs);
+        for ($i = 0; $i < $lang_count; $i++){
             $page[$i] = ProjectsLangs::find()
                 ->where('project_id = ' . $id)
                 ->andWhere('lang_id = ' . ($i + 1))
@@ -274,7 +276,9 @@ class ProjectsController extends Controller
 		        $image->delete();
             }
             $path = Yii::getAlias('@project') . '/' . $id;
-            Helper::deleteDir($path);
+		    if (dir($path)){
+                Helper::deleteDir($path);
+            }
 
 	    } catch ( StaleObjectException $e ) {
 	    } catch ( NotFoundHttpException $e ) {
@@ -297,9 +301,8 @@ class ProjectsController extends Controller
     {
         if (($model = Projects::findOne($id)) !== null) {
             return $model;
-        } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
         }
+        throw new NotFoundHttpException('The requested page does not exist.');
     }
 
 	public function actionAddToFavorites(){
@@ -333,7 +336,7 @@ class ProjectsController extends Controller
      * @param $name string image name
      * @return bool
      */
-	public function actionImageDelete($key = null, $name = null)
+	public function actionImageDelete()
 	{
 	    $key = $_REQUEST['key'];
 	    $name = $_REQUEST['name'];

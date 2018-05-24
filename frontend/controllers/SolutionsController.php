@@ -1,7 +1,6 @@
 <?php
 namespace frontend\controllers;
 
-use Yii;
 use yii\web\Controller;
 
 /**
@@ -42,10 +41,6 @@ class SolutionsController extends Controller
         return $this->render('f-sysinfo-plugin');
     }
 
-//    public function actionAdvancedWeb()
-//    {
-//        return $this->render('advanced-web');
-//    }
     public function actionMobileSolutions()
     {
         return $this->render('mobile-solutions');
@@ -62,9 +57,5 @@ class SolutionsController extends Controller
     {
         return $this->render('full-cycle-development');
     }
-//    public function actionCloud()
-//    {
-//        return $this->render('cloud');
-//    }
 
 }

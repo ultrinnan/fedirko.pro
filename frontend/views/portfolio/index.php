@@ -3,7 +3,14 @@
 /* @var $this yii\web\View */
 /* @var $projects \common\models\Projects */
 
-$this->title = 'Portfolio';
+use yii\helpers\Url;
+
+$this->title = 'Portfolio | FEDIRKO.PRO';
+
+Yii::$app->params['og_title']['content'] = $this->title;
+Yii::$app->params['og_image']['content'] = Url::to('@web/images/bg/serhii_bg.jpg', 'https');
+Yii::$app->params['og_description']['content'] = 'General portfolio page for FEDIRKO.PRO.';
+Yii::$app->params['default_description']['content'] = 'General portfolio page for FEDIRKO.PRO.';
 
 $this->registerCss(".first { background: url('/images/bg/serhii_bg.jpg') no-repeat center; background-size: cover;}");
 ?>

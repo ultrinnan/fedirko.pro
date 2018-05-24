@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Lang */
+/* @var $model frontend\models\Lang */
 
 $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Langs', 'url' => ['index']];
@@ -25,17 +25,23 @@ $this->params['breadcrumbs'][] = $this->title;
         ]) ?>
     </p>
 
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'id',
-            'url:url',
-            'local',
-            'name',
-            'default',
-            'date_update',
-            'date_create',
-        ],
-    ]) ?>
+    <?php
+    try{
+        echo DetailView::widget([
+            'model' => $model,
+            'attributes' => [
+                'id',
+                'url:url',
+                'local',
+                'name',
+                'default',
+                'date_update',
+                'date_create',
+            ],
+        ]);
+    } catch (Exception $e){
+        var_dump($e);
+    }
+    ?>
 
 </div>

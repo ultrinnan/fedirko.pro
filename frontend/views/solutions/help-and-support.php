@@ -2,9 +2,14 @@
 
 /* @var $this yii\web\View */
 
-use yii\helpers\Html;
+use yii\helpers\Url;
 
-$this->title = 'Help and Support';
+$this->title = 'Help and Support | FEDIRKO.PRO';
+
+Yii::$app->params['og_title']['content'] = $this->title;
+Yii::$app->params['og_image']['content'] = Url::to('@web/images/bg/solutions/help_support.jpg', 'https');
+Yii::$app->params['og_description']['content'] = 'Professional support and emergency help for your business.';
+Yii::$app->params['default_description']['content'] = 'Professional support and emergency help for your business.';
 
 $this->registerCss(".first { background: url('/images/bg/solutions/help_support.jpg') no-repeat center; background-size: cover;}");
 ?>

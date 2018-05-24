@@ -2,10 +2,14 @@
 
 /* @var $this yii\web\View */
 
-use yii\helpers\Html;
+use yii\helpers\Url;
 
-$this->title = 'WP-Plugin sysinfo';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'WP plugin F-Sysinfo | FEDIRKO.PRO';
+
+Yii::$app->params['og_title']['content'] = $this->title;
+Yii::$app->params['og_image']['content'] = Url::to('@web/images/bg/solutions/wordpress.jpg', 'https');
+Yii::$app->params['og_description']['content'] = 'Wordpress plugin to show widget with information about web server and it\'s configuration.';
+Yii::$app->params['default_description']['content'] = 'Wordpress plugin to show widget with information about web server and it\'s configuration.';
 
 $this->registerCss(".first { background: url('/images/bg/solutions/wordpress.jpg') no-repeat center; background-size: cover;}");
 ?>
@@ -13,7 +17,7 @@ $this->registerCss(".first { background: url('/images/bg/solutions/wordpress.jpg
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>WP-Plugin sysinfo</h1>
+                <h1>WP plugin F-Sysinfo</h1>
             </div>
         </div>
     </div>
@@ -23,7 +27,7 @@ $this->registerCss(".first { background: url('/images/bg/solutions/wordpress.jpg
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p>Shows important system information about server configuration as a nice Widget on WP dashboard.</p>
+                <p>Wordpress plugin to show widget with information about web server and it's configuration</p>
                 <a target="_blank" href="https://github.com/ultrinnan/f-sysinfo">Check it on GitHub</a>
             </div>
         </div>

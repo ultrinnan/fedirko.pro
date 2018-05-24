@@ -1,9 +1,16 @@
 <?php
-
 /* @var $this yii\web\View */
 /* @var $projects \common\models\Projects */
 
-$this->title = 'Mary\'s Portfolio';
+use yii\helpers\Url;
+
+$this->title = 'Mary\'s Portfolio | FEDIRKO.PRO';
+
+Yii::$app->params['og_title']['content'] = $this->title;
+Yii::$app->params['og_image']['content'] = Url::to('@web/images/bg/mary_bg.jpg', 'https');
+Yii::$app->params['og_description']['content'] = 'Mary Fedirko portfolio page.';
+Yii::$app->params['default_description']['content'] = 'Mary Fedirko portfolio page.';
+Yii::$app->params['default_author']['content'] = 'Mary Fedirko';
 
 $this->registerCss(".first { background: url('/images/bg/mary_bg.jpg') no-repeat center; background-size: cover;}");
 ?>

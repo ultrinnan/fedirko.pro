@@ -2,9 +2,14 @@
 
 /* @var $this yii\web\View */
 
-use yii\helpers\Html;
+use yii\helpers\Url;
 
-$this->title = 'Mobile solutions';
+$this->title = 'Mobile solutions | FEDIRKO.PRO';
+
+Yii::$app->params['og_title']['content'] = $this->title;
+Yii::$app->params['og_image']['content'] = Url::to('@web/images/bg/solutions/mobile_solutions.jpg', 'https');
+Yii::$app->params['og_description']['content'] = 'Applications and custom mobile solutions for your business.';
+Yii::$app->params['default_description']['content'] = 'Applications and custom mobile solutions for your business.';
 
 $this->registerCss(".first { background: url('/images/bg/solutions/mobile_solutions.jpg') no-repeat center; background-size: cover;}");
 ?>

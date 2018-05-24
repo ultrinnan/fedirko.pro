@@ -2,15 +2,22 @@
 
 /* @var $this yii\web\View */
 
-use yii\helpers\Html;
+use yii\helpers\Url;
 
-$this->title = 'How we work';
+$this->title = 'How we work | FEDIRKO.PRO';
+
+Yii::$app->params['og_title']['content'] = $this->title;
+Yii::$app->params['og_image']['content'] = Url::to('@web/images/bg/contactus-bg.jpg', 'https');
+Yii::$app->params['og_description']['content'] = 'Description of our general workflow with clients.';
+Yii::$app->params['default_description']['content'] = 'Description of our general workflow with clients.';
+
+$this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repeat center; background-size: cover;}");
 ?>
 <section class="first">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1><?=$this->title;?></h1>
+                <h1>How we work</h1>
             </div>
         </div>
     </div>
@@ -40,5 +47,5 @@ $this->title = 'How we work';
     </div>
 </section>
 <?php
-echo $this->render('/site/_call_to_action');
+    echo $this->render('/site/_call_to_action');
 ?>

@@ -2,10 +2,16 @@
 
 /* @var $this yii\web\View */
 
-use yii\helpers\Html;
+use yii\helpers\Url;
 
-$this->title = 'Terms and conditions';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Terms and conditions | FEDIRKO.PRO';
+
+Yii::$app->params['og_title']['content'] = $this->title;
+Yii::$app->params['og_image']['content'] = Url::to('@web/images/bg/contactus-bg.jpg', 'https');
+Yii::$app->params['og_description']['content'] = 'Terms and conditions for FEDIRKO.PRO.';
+Yii::$app->params['default_description']['content'] = 'Terms and conditions for FEDIRKO.PRO.';
+
+$this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repeat center; background-size: cover;}");
 ?>
 <section class="first main_page">
     <div class="container">
@@ -39,15 +45,6 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 </section>
 
-<section class="call_to_action">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>WANT TO START A PROJECT?</h2>
-                It's simple.
-                <a class="contact_button" href="site/contact">contact us</a>
-
-            </div>
-        </div>
-    </div>
-</section>
+<?php
+    echo $this->render('/site/_call_to_action');
+?>

@@ -869,10 +869,6 @@ a.service:hover h4 {
 
 /*------------------------ about page end --------------------------*/
 
-.poc {
-    background: black url('../images/bg/poc1.jpg') center no-repeat;
-}
-
 .poc_box {
     text-align: center;
     min-height: 200px;

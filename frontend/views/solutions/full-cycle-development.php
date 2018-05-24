@@ -2,9 +2,14 @@
 
 /* @var $this yii\web\View */
 
-use yii\helpers\Html;
+use yii\helpers\Url;
 
-$this->title = 'Full-cycle development';
+$this->title = 'Full-cycle development | FEDIRKO.PRO';
+
+Yii::$app->params['og_title']['content'] = $this->title;
+Yii::$app->params['og_image']['content'] = Url::to('@web/images/bg/solutions/development.jpg', 'https');
+Yii::$app->params['og_description']['content'] = 'Development of frontend and backend for your projects. Full cycle of services for your business.';
+Yii::$app->params['default_description']['content'] = 'Development of frontend and backend for your projects. Full cycle of services for your business.';
 
 $this->registerCss(".first { background: url('/images/bg/solutions/development.jpg') no-repeat center; background-size: cover;}")
 ?>

@@ -1,8 +1,14 @@
 <?php
 
 /* @var $this yii\web\View */
+use yii\helpers\Url;
 
-$this->title = 'Style guide';
+$this->title = 'Style guide | FEDIRKO.PRO';
+
+Yii::$app->params['og_title']['content'] = $this->title;
+Yii::$app->params['og_image']['content'] = Url::to('@web/images/bg/style_bg.jpg', 'https');
+Yii::$app->params['og_description']['content'] = 'A style guide (or manual of style) is a set of standards for the writing and design of documents, either for general use or for a specific publication, organization, or field.';
+Yii::$app->params['default_description']['content'] = 'A style guide (or manual of style) is a set of standards for the writing and design of documents, either for general use or for a specific publication, organization, or field.';
 
 $this->registerCss(".first { background: url('/images/bg/style_bg.jpg') no-repeat center; background-size: cover;}");
 ?>
@@ -10,7 +16,7 @@ $this->registerCss(".first { background: url('/images/bg/style_bg.jpg') no-repea
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1><?=$this->title;?></h1>
+                <h1>Style guide</h1>
             </div>
         </div>
     </div>
@@ -32,7 +38,7 @@ $this->registerCss(".first { background: url('/images/bg/style_bg.jpg') no-repea
         <div class="row">
             <h3>Colors</h3>
             <div class="col-md-6">
-                <img class="color_example" src="/images/colors.png">
+                <img class="color_example" src="<?=Url::to('/images/colors.png');?>">
             </div>
             <div class="col-md-6">
                 <div>
