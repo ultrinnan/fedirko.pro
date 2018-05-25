@@ -60,19 +60,31 @@ class SiteController extends Controller
         }
     }
 
-    /**
-     * Displays about page.
-     *
-     * @return mixed
-     */
+    //common pages
+
     public function actionAbout()
     {
         return $this->render('about');
     }
 
-    public function actionStyleGuide()
+    public function actionStyle()
     {
         return $this->render('style-guide');
+    }
+
+    public function actionHowWeWork()
+    {
+        return $this->render('how-we-work');
+    }
+
+    public function actionTermsAndConditions()
+    {
+        return $this->render('terms-and-conditions');
+    }
+
+    public function actionProofOfConcept()
+    {
+        return $this->render('proof-of-concept');
     }
 
 }

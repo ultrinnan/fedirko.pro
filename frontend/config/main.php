@@ -43,10 +43,16 @@ return [
             'showScriptName' => false,
             'class'=>'frontend\components\LangUrlManager',
             'rules' => [
-	            '' => 'site/index',
-	            '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-                '<alias:\w+>' => 'site/<alias>',
-                '<controller>' => '<controller>/index', //for default actions
+	            '/' => 'site/index',
+	            '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+
+                'portfolio' => 'portfolio/index',
+                'solutions' => 'solutions/index',
+
+                '<alias>' => 'site/<alias>', //all static pages
+
+                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>', //portfolio/view/7
+
             ],
         ],
         'language'=>'en-EN',
@@ -61,6 +67,33 @@ return [
 			        ],
 		        ],
 	        ],
+        ],
+        'assetManager' => [
+            'class' => 'yii\web\AssetManager',
+            'bundles' => [
+                'yii\web\JqueryAsset' => [
+                    'js' => [
+                        //YII_ENV_DEV ? 'jquery.js' : 'jquery.min.js'
+                        'jquery.min.js'
+                    ],
+                ],
+                'yii\bootstrap\BootstrapAsset' => [
+                    'css' => [
+                        'css/bootstrap.min.css',
+                    ],
+                    'cssOptions' => [
+                        'async' => 'async'
+                    ],
+                ],
+                'yii\bootstrap\BootstrapPluginAsset' => [
+                    'js' => [
+                        'js/bootstrap.min.js',
+                    ],
+                    'jsOptions' => [
+                        'async' => 'async'
+                    ],
+                ]
+            ],
         ],
     ],
     'params' => $params,

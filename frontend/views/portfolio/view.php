@@ -3,25 +3,53 @@
 /* @var $this yii\web\View */
 /* @var $project array \common\models\Projects */
 /* @var $slider array \common\models\Projects */
+
+use yii\helpers\Url;
+use frontend\assets\FancyAsset;
+
+FancyAsset::register($this);
+
+if ( $project['by_serhii'] && $project['by_mary'] ) {
+    $concat = ', ';
+} elseif ( $project['by_serhii'] || $project['by_mary'] ) {
+    $concat = '';
+} else {
+    return null;
+}
+$serhii = $project['by_serhii'] ? 'Serhii Fedirko' : '';
+$mary   = $project['by_mary'] ? 'Mary Fedirko' : '';
+
 $this->title = $project['name'];
+
+Yii::$app->params['og_title']['content'] = $this->title;
+Yii::$app->params['og_image']['content'] = Url::to('@web/images/projects/' . $project['project_id'] . '/' . $project['pictures']['main']['img'], 'https');
+Yii::$app->params['og_description']['content'] = $project['short_desc'];
+Yii::$app->params['default_description']['content'] = $project['short_desc'];
+Yii::$app->params['default_author']['content'] = $serhii . $concat . $mary;
 
 $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false : true;
 ?>
 <section class="first view_project">
-    <div class="first_bg" style="background: #39675a url('/images/projects/<?=$project['project_id'] . '/' . $project['pictures']['main']['img']?>') center no-repeat; background-size: cover;">
+    <div class="first_bg" style="background: #39675a url('/images/projects/<?=$project['project_id'] . '/' . $project['pictures']['main']['img']?>') center top no-repeat; background-size: cover;">
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-12">
                 <h1><?=$project['name'];?></h1>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-6 project_engine">
+            <div class="col-md-6 project_engine">
                 <p>Works on</p>
-                <img src="<?=$project['engine']->logo;?>" alt="<?=$project['engine']->name?>">
+                <?php
+                if ($project['engine']->logo != ''){
+                    echo '<img src="' . $project['engine']->logo . '" alt="' . $project['engine']->name . '">';
+                } else {
+                    echo '<div class="engine">' . $project['engine']->name . '</div>';
+                }
+                ?>
             </div>
-            <div class="col-lg-6 project_techlist">
+            <div class="col-md-6 project_techlist">
                 <p>Technologies</p>
                 <?php
                 foreach ($project['tech_list'] as $tech){
@@ -35,7 +63,7 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-12">
                 <h2>About project</h2>
                 <p><?=$project['long_desc'];?></p>
             </div>
@@ -49,12 +77,12 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
             //if more than one image
             if (isset($project['pictures']['all'])) {
                 ?>
-                <div class="col-lg-6 project_pictures_main">
+                <div class="col-md-6 project_pictures_main">
                     <a data-fancybox="<?=$project['id'];?>" href="/images/projects/<?=$project['project_id'] . '/' . $project['pictures']['main']['img'];?>" title="<?=$project['name'];?> example picture">
                         <img src="/images/projects/<?=$project['project_id'] . '/' . $project['pictures']['main']['thumb'];?>" alt="<?=$project['name'];?> example picture">
                     </a>
                 </div>
-                <div class="col-lg-6 project_pictures">
+                <div class="col-md-6 project_pictures">
                     <?php
                     foreach ($project['pictures']['all'] as $picture) {
                         echo '<a data-fancybox="' . $project['id'] . '" href="/images/projects/' . $project['project_id'] . '/' . $picture['img'] . '" title="' . $project['name'] . ' example picture"><img src="/images/projects/' . $project['project_id'] . '/' . $picture['thumb'] . '" alt="' . $project['name'] . ' example picture"></a>';
@@ -64,7 +92,7 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
                 <?php
             } else {
                 ?>
-                <div class="col-lg-12 project_pictures_main">
+                <div class="col-md-12 project_pictures_main">
                     <a data-fancybox="<?=$project['id'];?>" href="/images/projects/<?=$project['project_id'] . '/' . $project['pictures']['main']['img'];?>" title="<?=$project['name'];?> example picture">
                         <img src="/images/projects/<?=$project['project_id'] . '/' . $project['pictures']['main']['img'];?>" alt="<?=$project['name'];?> example picture">
                     </a>
@@ -75,20 +103,20 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
         </div>
     </div>
 </section>
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <?php
-                //todo: uncomment after seohide implementation
-//                if ($url_exists){
-//                    echo '<h3><a href="' . $project['url']. '">' . $project['url']. '</a></h3>';
-//                }
-                ?>
-            </div>
-        </div>
-    </div>
-</section>
+<!--<section>-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-12">-->
+<!--                --><?php
+//                //todo: uncomment after seohide implementation
+////                if ($url_exists){
+////                    echo '<h3><a href="' . $project['url']. '">' . $project['url']. '</a></h3>';
+////                }
+//                ?>
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 <?php
 //todo: maybe move to separate partial?
 if ($slider){
@@ -96,12 +124,13 @@ if ($slider){
     <section class="related_projects">
         <div class="container-fluid">
             <div class="row">
-                <h3>RELATED PROJECTS</h3>
                 <div id="related_slider" class="carousel slide" data-ride="carousel">
-					<?php
+                    <h3>RELATED PROJECTS</h3>
+                    <?php
 					$indicators = '';
                     $carousel_items = '';
-                    for ($i=0; $i<count($slider); $i++) {
+                    $slider_count = count($slider);
+                    for ($i=0; $i < $slider_count; $i++) {
 						$active_class = $i==0 ? 'active' : '';
 						$indicators .= '<li data-target="#related_slider" data-slide-to="' . $i . '" class="' . $active_class. '"></li> ';
 
@@ -111,7 +140,7 @@ if ($slider){
 						}
 						$carousel_items .= '
                         <div class="item ' . $active_class . '">
-                            <div class="bg" style="background: #39675a url(/images/projects/' . $slider[$i]['project_id'] . '/' . $slider[$i]['pictures']['main']['img'] . ') center no-repeat; background-size: cover;"></div>
+                            <div class="bg" style="background: #39675a url(/images/projects/' . $slider[$i]['project_id'] . '/' . $slider[$i]['pictures']['main']['img'] . ') center top no-repeat; background-size: cover;"></div>
                             <div class="item_box clearfix">
                                 <div class="clearfix">
                                     <div class="related_left">
@@ -123,10 +152,10 @@ if ($slider){
                                         </p>
                                     </div>
                                     <div class="related_right">
-                                        <a href="/portfolio/view?id=' . $slider[$i]['project_id'] .'" style="background: #39675a url(/images/projects/' . $slider[$i]['project_id'] . '/' . $slider[$i]['pictures']['main']['thumb'] . ') center no-repeat; background-size: cover;"></a>
+                                        <a href="/portfolio/view/' . $slider[$i]['project_id'] .'" style="background: #39675a url(/images/projects/' . $slider[$i]['project_id'] . '/' . $slider[$i]['pictures']['main']['thumb'] . ') center no-repeat; background-size: cover;"></a>
                                     </div>
                                 </div>
-                                <a class="read_more" href="/portfolio/view?id=' . $slider[$i]['project_id'] .'">Read more</a>
+                                <a class="read_more" href="/portfolio/view/' . $slider[$i]['project_id'] .'">Read more</a>
                             </div>
                         </div>';
 					}

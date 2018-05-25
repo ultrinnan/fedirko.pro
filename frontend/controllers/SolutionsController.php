@@ -1,7 +1,6 @@
 <?php
 namespace frontend\controllers;
 
-use Yii;
 use yii\web\Controller;
 
 /**
@@ -36,9 +35,27 @@ class SolutionsController extends Controller
      *
      * @return mixed
      */
+    //todo: move to dynamic posts
     public function actionFSysinfoPlugin()
     {
         return $this->render('f-sysinfo-plugin');
+    }
+
+    public function actionMobileSolutions()
+    {
+        return $this->render('mobile-solutions');
+    }
+    public function actionHelpAndSupport()
+    {
+        return $this->render('help-and-support');
+    }
+    public function actionWordpressSolutions()
+    {
+        return $this->render('wordpress-solutions');
+    }
+    public function actionFullCycleDevelopment()
+    {
+        return $this->render('full-cycle-development');
     }
 
 }

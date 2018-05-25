@@ -1,0 +1,29 @@
+
+*** These modified files were found in JOE when it aborted on Fri May  4 18:01:43 2018
+*** JOE was aborted by UNIX signal 1
+
+*** File '(Unnamed)'
+.git/COMMIT_EDITMSG
+
+*** File '.git/COMMIT_EDITMSG'
+
+htaccess changes
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Committer: h57883 <h57883@h113.hvosting.ua>
+#
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   .htaccess
+#	modified:   backend/web/.htaccess
+#	modified:   frontend/web/.htaccess
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	composer
+#	composer-setup.php

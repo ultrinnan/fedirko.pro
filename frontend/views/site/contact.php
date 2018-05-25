@@ -7,8 +7,14 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
+use yii\helpers\Url;
 
-$this->title = 'Contact us!';
+$this->title = 'Contact us! | FEDIRKO.PRO';
+
+Yii::$app->params['og_title']['content'] = $this->title;
+Yii::$app->params['og_image']['content'] = Url::to('@web/images/bg/contactus-bg.jpg', 'https');
+Yii::$app->params['og_description']['content'] = 'If you have business inquiries or other questions, please fill out the following form to contact us.';
+Yii::$app->params['default_description']['content'] = 'If you have business inquiries or other questions, please fill out the following form to contact us.';
 
 $this->registerCss(".first { background: url('/images/bg/contactus-bg.jpg') no-repeat center; background-size: cover;}");
 ?>
@@ -16,8 +22,8 @@ $this->registerCss(".first { background: url('/images/bg/contactus-bg.jpg') no-r
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1><?=$this->title;?></h1>
-                <h3>If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.</h3>
+                <h1>Contact us!</h1>
+                <h2>If you have business inquiries or other questions, please fill out the following form to contact us.</h2>
             </div>
         </div>
     </div>
@@ -38,7 +44,7 @@ $this->registerCss(".first { background: url('/images/bg/contactus-bg.jpg') no-r
                 <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
 
                 <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
-                    'template' => '<div class="row"><div class="col-md-3">{image}</div><div class="col-md-6">{input}</div></div>',
+                    'template' => '<div class="row"><div class="col-md-4 captcha_box" >{image}</div><div class="col-md-8">{input}</div></div>',
                 ]) ?>
 
                 <div class="form-group">

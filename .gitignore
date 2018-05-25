@@ -6,6 +6,9 @@
 # phpstorm project files
 .idea
 
+#SSL certificates folder
+.well-known
+
 # netbeans project files
 nbproject
 
@@ -37,3 +40,8 @@ phpunit.phar
 
 # node_modules
 /node_modules
+
+/frontend/web/images/avatars/
+!/frontend/web/images/avatars/default_user.svg
+/frontend/web/images/projects/
+/.htaccess

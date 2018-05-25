@@ -1,16 +1,23 @@
 <?php
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 
-$this->title = 'FEDIRKO.PRO - full stack web development';
+$this->title = 'FEDIRKO.PRO - Full Stack Web Development and Solutions';
+
+//meta modifiers example
+//Yii::$app->params['og_title']['content'] = $this->title;
+//Yii::$app->params['og_image']['content'] = Url::to('@web/images/bg/office-bg.jpg', 'https');
+//Yii::$app->params['og_description']['content'] = 'Meet our team of passionate professionals';
+//Yii::$app->params['default_description']['content'] = 'Meet our team of passionate professionals';
 
 $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repeat center; background-size: cover;}");
 ?>
-<section class="first main_page">
+<section class="first">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>WE BUILD AMAZING WEB SOLUTIONS<br>FOR BUSINESS AND LIFE</h1>
+                <h1>OUTSTANDING WEB SOLUTIONS<br>FOR YOUR BUSINESS</h1>
             </div>
         </div>
     </div>
@@ -19,7 +26,7 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>ADVANCED WEB & MOBILE SOLUTIONS<br>ENTERPRISE APPS & PORTALS</h2>
+                <h2>ADVANCED WEB & MOBILE SOLUTIONS,<br>ENTERPRISE APPS & PORTALS</h2>
                 <h3>Full-cycle servicing that covers every aspect of production and implementation of ideas</h3>
             </div>
         </div>
@@ -28,48 +35,34 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
-                <a href="#" class="service web">
-                    <div class="icon"></div>
-                    <h4>ADVANCED WEB</h4>
-                    <div class="desc">Productive, engaging and reliable web solutions for business outcomes you deserve.</div>
+            <div class="col-md-6 col-sm-6">
+                <a href="/solutions/full-cycle-development" class="service full_stack clearfix">
+                    <span class="icon"></span>
+                    <h4>FULL-CYCLE DEVELOPMENT</h4>
+                    <span class="desc">Full range of development services with flexible engagement models.</span>
                 </a>
             </div>
-            <div class="col-md-4">
-                <a href="#" class="service mobile">
-                    <div class="icon"></div>
-                    <h4>MOBILE SOLUTIONS</h4>
-                    <div class="desc">Mobile integrations and custom tools development for your business.</div>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="#" class="service help">
-                    <div class="icon"></div>
-                    <h4>HELP AND SUPPORT</h4>
-                    <div class="desc">Excellent solution for fast recovery or fix of your existing projects.</div>
+            <div class="col-md-6 col-sm-6">
+                <a href="/solutions/wordpress-solutions" class="service wp">
+                    <span class="icon"></span>
+                    <h4>WORDPRESS SOLUTIONS</h4>
+                    <span class="desc">Professional tools and solutions for any site on most popular CMS.</span>
                 </a>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4">
-                <a href="#" class="service qa">
-                    <div class="icon"></div>
-                    <h4>QUALITY ASSURANCE</h4>
-                    <div class="desc">Hands-on quality assurance expertise weaved into your development lifecycle.</div>
+            <div class="col-md-6 col-sm-6">
+                <a href="/solutions/mobile-solutions" class="service mobile">
+                    <span class="icon"></span>
+                    <h4>MOBILE SOLUTIONS</h4>
+                    <span class="desc">Mobile integrations and tools development for any business.</span>
                 </a>
             </div>
-            <div class="col-md-4">
-                <a href="#" class="service full_stack clearfix">
-                    <div class="icon"></div>
-                    <h4>FULL-CYCLE DEVELOPMENT</h4>
-                    <div class="desc">Full spectrum of development services spiced with flexible engagement models.</div>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="#" class="service cloud">
-                    <div class="icon"></div>
-                    <h4>CLOUD</h4>
-                    <div class="desc">Powerful cloud-based solutions fused with creative design for private, hybrid & public platforms.</div>
+            <div class="col-md-6 col-sm-6">
+                <a href="/solutions/help-and-support" class="service help">
+                    <span class="icon"></span>
+                    <h4>HELP AND SUPPORT</h4>
+                    <span class="desc">Solution for fast recovery or fix of your existing projects.</span>
                 </a>
             </div>
         </div>
@@ -108,6 +101,7 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
 </section>
 
 <section class="feedback_slider">
+<!--    todo: refactor with slick-->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -119,39 +113,39 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
-            <div class="item active" style="background: url('/images/bg/feedback/feed_1.jpg') center; background-size: cover;">
+            <div class="item active" style="background: url('<?=Url::to('@web/images/bg/feedback/feed_1.jpg');?>') center; background-size: cover;">
                 <div class="feedback_text">
                     "Throughout the scope of work undertaken on my behalf, Serhii has maintained an exemplary attitude of professionalism and flexibility on what has proven a challenging project. Additionally, he has offered personal input on possible improvements at no expense, it has been a pleasure working with Serhii."
                 </div>
                 <div class="feedback_author">
-                    Matt Allan, <a href="#">BEVVS</a>
+                    Matt Allan, BEVVS
                 </div>
             </div>
 
-            <div class="item" style="background: url('/images/bg/feedback/feed_2.jpg') center; background-size: cover;">
+            <div class="item" style="background: url('<?=Url::to('@web/images/bg/feedback/feed_3.jpg');?>') center; background-size: cover;">
                 <div class="feedback_text">
-                    "Throughout the scope of work undertaken on my behalf, Serhii has maintained an exemplary attitude of professionalism and flexibility on what has proven a challenging project. Additionally, he has offered personal input on possible improvements at no expense, it has been a pleasure working with Serhii."
+                    "Заказывал у Сергея админ часть сайта (фронтенд и бэкенд). Все сделано в соответствии с техническим заданием и четко в строк. От себя могу добавить: приятный и адекватный разработчик,  в случае необходимости, может чего-то посоветовать в направлении юзабильности продукта. Уже посоветовал своим друзьям."
                 </div>
                 <div class="feedback_author">
-                    Matt Allan, <a href="#">BEVVS</a>
+                    Владимир Лобода
                 </div>
             </div>
 
-            <div class="item" style="background: url('/images/bg/feedback/feed_3.jpg') center; background-size: cover;">
+            <div class="item" style="background: url('<?=Url::to('@web/images/bg/feedback/feed_2.jpg');?>') center; background-size: cover;">
                 <div class="feedback_text">
-                    "Throughout the scope of work undertaken on my behalf, Serhii has maintained an exemplary attitude of professionalism and flexibility on what has proven a challenging project. Additionally, he has offered personal input on possible improvements at no expense, it has been a pleasure working with Serhii."
+                    "We have worked together on 2 website projects from concept to reality. Serhii provided innovation and professionalism throughout the projects. Serhii developed the projects on time and within budget, which highlights to delivery. Serhii has helped turn the 2 project ideas into operating businesses. I continue to use Serhii who provides a cost effective service for support."
                 </div>
                 <div class="feedback_author">
-                    Matt Allan, <a href="#">BEVVS</a>
+                    Martin Burke, ValveRecruitment
                 </div>
             </div>
 
-            <div class="item" style="background: url('/images/bg/feedback/feed_4.jpg') center; background-size: cover;">
+            <div class="item" style="background: url('<?=Url::to('@web/images/bg/feedback/feed_4.jpg');?>') center; background-size: cover;">
                 <div class="feedback_text">
-                    "Throughout the scope of work undertaken on my behalf, Serhii has maintained an exemplary attitude of professionalism and flexibility on what has proven a challenging project. Additionally, he has offered personal input on possible improvements at no expense, it has been a pleasure working with Serhii."
+                    "Заказывал доработку/правки сайта после индийских "профессионалов". Не самые дешевые рейты, но качество работы более чем соответствует. Новый проект запустили вовремя, а благодаря оперативной поддержке и постоянным советам по улучшению, готовый сайт получился даже луче, чем планировали.
                 </div>
                 <div class="feedback_author">
-                    Matt Allan, <a href="#">BEVVS</a>
+                    Дмитрий
                 </div>
             </div>
 
