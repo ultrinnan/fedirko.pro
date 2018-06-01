@@ -82,6 +82,11 @@ class SiteController extends Controller
         return $this->render('terms-and-conditions');
     }
 
+    public function actionPrivacyPolicy()
+    {
+        return $this->render('privacy-policy');
+    }
+
     public function actionProofOfConcept()
     {
         return $this->render('proof-of-concept');

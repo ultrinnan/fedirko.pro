@@ -7,7 +7,7 @@ use yii\helpers\Url;
 $this->title = 'Terms and conditions | FEDIRKO.PRO';
 
 Yii::$app->params['og_title']['content'] = $this->title;
-Yii::$app->params['og_image']['content'] = Url::to('@web/images/bg/contactus-bg.jpg', 'https');
+Yii::$app->params['og_image']['content'] = Url::to('@web/images/bg/space_bg.jpg', 'https');
 Yii::$app->params['og_description']['content'] = 'Terms and conditions for FEDIRKO.PRO.';
 Yii::$app->params['default_description']['content'] = 'Terms and conditions for FEDIRKO.PRO.';
 
