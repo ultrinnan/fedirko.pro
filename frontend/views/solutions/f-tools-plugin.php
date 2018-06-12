@@ -4,12 +4,12 @@
 
 use yii\helpers\Url;
 
-$this->title = 'WP plugin F-Sysinfo | FEDIRKO.PRO';
+$this->title = 'WP plugin F-Tools | FEDIRKO.PRO';
 
 Yii::$app->params['og_title']['content'] = $this->title;
 Yii::$app->params['og_image']['content'] = Url::to('@web/images/bg/solutions/wordpress.jpg', 'https');
-Yii::$app->params['og_description']['content'] = 'Wordpress plugin to show widget with information about web server and it\'s configuration.';
-Yii::$app->params['default_description']['content'] = 'Wordpress plugin to show widget with information about web server and it\'s configuration.';
+Yii::$app->params['og_description']['content'] = 'Wordpress plugin with many useful tools for your site.';
+Yii::$app->params['default_description']['content'] = 'Wordpress plugin with many useful tools for your site.';
 
 $this->registerCss(".first { background: url('/images/bg/solutions/wordpress.jpg') no-repeat center; background-size: cover;}");
 ?>
@@ -17,7 +17,7 @@ $this->registerCss(".first { background: url('/images/bg/solutions/wordpress.jpg
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>WP plugin F-Sysinfo</h1>
+                <h1>WP plugin F-Tools</h1>
             </div>
         </div>
     </div>
@@ -27,8 +27,8 @@ $this->registerCss(".first { background: url('/images/bg/solutions/wordpress.jpg
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p>Wordpress plugin to show widget with information about your web server's configuration.</p>
-                <a target="_blank" href="https://github.com/ultrinnan/f-sysinfo">Check it on GitHub</a>
+                <p>Wordpress plugin with many useful tools for your site.</p>
+                <a target="_blank" href="https://github.com/ultrinnan/f-tools">Check it on GitHub</a>
             </div>
         </div>
     </div>
