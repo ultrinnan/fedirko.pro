@@ -1,18 +1,18 @@
-@import 'fonts'
+// Helpers
+@import 'helpers/variables'
+@import 'helpers/mixins'
 
-html,
-body
-  height: 100%
+// Base styles
+@import 'normalize'
+@import 'base/base'
+@import 'base/typography'
 
-body
-  font-family: Ubuntu,Arial,Helvetica,sans-serif
-  font-size: 19px
-  line-height: 1.57894737
-  color: #234
-  background-color: #eee
-  overflow-x: hidden
-  -webkit-font-smoothing: antialiased
+// Components
+@import 'components/buttons'
+@import 'components/forms'
+@import 'components/dropdown'
 
-@import 'media_1366'
-@import 'media_768'
-@import 'media_375'
+// Layout
+@import 'layout/header'
+@import 'layout/content'
+@import 'layout/footer'
