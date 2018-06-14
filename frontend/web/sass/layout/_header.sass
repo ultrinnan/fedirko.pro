@@ -1,14 +1,153 @@
 header
-  padding: 8px
-  background: grey
-  //min-height: 50px
+  position: fixed
+  z-index: 1000
+  width: 100%
+  background: transparent
+  border-bottom: 1px solid transparent
+  padding: 20px 0
+  transition: all .5s ease
 
-.language_switcher
-  background: white
-  border: 1px solid black
-  padding: 8px
-  display: inline-block
-  color: green
+  &.small_header
+    background: white
+    border-bottom: 1px solid #f1f1f1
+    padding: 7px 0 5px
+    transition: all .5s ease
+    box-shadow: 0 0 5px rgba(0,0,0,0.1)
+
+    .logo
+      background: url('../images/logo.svg') top left no-repeat
+      background-size: contain
+      width: 260px
+      height: 50px
+
+    .top_menu
+      padding: 2px 0
+      > li
+        .active
+          > a
+            color: #84a580
+
+  .logo
+    display: block
+    background: url('../images/logo_white.svg') top left no-repeat
+    background-size: contain
+    width: 260px
+    height: 64px
+    float: left
+
+.mobile_menu
+  display: none
+
+.top_menu
+  float: right
+  position: relative
+  display: block
+  font-size: 14px
+  font-weight: bold
+  line-height: 25px
+  padding: 4px 0
+  text-decoration: none
+  text-transform: uppercase
+  li
+    .dropdown
+      &:hover
+        .dropdown-menu
+          display: block
+          margin: 0
+          padding: 0
+          border: 0
+          border-radius: 0
+          a
+            color: #39675a
+            padding: 10px 20px
+            &:hover
+              background: #39675a
+              color: white
+          &.active
+            a
+              background: #84a580
+              color: white
+
+  > li#contact_button
+    > a:after
+      display: none
+  > li
+    float: left
+    margin: 0 10px
+    > a
+      padding: 8px 10px 7px
+      color: white
+      &:hover
+        background: transparent
+      &:after
+        display: block
+        content: ""
+        height: 2px
+        width: 0
+        background-color: white
+        transition: width .2s ease-in-out
+      &:hover:after,
+      &:focus:after,
+      &:after
+        width: 100%
+
+
+.small_header
+  .top_menu
+    > li
+      > a
+        color: #39675a
+    > li:hover,
+    > li.active
+      > a:after
+        background-color: #84a580
+  #contact_button
+    a
+      border: 1px solid #84a580
+      border-radius: 2px
+      color: #84a580
+      &:hover
+        background: #84a580
+        color: white
+        transition: .5s
+
+#contact_button
+  a
+    border: 1px solid white
+    border-radius: 2px
+    &:hover
+      background: white
+      color: #39675a
+      transition: .5s
+
+#lang
+  position: absolute
+  z-index: 999
+  top: 80px
+  right: 0
+  a
+    .lang_box
+      display: block
+      text-decoration: none
+      font-size: 16px
+      border: 2px solid #39675a
+      border-radius: 2px
+      border-right: 0
+      padding: 0 8px
+      margin: 2px 0
+      cursor: pointer
+      width: 100px
+      position: relative
+      left: 71px
+      &:hover
+        color: #84a580
+        border: 2px solid #84a580
+        border-right: 0
+        left: 0
+        transition: 0.5s
+      &.active
+        color: #84a580
+        border: 2px solid #84a580
 
 @media screen and (max-width: 1366px)
 

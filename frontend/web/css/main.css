@@ -12,11 +12,13 @@ body{height:100%;}
 body{font-family:Ubuntu,Arial,Helvetica,sans-serif;font-size:19px;line-height:1.57894737;color:#234;background-color:#eee;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 body.noscroll{overflow:hidden;}
 p{margin:0 0 16px;}
+
 header{position:fixed;z-index:1000;width:100%;background:transparent;border-bottom:1px solid transparent;padding:20px 0;transition:all .5s ease;}
 header.small_header{background:white;border-bottom:1px solid #f1f1f1;padding:7px 0 5px;transition:all .5s ease;box-shadow:0 0 5px rgba(0,0,0,0.1);}
 header .logo{display:block;background:url('../images/logo_white.svg') top left no-repeat;background-size:contain;width:260px;height:64px;}
 header .logo{float:left;}
 header.small_header .logo{background:url('../images/logo.svg') top left no-repeat;background-size:contain;width:260px;height:50px;}
+
 .mobile_menu{display:none;}
 .top_menu{float:right;position:relative;display:block;font-size:14px;font-weight:bold;line-height:25px;padding:4px 0;text-decoration:none;text-transform:uppercase;}
 .small_header .top_menu{padding:2px 0;}
@@ -27,6 +29,7 @@ header.small_header .logo{background:url('../images/logo.svg') top left no-repea
 .top_menu > li > a:hover:after,
 .top_menu > li > a:focus:after,
 .top_menu > li.active > a:after{width:100%;}
+
 .small_header .top_menu > li.active > a{color:#84a580;}
 .small_header .top_menu > li:hover > a:after,
 .small_header .top_menu > li.active > a:after{background-color:#84a580;}
@@ -41,10 +44,12 @@ li.dropdown:hover .dropdown-menu{display:block;margin:0;padding:0;border:0;borde
 li.dropdown:hover .dropdown-menu a{padding:10px 20px;}
 li.dropdown:hover .dropdown-menu a:hover{background:#39675a;color:white;}
 li.dropdown:hover .dropdown-menu .active a{background:#84a580;color:white;}
+
 #lang{position:absolute;z-index:999;top:80px;right:0;}
 a.lang_box{display:block;text-decoration:none;font-size:16px;border:2px solid #39675a;border-radius:2px;border-right:0;padding:0 8px;margin:2px 0;cursor:pointer;width:100px;position:relative;left:71px;}
 a.lang_box:hover{color:#84a580;border:2px solid #84a580;border-right:0;left:0;transition:0.5s;}
 a.lang_box.active{color:#84a580;border:2px solid #84a580;}
+
 section{padding:32px 0;}
 h1, h2, h3, h4, h5, h6{font-family:Avenir, Arial,Helvetica,sans-serif;font-weight:normal;text-align:center;}
 h1{font-size:60px;margin-top:40px;}
