@@ -1,25 +1,31 @@
 footer
-  padding: 8px
-  background: grey
-  //min-height: 50px
+  font-size: 14px
+  padding-top: 20px
+  background-color: #3d3c42
+  color: #b3b3b4
+  line-height: 2
+  a
+    color: #b4c3a8
+    &:active, &:visited
+      color: #b4c3a8
+    &:hover
+      color: #84a580
 
-  .footer_social
-    border: 1px solid black
-    display: inline-block
-    padding: 8px
+.footer_title
+  font-weight: bold
+  text-transform: uppercase
 
-    .social
-      display: inline-block
-      width: 24px
-      height: 24px
-      background: grey
-      margin: 8px
-      &.facebook
-        background: red
-      &.instagram
-        background: green
-      &.twitter
-        background: blue
+.footer_list .main
+  min-width: 260px
+
+.footer_copy
+  margin-top: 20px
+  padding-top: 21px
+  padding-bottom: 20px
+  line-height: 24px
+  color: #89898b
+  text-align: center
+  background-color: #2d2c31
 
 @media screen and (max-width: 1366px)
 
@@ -30,5 +36,7 @@ footer
 @media screen and (max-width: 414px)
 
 @media screen and (max-width: 375px)
+  .footer_copy
+    font-size: 11px
 
 @media screen and (max-width: 320px)

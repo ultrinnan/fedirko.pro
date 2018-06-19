@@ -9,7 +9,7 @@ const rename = require('gulp-rename');
 const paths = {
     styles: {
         src: 'frontend/web/sass/',
-        dest: 'frontend/web/css2/'
+        dest: 'frontend/web/css/'
     },
     scripts: {
         src: 'frontend/web/js/',

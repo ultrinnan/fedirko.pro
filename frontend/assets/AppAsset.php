@@ -27,7 +27,7 @@ class AppAsset extends AssetBundle
     {
         if (YII_ENV_DEV){
             $this->css = [
-                'css2/main.css'
+                'css/main.css'
             ];
             $this->js = [
                 'js/main.js'
