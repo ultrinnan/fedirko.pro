@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\Projects;
 use Yii;
 use yii\web\Controller;
 use frontend\models\ContactForm;
@@ -33,7 +34,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $projects_count = Projects::getCount();
+        return $this->render('index', [
+            'projects_count' => $projects_count
+        ]);
     }
 
 

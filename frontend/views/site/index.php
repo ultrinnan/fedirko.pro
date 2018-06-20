@@ -2,6 +2,7 @@
 use yii\helpers\Url;
 
 /* @var $this yii\web\View */
+/* @var $projects_count yii\web\View */
 
 $this->title = 'FEDIRKO.PRO - Full Stack Web Development and Solutions';
 
@@ -81,7 +82,7 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h2><span class="green_header">MORE THAN 35<span title="some projects are hidden according to NDA" style="cursor: pointer;">*</span></span> COMPLETED PROJECTS</h2>
+                <h2><span class="green_header">MORE THAN <?=$projects_count;?><span title="some projects are hidden according to NDA" style="cursor: pointer;">*</span></span> COMPLETED PROJECTS</h2>
                 <p>We deliver globally, providing result-driven project management and seamless communication.</p>
                 <p>Our solutions yield benefit in Internet-facing, corporate and hybrid environments.</p>
             </div>

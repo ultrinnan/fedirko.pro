@@ -216,5 +216,15 @@ class Projects extends \yii\db\ActiveRecord
 		return $project;
 	}
 
+    /**
+     * number of projects in portfolio for adds purposes and main page
+     * @return int
+     */
+	public static function getCount()
+    {
+        $projects_count = self::find()->all();
+        return count($projects_count);
+    }
+
 
 }
