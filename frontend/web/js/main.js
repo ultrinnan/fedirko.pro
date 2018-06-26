@@ -35,6 +35,7 @@ $(document).ready(function() {
         nextArrow: $('.next_feedback'),
         dots: true,
         pauseOnHover: true,
-        lazyLoad: 'progressive',
+        infinite: true,
+        lazyLoad: 'ondemand',
     });
 });
