@@ -8,7 +8,7 @@ const rename = require('gulp-rename');
 
 const paths = {
     styles: {
-        src: 'frontend/web/sass/',
+        src: 'frontend/web/scss/',
         dest: 'frontend/web/css/'
     },
     scripts: {
@@ -17,27 +17,12 @@ const paths = {
     }
 };
 
-let NODE_ENV = 'development';
-
 /**
  *  Compile styles
+ *  include general libs
  */
 function styles() {
-
-    if (NODE_ENV === 'development') {
-        return sass(paths.styles.src + 'main.sass', {style: 'expanded'})
-            .on('error', (err) => {
-                console.error('Error', err.message);
-            })
-            .pipe(gulp.dest(paths.styles.dest))
-            .pipe(rename({
-                suffix: '.min'
-            }))
-            .pipe(cleanCSS())
-            .pipe(gulp.dest(paths.styles.dest))
-    }
-
-    return sass(paths.styles.src + 'main.sass', {style: 'compressed'})
+    return sass(paths.styles.src + 'main.scss', {style: 'compressed'})
         .on('error', (err) => {
             console.error('Error', err.message);
         })
@@ -48,14 +33,14 @@ function styles() {
         }))
         .pipe(cleanCSS())
         .pipe(gulp.dest(paths.styles.dest))
-
 }
 
 /**
  *  Minify and concat all JS files
+ *  include general libs
  */
 function scripts() {
-    return gulp.src([paths.scripts.src + 'main.js', `!${paths.scripts.src}*.min.js`, `!${paths.scripts.src}admin.js`])
+    return gulp.src(['frontend/web/libs/slick/slick.min.js', paths.scripts.src + 'main.js', `!${paths.scripts.src}*.min.js`, `!${paths.scripts.src}admin.js`])
         .pipe(concat('main.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest(paths.scripts.dest))
@@ -65,7 +50,7 @@ function scripts() {
  *  Watch changes
  */
 function watch() {
-    gulp.watch(paths.styles.src + '**/*.sass', styles);
+    gulp.watch(paths.styles.src + '**/*.scss', styles);
     gulp.watch([paths.scripts.src + 'main.js', `!${paths.scripts.src}*.min.js`, `!${paths.scripts.src}admin.js`], gulp.series(scripts));
 }
 

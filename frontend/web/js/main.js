@@ -26,4 +26,15 @@ $(document).ready(function() {
         $('body').toggleClass('noscroll');
         $('.mobile_menu').toggle();
     });
+
+    $('.feedback_slider .slider').slick({
+        autoplay: true,
+        speed: 1000,
+        arrows: true,
+        prevArrow: $('.prev_feedback'),
+        nextArrow: $('.next_feedback'),
+        dots: true,
+        pauseOnHover: true,
+        lazyLoad: 'progressive',
+    });
 });

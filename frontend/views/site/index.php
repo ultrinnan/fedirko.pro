@@ -100,21 +100,10 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
         <a class="check_all" href="/portfolio">check all of our projects</a>
     </div>
 </section>
-
 <section class="feedback_slider">
-<!--    todo: refactor with slick-->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item active" style="background: url('<?=Url::to('@web/images/bg/feedback/feed_1.jpg');?>') center; background-size: cover;">
+    <div class="slider">
+        <div class="feedback feed_1">
+            <div class="slider_box">
                 <div class="feedback_text">
                     "Throughout the scope of work undertaken on my behalf, Serhii has maintained an exemplary attitude of professionalism and flexibility on what has proven a challenging project. Additionally, he has offered personal input on possible improvements at no expense, it has been a pleasure working with Serhii."
                 </div>
@@ -122,8 +111,9 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
                     Matt Allan, BEVVS
                 </div>
             </div>
-
-            <div class="item" style="background: url('<?=Url::to('@web/images/bg/feedback/feed_3.jpg');?>') center; background-size: cover;">
+        </div>
+        <div class="feedback feed_2">
+            <div class="slider_box">
                 <div class="feedback_text">
                     "Заказывал у Сергея админ часть сайта (фронтенд и бэкенд). Все сделано в соответствии с техническим заданием и четко в строк. От себя могу добавить: приятный и адекватный разработчик,  в случае необходимости, может чего-то посоветовать в направлении юзабильности продукта. Уже посоветовал своим друзьям."
                 </div>
@@ -131,8 +121,9 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
                     Владимир Лобода
                 </div>
             </div>
-
-            <div class="item" style="background: url('<?=Url::to('@web/images/bg/feedback/feed_2.jpg');?>') center; background-size: cover;">
+        </div>
+        <div class="feedback feed_3">
+            <div class="slider_box">
                 <div class="feedback_text">
                     "We have worked together on 2 website projects from concept to reality. Serhii provided innovation and professionalism throughout the projects. Serhii developed the projects on time and within budget, which highlights to delivery. Serhii has helped turn the 2 project ideas into operating businesses. I continue to use Serhii who provides a cost effective service for support."
                 </div>
@@ -140,28 +131,20 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
                     Martin Burke, ValveRecruitment
                 </div>
             </div>
-
-            <div class="item" style="background: url('<?=Url::to('@web/images/bg/feedback/feed_4.jpg');?>') center; background-size: cover;">
+        </div>
+        <div class="feedback feed_4">
+            <div class="slider_box">
                 <div class="feedback_text">
-                    "Заказывал доработку/правки сайта после индийских "профессионалов". Не самые дешевые рейты, но качество работы более чем соответствует. Новый проект запустили вовремя, а благодаря оперативной поддержке и постоянным советам по улучшению, готовый сайт получился даже луче, чем планировали.
+                    "Заказывал доработку/правки сайта после индийских "профессионалов". Не самые дешевые рейты, но качество работы более чем соответствует. Новый проект запустили вовремя, а благодаря оперативной поддержке и постоянным советам по улучшению, готовый сайт получился даже луче, чем планировали."
                 </div>
                 <div class="feedback_author">
                     Дмитрий
                 </div>
             </div>
-
         </div>
-
-        <!-- Left and right controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-            <span class="sr-only">Next</span>
-        </a>
     </div>
+    <div class="prev prev_feedback"></div>
+    <div class="next next_feedback"></div>
 </section>
 
 <?php

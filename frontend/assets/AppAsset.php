@@ -21,18 +21,4 @@ class AppAsset extends AssetBundle
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapPluginAsset',
     ];
-
-    //redefine properties for dev environment and connect unminified scripts
-    public function init()
-    {
-        if (YII_ENV_DEV){
-            $this->css = [
-                'css/main.css'
-            ];
-            $this->js = [
-                'js/main.js'
-            ];
-        }
-        return true;
-    }
 }
