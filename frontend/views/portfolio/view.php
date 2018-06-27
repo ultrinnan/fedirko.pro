@@ -120,25 +120,20 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
 <?php
 //todo: maybe move to separate partial?
 if ($slider){
-?>
-    <section class="related_projects">
-        <div class="container-fluid">
-            <div class="row">
-                <div id="related_slider" class="carousel slide" data-ride="carousel">
-                    <h3>RELATED PROJECTS</h3>
-                    <?php
-					$indicators = '';
-                    $carousel_items = '';
-                    $slider_count = count($slider);
-                    for ($i=0; $i < $slider_count; $i++) {
-						$active_class = $i==0 ? 'active' : '';
-						$indicators .= '<li data-target="#related_slider" data-slide-to="' . $i . '" class="' . $active_class. '"></li> ';
+    $indicators = '';
+    $carousel_items = '';
+    $carousel_items2 = '';
+    $slider_count = count($slider);
 
-						$techs = '';
-						foreach ($slider[$i]['tech_list'] as $tech){
-							$techs .= '<div class="related_tech">' . $tech['name'] . '</div>';
-						}
-						$carousel_items .= '
+    for ($i=0; $i < $slider_count; $i++) {
+        $active_class = $i==0 ? 'active' : '';
+        $indicators .= '<li data-target="#related_slider" data-slide-to="' . $i . '" class="' . $active_class. '"></li> ';
+
+        $techs = '';
+        foreach ($slider[$i]['tech_list'] as $tech){
+            $techs .= '<div class="related_tech">' . $tech['name'] . '</div>';
+        }
+        $carousel_items .= '
                         <div class="item ' . $active_class . '">
                             <div class="bg" style="background: #39675a url(/images/projects/' . $slider[$i]['project_id'] . '/' . $slider[$i]['pictures']['main']['img'] . ') center top no-repeat; background-size: cover;"></div>
                             <div class="item_box clearfix">
@@ -158,8 +153,39 @@ if ($slider){
                                 <a class="read_more" href="/portfolio/view/' . $slider[$i]['project_id'] .'">Read more</a>
                             </div>
                         </div>';
-					}
-					?>
+        $carousel_items2 .= '
+            <div class="project">
+                <div class="bg" style="background: #39675a url(/images/projects/' . $slider[$i]['project_id'] . '/' . $slider[$i]['pictures']['main']['img'] . ') center top no-repeat; background-size: cover;"></div>
+                <div class="slider_box clearfix">
+                    <div class="related_left">
+                        <h3>' . $slider[$i]['name'] . '</h3>
+                        <p>' . $slider[$i]['short_desc'] . '</p>
+                        <p>Works on <strong>' . $slider[$i]['engine']['name'] .'</strong></p>
+                        <p>Technologies:
+                            ' . $techs . '
+                        </p>
+                    </div>
+                    <div class="related_right">
+                        <a href="/portfolio/view/' . $slider[$i]['project_id'] .'" style="background: #39675a url(/images/projects/' . $slider[$i]['project_id'] . '/' . $slider[$i]['pictures']['main']['thumb'] . ') center no-repeat; background-size: cover;"></a>
+                    </div>
+                </div>
+            </div>';
+    }
+?>
+    <section class="related_projects">
+        <h3 class="slider_title">RELATED PROJECTS</h3>
+        <div class="slider">
+            <?=$carousel_items2;?>
+        </div>
+        <div class="prev prev_project"></div>
+        <div class="next next_project"></div>
+    </section>
+
+    <section class="related_projects">
+        <div class="container-fluid">
+            <div class="row">
+                <div id="related_slider" class="carousel slide" data-ride="carousel">
+                    <h3 class="slider_title">RELATED PROJECTS</h3>
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
 						<?=$indicators;?>

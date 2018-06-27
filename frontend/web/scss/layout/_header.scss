@@ -98,7 +98,7 @@ header {
 }
 
 .small_header .top_menu > li > a, li.dropdown:hover .dropdown-menu a {
-  color: #39675a;
+  color: $dark_green;
 }
 
 #contact_button a {
@@ -107,7 +107,7 @@ header {
 
   &:hover {
     background: white;
-    color: #39675a;
+    color: $dark_green;
     transition: 0.5s;
   }
 }
@@ -135,7 +135,7 @@ li.dropdown:hover .dropdown-menu {
     padding: 10px 20px;
 
     &:hover {
-      background: #39675a;
+      background: $dark_green;
       color: white;
     }
   }
@@ -157,7 +157,7 @@ a.lang_box {
   display: block;
   text-decoration: none;
   font-size: 16px;
-  border: 2px solid #39675a;
+  border: 2px solid $dark_green;
   border-radius: 2px;
   border-right: 0;
   padding: 0 8px;
@@ -214,7 +214,7 @@ a.lang_box {
     top: 0;
 
     span {
-      background: #39675a;
+      background: $dark_green;
     }
   }
 

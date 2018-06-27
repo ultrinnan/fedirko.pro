@@ -48,11 +48,11 @@ p {
 }
 
 a {
-  color: #39675a;
+  color: $dark_green;
   text-decoration: none;
 
   &:visited {
-    color: #39675a;
+    color: $dark_green;
   }
 
   &:hover,
@@ -108,12 +108,12 @@ a {
 }
 
 .dark_button, a.dark_button {
-  color: #39675a;
-  border: 2px solid #39675a;
+  color: $dark_green;
+  border: 2px solid $dark_green;
 }
 
 .dark_button:hover, a.dark_button:hover {
-  background: #39675a;
+  background: $dark_green;
 }
 
 .red_button, a.red_button {

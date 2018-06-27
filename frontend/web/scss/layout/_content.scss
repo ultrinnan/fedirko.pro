@@ -5,7 +5,7 @@
   padding: 105px 0 90px;
   min-height: 33vh;
   position: relative;
-  background: #39675a;
+  background: $dark_green;
   color: white;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 
@@ -71,7 +71,7 @@
     background: white;
     border: 1px solid white;
     border-radius: 2px;
-    color: #39675a;
+    color: $dark_green;
   }
 
   .read_more {
@@ -133,15 +133,15 @@
   background: white;
   border: 1px solid white;
   border-radius: 2px;
-  color: #39675a;
+  color: $dark_green;
 }
 
 .related_tech {
   display: inline-block;
   padding: 0 10px;
   margin: 0 15px 10px 0;
-  background: #39675a;
-  border: 1px solid #39675a;
+  background: $dark_green;
+  border: 1px solid $dark_green;
   border-radius: 2px;
   color: white;
 }
@@ -167,102 +167,7 @@
   box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
 }
 
-.related_projects {
-  margin: 0;
-  padding: 0;
-}
-
-#related_slider > h3 {
-  color: #fff;
-  position: absolute;
-  top: 24px;
-  margin: auto;
-  width: 100%;
-  z-index: 2;
-}
-
-.carousel {
-  background: #39675a;
-}
-
-.carousel-control {
-  z-index: 1;
-}
-
-.related_projects {
-  .item .bg {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    filter: blur(10px);
-    overflow: hidden;
-
-    &:before {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      position: absolute;
-      z-index: 1;
-      top: 0;
-    }
-  }
-
-  .item_box {
-    margin: 0 auto;
-    padding: 30px;
-    width: 60%;
-    background: white;
-    filter: blur(0);
-  }
-
-  .carousel-inner > .item {
-    padding: 80px 0 64px;
-  }
-
-  .carousel-indicators {
-    bottom: 8px;
-  }
-}
-
-.related_left {
-  float: left;
-  width: 50%;
-  height: 300px;
-}
-
-.related_right {
-  float: left;
-  width: 50%;
-  height: 300px;
-
-  a {
-    display: block;
-    height: 100%;
-  }
-}
-
 a {
-  &.read_more {
-    border: 2px solid #39675a;
-    border-radius: 2px;
-    color: #39675a;
-    display: block;
-    padding: 5px 25px;
-    text-transform: uppercase;
-    text-decoration: none;
-    width: 170px;
-    margin: 30px auto 10px;
-
-    &:hover {
-      background: #39675a;
-      color: white;
-      transition: 0.5s;
-    }
-  }
-
   &.service {
     display: block;
     background: #fcfcfc;
@@ -400,9 +305,9 @@ a.service:hover h4 {
 }
 
 .favorite_works a.check_all {
-  border: 2px solid #39675a;
+  border: 2px solid $dark_green;
   border-radius: 2px;
-  color: #39675a;
+  color: $dark_green;
   display: block;
   padding: 10px 25px;
   text-transform: uppercase;
@@ -412,7 +317,7 @@ a.service:hover h4 {
 
   &:hover {
     color: white;
-    background: #39675a;
+    background: $dark_green;
     transition: 0.5s;
   }
 }
@@ -441,7 +346,7 @@ a.service:hover h4 {
 
 .name {
   text-transform: uppercase;
-  color: #39675a;
+  color: $dark_green;
 }
 
 .position {
@@ -456,7 +361,7 @@ a.service:hover h4 {
 
   h3 {
     display: inline-block;
-    color: #39675a;
+    color: $dark_green;
   }
 
   img {
@@ -467,11 +372,11 @@ a.service:hover h4 {
 }
 
 blockquote {
-  border-left: 2px solid #39675a;
+  border-left: 2px solid $dark_green;
 }
 
 .quote_source {
-  color: #39675a;
+  color: $dark_green;
   text-align: right;
 }
 
@@ -494,7 +399,7 @@ blockquote {
 }
 
 .call_to_action {
-  background: #39675a;
+  background: $dark_green;
   color: white;
   text-align: center;
 
@@ -510,7 +415,7 @@ blockquote {
     margin: 20px auto 30px;
 
     &:hover {
-      color: #39675a;
+      color: $dark_green;
       background: white;
       transition: 0.5s;
     }
@@ -519,14 +424,14 @@ blockquote {
 
 .block-item {
   display: table;
-  border: 3px solid #39675a;
+  border: 3px solid $dark_green;
   padding: 20px 50px;
   margin-top: 20px;
   width: 92%;
   position: relative;
 
   .title {
-    background: #39675a;
+    background: $dark_green;
     color: #fff;
     padding: 5px 20px;
     margin: (-35px) 0 20px;
@@ -666,9 +571,6 @@ blockquote {
     }
   }
 
-  .related_projects .item_box {
-    width: 80%;
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -681,21 +583,17 @@ blockquote {
     max-width: 100%;
   }
 
-  .related_left, .related_right {
-    width: 100%;
-  }
-
   .captcha_box {
     margin-bottom: 15px;
   }
 
   .favorite_works a.check_all {
     color: white;
-    background: #39675a;
+    background: $dark_green;
   }
 
   .call_to_action a.contact_button {
-    color: #39675a;
+    color: $dark_green;
     background: white;
   }
 
@@ -720,25 +618,8 @@ blockquote {
     }
   }
 
-  .feedback_slider .item {
-    min-height: 540px;
-    padding: 24px 0;
-  }
-
-  .feedback_author {
-    width: 80%;
-  }
-
   .project_engine {
     margin-bottom: 15px;
-  }
-
-  .related_left {
-    height: 100%;
-  }
-
-  .related_right {
-    height: 200px;
   }
 }
 

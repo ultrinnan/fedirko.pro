@@ -38,4 +38,16 @@ $(document).ready(function() {
         infinite: true,
         lazyLoad: 'ondemand',
     });
+
+    $('.related_projects .slider').slick({
+        autoplay: true,
+        speed: 1000,
+        arrows: true,
+        prevArrow: $('.prev_project'),
+        nextArrow: $('.next_project'),
+        dots: true,
+        pauseOnHover: true,
+        infinite: true,
+        lazyLoad: 'ondemand',
+    });
 });
