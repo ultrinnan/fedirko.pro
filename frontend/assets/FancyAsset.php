@@ -19,7 +19,6 @@ class FancyAsset extends AssetBundle
     ];
     public $depends = [
         'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapPluginAsset',
     ];
     public $cssOptions = [
         'async' => 'async',
