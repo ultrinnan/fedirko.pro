@@ -1,0 +1,49 @@
+.social_sharing{
+  h3{
+    font-size: 32px;
+  }
+  .social_box{
+    display: flex;
+    justify-content: center;
+    .social{
+      cursor: pointer;
+      margin: 8px;
+      width: 48px;
+      height: 48px;
+      display: block;
+      opacity: 0.8;
+      text-decoration: none;
+      background: $dark_green;
+      &:hover{
+        opacity: 1;
+      }
+      &.facebook{
+        background: url("../images/icons/social/facebook.svg");
+      }
+      &.google{
+        background: url("../images/icons/social/google.svg");
+      }
+      //&.instagram{
+      //  background: url("../images/icons/social/instagram.svg");
+      //}
+      &.linkedin{
+        background: url("../images/icons/social/linkedin.svg");
+      }
+      &.twitter{
+        background: url("../images/icons/social/twitter.svg");
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1366px) {}
+
+@media screen and (max-width: 1024px) {}
+
+@media screen and (max-width: 768px) {}
+
+@media screen and (max-width: 414px) {}
+
+@media screen and (max-width: 375px) {}
+
+@media screen and (max-width: 320px) {}

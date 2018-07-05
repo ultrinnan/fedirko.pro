@@ -118,6 +118,9 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
 <!--    </div>-->
 <!--</section>-->
 <?php
+
+echo $this->render('/site/_social_sharing');
+
 if ($slider){
     $related_items = '';
     $slider_count = count($slider);
