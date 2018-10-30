@@ -465,6 +465,24 @@ blockquote {
   padding: 8px;
 }
 
+.payment_wrap{
+  width: 80%;
+  height: 50px;
+  margin: auto;
+  &.mastercard{
+    background: url("../images/icons/mastercard.svg") center no-repeat;
+    background-size: contain;
+  }
+  &.visa{
+    background: url("../images/icons/visa.svg") center no-repeat;
+    background-size: contain;
+  }
+  &.privatbank{
+    background: url("../images/icons/privatbank.svg") center no-repeat;
+    background-size: contain;
+  }
+}
+
 @media screen and (max-width: 1366px) {}
 
 @media screen and (max-width: 1024px) {

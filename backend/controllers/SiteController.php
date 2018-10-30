@@ -110,9 +110,4 @@ class SiteController extends Controller
     {
         return $this->render('site-settings');
     }
-
-    public function actionPlayer()
-    {
-    	return $this->render('player');
-    }
 }

@@ -42,6 +42,11 @@ $mainItems = [
                 'url' => '/privacy-policy',
                 'active' => \Yii::$app->controller->action->id === 'privacy-policy',
             ],
+            [
+                'label' => 'Donations',
+                'url' => '/donations',
+                'active' => \Yii::$app->controller->action->id === 'donations',
+            ],
 //            [
 //                'label' => 'Serhii\'s CV',
 //                'url' => '/cv-sergey',
