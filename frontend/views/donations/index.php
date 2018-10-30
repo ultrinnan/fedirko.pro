@@ -45,36 +45,10 @@ $this->registerCss(".first { background: url('/images/bg/donate_bg.jpg') no-repe
 		background: rgb(122,183,43) !important;"onmouseover="this.style.opacity='0.5';" onmouseout="this.style.opacity='1';">
                         <img src="https://static.liqpay.ua/buttons/logo-small.png" name="btn_text"
                              style="margin-right: 7px !important; vertical-align: middle !important;"/>
-                        <span style="vertical-align:middle; !important">Buy us some coffee (5 USD)</span>
+                        <span style="vertical-align:middle; !important">Buy us some coffee (1 USD)</span>
                     </button>
                 </form>
                 <hr>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <div id="liqpay_checkout"></div>
-                <script>
-                    window.LiqPayCheckoutCallback = function() {
-                        LiqPayCheckout.init({
-                            data:"eyAidmVyc2lvbiIgOiAzLCAicHVibGljX2tleSIgOiAieW91cl9wdWJsaWNfa2V5IiwgImFjdGlv" +
-                                "biIgOiAicGF5IiwgImFtb3VudCIgOiAxLCAiY3VycmVuY3kiIDogIlVTRCIsICJkZXNjcmlwdGlv" +
-                                "biIgOiAiZGVzY3JpcHRpb24gdGV4dCIsICJvcmRlcl9pZCIgOiAib3JkZXJfaWRfMSIgfQ==",
-                            signature: "QvJD5u9Fg55PCx/Hdz6lzWtYwcI=",
-                            embedTo: "#liqpay_checkout",
-                            mode: "embed" // embed || popup,
-                        }).on("liqpay.callback", function(data){
-                            console.log(data.status);
-                            console.log(data);
-                        }).on("liqpay.ready", function(data){
-                            // ready
-                        }).on("liqpay.close", function(data){
-                            // close
-                        });
-                    };
-                </script>
-                <script src="//static.liqpay.ua/libjs/checkout.js" async></script>
             </div>
         </div>
 
