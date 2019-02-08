@@ -41,6 +41,5 @@ phpunit.phar
 /frontend/web/images/avatars/
 !/frontend/web/images/avatars/default_user.svg
 /frontend/web/images/projects/
-/.htaccess
 /node_modules/
 /.sass-cache/
