@@ -36,7 +36,6 @@ phpunit.phar
 
 # vagrant runtime
 /.vagrant
-/composer.lock
 
 /frontend/web/images/avatars/
 !/frontend/web/images/avatars/default_user.svg
