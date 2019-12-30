@@ -42,3 +42,4 @@ phpunit.phar
 /frontend/web/images/projects/
 /node_modules/
 /.sass-cache/
+.htaccess
