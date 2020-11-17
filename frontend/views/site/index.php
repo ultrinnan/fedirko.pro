@@ -102,6 +102,7 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
 </section>
 <section class="feedback_slider">
     <div class="slider">
+<!--        todo: make it dynamic with random backgrounds-->
         <div class="feedback feed_1">
             <div class="slider_box">
                 <div class="feedback_text">
@@ -139,6 +140,18 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
                 </div>
                 <div class="feedback_author">
                     Дмитрий
+                </div>
+            </div>
+        </div>
+        <div class="feedback feed_2">
+            <div class="slider_box">
+                <div class="feedback_text">
+                    "It was a great pleasure to work with Serhii in the project of the AIX’s website renovation. The quality of his services have gone above and beyond our greatest expectations.
+                    <br>
+                    Serhii has managed to offer the most efficient tools to meet our business requirements, and was very flexible during the implementation of the project. Serhii's expertise in Wordpress allowed us to realize almost all of our needs."
+                </div>
+                <div class="feedback_author">
+                    Saltanat Mashirova, AIX
                 </div>
             </div>
         </div>
