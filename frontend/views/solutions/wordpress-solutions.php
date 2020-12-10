@@ -50,10 +50,6 @@ $this->registerCss(".first { background: url('/images/bg/solutions/wordpress.jpg
                     <p>Shows important system information about server configuration as a nice widget in WP dashboard.</p>
                 </div>
                 <div>
-                    <a href="/solutions/f-tools-plugin"><h2>WP plugin F-Tools.</h2></a>
-                    <p>Wordpress plugin with many useful tools for your site.</p>
-                </div>
-                <div>
                     <a href="#"><h2>WP Plugin SEOHide. <span class="small">(link coming soon)</span></h2></a>
                     <p>Encodes external links with base64 and converts it dynamically after page rendering. Can be applied for posts/pages/custom post types/etc.</p>
                 </div>
