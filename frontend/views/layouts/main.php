@@ -174,9 +174,6 @@ $this->registerMetaTag(Yii::$app->params['default_keywords'], 'default_keywords'
 </header>
 
 <main>
-<!--    todo: uncomment after multilang will be ready on backend-->
-	<?//= WLang::widget();?>
-
     <div class="alert_box">
         <?= Alert::widget() ?>
     </div>
