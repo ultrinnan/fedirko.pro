@@ -65,7 +65,7 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
         <div class="row">
             <div class="col-md-12">
                 <h2>About project</h2>
-                <p><?=$project['long_desc'];?></p>
+                <?=$project['long_desc'];?>
             </div>
         </div>
     </div>

@@ -10,7 +10,7 @@ $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed201
     ?>
     <?php $this->beginPage() ?>
     <!DOCTYPE html>
-    <html lang="<?= Yii::$app->language ?>">
+    <html lang="en">
     <head>
         <link rel="icon" type="image/png" href="/favicon.png">
         <meta charset="<?= Yii::$app->charset ?>"/>
