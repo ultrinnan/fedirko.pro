@@ -121,7 +121,7 @@ $this->registerMetaTag(Yii::$app->params['default_keywords'], 'default_keywords'
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>" prefix="og: http://ogp.me/ns#">
+<html lang="en" prefix="og: http://ogp.me/ns#">
 <head>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
