@@ -8,7 +8,7 @@ if ($projects){
 	foreach ($projects as $key => $value) {
 		$techs = '';
 		foreach ($value['tech_list'] as $tech){
-			$techs .= '<div class="related_tech">' . $tech['name'] . '</div>';
+			$techs .= '<span class="related_tech">' . $tech['name'] . '</span>';
 		}
 		if ($key !=0 && ($key % 2 == 0)) {
 			$projects_list .= '</div>';
@@ -18,9 +18,9 @@ if ($projects){
                 <a href="/portfolio/view/' . $value['project_id'] .'" style="background: #39675a url(/images/projects/' . $value['project_id'] . '/' . $value['pictures']['main']['thumb'] . ') center top no-repeat; background-size: cover;">
                     <span class="item_desc">
                         <span class="h3">' . $value['name'] . '</span>
-                        <p>' . $value['short_desc'] . '</p>
-                        <p>Works on <strong>' . $value['engine']['name'] .'</strong></p>
-                        <p>Technologies:</p>' . $techs . '
+                        <span>' . $value['short_desc'] . '</span>
+                        <span>Works on <strong>' . $value['engine']['name'] .'</strong></span>
+                        <span>Technologies:</span>' . $techs . '
                         <span class="read_more">Read more</span>
                     </span>
                 </a>

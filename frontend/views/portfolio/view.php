@@ -104,22 +104,8 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
         </div>
     </div>
 </section>
-<!--<section>-->
-<!--    <div class="container">-->
-<!--        <div class="row">-->
-<!--            <div class="col-md-12">-->
-<!--                --><?php
-//                //todo: uncomment after seohide implementation
-////                if ($url_exists){
-////                    echo '<h3><a href="' . $project['url']. '">' . $project['url']. '</a></h3>';
-////                }
-//                ?>
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
-<?php
 
+<?php
 echo $this->render('/site/_social_sharing');
 
 if ($slider){
@@ -129,7 +115,7 @@ if ($slider){
     for ($i=0; $i < $slider_count; $i++) {
         $techs = '';
         foreach ($slider[$i]['tech_list'] as $tech){
-            $techs .= '<div class="related_tech">' . $tech['name'] . '</div>';
+            $techs .= '<span class="related_tech">' . $tech['name'] . '</span>';
         }
         $related_items .= '
             <div class="project">
