@@ -72,6 +72,7 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
 </section>
 <section>
     <div class="container">
+        <h3 class="hidden">Project pictures</h3>
         <div class="row">
             <?php
             //if more than one image

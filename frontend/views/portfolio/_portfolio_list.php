@@ -17,7 +17,7 @@ if ($projects){
 		$projects_list .= '<div class="col-md-6">
                 <a href="/portfolio/view/' . $value['project_id'] .'" style="background: #39675a url(/images/projects/' . $value['project_id'] . '/' . $value['pictures']['main']['thumb'] . ') center top no-repeat; background-size: cover;">
                     <span class="item_desc">
-                        <h3>' . $value['name'] . '</h3>
+                        <span class="h3">' . $value['name'] . '</span>
                         <p>' . $value['short_desc'] . '</p>
                         <p>Works on <strong>' . $value['engine']['name'] .'</strong></p>
                         <p>Technologies:</p>' . $techs . '
