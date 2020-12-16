@@ -83,7 +83,7 @@ return [
                         'css/bootstrap.min.css',
                     ],
                     'cssOptions' => [
-                        'async' => 'async'
+//                        'async' => 'async'
                     ],
                 ],
                 'yii\bootstrap\BootstrapPluginAsset' => [

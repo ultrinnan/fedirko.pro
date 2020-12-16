@@ -26,6 +26,9 @@ h6 {
   font-family: "Montserrat", Arial, sans-serif;
   font-weight: normal;
   text-align: center;
+  &.hidden {
+    display: none;
+  }
 }
 
 h1 {
