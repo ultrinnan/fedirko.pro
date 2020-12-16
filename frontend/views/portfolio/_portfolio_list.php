@@ -21,7 +21,7 @@ if ($projects){
                         <span class="h3">' . $value['name'] . '</span>
                         <span>' . $value['short_desc'] . '</span>
                         <span>Works on <strong>' . $value['engine']['name'] .'</strong></span>
-                        <span>Technologies:</span>' . $techs . '
+                        <span>Technologies:</span><span>' . $techs . '</span>
                         <span class="read_more">Read more</span>
                     </span>
                 </a>

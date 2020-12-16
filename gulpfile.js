@@ -1,10 +1,14 @@
 const gulp = require('gulp');
-const sass = require('gulp-ruby-sass');
+const sass = require('gulp-sass');
+const rename = require('gulp-rename');
+const autoprefixer = require('gulp-autoprefixer');
+const sourcemaps = require('gulp-sourcemaps');
+const browserSync = require('browser-sync');
 const cleanCSS = require('gulp-clean-css');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
-const autoprefixer = require('gulp-autoprefixer');
-const rename = require('gulp-rename');
+const jshint = require('gulp-jshint');
+const babel = require('gulp-babel');
 
 const paths = {
     styles: {
@@ -19,31 +23,59 @@ const paths = {
 
 /**
  *  Compile styles
- *  include general libs
  */
 function styles() {
-    return sass(paths.styles.src + 'main.scss', {style: 'compressed'})
-        .on('error', (err) => {
-            console.error('Error', err.message);
-        })
-        .pipe(autoprefixer('last 2 versions'))
+    return gulp
+        .src(paths.styles.src + '**/*.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass().on('error', sass.logError))
+        .pipe(
+            autoprefixer({
+                cascade: false,
+            })
+        )
+        .pipe(
+            rename({
+                suffix: '.min',
+            })
+        )
+        .pipe(
+            cleanCSS({ debug: true }, (details) => {
+                console.log(`${details.name}: ${details.stats.originalSize}`);
+                console.log(`${details.name}: ${details.stats.minifiedSize}`);
+            })
+        )
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(paths.styles.dest))
-        .pipe(rename({
-            suffix: '.min'
-        }))
-        .pipe(cleanCSS())
-        .pipe(gulp.dest(paths.styles.dest))
+        .pipe(browserSync.stream());
 }
 
 /**
  *  Minify and concat all JS files
- *  include general libs
  */
 function scripts() {
-    return gulp.src(['frontend/web/libs/slick/slick.min.js', paths.scripts.src + 'main.js', `!${paths.scripts.src}*.min.js`, `!${paths.scripts.src}admin.js`])
+    return gulp
+        .src(['frontend/web/libs/slick/slick.min.js', paths.scripts.src + '*.js', `!${paths.scripts.src}*.min.js`, `!${paths.scripts.src}admin.js`])
+        .pipe(sourcemaps.init())
+        .pipe(
+            babel({
+                presets: ['@babel/env'],
+            })
+        )
         .pipe(concat('main.min.js'))
         .pipe(uglify())
-        .pipe(gulp.dest(paths.scripts.dest))
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest(paths.scripts.dest));
+}
+
+/**
+ * Check errors in scripts
+ */
+function lint() {
+    return gulp
+        .src([paths.scripts.src + '*.js', `!${paths.scripts.src}*.min.js`])
+        .pipe(jshint())
+        .pipe(jshint.reporter('jshint-stylish'));
 }
 
 /**
@@ -51,17 +83,23 @@ function scripts() {
  */
 function watch() {
     gulp.watch(paths.styles.src + '**/*.scss', styles);
-    gulp.watch([paths.scripts.src + 'main.js', `!${paths.scripts.src}*.min.js`, `!${paths.scripts.src}admin.js`], gulp.series(scripts));
+    gulp.watch(
+        [paths.scripts.src + 'main.js', `!${paths.scripts.src}*.min.js`, `!${paths.scripts.src}admin.js`],
+        gulp.series(lint, scripts)
+    );
 }
 
-let build = gulp.series(gulp.parallel(styles, scripts));
-
 /*
- * Define build task to build our scripts and styles for Production
+ * Define development task to build our scripts and styles for Development
  */
-gulp.task('build', build);
+gulp.task('development', gulp.series(styles, scripts));
 
 /*
  * Define default task that can be called by just running `gulp` from cli
  */
-gulp.task('default', gulp.series(build, watch));
+gulp.task('default', gulp.parallel(watch));
+
+
+
+
+

@@ -63,7 +63,11 @@
         width: 100%;
         padding: 0 32px;
         z-index: 1;
-        >span {
+
+        .h3 {
+          text-align: center;
+        }
+        > span {
           display: block;
         }
       }
@@ -586,13 +590,14 @@ blockquote {
       background: rgba(57, 103, 90, 0.8);
     }
 
-    .item_desc, &:hover .item_desc {
+    .item_desc,
+    &:hover .item_desc {
       display: block;
       padding: 0 8px;
       text-align: center;
       width: 100%;
       z-index: 1;
-      >span {
+      > span {
         display: block;
       }
     }

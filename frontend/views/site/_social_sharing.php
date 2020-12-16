@@ -16,14 +16,6 @@ use yii\helpers\Url;
                     <a rel="nofollow" class="social google" target="_blank" href="https://plus.google.com/share?url=<?=urlencode(Url::to('', 'https'));?>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=480,width=640');return false;" title="Share on Google+"></a>
                 </div>
 
-                <div class="related_left">↩
-                    <h3>TransRadar</h3>↩
-                    <p>Efficient and free cargo search for trucks.</p>↩
-                    <p>Works on <strong>WordPress</strong></p>↩
-                    <p>Technologies:</p>
-                    <div class="related_tech">PHP</div><div class="related_tech">HTML5</div><div class="related_tech">CSS3</div><div class="related_tech">JavaScript</div><div class="related_tech">jQuery</div><div class="related_tech">Bootstrap</div><div class="related_tech">AJAX</div><div class="related_tech">API</div>
-                </div>↩
-
                 <script>
                     (function(d, s, id){
                         let js, fjs = d.getElementsByTagName(s)[0];

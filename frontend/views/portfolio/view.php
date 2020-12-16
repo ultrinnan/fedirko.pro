@@ -109,37 +109,38 @@ $url_exists = strpos(@get_headers($project['url'])[0],'200') === false ? false :
 echo $this->render('/site/_social_sharing');
 
 if ($slider){
-    $related_items = '';
-    $slider_count = count($slider);
-
-    for ($i=0; $i < $slider_count; $i++) {
-        $techs = '';
-        foreach ($slider[$i]['tech_list'] as $tech){
-            $techs .= '<span class="related_tech">' . $tech['name'] . '</span>';
-        }
-        $related_items .= '
-            <div class="project">
-                <div class="bg" style="background: #39675a url(/images/projects/' . $slider[$i]['project_id'] . '/' . $slider[$i]['pictures']['main']['img'] . ') center top no-repeat; background-size: cover;"></div>
-                <div class="slider_box">
-                    <div class="related_left">
-                        <h3>' . $slider[$i]['name'] . '</h3>
-                        <p>' . $slider[$i]['short_desc'] . '</p>
-                        <p>Works on <strong>' . $slider[$i]['engine']['name'] .'</strong></p>
-                        <p>Technologies:</p>
-                            ' . $techs . '
-                    </div>
-                    <div class="related_right">
-                        <a href="/portfolio/view/' . $slider[$i]['project_id'] .'" style="background: #39675a url(/images/projects/' . $slider[$i]['project_id'] . '/' . $slider[$i]['pictures']['main']['thumb'] . ') center no-repeat; background-size: cover;"></a>
-                    </div>
-                    <a class="read_more" href="/portfolio/view/' . $slider[$i]['project_id'] .'">Read more</a>
-                </div>
-            </div>';
-    }
 ?>
     <section class="related_projects">
         <h3 class="slider_title">RELATED PROJECTS</h3>
         <div class="slider">
-            <?=$related_items;?>
+            <?php
+            $slider_count = count($slider);
+
+            for ($i=0; $i < $slider_count; $i++) {
+                $techs = '';
+                foreach ($slider[$i]['tech_list'] as $tech){
+                    $techs .= '<span class="related_tech">' . $tech['name'] . '</span>';
+                }
+                ?>
+                <div class="project">
+                    <div class="bg" style="background: #39675a url('/images/projects/<?=$slider[$i]['project_id']?>/<?=$slider[$i]['pictures']['main']['img']?>') center top no-repeat; background-size: cover;"></div>
+                    <div class="slider_box">
+                        <div class="related_left">
+                            <h3><?=$slider[$i]['name']?></h3>
+                            <p><?=$slider[$i]['short_desc']?></p>
+                            <p>Works on <strong><?=$slider[$i]['engine']['name']?></strong></p>
+                            <p>Technologies:</p>
+                            <?=$techs?>
+                        </div>
+                        <div class="related_right">
+                            <a href="/portfolio/view/<?=$slider[$i]['project_id']?>" style="background: #39675a url('/images/projects/<?=$slider[$i]['project_id']?>/<?=$slider[$i]['pictures']['main']['thumb']?>') center no-repeat; background-size: cover;"></a>
+                        </div>
+                        <a class="read_more" href="/portfolio/view/<?=$slider[$i]['project_id']?>">Read more</a>
+                    </div>
+                </div>
+                <?php
+            }
+            ?>
         </div>
         <div class="prev prev_project"></div>
         <div class="next next_project"></div>
