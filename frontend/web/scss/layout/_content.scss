@@ -43,6 +43,9 @@
 
     .item_desc {
       display: none;
+      >span {
+        display: block;
+      }
     }
 
     &:hover {
@@ -60,7 +63,7 @@
         width: 100%;
         padding: 0 32px;
         z-index: 1;
-        span {
+        >span {
           display: block;
         }
       }
@@ -589,6 +592,9 @@ blockquote {
       text-align: center;
       width: 100%;
       z-index: 1;
+      >span {
+        display: block;
+      }
     }
   }
 
