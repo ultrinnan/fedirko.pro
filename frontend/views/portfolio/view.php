@@ -138,9 +138,8 @@ if ($slider){
                         <h3>' . $slider[$i]['name'] . '</h3>
                         <p>' . $slider[$i]['short_desc'] . '</p>
                         <p>Works on <strong>' . $slider[$i]['engine']['name'] .'</strong></p>
-                        <p>Technologies:
+                        <p>Technologies:</p>
                             ' . $techs . '
-                        </p>
                     </div>
                     <div class="related_right">
                         <a href="/portfolio/view/' . $slider[$i]['project_id'] .'" style="background: #39675a url(/images/projects/' . $slider[$i]['project_id'] . '/' . $slider[$i]['pictures']['main']['thumb'] . ') center no-repeat; background-size: cover;"></a>
