@@ -130,7 +130,7 @@ $this->registerMetaTag(Yii::$app->params['default_keywords'], 'default_keywords'
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-KDGDVMX');</script>
     <!-- End Google Tag Manager -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image/png" href="/favicon.png">
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -140,7 +140,7 @@ $this->registerMetaTag(Yii::$app->params['default_keywords'], 'default_keywords'
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?=Url::to('', 'https');?>">
     <meta property="og:site_name" content="FEDIRKO.PRO">
-    <meta property="og:locale" content="en_EN">
+    <meta property="og:locale" content="en_US">
     <?php $this->head() ?>
 </head>
 <body>
@@ -173,7 +173,7 @@ $this->registerMetaTag(Yii::$app->params['default_keywords'], 'default_keywords'
     </div>
 </header>
 
-<content>
+<main>
 <!--    todo: uncomment after multilang will be ready on backend-->
 	<?//= WLang::widget();?>
 
@@ -181,7 +181,7 @@ $this->registerMetaTag(Yii::$app->params['default_keywords'], 'default_keywords'
         <?= Alert::widget() ?>
     </div>
     <?= $content ?>
-</content>
+</main>
 
 <footer>
     <div class="container">

@@ -21,7 +21,7 @@ class FancyAsset extends AssetBundle
         'yii\web\YiiAsset',
     ];
     public $cssOptions = [
-        'async' => 'async',
+//        'async' => 'async',
     ];
     public $jsOptions = [
         'async' => 'async',

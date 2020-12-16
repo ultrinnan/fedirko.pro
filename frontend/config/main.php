@@ -56,7 +56,7 @@ return [
 
             ],
         ],
-        'language'=>'en-EN',
+        'language'=>'en-US',
         'i18n' => [
 	        'translations' => [
 		        '*' => [

@@ -132,7 +132,7 @@ if ($slider){
         }
         $related_items .= '
             <div class="project">
-                <div class="bg" style="background: #39675a url(/images/projects/' . $slider[$i]['project_id'] . '/' . $slider[$i]['pictures']['main']['img'] . ') center top no-repeat; background-size: cover;"></div>
+                <div class="bg" style="background: #39675a url("/images/projects/"' . $slider[$i]['project_id'] . '/' . $slider[$i]['pictures']['main']['img'] . ') center top no-repeat; background-size: cover;"></div>
                 <div class="slider_box">
                     <div class="related_left">
                         <h3>' . $slider[$i]['name'] . '</h3>
@@ -143,7 +143,7 @@ if ($slider){
                         </p>
                     </div>
                     <div class="related_right">
-                        <a href="/portfolio/view/' . $slider[$i]['project_id'] .'" style="background: #39675a url(/images/projects/' . $slider[$i]['project_id'] . '/' . $slider[$i]['pictures']['main']['thumb'] . ') center no-repeat; background-size: cover;"></a>
+                        <a href="/portfolio/view/' . $slider[$i]['project_id'] .'" style="background: #39675a url("/images/projects/"' . $slider[$i]['project_id'] . '/' . $slider[$i]['pictures']['main']['thumb'] . ') center no-repeat; background-size: cover;"></a>
                     </div>
                     <a class="read_more" href="/portfolio/view/' . $slider[$i]['project_id'] .'">Read more</a>
                 </div>
