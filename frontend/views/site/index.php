@@ -101,6 +101,7 @@ $this->registerCss(".first { background: url('/images/bg/space_bg.jpg') no-repea
     </div>
 </section>
 <section class="feedback_slider">
+    <h3 class="hidden">Feedback</h3>
     <div class="slider">
 <!--        todo: make it dynamic with random backgrounds-->
         <div class="feedback feed_1">

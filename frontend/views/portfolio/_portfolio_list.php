@@ -1,4 +1,5 @@
 <section>
+    <h3 class="hidden">Portfolio page</h3>
     <div class="container portfolio">
 <?php
 $projects_list = '<div class="row">';
