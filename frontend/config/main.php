@@ -48,7 +48,6 @@ return [
 
                 'portfolio' => 'portfolio/index',
                 'solutions' => 'solutions/index',
-                'donations' => 'donations/index',
 
                 '<alias>' => 'site/<alias>', //all static pages
 
