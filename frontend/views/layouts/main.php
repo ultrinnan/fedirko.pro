@@ -42,14 +42,6 @@ $mainItems = [
                 'url' => '/privacy-policy',
                 'active' => \Yii::$app->controller->action->id === 'privacy-policy',
             ],
-//            [
-//                'label' => 'Serhii\'s CV',
-//                'url' => '/cv-sergey',
-//            ],
-//            [
-//                'label' => 'Mary\'s CV',
-//                'url' => '/cv-mary',
-//            ],
         ],
     ],
     [
